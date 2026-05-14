@@ -1,0 +1,3 @@
+[submodule "vendor/streamline-vectors"]
+	path = vendor/streamline-vectors
+	url = https://github.com/webalys-hq/streamline-vectors.git

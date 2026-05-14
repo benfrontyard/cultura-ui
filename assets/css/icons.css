@@ -1,0 +1,53 @@
+/**
+ * Line icons from the GitHub-hosted Streamline vectors bundle (built into streamline-sprite.svg).
+ * Source: https://github.com/webalys-hq/streamline-vectors (see sprite file comment + submodule).
+ */
+.ch-icon {
+  display: inline-block;
+  width: 1.125rem;
+  height: 1.125rem;
+  flex-shrink: 0;
+  vertical-align: -0.125em;
+  color: inherit;
+  /* Closed paths default to fill=black; these sprites are stroke-only */
+  fill: none;
+}
+
+.ch-icon use {
+  pointer-events: none;
+  fill: none;
+}
+
+.ch-icon--sm {
+  width: 0.875rem;
+  height: 0.875rem;
+  vertical-align: -0.06em;
+}
+
+.ch-icon--xl {
+  width: 1.375rem;
+  height: 1.375rem;
+}
+
+.ch-icon--2xl {
+  width: 2rem;
+  height: 2rem;
+  vertical-align: -0.2em;
+}
+
+.ch-shell-icon-btn .ch-icon,
+.ch-nav-link > .ch-icon {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.ch-topbar-actions .btn-icon .ch-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.btn.rounded-circle .ch-icon {
+  width: 1.125rem;
+  height: 1.125rem;
+  vertical-align: 0;
+}

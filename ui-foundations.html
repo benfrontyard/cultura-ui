@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="assets/img/cultura-icon.png" />
+    <title>UI Foundations · Cultura</title>
+    <link
+      rel="stylesheet"
+      href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&amp;display=swap"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <link href="assets/css/icons.css" rel="stylesheet" />
+    <link href="assets/css/theme.css" rel="stylesheet" />
+  </head>
+  <body data-ch-current="foundations">
+    <a class="ch-skip-link" href="#main-content">Skip to main content</a>
+
+    <div class="ch-app">
+      <!-- ch:shell:sidebar -->
+      <aside class="ch-sidebar ch-sidebar-desktop">
+        <div class="ch-sidebar-brand">
+          <a
+            href="index.html"
+            class="ch-sidebar-brand-link d-flex align-items-center gap-2 flex-grow-1 min-w-0 text-decoration-none"
+            aria-label="Cultura home"
+          >
+            <span class="ch-sidebar-brand-wordmark">
+              <img src="assets/img/cultura-logo.png" alt="" decoding="async" />
+            </span>
+            <span class="ch-sidebar-brand-mark ch-sidebar-brand-mark--collapsed-only" aria-hidden="true">
+              <img src="assets/img/cultura-icon.png" alt="" width="32" height="32" decoding="async" />
+            </span>
+          </a>
+        </div>
+        <div class="ch-sidebar-scroll">
+          <nav aria-label="Primary navigation">
+            <p class="ch-nav-section-label" id="nav-label-workspace">Workspace</p>
+            <ul class="list-unstyled mb-2">
+              <li>
+                <a class="ch-nav-link" href="index.html" data-ch-nav="home">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-house"/></svg>
+                  <span class="ch-nav-label">Home</span>
+                </a>
+              </li>
+              <li>
+                <a class="ch-nav-link" href="ai-chat.html" data-ch-nav="ai-chat">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-chat"/></svg>
+                  <span class="ch-nav-label">AI Chat</span>
+                </a>
+              </li>
+            </ul>
+            <details class="ch-nav-group">
+              <summary class="ch-nav-group-summary">
+                <span class="ch-nav-group-label">Research</span>
+                <svg class="ch-icon ch-nav-group-caret" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-chevron-down"/></svg>
+              </summary>
+              <ul class="list-unstyled mb-0 ch-nav-group-list">
+                <li>
+                  <a class="ch-nav-link" href="crs-reports.html" data-ch-nav="crs-reports">
+                    <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-file-graph"/></svg>
+                    <span class="ch-nav-label">CRS Reports</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="ch-nav-link disabled" href="#" aria-disabled="true" data-ch-nav="crs-scores">
+                    <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-graph-up"/></svg>
+                    <span class="ch-nav-label">CRS Scores</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="ch-nav-link" href="persona-detail.html" data-ch-nav="personas">
+                    <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-people"/></svg>
+                    <span class="ch-nav-label">Personas</span>
+                  </a>
+                </li>
+              </ul>
+            </details>
+            <details class="ch-nav-group">
+              <summary class="ch-nav-group-summary">
+                <span class="ch-nav-group-label">Campaigns &amp; data</span>
+                <svg class="ch-icon ch-nav-group-caret" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-chevron-down"/></svg>
+              </summary>
+              <ul class="list-unstyled mb-0 ch-nav-group-list">
+                <li>
+                  <a class="ch-nav-link" href="#" data-ch-nav="campaigns">
+                    <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-megaphone"/></svg>
+                    <span class="ch-nav-label">Campaigns</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="ch-nav-link" href="#" data-ch-nav="audience-lists">
+                    <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-list-ul"/></svg>
+                    <span class="ch-nav-label">Audience Lists</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="ch-nav-link" href="upload-csv.html" data-ch-nav="upload">
+                    <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-cloud-upload"/></svg>
+                    <span class="ch-nav-label">Upload CSV</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="ch-nav-link" href="#" data-ch-nav="processed-files">
+                    <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-folder"/></svg>
+                    <span class="ch-nav-label">Processed Files</span>
+                  </a>
+                </li>
+              </ul>
+            </details>
+            <details class="ch-nav-group">
+              <summary class="ch-nav-group-summary">
+                <span class="ch-nav-group-label">System</span>
+                <svg class="ch-icon ch-nav-group-caret" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-chevron-down"/></svg>
+              </summary>
+              <ul class="list-unstyled mb-0 ch-nav-group-list">
+                <li>
+                  <a class="ch-nav-link" href="#" data-ch-nav="blueprint">
+                    <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-diagram"/></svg>
+                    <span class="ch-nav-label">Cultural Blueprint</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="ch-nav-link" href="#" data-ch-nav="settings">
+                    <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-gear"/></svg>
+                    <span class="ch-nav-label">Settings</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="ch-nav-link" href="ui-foundations.html" data-ch-nav="foundations">
+                    <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-grid"/></svg>
+                    <span class="ch-nav-label">UI Foundations</span>
+                  </a>
+                </li>
+              </ul>
+            </details>
+          </nav>
+        </div>
+        <div class="ch-sidebar-footer">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <div class="ch-user-avatar" aria-hidden="true">NC</div>
+            <div class="ch-user-meta min-w-0">
+              <div class="fw-semibold text-truncate small">Nate Chandra</div>
+              <div class="text-ch-muted small">Free Plan</div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-outline-primary btn-sm w-100">
+            <svg class="ch-icon me-1" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-arrow-up-circle"/></svg>
+            <span>Upgrade Plan</span>
+          </button>
+        </div>
+        <div class="ch-sidebar-rail">
+          <button
+            type="button"
+            id="chSidebarCollapse"
+            class="btn btn-sm ch-sidebar-collapse-btn ch-shell-icon-btn d-none d-lg-inline-flex align-items-center justify-content-center"
+            aria-label="Collapse sidebar"
+            aria-pressed="false"
+          >
+            <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-layout-sidebar"/></svg>
+          </button>
+        </div>
+      </aside>
+      <!-- ch:/shell:sidebar -->
+
+      <div class="ch-shell">
+        <header class="ch-topbar">
+          <button
+            class="btn btn-light border ch-mobile-only me-1"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#chNavDrawer"
+            aria-controls="chNavDrawer"
+            aria-label="Open menu"
+          >
+            <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-menu"/></svg>
+          </button>
+          <a
+            href="index.html"
+            class="ch-topbar-logo ch-mobile-only d-inline-flex align-items-center flex-shrink-0 me-2 text-decoration-none"
+            aria-label="Cultura home"
+          >
+            <img src="assets/img/cultura-icon.png" alt="" width="28" height="28" decoding="async" />
+          </a>
+          <div class="ch-topbar-search position-relative d-none d-md-block">
+            <label for="global-search" class="visually-hidden">Search workspace</label>
+            <svg class="ch-icon ch-search-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-search"/></svg>
+            <input
+              id="global-search"
+              type="search"
+              class="form-control"
+              placeholder="Search reports, personas, audiences…"
+              autocomplete="off"
+            />
+            <span
+              class="position-absolute end-0 top-50 translate-middle-y me-3 ch-kbd-hint d-none d-lg-inline"
+              role="group"
+              aria-label="Keyboard shortcut: Command K"
+              ><kbd>Cmd</kbd><span class="ch-kbd-sep" aria-hidden="true">+</span><kbd>K</kbd></span
+            >
+          </div>
+          <div class="ch-topbar-actions d-flex align-items-center gap-1 ms-auto">
+            <button type="button" class="btn btn-icon" aria-label="Notifications">
+              <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-bell"/></svg>
+            </button>
+            <button type="button" class="btn btn-icon" aria-label="Help">
+              <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-help"/></svg>
+            </button>
+            <div class="dropdown">
+              <button
+                type="button"
+                class="btn btn-light border rounded-pill d-flex align-items-center gap-2 py-1 ps-1 pe-2"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                aria-label="Account menu"
+              >
+                <span class="ch-user-avatar ch-user-avatar--sm" aria-hidden="true">NC</span>
+                <svg class="ch-icon ch-icon--sm text-ch-muted" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-chevron-down"/></svg>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end shadow-sm" style="min-width: 12rem">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Workspace settings</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Sign out</a></li>
+              </ul>
+            </div>
+          </div>
+        </header>
+
+        <div class="ch-workspace flex-grow-1">
+          <div class="ch-main">
+            <div class="ch-main-inner">
+              <main id="main-content">
+                <h1 class="ch-type-heading-lg mb-2">UI Foundations</h1>
+                <p class="text-ch-secondary mb-4">
+                  Developer reference for Cultura tokens, Bootstrap bridges, and reusable <code>.ch-*</code> patterns.
+                </p>
+
+                <section class="mb-5" aria-labelledby="tok-colors">
+                  <h2 id="tok-colors" class="h5 ch-heading mb-3">Color tokens</h2>
+                  <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 g-2">
+                    <div class="col"><div class="ch-swatch"><div class="ch-swatch-color" style="background:#1f69da"></div><div class="ch-swatch-meta"><code>--ch-primary</code><br />#1F69DA</div></div></div>
+                    <div class="col"><div class="ch-swatch"><div class="ch-swatch-color" style="background:#111111"></div><div class="ch-swatch-meta"><code>--ch-heading</code><br />#111111</div></div></div>
+                    <div class="col"><div class="ch-swatch"><div class="ch-swatch-color" style="background:#f2f6f9"></div><div class="ch-swatch-meta"><code>--ch-bg-page</code><br />#F2F6F9</div></div></div>
+                    <div class="col"><div class="ch-swatch"><div class="ch-swatch-color" style="background:#d3e8f0"></div><div class="ch-swatch-meta"><code>--ch-border</code><br />#D3E8F0</div></div></div>
+                  </div>
+                </section>
+
+                <section class="mb-5" aria-labelledby="tok-type">
+                  <h2 id="tok-type" class="h5 ch-heading mb-3">Typography</h2>
+                  <p class="text-ch-secondary ch-type-body-sm mb-3">
+                    Font stacks stay Cultura: Epilogue (<code>--ch-font-display</code>) for the largest display headings, General Sans (<code>--ch-font-sans</code>) for UI and smaller headings.
+                    Size and line-height primitives follow the <a href="https://polaris.shopify.com/tokens/font" class="text-reset">Shopify Polaris font scale</a> (11px–40px, 4px line-height rhythm), exposed as <code>--ch-font-size-*</code> and <code>--ch-font-line-height-*</code>.
+                    Marketing-style fluid steps remain: <code>--ch-text-2xs</code>–<code>--ch-text-md</code>; <code>html</code> root uses <code>clamp()</code> (~16–17.5px).
+                  </p>
+                  <div class="table-responsive ch-card mb-4">
+                    <table class="table table-sm mb-0">
+                      <caption class="text-start px-3 py-2 text-ch-secondary ch-type-body-sm">Primitive sizes (rem @ 16px reference)</caption>
+                      <thead><tr><th scope="col">Token</th><th scope="col">≈ px</th></tr></thead>
+                      <tbody>
+                        <tr><td><code>--ch-font-size-275</code> … <code>--ch-font-size-1000</code></td><td>11 → 40 (see <code>theme.css</code>)</td></tr>
+                        <tr><td><code>--ch-font-line-height-300</code> … <code>--ch-font-line-height-1200</code></td><td>12 → 48</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="table-responsive ch-card mb-4">
+                    <table class="table table-sm mb-0">
+                      <caption class="text-start px-3 py-2 text-ch-secondary ch-type-body-sm">Semantic utilities (Polaris-style roles)</caption>
+                      <thead><tr><th scope="col">Class</th><th scope="col">Typical use</th></tr></thead>
+                      <tbody>
+                        <tr><td><code>.ch-type-heading-3xl</code></td><td>Rare hero / home greeting</td></tr>
+                        <tr><td><code>.ch-type-heading-2xl</code> / <code>.ch-type-page-title</code></td><td>Primary page title (default in-app title step)</td></tr>
+                        <tr><td><code>.ch-type-heading-xl</code></td><td>Large in-content headline</td></tr>
+                        <tr><td><code>.ch-type-heading-lg</code></td><td>Tool and settings page <code>h1</code></td></tr>
+                        <tr><td><code>.ch-type-heading-md</code></td><td>Modal titles, panel titles</td></tr>
+                        <tr><td><code>.ch-type-heading-sm</code> / <code>.ch-type-heading-xs</code></td><td>Compact labels, uppercase section labels</td></tr>
+                        <tr><td><code>.ch-type-section-title</code> … <code>.ch-type-caption</code></td><td>Legacy dashboard roles (mapped to the same scale)</td></tr>
+                        <tr><td><code>.ch-type-body-lg</code> … <code>.ch-type-body-xs</code></td><td>Body density steps (aliases: <code>.ch-type-body-large</code> = lg, <code>.ch-type-body</code> = md)</td></tr>
+                        <tr><td><code>.ch-tabular-nums</code></td><td>Tables, metrics (<code>font-variant-numeric: tabular-nums</code>)</td></tr>
+                        <tr><td>Line breaks (<code>theme.css</code>)</td><td><code>h1</code>–<code>h6</code> in <code>.ch-app</code> and heading utilities use <code>text-wrap: balance</code>. Paragraphs and body/caption utilities use <code>text-wrap: pretty</code> plus <code>widows: 2</code> / <code>orphans: 2</code>. Prefer colons or a middle dot in titles over em dashes in copy.</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <p class="ch-type-heading-3xl mb-1">Heading 3xl</p>
+                  <p class="ch-type-heading-2xl mb-1">Heading 2xl / page title</p>
+                  <p class="ch-type-heading-xl mb-1">Heading xl</p>
+                  <p class="ch-type-heading-lg mb-1">Heading lg (tool page title)</p>
+                  <p class="ch-type-heading-md mb-1">Heading md</p>
+                  <p class="ch-type-heading-sm mb-1">Heading sm</p>
+                  <p class="ch-type-heading-xs mb-3">Heading xs</p>
+                  <p class="ch-page-title mb-2">Fluid page title (<code>.ch-page-title</code>, 20–24px)</p>
+                  <p class="ch-type-body-lg mb-1">Body large: supporting lead copy.</p>
+                  <p class="ch-type-body-md mb-1">Body md: default density. <strong>Strong</strong>, <a href="#">link</a>, <span class="text-ch-secondary">secondary</span>, <span class="text-ch-muted">muted</span>.</p>
+                  <p class="ch-type-body-sm mb-1">Body sm: secondary lines and captions.</p>
+                  <p class="ch-type-body-xs mb-0">Body xs: meta only (11px).</p>
+                </section>
+
+                <section class="mb-5" aria-labelledby="tok-space">
+                  <h2 id="tok-space" class="h5 ch-heading mb-3">Spacing, radius, elevation</h2>
+                  <div class="table-responsive ch-card">
+                    <table class="table table-sm mb-0">
+                      <thead><tr><th scope="col">Token</th><th scope="col">Value</th></tr></thead>
+                      <tbody>
+                        <tr><td><code>--ch-content-pad-x</code></td><td>30px desktop / 22px ≤1200px / 18px ≤768px</td></tr>
+                        <tr><td><code>--ch-content-pad-y</code></td><td>22px desktop / 16px mobile (home primary column uses 26px desktop)</td></tr>
+                        <tr><td><code>--ch-space-1</code> … <code>--ch-space-8</code></td><td>0.25rem → 2rem (component spacing)</td></tr>
+                        <tr><td><code>--ch-space-grid</code> / <code>--ch-space-grid-compact</code></td><td>Fluid card grid gaps on the home dashboard</td></tr>
+                        <tr><td><code>--ch-icon-tile</code> / <code>--ch-icon-tile-sm</code></td><td>44px / 38px width for recent &amp; workflow icon cells (flat-top hex clip, height from <code>aspect-ratio</code>)</td></tr>
+                        <tr><td><code>--ch-control-icon</code></td><td>36px (topbar / shell square buttons)</td></tr>
+                        <tr><td><code>--ch-topbar-height</code></td><td>60px</td></tr>
+                        <tr><td><code>--ch-sidebar-width</code></td><td>232px</td></tr>
+                        <tr><td><code>--ch-rail-width</code></td><td>272px (home rail from xl only)</td></tr>
+                        <tr><td><code>--ch-radius-sm</code></td><td>10px</td></tr>
+                        <tr><td><code>--ch-radius</code></td><td>16px</td></tr>
+                        <tr><td><code>--ch-radius-lg</code></td><td>22px</td></tr>
+                        <tr><td><code>--ch-shadow</code></td><td>subtle lift (see theme.css)</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </section>
+
+                <section class="mb-5" aria-labelledby="tok-hex-motif">
+                  <h2 id="tok-hex-motif" class="h5 ch-heading mb-3">Hex motif (flat-top)</h2>
+                  <p class="text-ch-secondary small mb-3">Reusable accent shape: flat edge on top, not stretched. Use on cards, rails, or inline markers — <strong>not</strong> as a full-page or <code>.ch-app</code> background.</p>
+                  <div class="d-flex flex-wrap align-items-center gap-3 mb-3">
+                    <span class="ch-motif-hex ch-motif-hex--tile" style="background: linear-gradient(200deg, rgba(31, 105, 218, 0.28), rgba(31, 105, 218, 0.06));" aria-hidden="true"></span>
+                    <span class="ch-motif-hex ch-motif-hex--tile-sm" style="background: var(--ch-primary); opacity: 0.22;" aria-hidden="true"></span>
+                    <span class="ch-motif-hex" style="width: 3rem; background: var(--ch-surface-subtle);" aria-hidden="true"></span>
+                  </div>
+                  <div class="table-responsive ch-card">
+                    <table class="table table-sm mb-0">
+                      <thead><tr><th scope="col">Token / class</th><th scope="col">Role</th></tr></thead>
+                      <tbody>
+                        <tr><td><code>--ch-hex-flat</code></td><td><code>clip-path</code> polygon (flat-top regular when box ratio is enforced)</td></tr>
+                        <tr><td><code>--ch-hex-flat-h</code></td><td><code>height: calc(width * var(--ch-hex-flat-h))</code> when you cannot use <code>aspect-ratio</code></td></tr>
+                        <tr><td><code>.ch-motif-hex</code></td><td>Clip + <code>aspect-ratio</code>; set <code>width</code> (or use tile modifiers)</td></tr>
+                        <tr><td><code>.ch-motif-hex--tile</code> / <code>.ch-motif-hex--tile-sm</code></td><td>Widths aligned to <code>--ch-icon-tile</code> / <code>--ch-icon-tile-sm</code></td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </section>
+
+                <section class="mb-5" aria-labelledby="tok-focus">
+                  <h2 id="tok-focus" class="h5 ch-heading mb-3">Focus</h2>
+                  <p class="text-ch-secondary mb-2">Tab to these controls: consistent <code>:focus-visible</code> ring across the app shell.</p>
+                  <button type="button" class="btn btn-primary me-2">Primary</button>
+                  <button type="button" class="btn btn-outline-secondary">Outline</button>
+                </section>
+
+                <section class="mb-5" aria-labelledby="comp-buttons">
+                  <h2 id="comp-buttons" class="h5 ch-heading mb-3">Buttons</h2>
+                  <div class="d-flex flex-wrap gap-2 mb-2">
+                    <button type="button" class="btn btn-primary">Primary</button>
+                    <button type="button" class="btn btn-secondary">Secondary</button>
+                    <button type="button" class="btn btn-outline-primary">Outline</button>
+                    <button type="button" class="btn btn-link">Link</button>
+                    <button type="button" class="btn btn-primary" disabled>Disabled</button>
+                    <button type="button" class="btn btn-primary" disabled><span class="spinner-border spinner-border-sm me-1" aria-hidden="true"></span>Loading</button>
+                  </div>
+                  <button type="button" class="btn btn-light border" aria-label="Settings"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-gear"/></svg></button>
+                </section>
+
+                <section class="mb-5" aria-labelledby="comp-forms">
+                  <h2 id="comp-forms" class="h5 ch-heading mb-3">Forms</h2>
+                  <div class="row g-3">
+                    <div class="col-md-4">
+                      <label for="fdemo1" class="form-label">Input</label>
+                      <input id="fdemo1" type="text" class="form-control" placeholder="Placeholder" />
+                    </div>
+                    <div class="col-md-4">
+                      <label for="fdemo2" class="form-label">Select</label>
+                      <select id="fdemo2" class="form-select"><option>One</option><option>Two</option></select>
+                    </div>
+                    <div class="col-md-4">
+                      <label for="fdemo3" class="form-label">Search</label>
+                      <input id="fdemo3" type="search" class="form-control" placeholder="Search…" />
+                    </div>
+                    <div class="col-12">
+                      <label for="fdemo4" class="form-label">Textarea</label>
+                      <textarea id="fdemo4" class="form-control is-invalid" rows="2" aria-describedby="fdemo4fb"></textarea>
+                      <div id="fdemo4fb" class="invalid-feedback">Example error message for validation state.</div>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="mb-5" aria-labelledby="comp-cards">
+                  <h2 id="comp-cards" class="h5 ch-heading mb-3">Cards &amp; tiles</h2>
+                  <div class="row g-2">
+                    <div class="col-md-4">
+                      <div class="ch-card ch-card-body"><div class="fw-semibold mb-1">Card</div><p class="small text-ch-secondary mb-0">Default surface + border.</p></div>
+                    </div>
+                    <div class="col-md-4">
+                      <a class="ch-workflow-tile" href="#"><div class="d-flex align-items-center gap-2 mb-1"><span class="ch-recent-icon ch-recent-icon--sm ch-accent-blue" aria-hidden="true"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-lightning"/></svg></span><span class="fw-semibold small">Workflow tile</span></div><p class="small text-ch-secondary mb-0">Entire tile clickable.</p><span class="ch-workflow-arrow" aria-hidden="true"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-arrow-up-right"/></svg></span></a>
+                    </div>
+                    <div class="col-md-4">
+                      <a class="ch-recent-card" href="#"><div class="d-flex gap-2"><div class="ch-recent-icon ch-accent-blue" aria-hidden="true"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-file-earmark"/></svg></div><div><div class="fw-semibold">Recent item</div><div class="small text-ch-muted">Metadata</div></div></div></a>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="mb-5" aria-labelledby="comp-table">
+                  <h2 id="comp-table" class="h5 ch-heading mb-3">Table</h2>
+                  <div class="table-responsive ch-card">
+                    <table class="table mb-0 ch-table">
+                      <caption class="px-3 pt-3 text-ch-secondary small">Sample caption for accessibility.</caption>
+                      <thead><tr><th scope="col">Name</th><th scope="col">Status</th></tr></thead>
+                      <tbody>
+                        <tr><td>Alpha</td><td><span class="badge rounded-pill ch-badge-completed">Completed</span></td></tr>
+                        <tr><td>Beta</td><td><span class="badge rounded-pill ch-badge-processing">Processing</span></td></tr>
+                        <tr><td>Gamma</td><td><span class="badge rounded-pill ch-badge-draft">Draft</span></td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </section>
+
+                <section class="mb-5" aria-labelledby="comp-tabs-bc">
+                  <h2 id="comp-tabs-bc" class="h5 ch-heading mb-3">Tabs &amp; breadcrumbs</h2>
+                  <nav aria-label="Breadcrumb example"><ol class="breadcrumb small mb-3"><li class="breadcrumb-item"><a href="index.html">Home</a></li><li class="breadcrumb-item active" aria-current="page">Foundations</li></ol></nav>
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item" role="presentation"><button class="nav-link active" id="ftab1-tab" data-bs-toggle="tab" data-bs-target="#ftab1" type="button" role="tab" aria-controls="ftab1" aria-selected="true">Tab A</button></li>
+                    <li class="nav-item" role="presentation"><button class="nav-link" id="ftab2-tab" data-bs-toggle="tab" data-bs-target="#ftab2" type="button" role="tab" aria-controls="ftab2" aria-selected="false">Tab B</button></li>
+                  </ul>
+                  <div class="tab-content border border-top-0 rounded-bottom p-3 ch-card">
+                    <div class="tab-pane fade show active" id="ftab1" role="tabpanel" aria-labelledby="ftab1-tab" tabindex="0">Tab panel A</div>
+                    <div class="tab-pane fade" id="ftab2" role="tabpanel" aria-labelledby="ftab2-tab" tabindex="0">Tab panel B</div>
+                  </div>
+                </section>
+
+                <section class="mb-5" aria-labelledby="comp-alerts">
+                  <h2 id="comp-alerts" class="h5 ch-heading mb-3">Alerts</h2>
+                  <div class="alert alert-success" role="status">Success state</div>
+                  <div class="alert alert-warning mb-0" role="status">Warning state</div>
+                </section>
+
+                <section class="mb-5" aria-labelledby="comp-empty">
+                  <h2 id="comp-empty" class="h5 ch-heading mb-3">Empty state</h2>
+                  <div class="ch-card ch-card-body text-center py-5">
+                    <div class="ch-brand-wordmark mx-auto mb-3">
+                      <img src="assets/img/cultura-logo.png" alt="Cultura by Culture Hive" decoding="async" />
+                    </div>
+                    <p class="fw-semibold mb-1">No reports yet</p>
+                    <p class="text-ch-secondary small mb-3">Create a CRS report to see it listed here.</p>
+                    <a class="btn btn-primary btn-sm" href="crs-reports.html">Go to CRS Reports</a>
+                  </div>
+                </section>
+
+                <section class="mb-5" aria-labelledby="comp-overlays">
+                  <h2 id="comp-overlays" class="h5 ch-heading mb-3">Modal &amp; toast</h2>
+                  <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#chFoundationModal">Open modal</button>
+                  <button type="button" class="btn btn-outline-primary" data-ch-demo-toast>Show toast</button>
+                </section>
+
+                <section class="mb-5" aria-labelledby="comp-upload-ai">
+                  <h2 id="comp-upload-ai" class="h5 ch-heading mb-3">Upload &amp; AI blocks</h2>
+                  <div class="ch-dropzone mb-3" data-ch-dropzone role="region" aria-label="Example dropzone"><p class="mb-0 small text-ch-secondary">Drag files (demo state only)</p></div>
+                  <div class="ch-ai-prompt mb-2">
+                    <label for="fdemo-ai" class="visually-hidden">AI prompt</label>
+                    <textarea id="fdemo-ai" class="form-control" rows="2" placeholder="Ask Cultura AI…"></textarea>
+                    <div class="d-flex justify-content-end mt-2 pt-2 border-top"><button type="button" class="btn btn-primary btn-sm" aria-label="Send">Send</button></div>
+                  </div>
+                  <div class="border rounded p-3 bg-white">
+                    <div class="small text-ch-muted mb-1">Assistant</div>
+                    <p class="mb-2">Short response preview with actions.</p>
+                    <div class="d-flex flex-wrap gap-2" role="group" aria-label="Response actions">
+                      <button type="button" class="btn btn-sm btn-outline-primary">Save</button>
+                      <button type="button" class="btn btn-sm btn-outline-primary">Export</button>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="mb-2" aria-labelledby="comp-nav">
+                  <h2 id="comp-nav" class="h5 ch-heading mb-3">Sidebar nav states</h2>
+                  <p class="text-ch-secondary small">Live states appear in the app shell. Each page sets <code>data-ch-current</code> on <code>&lt;body&gt;</code>; <code>assets/js/app.js</code> marks the matching <code>data-ch-nav</code> link with <code>.ch-nav-active</code> / Bootstrap <code>.active</code> and opens the parent <code>&lt;details class="ch-nav-group"&gt;</code> when the route lives inside a collapsible section. In the desktop sidebar and mobile drawer, the active row uses a neutral pill background (<code>--ch-sidebar-nav-pill</code>) with no left accent; other surfaces may still use the legacy blue rail (<code>--ch-nav-active-indicator-width</code>).</p>
+                </section>
+              </main>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ch:shell:mobile-nav -->
+    <div
+      class="offcanvas offcanvas-start ch-offcanvas-nav"
+      tabindex="-1"
+      id="chNavDrawer"
+      aria-labelledby="chNavDrawerLabel"
+    >
+      <div class="offcanvas-header border-bottom">
+        <div class="d-flex align-items-center gap-2 min-w-0 flex-grow-1">
+          <a
+            href="index.html"
+            id="chNavDrawerLabel"
+            class="ch-offcanvas-brand-link text-decoration-none min-w-0"
+          >
+            <span class="ch-offcanvas-brand-wordmark">
+              <img src="assets/img/cultura-logo.png" alt="Cultura by Culture Hive" decoding="async" />
+            </span>
+          </a>
+        </div>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close menu"
+        ></button>
+      </div>
+      <div class="offcanvas-body p-0">
+        <nav aria-label="Mobile primary navigation">
+          <p class="ch-nav-section-label">Workspace</p>
+          <ul class="list-unstyled mb-2">
+            <li>
+              <a class="ch-nav-link" href="index.html" data-ch-nav="home">
+                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-house"/></svg><span class="ch-nav-label">Home</span>
+              </a>
+            </li>
+            <li>
+              <a class="ch-nav-link" href="ai-chat.html" data-ch-nav="ai-chat">
+                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-chat"/></svg><span class="ch-nav-label">AI Chat</span>
+              </a>
+            </li>
+          </ul>
+          <details class="ch-nav-group">
+            <summary class="ch-nav-group-summary">
+              <span class="ch-nav-group-label">Research</span>
+              <svg class="ch-icon ch-nav-group-caret" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-chevron-down"/></svg>
+            </summary>
+            <ul class="list-unstyled mb-0 ch-nav-group-list">
+              <li>
+                <a class="ch-nav-link" href="crs-reports.html" data-ch-nav="crs-reports">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-file-graph"/></svg>
+                  <span class="ch-nav-label">CRS Reports</span>
+                </a>
+              </li>
+              <li>
+                <a class="ch-nav-link disabled" href="#" aria-disabled="true" data-ch-nav="crs-scores">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-graph-up"/></svg><span class="ch-nav-label">CRS Scores</span>
+                </a>
+              </li>
+              <li>
+                <a class="ch-nav-link" href="persona-detail.html" data-ch-nav="personas">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-people"/></svg><span class="ch-nav-label">Personas</span>
+                </a>
+              </li>
+            </ul>
+          </details>
+          <details class="ch-nav-group">
+            <summary class="ch-nav-group-summary">
+              <span class="ch-nav-group-label">Campaigns &amp; data</span>
+              <svg class="ch-icon ch-nav-group-caret" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-chevron-down"/></svg>
+            </summary>
+            <ul class="list-unstyled mb-0 ch-nav-group-list">
+              <li>
+                <a class="ch-nav-link" href="#" data-ch-nav="campaigns">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-megaphone"/></svg><span class="ch-nav-label">Campaigns</span>
+                </a>
+              </li>
+              <li>
+                <a class="ch-nav-link" href="#" data-ch-nav="audience-lists">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-list-ul"/></svg><span class="ch-nav-label">Audience Lists</span>
+                </a>
+              </li>
+              <li>
+                <a class="ch-nav-link" href="upload-csv.html" data-ch-nav="upload">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-cloud-upload"/></svg><span class="ch-nav-label">Upload CSV</span>
+                </a>
+              </li>
+              <li>
+                <a class="ch-nav-link" href="#" data-ch-nav="processed-files">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-folder"/></svg><span class="ch-nav-label">Processed Files</span>
+                </a>
+              </li>
+            </ul>
+          </details>
+          <details class="ch-nav-group">
+            <summary class="ch-nav-group-summary">
+              <span class="ch-nav-group-label">System</span>
+              <svg class="ch-icon ch-nav-group-caret" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-chevron-down"/></svg>
+            </summary>
+            <ul class="list-unstyled mb-0 ch-nav-group-list">
+              <li>
+                <a class="ch-nav-link" href="#" data-ch-nav="blueprint">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-diagram"/></svg>
+                  <span class="ch-nav-label">Cultural Blueprint</span>
+                </a>
+              </li>
+              <li>
+                <a class="ch-nav-link" href="#" data-ch-nav="settings">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-gear"/></svg><span class="ch-nav-label">Settings</span>
+                </a>
+              </li>
+              <li>
+                <a class="ch-nav-link" href="ui-foundations.html" data-ch-nav="foundations">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-grid"/></svg><span class="ch-nav-label">UI Foundations</span>
+                </a>
+              </li>
+            </ul>
+          </details>
+        </nav>
+      </div>
+    </div>
+    <!-- ch:/shell:mobile-nav -->
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" id="chToastHost" aria-live="polite"></div>
+
+    <div class="modal fade" id="chFoundationModal" tabindex="-1" aria-labelledby="chFoundationModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title ch-type-heading-md" id="chFoundationModalLabel">Example modal</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close dialog"></button>
+          </div>
+          <div class="modal-body">
+            <p class="text-ch-secondary mb-0">Use for confirmations and short forms. Trap focus is handled by Bootstrap.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

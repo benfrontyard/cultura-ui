@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="assets/img/cultura-icon.png" />
+    <title>Home · Cultura</title>
+    <link
+      rel="stylesheet"
+      href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&amp;display=swap"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Inter:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <link href="assets/css/icons.css" rel="stylesheet" />
+    <link href="assets/css/theme.css" rel="stylesheet" />
+  </head>
+  <body data-ch-current="home">
+    <a class="ch-skip-link" href="#main-content">Skip to main content</a>
+
+    <div class="ch-app">
+      <!-- ch:shell:sidebar -->
+      <aside class="ch-sidebar ch-sidebar-desktop">
+        <div class="ch-sidebar-brand">
+          <a
+            href="index.html"
+            class="ch-sidebar-brand-link d-flex align-items-center gap-2 flex-grow-1 min-w-0 text-decoration-none"
+            aria-label="Cultura home"
+          >
+            <span class="ch-sidebar-brand-wordmark">
+              <img src="assets/img/cultura-logo.png" alt="Cultura" decoding="async" />
+            </span>
+            <span class="ch-sidebar-brand-mark ch-sidebar-brand-mark--collapsed-only" aria-hidden="true">
+              <img src="assets/img/cultura-icon.png" alt="" width="32" height="32" decoding="async" />
+            </span>
+          </a>
+        </div>
+        <div class="ch-sidebar-scroll">
+          <nav aria-label="Primary navigation">
+            <p class="ch-nav-section-label" id="nav-label-workspace">Workspace</p>
+            <ul class="list-unstyled mb-2">
+              <li>
+                <a class="ch-nav-link" href="index.html" data-ch-nav="home">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-house"/></svg>
+                  <span class="ch-nav-label">Home</span>
+                </a>
+              </li>
+              <li>
+                <a class="ch-nav-link" href="ai-chat.html" data-ch-nav="ai-chat">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-chat"/></svg>
+                  <span class="ch-nav-label">AI Chat</span>
+                </a>
+              </li>
+            </ul>
+            <details class="ch-nav-group">
+              <summary class="ch-nav-group-summary">
+                <span class="ch-nav-group-label">Research</span>
+                <svg class="ch-icon ch-nav-group-caret" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-chevron-down"/></svg>
+              </summary>
+              <ul class="list-unstyled mb-0 ch-nav-group-list">
+                <li>
+                  <a class="ch-nav-link" href="crs-reports.html" data-ch-nav="crs-reports">
+                    <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-file-graph"/></svg>
+                    <span class="ch-nav-label">CRS Reports</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="ch-nav-link disabled" href="#" aria-disabled="true" data-ch-nav="crs-scores">
+                    <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-graph-up"/></svg>
+                    <span class="ch-nav-label">CRS Scores</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="ch-nav-link" href="persona-detail.html" data-ch-nav="personas">
+                    <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-people"/></svg>
+                    <span class="ch-nav-label">Personas</span>
+                  </a>
+                </li>
+              </ul>
+            </details>
+            <details class="ch-nav-group">
+              <summary class="ch-nav-group-summary">
+                <span class="ch-nav-group-label">Campaigns &amp; data</span>
+                <svg class="ch-icon ch-nav-group-caret" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-chevron-down"/></svg>
+              </summary>
+              <ul class="list-unstyled mb-0 ch-nav-group-list">
+                <li>
+                  <a class="ch-nav-link" href="#" data-ch-nav="campaigns">
+                    <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-megaphone"/></svg>
+                    <span class="ch-nav-label">Campaigns</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="ch-nav-link" href="#" data-ch-nav="audience-lists">
+                    <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-list-ul"/></svg>
+                    <span class="ch-nav-label">Audience Lists</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="ch-nav-link" href="upload-csv.html" data-ch-nav="upload">
+                    <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-cloud-upload"/></svg>
+                    <span class="ch-nav-label">Upload CSV</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="ch-nav-link" href="#" data-ch-nav="processed-files">
+                    <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-folder"/></svg>
+                    <span class="ch-nav-label">Processed Files</span>
+                  </a>
+                </li>
+              </ul>
+            </details>
+            <details class="ch-nav-group">
+              <summary class="ch-nav-group-summary">
+                <span class="ch-nav-group-label">System</span>
+                <svg class="ch-icon ch-nav-group-caret" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-chevron-down"/></svg>
+              </summary>
+              <ul class="list-unstyled mb-0 ch-nav-group-list">
+                <li>
+                  <a class="ch-nav-link" href="#" data-ch-nav="blueprint">
+                    <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-diagram"/></svg>
+                    <span class="ch-nav-label">Cultural Blueprint</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="ch-nav-link" href="#" data-ch-nav="settings">
+                    <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-gear"/></svg>
+                    <span class="ch-nav-label">Settings</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="ch-nav-link" href="ui-foundations.html" data-ch-nav="foundations">
+                    <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-grid"/></svg>
+                    <span class="ch-nav-label">UI Foundations</span>
+                  </a>
+                </li>
+              </ul>
+            </details>
+          </nav>
+        </div>
+        <div class="ch-sidebar-footer">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <div class="ch-user-avatar" aria-hidden="true">NC</div>
+            <div class="ch-user-meta min-w-0">
+              <div class="fw-semibold text-truncate small">Nate Chandra</div>
+              <div class="text-ch-muted small">Free Plan</div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-outline-primary btn-sm w-100">
+            <svg class="ch-icon me-1" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-arrow-up-circle"/></svg>
+            <span>Upgrade Plan</span>
+          </button>
+        </div>
+        <div class="ch-sidebar-rail">
+          <button
+            type="button"
+            id="chSidebarCollapse"
+            class="btn btn-sm ch-sidebar-collapse-btn ch-shell-icon-btn d-none d-lg-inline-flex align-items-center justify-content-center"
+            aria-label="Collapse sidebar"
+            aria-pressed="false"
+          >
+            <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-layout-sidebar"/></svg>
+          </button>
+        </div>
+      </aside>
+      <!-- ch:/shell:sidebar -->
+
+      <div class="ch-shell">
+        <header class="ch-topbar">
+          <button
+            class="btn btn-light border ch-mobile-only me-1"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#chNavDrawer"
+            aria-controls="chNavDrawer"
+            aria-label="Open menu"
+          >
+            <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-menu"/></svg>
+          </button>
+          <a
+            href="index.html"
+            class="ch-topbar-logo ch-mobile-only d-inline-flex align-items-center flex-shrink-0 me-2 text-decoration-none"
+            aria-label="Cultura home"
+          >
+            <img src="assets/img/cultura-icon.png" alt="" width="28" height="28" decoding="async" />
+          </a>
+          <div class="ch-topbar-search position-relative d-none d-md-block">
+            <label for="global-search" class="visually-hidden">Search workspace</label>
+            <svg class="ch-icon ch-search-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-search"/></svg>
+            <input
+              id="global-search"
+              type="search"
+              class="form-control"
+              placeholder="Search reports, personas, audiences…"
+              autocomplete="off"
+            />
+            <span
+              class="position-absolute end-0 top-50 translate-middle-y me-3 ch-kbd-hint d-none d-lg-inline"
+              role="group"
+              aria-label="Keyboard shortcut: Command K"
+              ><kbd>Cmd</kbd><span class="ch-kbd-sep" aria-hidden="true">+</span><kbd>K</kbd></span
+            >
+          </div>
+          <div class="ch-topbar-actions d-flex align-items-center gap-1 ms-auto">
+            <button type="button" class="btn btn-icon" aria-label="Notifications">
+              <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-bell"/></svg>
+            </button>
+            <button type="button" class="btn btn-icon" aria-label="Help">
+              <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-help"/></svg>
+            </button>
+            <div class="dropdown">
+              <button
+                type="button"
+                class="btn btn-light border rounded-pill d-flex align-items-center gap-2 py-1 ps-1 pe-2"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                aria-label="Account menu"
+              >
+                <span class="ch-user-avatar" style="width: 32px; height: 32px; font-size: 0.75rem" aria-hidden="true">NC</span>
+                <svg class="ch-icon ch-icon--sm text-ch-muted" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-chevron-down"/></svg>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end shadow-sm" style="min-width: 12rem">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Workspace settings</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Sign out</a></li>
+              </ul>
+            </div>
+          </div>
+        </header>
+
+        <div class="ch-workspace flex-grow-1">
+          <div class="ch-main">
+            <div class="ch-main-inner ch-main-inner--home">
+              <main id="main-content">
+                <div class="ch-home-dashboard">
+                  <div class="ch-home-dashboard__primary">
+                    <header class="ch-dash-header mb-4">
+                      <h1 class="ch-heading ch-type-heading-3xl mb-1">Good morning, Nate</h1>
+                      <p class="ch-type-caption text-ch-secondary mb-0">
+                        <span class="text-ch-primary fw-medium">3 active reports</span>
+                        <span class="text-ch-muted mx-1" aria-hidden="true">·</span>
+                        <span class="text-ch-primary fw-medium">2 uploads processing</span>
+                      </p>
+                    </header>
+
+                    <section class="ch-dash-section mb-4" aria-labelledby="ai-heading">
+                      <div class="ch-dash-ai-head d-flex flex-wrap align-items-baseline justify-content-between gap-2 mb-2">
+                        <h2 id="ai-heading" class="ch-type-section-title mb-0">Ask Culture Hive AI</h2>
+                        <p class="ch-type-body-small text-ch-secondary mb-0">Workspace answers: use search above to find saved work.</p>
+                      </div>
+                      <div class="ch-ai-prompt">
+                        <label for="home-ai-input" class="visually-hidden">Ask Culture Hive AI</label>
+                        <textarea
+                          id="home-ai-input"
+                          class="form-control"
+                          rows="2"
+                          placeholder="Ask Culture Hive AI anything…"
+                        ></textarea>
+                        <div class="d-flex align-items-center justify-content-between mt-2 pt-2 border-top">
+                          <div class="ch-ai-toolbar">
+                            <button type="button" class="btn btn-light btn-sm" aria-label="Attach file">
+                              <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-paperclip"/></svg>
+                            </button>
+                            <button type="button" class="btn btn-light btn-sm" aria-label="Voice input">
+                              <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-mic"/></svg>
+                            </button>
+                            <button type="button" class="btn btn-light btn-sm" aria-label="Saved prompts">
+                              <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-bookmarks"/></svg>
+                            </button>
+                          </div>
+                          <button type="button" class="btn btn-primary rounded-circle p-2 lh-1" aria-label="Send message">
+                            <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-send"/></svg>
+                          </button>
+                        </div>
+                      </div>
+                      <p class="ch-type-body-small text-ch-muted mt-2 mb-0">
+                        AI responses may be inaccurate. Verify important details before sharing externally.
+                      </p>
+                    </section>
+
+                    <section class="ch-dash-section mb-4" aria-labelledby="continue-heading">
+                      <h2 id="continue-heading" class="ch-type-section-title mb-2">Continue working</h2>
+                      <div class="ch-dash-grid">
+                        <a class="ch-recent-card" href="crs-reports.html">
+                          <div class="d-flex gap-3 align-items-start">
+                            <div class="ch-recent-icon ch-accent-purple" aria-hidden="true">
+                              <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-file-graph"/></svg>
+                            </div>
+                            <div class="min-w-0 flex-grow-1">
+                              <div class="ch-type-card-title">Q2 Sneaker CRS</div>
+                              <div class="ch-type-body-small text-ch-muted">Edited 2 hours ago</div>
+                            </div>
+                          </div>
+                        </a>
+                        <a class="ch-recent-card" href="persona-detail.html">
+                          <div class="d-flex gap-3 align-items-start">
+                            <div class="ch-recent-icon ch-accent-green" aria-hidden="true">
+                              <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-people"/></svg>
+                            </div>
+                            <div class="min-w-0 flex-grow-1">
+                              <div class="ch-type-card-title">Urban Gen Z Sneaker Persona</div>
+                              <div class="ch-type-body-small text-ch-muted">Viewed yesterday</div>
+                            </div>
+                          </div>
+                        </a>
+                        <a class="ch-recent-card" href="upload-csv.html">
+                          <div class="d-flex gap-3 align-items-start">
+                            <div class="ch-recent-icon ch-accent-orange" aria-hidden="true">
+                              <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-cloud-upload"/></svg>
+                            </div>
+                            <div class="min-w-0 flex-grow-1">
+                              <div class="ch-type-card-title">Retail Foot Traffic CSV</div>
+                              <div class="ch-type-body-small text-ch-muted">Uploaded Monday</div>
+                            </div>
+                          </div>
+                        </a>
+                        <a class="ch-recent-card" href="ai-chat.html">
+                          <div class="d-flex gap-3 align-items-start">
+                            <div class="ch-recent-icon ch-accent-blue" aria-hidden="true">
+                              <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-chat"/></svg>
+                            </div>
+                            <div class="min-w-0 flex-grow-1">
+                              <div class="ch-type-card-title">Audience Sizing Thread</div>
+                              <div class="ch-type-body-small text-ch-muted">Edited this morning</div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </section>
+
+                    <section class="ch-dash-section mb-0" aria-labelledby="start-heading">
+                      <h2 id="start-heading" class="ch-type-section-title mb-2">Start something</h2>
+                      <div class="ch-dash-grid ch-dash-grid--compact">
+                        <a class="ch-start-tile" href="crs-reports.html">
+                          <span class="ch-recent-icon ch-accent-blue ch-recent-icon--sm" aria-hidden="true">
+                            <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-file-plus"/></svg>
+                          </span>
+                          <span class="ch-type-card-title mb-0">Create CRS Report</span>
+                          <span class="ch-workflow-arrow" aria-hidden="true"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-arrow-up-right"/></svg></span>
+                        </a>
+                        <a class="ch-start-tile" href="upload-csv.html">
+                          <span class="ch-recent-icon ch-accent-green ch-recent-icon--sm" aria-hidden="true">
+                            <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-upload"/></svg>
+                          </span>
+                          <span class="ch-type-card-title mb-0">Upload CSV</span>
+                          <span class="ch-workflow-arrow" aria-hidden="true"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-arrow-up-right"/></svg></span>
+                        </a>
+                        <a class="ch-start-tile" href="persona-detail.html">
+                          <span class="ch-recent-icon ch-accent-purple ch-recent-icon--sm" aria-hidden="true">
+                            <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-person-badge"/></svg>
+                          </span>
+                          <span class="ch-type-card-title mb-0">Build Persona</span>
+                          <span class="ch-workflow-arrow" aria-hidden="true"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-arrow-up-right"/></svg></span>
+                        </a>
+                        <a class="ch-start-tile" href="ai-chat.html">
+                          <span class="ch-recent-icon ch-accent-orange ch-recent-icon--sm" aria-hidden="true">
+                            <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-lightning"/></svg>
+                          </span>
+                          <span class="ch-type-card-title mb-0">Start AI Chat</span>
+                          <span class="ch-workflow-arrow" aria-hidden="true"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-arrow-up-right"/></svg></span>
+                        </a>
+                      </div>
+                    </section>
+                  </div>
+
+                  <aside class="ch-home-dashboard__activity" aria-labelledby="activity-heading">
+                    <div class="ch-activity-panel">
+                      <div class="d-flex align-items-center justify-content-between gap-2 mb-1">
+                        <h2 id="activity-heading" class="ch-type-section-title mb-0">Recent activity</h2>
+                        <a href="#" class="ch-type-body-small text-ch-secondary text-decoration-none">View all</a>
+                      </div>
+                      <div class="ch-activity-feed">
+                        <div class="ch-rail-item">
+                          <svg class="ch-icon text-success" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-check-circle"/></svg>
+                          <div class="min-w-0">
+                            <div class="ch-type-body fw-medium text-truncate">CRS report exported</div>
+                            <div class="ch-type-body-small text-ch-muted">12 minutes ago</div>
+                          </div>
+                        </div>
+                        <div class="ch-rail-item">
+                          <svg class="ch-icon text-primary" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-people"/></svg>
+                          <div class="min-w-0">
+                            <div class="ch-type-body fw-medium text-truncate">Persona updated</div>
+                            <div class="ch-type-body-small text-ch-muted">Yesterday</div>
+                          </div>
+                        </div>
+                        <div class="ch-rail-item">
+                          <svg class="ch-icon text-ch-secondary" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-cloud-upload"/></svg>
+                          <div class="min-w-0">
+                            <div class="ch-type-body fw-medium text-truncate">CSV uploaded</div>
+                            <div class="ch-type-body-small text-ch-muted">Mon 9:14&nbsp;a.m.</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </aside>
+                </div>
+              </main>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ch:shell:mobile-nav -->
+    <div
+      class="offcanvas offcanvas-start ch-offcanvas-nav"
+      tabindex="-1"
+      id="chNavDrawer"
+      aria-labelledby="chNavDrawerLabel"
+    >
+      <div class="offcanvas-header border-bottom">
+        <div class="d-flex align-items-center gap-2 min-w-0 flex-grow-1">
+          <a
+            href="index.html"
+            id="chNavDrawerLabel"
+            class="ch-offcanvas-brand-link text-decoration-none min-w-0"
+          >
+            <span class="ch-offcanvas-brand-wordmark">
+              <img src="assets/img/cultura-logo.png" alt="Cultura by Culture Hive" decoding="async" />
+            </span>
+          </a>
+        </div>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close menu"
+        ></button>
+      </div>
+      <div class="offcanvas-body p-0">
+        <nav aria-label="Mobile primary navigation">
+          <p class="ch-nav-section-label">Workspace</p>
+          <ul class="list-unstyled mb-2">
+            <li>
+              <a class="ch-nav-link" href="index.html" data-ch-nav="home">
+                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-house"/></svg><span class="ch-nav-label">Home</span>
+              </a>
+            </li>
+            <li>
+              <a class="ch-nav-link" href="ai-chat.html" data-ch-nav="ai-chat">
+                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-chat"/></svg><span class="ch-nav-label">AI Chat</span>
+              </a>
+            </li>
+          </ul>
+          <details class="ch-nav-group">
+            <summary class="ch-nav-group-summary">
+              <span class="ch-nav-group-label">Research</span>
+              <svg class="ch-icon ch-nav-group-caret" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-chevron-down"/></svg>
+            </summary>
+            <ul class="list-unstyled mb-0 ch-nav-group-list">
+              <li>
+                <a class="ch-nav-link" href="crs-reports.html" data-ch-nav="crs-reports">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-file-graph"/></svg>
+                  <span class="ch-nav-label">CRS Reports</span>
+                </a>
+              </li>
+              <li>
+                <a class="ch-nav-link disabled" href="#" aria-disabled="true" data-ch-nav="crs-scores">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-graph-up"/></svg><span class="ch-nav-label">CRS Scores</span>
+                </a>
+              </li>
+              <li>
+                <a class="ch-nav-link" href="persona-detail.html" data-ch-nav="personas">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-people"/></svg><span class="ch-nav-label">Personas</span>
+                </a>
+              </li>
+            </ul>
+          </details>
+          <details class="ch-nav-group">
+            <summary class="ch-nav-group-summary">
+              <span class="ch-nav-group-label">Campaigns &amp; data</span>
+              <svg class="ch-icon ch-nav-group-caret" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-chevron-down"/></svg>
+            </summary>
+            <ul class="list-unstyled mb-0 ch-nav-group-list">
+              <li>
+                <a class="ch-nav-link" href="#" data-ch-nav="campaigns">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-megaphone"/></svg><span class="ch-nav-label">Campaigns</span>
+                </a>
+              </li>
+              <li>
+                <a class="ch-nav-link" href="#" data-ch-nav="audience-lists">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-list-ul"/></svg><span class="ch-nav-label">Audience Lists</span>
+                </a>
+              </li>
+              <li>
+                <a class="ch-nav-link" href="upload-csv.html" data-ch-nav="upload">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-cloud-upload"/></svg><span class="ch-nav-label">Upload CSV</span>
+                </a>
+              </li>
+              <li>
+                <a class="ch-nav-link" href="#" data-ch-nav="processed-files">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-folder"/></svg><span class="ch-nav-label">Processed Files</span>
+                </a>
+              </li>
+            </ul>
+          </details>
+          <details class="ch-nav-group">
+            <summary class="ch-nav-group-summary">
+              <span class="ch-nav-group-label">System</span>
+              <svg class="ch-icon ch-nav-group-caret" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-chevron-down"/></svg>
+            </summary>
+            <ul class="list-unstyled mb-0 ch-nav-group-list">
+              <li>
+                <a class="ch-nav-link" href="#" data-ch-nav="blueprint">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-diagram"/></svg>
+                  <span class="ch-nav-label">Cultural Blueprint</span>
+                </a>
+              </li>
+              <li>
+                <a class="ch-nav-link" href="#" data-ch-nav="settings">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-gear"/></svg><span class="ch-nav-label">Settings</span>
+                </a>
+              </li>
+              <li>
+                <a class="ch-nav-link" href="ui-foundations.html" data-ch-nav="foundations">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-grid"/></svg><span class="ch-nav-label">UI Foundations</span>
+                </a>
+              </li>
+            </ul>
+          </details>
+        </nav>
+      </div>
+    </div>
+    <!-- ch:/shell:mobile-nav -->
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" id="chToastHost" aria-live="polite"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
