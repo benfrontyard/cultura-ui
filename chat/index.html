@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="../assets/img/cultura-icon.png" />
+    <title>Chat · Cultura</title>
+    <link
+      rel="stylesheet"
+      href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&amp;display=swap"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <link href="../assets/css/icons.css" rel="stylesheet" />
+    <link href="../assets/css/theme.css" rel="stylesheet" />
+  </head>
+  <body data-ch-current="ai-chat">
+    <a class="ch-skip-link" href="#chAuthGate">Skip to sign in</a>
+
+    <!-- Public gate: sign in (prototype; no backend) -->
+    <div id="chAuthGate" class="ch-auth-gate" aria-labelledby="chAuthTitle">
+      <div class="ch-auth-card p-4 p-md-5">
+        <div class="text-center mb-4">
+          <img src="../assets/img/cultura-logo.png" alt="Cultura" width="160" height="auto" class="mb-3" decoding="async" />
+          <h1 class="h4 mb-1" id="chAuthTitle">Sign in to Culture Hive</h1>
+          <p class="text-ch-secondary small mb-0">Unauthenticated visitors stay on this screen. Workspace unlocks after sign in (demo only).</p>
+        </div>
+        <form id="chLoginForm" novalidate>
+          <div class="mb-3">
+            <label for="chLoginEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="chLoginEmail" autocomplete="username" required />
+          </div>
+          <div class="mb-2">
+            <label for="chLoginPassword" class="form-label">Password</label>
+            <input type="password" class="form-control" id="chLoginPassword" autocomplete="current-password" required />
+          </div>
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <button type="button" class="btn btn-link btn-sm px-0 text-decoration-none" data-ch-forgot-placeholder>Forgot password?</button>
+            <button type="button" class="btn btn-link btn-sm px-0 text-decoration-none" data-ch-register-placeholder>Register</button>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Log in</button>
+        </form>
+        <p class="small text-ch-muted text-center mt-3 mb-0">MVP prototype: any non-empty email and password will unlock the workspace.</p>
+      </div>
+    </div>
+
+    <!-- Authenticated application shell -->
+    <div id="chWorkspaceApp" class="d-none" aria-hidden="true">
+      <a class="ch-skip-link" href="#main-content">Skip to main content</a>
+
+      <div class="ch-app">
+        <aside id="ch-primary-sidebar" class="ch-sidebar ch-sidebar-desktop">
+          <div class="ch-sidebar-brand">
+            <a
+              href="../index.html"
+              class="ch-sidebar-brand-link d-flex align-items-center gap-2 flex-grow-1 min-w-0 text-decoration-none"
+              aria-label="Cultura home"
+            >
+              <span class="ch-sidebar-brand-wordmark">
+                <img src="../assets/img/cultura-logo.png" alt="" decoding="async" />
+              </span>
+              <span class="ch-sidebar-brand-mark ch-sidebar-brand-mark--collapsed-only" aria-hidden="true">
+                <img src="../assets/img/cultura-icon.png" alt="" width="32" height="32" decoding="async" />
+              </span>
+            </a>
+          </div>
+          <div class="ch-sidebar-scroll">
+            <nav aria-label="Primary navigation">
+              <p class="ch-nav-section-label" id="nav-label-workspace">Workspace</p>
+              <!-- Home: app root for MVP (see HTML comment on index.html for future marketing split). -->
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a class="ch-nav-link" href="../index.html" data-ch-nav="home">
+                    <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-house"/></svg>
+                    <span class="ch-nav-label">Home</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="ch-nav-link" href="./" data-ch-nav="ai-chat">
+                    <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-chat"/></svg>
+                    <span class="ch-nav-label">Chat</span>
+                  </a>
+                </li>
+                <li>
+                  <details class="ch-nav-group">
+                    <summary>
+                      <span class="ch-nav-group-label">CRS reports</span>
+                      <svg class="ch-nav-group-caret" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-chevron-down"/></svg>
+                    </summary>
+                    <ul class="ch-nav-group-list list-unstyled mb-0">
+                      <li>
+                        <a
+                          class="ch-nav-link"
+                          href="#"
+                          data-ch-nav="crs-reports"
+                          data-ch-audience-gate
+                          data-ch-post-select-href="../crs-reports.html"
+                        >
+                          <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-file-graph"/></svg>
+                          <span class="ch-nav-label">CRS Reports</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="ch-nav-link" href="../crs-reports.html#crs-scores" data-ch-nav="crs-scores">
+                          <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-graph-up"/></svg>
+                          <span class="ch-nav-label">CRS Scores</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </details>
+                </li>
+                <li>
+                  <details class="ch-nav-group">
+                    <summary>
+                      <span class="ch-nav-group-label">Audience &amp; campaigns</span>
+                      <svg class="ch-nav-group-caret" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-chevron-down"/></svg>
+                    </summary>
+                    <ul class="ch-nav-group-list list-unstyled mb-0">
+                      <li>
+                        <a
+                          class="ch-nav-link"
+                          href="#"
+                          data-ch-nav="personas"
+                          data-ch-audience-gate
+                          data-ch-post-select-href="../persona-detail.html"
+                        >
+                          <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-people"/></svg>
+                          <span class="ch-nav-label">Persona</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="ch-nav-link"
+                          href="#"
+                          data-ch-nav="campaign"
+                          data-ch-audience-gate
+                          data-ch-post-select-modal="#chCampaignModal"
+                        >
+                          <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-megaphone"/></svg>
+                          <span class="ch-nav-label">Campaign</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </details>
+                </li>
+                <li>
+                  <details class="ch-nav-group">
+                    <summary>
+                      <span class="ch-nav-group-label">CSV &amp; files</span>
+                      <svg class="ch-nav-group-caret" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-chevron-down"/></svg>
+                    </summary>
+                    <ul class="ch-nav-group-list list-unstyled mb-0">
+                      <li>
+                        <a class="ch-nav-link" href="../upload-csv.html" data-ch-nav="upload">
+                          <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-cloud-upload"/></svg>
+                          <span class="ch-nav-label">Download CSV template</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="ch-nav-link" href="../processed-csvs/" data-ch-nav="processed-csvs">
+                          <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-folder"/></svg>
+                          <span class="ch-nav-label">Processed CSV</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </details>
+                </li>
+                <li>
+                  <a class="ch-nav-link" href="#" data-ch-nav="blueprint">
+                    <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-diagram"/></svg>
+                    <span class="ch-nav-label">Cultural Blueprint</span>
+                  </a>
+                </li>
+                <li class="ch-dev-only-nav d-none">
+                  <a class="ch-nav-link" href="../ui-foundations.html" data-ch-nav="foundations">
+                    <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-grid"/></svg>
+                    <span class="ch-nav-label">UI Foundations</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="ch-sidebar-footer">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <div class="ch-user-avatar" aria-hidden="true">NC</div>
+              <div class="ch-user-meta min-w-0">
+                <div class="fw-semibold text-truncate small">Nate Chandra</div>
+                <div class="text-ch-muted small">Free Plan</div>
+              </div>
+            </div>
+            <button type="button" class="btn btn-outline-primary btn-sm w-100">
+              <svg class="ch-icon me-1" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-arrow-up-circle"/></svg>
+              <span>Upgrade Plan</span>
+            </button>
+          </div>
+        </aside>
+
+        <div class="ch-shell">
+          <header class="ch-topbar">
+            <button
+              type="button"
+              class="btn btn-light border ch-mobile-only me-1"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#chHistoryDrawer"
+              aria-controls="chHistoryDrawer"
+              aria-label="Chat history"
+            >
+              <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-chat"/></svg>
+            </button>
+            <button
+              class="btn btn-light border ch-mobile-only me-1"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#chNavDrawer"
+              aria-controls="chNavDrawer"
+              aria-label="Open menu"
+            >
+              <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-menu"/></svg>
+            </button>
+            <a
+              href="../index.html"
+              class="ch-topbar-logo ch-mobile-only d-inline-flex align-items-center flex-shrink-0 me-2 text-decoration-none"
+              aria-label="Cultura home"
+            >
+              <img src="../assets/img/cultura-icon.png" alt="" width="28" height="28" decoding="async" />
+            </a>
+            <div class="ch-topbar-search-wrap d-none d-md-flex align-items-center justify-content-center flex-grow-1 min-w-0">
+              <button
+                type="button"
+                class="btn btn-icon flex-shrink-0 d-none d-md-inline-flex"
+                data-ch-sidebar-toggle
+                aria-controls="ch-primary-sidebar"
+                aria-expanded="true"
+                aria-label="Collapse sidebar"
+                aria-pressed="false"
+              >
+                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-layout-sidebar"/></svg>
+              </button>
+              <div class="ch-topbar-search position-relative flex-grow-1">
+                <label for="global-search" class="visually-hidden">Search workspace</label>
+                <svg class="ch-icon ch-search-icon" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-search"/></svg>
+                <input
+                  id="global-search"
+                  type="search"
+                  class="form-control"
+                  placeholder="Search reports, personas, audiences…"
+                  autocomplete="off"
+                />
+                <span
+                  class="position-absolute end-0 top-50 translate-middle-y me-3 ch-kbd-hint d-none d-md-inline"
+                  role="group"
+                  aria-label="Keyboard shortcut: Command K"
+                  ><kbd>Cmd</kbd><span class="ch-kbd-sep" aria-hidden="true">+</span><kbd>K</kbd></span
+                >
+              </div>
+            </div>
+            <div class="ch-topbar-actions d-flex align-items-center gap-1 ms-auto flex-wrap justify-content-end">
+              <button
+                type="button"
+                class="btn btn-light border btn-sm d-none d-md-inline-flex align-items-center gap-1"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#chHistoryDrawer"
+                aria-controls="chHistoryDrawer"
+              >
+                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-chat"/></svg>
+                <span>Chat history</span>
+              </button>
+              <label class="visually-hidden" for="chLocaleSelect">Language</label>
+              <select id="chLocaleSelect" class="form-select form-select-sm ch-locale-select" aria-label="Language">
+                <option value="en" selected>English</option>
+              </select>
+              <button type="button" class="btn btn-icon" aria-label="Notifications">
+                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-bell"/></svg>
+              </button>
+              <button type="button" class="btn btn-icon" data-ch-help-open aria-label="Help">
+                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-help"/></svg>
+              </button>
+              <div class="dropdown">
+                <button
+                  type="button"
+                  class="btn btn-light border rounded-pill d-flex align-items-center gap-2 py-1 ps-1 pe-2"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  aria-label="Account menu"
+                >
+                  <span class="ch-user-avatar ch-user-avatar--sm" aria-hidden="true">NC</span>
+                  <svg class="ch-icon ch-icon--sm text-ch-muted" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-chevron-down"/></svg>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end shadow-sm" style="min-width: 12rem">
+                  <li><span class="dropdown-item-text small text-ch-muted">Nate Chandra</span></li>
+                  <li><span class="dropdown-item-text small">Free Plan</span></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li><a class="dropdown-item" href="#">Upgrade</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li><a class="dropdown-item" href="#" data-ch-logout>Logout</a></li>
+                </ul>
+              </div>
+            </div>
+          </header>
+
+          <div class="ch-workspace flex-grow-1">
+            <div class="ch-main">
+              <div class="ch-main-inner">
+                <main id="main-content" class="ch-chat-main d-flex flex-column flex-grow-1">
+                  <div id="chChatPage" class="ch-chat-page d-flex flex-column flex-grow-1">
+                    <header class="ch-chat-page-head flex-shrink-0 mb-3">
+                      <h1 class="ch-type-heading-lg mb-0">AI Chat</h1>
+                    </header>
+
+                    <div class="ch-chat-page-empty flex-grow-1 d-flex flex-column">
+                      <div class="ch-chat-hero text-center mx-auto pt-1 pb-1 ch-chat-hero-copy">
+                        <p class="ch-type-heading-sm text-ch-secondary mb-1">
+                          How can <strong class="text-body">Cultura</strong> help you today?
+                        </p>
+                        <p class="text-ch-secondary small mb-0">Choose a starter or type your own message below.</p>
+                      </div>
+                      <section class="mb-0 mt-3" aria-labelledby="suggested-heading">
+                        <h2 id="suggested-heading" class="visually-hidden">Suggested prompts</h2>
+                        <div class="d-flex flex-wrap gap-2 justify-content-center">
+                          <button type="button" class="ch-suggested-prompt" data-ch-starter-prompt="Give me CRS for espn.com">
+                            Give me CRS for espn.com
+                          </button>
+                          <button type="button" class="ch-suggested-prompt" data-ch-starter-prompt="Curate site list for espn.com">
+                            Curate site list for espn.com
+                          </button>
+                          <button type="button" class="ch-suggested-prompt" data-ch-starter-prompt="What is Cultura AI?">
+                            What is Cultura AI?
+                          </button>
+                          <button type="button" class="ch-suggested-prompt" data-ch-starter-prompt="Create persona for espn.com">
+                            Create persona for espn.com
+                          </button>
+                        </div>
+                      </section>
+                      <div class="flex-grow-1 ch-chat-empty-spacer" aria-hidden="true"></div>
+                    </div>
+
+                    <section
+                      class="ch-chat-thread-section mb-3"
+                      aria-label="Conversation"
+                      aria-hidden="true"
+                    >
+                      <h2 class="ch-type-section-title mb-2">Conversation</h2>
+                      <div id="chChatScroll" class="ch-chat-scroll mb-0" tabindex="0" role="log" aria-live="polite" aria-relevant="additions"></div>
+                    </section>
+
+                    <section class="ch-chat-compose flex-shrink-0 mt-auto" aria-label="Compose message">
+                    <div class="ch-ai-prompt">
+                      <label for="chat-input" class="visually-hidden">Message</label>
+                      <textarea
+                        id="chat-input"
+                        class="form-control"
+                        rows="3"
+                        maxlength="2000"
+                        placeholder="Message Cultura AI…"
+                      ></textarea>
+                      <div class="ch-ai-quick-actions" role="group" aria-label="Quick workspace actions">
+                        <a class="ch-ai-quick-action" href="../crs-reports.html">
+                          <svg class="ch-icon ch-icon--sm text-primary" aria-hidden="true" focusable="false">
+                            <use href="../assets/icons/streamline-sprite.svg#ch-file-plus" />
+                          </svg>
+                          <span>CRS Report</span>
+                        </a>
+                        <a class="ch-ai-quick-action" href="../upload-csv.html">
+                          <svg class="ch-icon ch-icon--sm text-success" aria-hidden="true" focusable="false">
+                            <use href="../assets/icons/streamline-sprite.svg#ch-upload" />
+                          </svg>
+                          <span>Upload CSV</span>
+                        </a>
+                        <a class="ch-ai-quick-action" href="../persona-detail.html">
+                          <svg class="ch-icon ch-icon--sm ch-ai-quick-action-accent--persona" aria-hidden="true" focusable="false">
+                            <use href="../assets/icons/streamline-sprite.svg#ch-person-badge" />
+                          </svg>
+                          <span>Persona</span>
+                        </a>
+                        <a class="ch-ai-quick-action" href="../index.html">
+                          <svg class="ch-icon ch-icon--sm text-warning" aria-hidden="true" focusable="false">
+                            <use href="../assets/icons/streamline-sprite.svg#ch-house" />
+                          </svg>
+                          <span>Home</span>
+                        </a>
+                      </div>
+                      <div class="d-flex align-items-center justify-content-between mt-2 pt-2 border-top gap-2">
+                        <div class="ch-ai-toolbar">
+                          <button type="button" class="btn btn-light btn-sm" aria-label="Attach file">
+                            <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-paperclip"/></svg>
+                          </button>
+                          <button type="button" class="btn btn-light btn-sm" aria-label="Voice message">
+                            <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-mic"/></svg>
+                          </button>
+                          <button type="button" class="btn btn-light btn-sm" aria-label="Browse prompts" data-ch-prompt-browser>
+                            <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-bookmarks"/></svg>
+                          </button>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                          <span class="ch-chat-char-count"><span id="chChatCharCount">0</span> / 2000</span>
+                          <button type="button" id="chChatSend" class="btn btn-primary rounded-circle p-2 lh-1" aria-label="Send message" disabled>
+                            <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-send"/></svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="small text-ch-muted mt-2 mb-0">
+                      Markdown in assistant replies is rendered for this prototype only using trusted sample content.
+                    </p>
+                  </section>
+                  </div>
+                </main>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile primary nav -->
+      <div
+        class="offcanvas offcanvas-start ch-offcanvas-nav"
+        tabindex="-1"
+        id="chNavDrawer"
+        aria-labelledby="chNavDrawerLabel"
+      >
+        <div class="offcanvas-header border-bottom">
+          <div class="d-flex align-items-center gap-2 min-w-0 flex-grow-1">
+            <a href="../index.html" id="chNavDrawerLabel" class="ch-offcanvas-brand-link text-decoration-none min-w-0">
+              <span class="ch-offcanvas-brand-wordmark">
+                <img src="../assets/img/cultura-logo.png" alt="Cultura by Culture Hive" decoding="async" />
+              </span>
+            </a>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close menu"></button>
+        </div>
+        <div class="offcanvas-body p-0">
+          <nav aria-label="Mobile primary navigation">
+            <p class="ch-nav-section-label">Workspace</p>
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a class="ch-nav-link" href="../index.html" data-ch-nav="home">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-house"/></svg><span class="ch-nav-label">Home</span>
+                </a>
+              </li>
+              <li>
+                <a class="ch-nav-link" href="./" data-ch-nav="ai-chat">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-chat"/></svg><span class="ch-nav-label">Chat</span>
+                </a>
+              </li>
+              <li>
+                <details class="ch-nav-group">
+                  <summary>
+                    <span class="ch-nav-group-label">CRS reports</span>
+                    <svg class="ch-nav-group-caret" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-chevron-down"/></svg>
+                  </summary>
+                  <ul class="ch-nav-group-list list-unstyled mb-0">
+                    <li>
+                      <a class="ch-nav-link" href="#" data-ch-nav="crs-reports" data-ch-audience-gate data-ch-post-select-href="../crs-reports.html">
+                        <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-file-graph"/></svg><span class="ch-nav-label">CRS Reports</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="ch-nav-link" href="../crs-reports.html#crs-scores" data-ch-nav="crs-scores">
+                        <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-graph-up"/></svg><span class="ch-nav-label">CRS Scores</span>
+                      </a>
+                    </li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details class="ch-nav-group">
+                  <summary>
+                    <span class="ch-nav-group-label">Audience &amp; campaigns</span>
+                    <svg class="ch-nav-group-caret" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-chevron-down"/></svg>
+                  </summary>
+                  <ul class="ch-nav-group-list list-unstyled mb-0">
+                    <li>
+                      <a class="ch-nav-link" href="#" data-ch-nav="personas" data-ch-audience-gate data-ch-post-select-href="../persona-detail.html">
+                        <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-people"/></svg><span class="ch-nav-label">Persona</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="ch-nav-link" href="#" data-ch-nav="campaign" data-ch-audience-gate data-ch-post-select-modal="#chCampaignModal">
+                        <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-megaphone"/></svg><span class="ch-nav-label">Campaign</span>
+                      </a>
+                    </li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details class="ch-nav-group">
+                  <summary>
+                    <span class="ch-nav-group-label">CSV &amp; files</span>
+                    <svg class="ch-nav-group-caret" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-chevron-down"/></svg>
+                  </summary>
+                  <ul class="ch-nav-group-list list-unstyled mb-0">
+                    <li>
+                      <a class="ch-nav-link" href="../upload-csv.html" data-ch-nav="upload">
+                        <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-cloud-upload"/></svg><span class="ch-nav-label">Download CSV template</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="ch-nav-link" href="../processed-csvs/" data-ch-nav="processed-csvs">
+                        <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-folder"/></svg><span class="ch-nav-label">Processed CSV</span>
+                      </a>
+                    </li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <a class="ch-nav-link" href="#" data-ch-nav="blueprint">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-diagram"/></svg><span class="ch-nav-label">Cultural Blueprint</span>
+                </a>
+              </li>
+              <li class="ch-dev-only-nav d-none">
+                <a class="ch-nav-link" href="../ui-foundations.html" data-ch-nav="foundations">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-grid"/></svg><span class="ch-nav-label">UI Foundations</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Chat history drawer -->
+      <div
+        class="offcanvas offcanvas-end ch-history-offcanvas"
+        tabindex="-1"
+        id="chHistoryDrawer"
+        aria-labelledby="chHistoryDrawerLabel"
+      >
+        <div class="offcanvas-header border-bottom">
+          <h2 class="offcanvas-title ch-type-heading-md mb-0" id="chHistoryDrawerLabel">Chat history</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close chat history"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column gap-3">
+          <div class="d-flex flex-wrap gap-2 align-items-center">
+            <button type="button" class="btn btn-primary btn-sm" data-ch-new-chat>New chat</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm d-md-none" data-bs-dismiss="offcanvas" data-bs-target="#chHistoryDrawer">
+              Close
+            </button>
+          </div>
+          <div>
+            <label for="chHistorySearch" class="form-label small mb-1">Search chats</label>
+            <input id="chHistorySearch" type="search" class="form-control form-control-sm" placeholder="Filter by title…" autocomplete="off" />
+          </div>
+          <div>
+            <h3 class="h6 mb-2" id="chHistoryCountHeading">Chats (12)</h3>
+            <ul class="list-unstyled mb-0 d-flex flex-column gap-1" id="chHistoryThreadList">
+              <li
+                class="ch-history-thread border rounded p-2 d-flex align-items-start gap-2"
+                data-ch-thread-title="CRS narrative sprint"
+              >
+                <div class="flex-grow-1 min-w-0">
+                  <div class="fw-semibold text-truncate">CRS narrative sprint</div>
+                  <div class="small text-ch-muted">Apr 12, 2025</div>
+                </div>
+                <div class="dropdown">
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-light border-0"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    aria-label="Thread options"
+                  >
+                    <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-dots-vertical"/></svg>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#">Rename</a></li>
+                    <li><a class="dropdown-item text-muted" href="#" tabindex="-1" aria-disabled="true">Delete</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li
+                class="ch-history-thread border rounded p-2 d-flex align-items-start gap-2"
+                data-ch-thread-title="Audience sizing assumptions"
+              >
+                <div class="flex-grow-1 min-w-0">
+                  <div class="fw-semibold text-truncate">Audience sizing assumptions</div>
+                  <div class="small text-ch-muted">Apr 10, 2025</div>
+                </div>
+                <div class="dropdown">
+                  <button type="button" class="btn btn-sm btn-light border-0" data-bs-toggle="dropdown" aria-label="Thread options">
+                    <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-dots-vertical"/></svg>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#">Rename</a></li>
+                    <li><a class="dropdown-item text-muted" href="#" tabindex="-1" aria-disabled="true">Delete</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li
+                class="ch-history-thread border rounded p-2 d-flex align-items-start gap-2"
+                data-ch-thread-title="Gen Z sneaker risks"
+              >
+                <div class="flex-grow-1 min-w-0">
+                  <div class="fw-semibold text-truncate">Gen Z sneaker risks</div>
+                  <div class="small text-ch-muted">Apr 8, 2025</div>
+                </div>
+                <div class="dropdown">
+                  <button type="button" class="btn btn-sm btn-light border-0" data-bs-toggle="dropdown" aria-label="Thread options">
+                    <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="../assets/icons/streamline-sprite.svg#ch-dots-vertical"/></svg>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#">Rename</a></li>
+                    <li><a class="dropdown-item text-muted" href="#" tabindex="-1" aria-disabled="true">Delete</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Audience context modal -->
+      <div class="modal fade" id="chAudienceModal" tabindex="-1" aria-labelledby="chAudienceModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title ch-type-heading-md" id="chAudienceModalLabel">Choose audience</h2>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close dialog"></button>
+            </div>
+            <div class="modal-body">
+              <p class="small text-ch-secondary">Select where this workflow should apply. Search filters the list below.</p>
+              <label for="chAudienceSearch" class="form-label">Search audiences</label>
+              <input type="search" class="form-control mb-3" id="chAudienceSearch" placeholder="Type to filter…" autocomplete="off" />
+              <ul class="list-unstyled mb-0 d-flex flex-column gap-1" id="chAudienceList">
+                <li
+                  class="ch-audience-row"
+                  data-ch-audience-name="Urban Gen Z Sneaker"
+                  role="button"
+                  tabindex="0"
+                >
+                  Urban Gen Z Sneaker
+                </li>
+                <li class="ch-audience-row" data-ch-audience-name="National Sports Fans" role="button" tabindex="0">
+                  National Sports Fans
+                </li>
+                <li class="ch-audience-row" data-ch-audience-name="Retail Foot Traffic" role="button" tabindex="0">
+                  Retail Foot Traffic
+                </li>
+                <li class="ch-audience-row" data-ch-audience-name="Streaming Co-Viewing HH" role="button" tabindex="0">
+                  Streaming Co-Viewing HH
+                </li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" id="chAudienceContinue">Continue</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Campaign workspace stub -->
+      <div class="modal fade" id="chCampaignModal" tabindex="-1" aria-labelledby="chCampaignModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title ch-type-heading-md" id="chCampaignModalLabel">Campaign</h2>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close dialog"></button>
+            </div>
+            <div class="modal-body">
+              <p class="mb-0">This is a static workspace stub. Hook your campaign builder route here when it exists.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Browse prompts -->
+      <div class="modal fade" id="chPromptPickerModal" tabindex="-1" aria-labelledby="chPromptPickerLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title ch-type-heading-md" id="chPromptPickerLabel">Browse prompts</h2>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close dialog"></button>
+            </div>
+            <div class="modal-body">
+              <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+                <li>
+                  <button type="button" class="btn btn-outline-secondary w-100 text-start" data-ch-prompt-insert="Summarize last week’s CRS themes">
+                    Summarize last week’s CRS themes
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="btn btn-outline-secondary w-100 text-start" data-ch-prompt-insert="Draft audience sizing assumptions">
+                    Draft audience sizing assumptions
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="btn btn-outline-secondary w-100 text-start" data-ch-prompt-insert="List risks for Gen Z sneaker messaging">
+                    List risks for Gen Z sneaker messaging
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Help -->
+      <div class="modal fade" id="chHelpModal" tabindex="-1" aria-labelledby="chHelpModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title ch-type-heading-md" id="chHelpModalLabel">Help</h2>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close dialog"></button>
+            </div>
+            <div class="modal-body">
+              <p class="small text-ch-secondary mb-2">Documentation and in-app guidance will live here.</p>
+              <ul class="mb-0">
+                <li><a href="https://theculturehive.ai" rel="noopener noreferrer" target="_blank">Culture Hive</a> (reference)</li>
+                <li><a href="#">Support center</a> (placeholder)</li>
+                <li><a href="#">Release notes</a> (placeholder)</li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="toast-container position-fixed bottom-0 end-0 p-3" id="chToastHost" aria-live="polite"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js" crossorigin="anonymous"></script>
+    <script type="text/plain" id="chMarkdownSource">
+## Comparison (prototype)
+
+**CRS narrative** emphasizes *category drivers* and seasonal retail moments.
+
+**Persona** emphasizes *identity*, *creators*, and *community trust*.
+
+1. Align proof points to TikTok-native language.
+2. Avoid generic “hype” words without substantiation.
+
+```text
+Next step: attach the Q1 CRS export for a line-by-line merge.
+```
+    </script>
+    <script src="../assets/js/app.js"></script>
+  </body>
+</html>
