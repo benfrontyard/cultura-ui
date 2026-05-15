@@ -8,10 +8,13 @@ Source of truth: git submodule at vendor/streamline-vectors
 After clone or submodule init:
   git submodule update --init --depth 1 vendor/streamline-vectors
   python3 scripts/build-streamline-sprite.py
+
+Also updates assets/js/ch-icon-sprite-inject.js when Node is available (for file:// icon support).
 """
 from __future__ import annotations
 
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -107,6 +110,12 @@ def main() -> int:
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text("\n".join(parts) + "\n", encoding="utf-8")
     print(f"Wrote {OUT}")
+    sync = ROOT / "scripts" / "sync-ch-icon-sprite-inject.mjs"
+    if sync.is_file():
+        try:
+            subprocess.run(["node", str(sync)], cwd=ROOT, check=False)
+        except OSError:
+            pass
     return 0
 
 

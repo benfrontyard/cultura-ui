@@ -4,13 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="assets/img/cultura-icon.png" />
-    <title>Home · Culture Hive AI</title>
+    <title>Audiences · Culture Hive AI</title>
     <link
       rel="stylesheet"
       href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&amp;display=swap"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Inter:wght@400;500;600;700&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&amp;display=swap"
       rel="stylesheet"
     />
     <link
@@ -21,7 +21,7 @@
     <link href="assets/css/icons.css" rel="stylesheet" />
     <link href="assets/css/theme.css" rel="stylesheet" />
   </head>
-  <body data-ch-current="home">
+  <body data-ch-current="audiences">
     <script src="assets/js/ch-icon-sprite-inject.js"></script>
 
     <a class="ch-skip-link" href="#main-content">Skip to main content</a>
@@ -36,7 +36,7 @@
             aria-label="Culture Hive home"
           >
             <span class="ch-sidebar-brand-wordmark">
-              <img src="assets/img/cultura-logo.png" alt="Cultura" decoding="async" />
+              <img src="assets/img/cultura-logo.png" alt="" decoding="async" />
             </span>
             <span class="ch-sidebar-brand-mark ch-sidebar-brand-mark--collapsed-only" aria-hidden="true">
               <img src="assets/img/cultura-icon.png" alt="" width="32" height="32" decoding="async" />
@@ -133,6 +133,18 @@
           >
             <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-menu"/></svg>
           </button>
+          <div
+            class="ch-topbar-history ch-mobile-only me-1 flex-shrink-0 d-inline-flex align-items-center"
+            role="group"
+            aria-label="History"
+          >
+            <button type="button" class="ch-topbar-history-btn" data-ch-history="back" aria-label="Back" disabled>
+              <svg class="ch-icon ch-icon--sm" aria-hidden="true" focusable="false"><use href="#ch-chevron-left"/></svg>
+            </button>
+            <button type="button" class="ch-topbar-history-btn" data-ch-history="forward" aria-label="Forward" disabled>
+              <svg class="ch-icon ch-icon--sm" aria-hidden="true" focusable="false"><use href="#ch-chevron-right"/></svg>
+            </button>
+          </div>
           <a
             href="index.html"
             class="ch-topbar-logo ch-mobile-only d-inline-flex align-items-center flex-shrink-0 me-2 text-decoration-none"
@@ -152,9 +164,21 @@
             >
               <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-layout-sidebar"/></svg>
             </button>
+            <div
+              class="ch-topbar-history d-none d-md-inline-flex align-items-center flex-shrink-0"
+              role="group"
+              aria-label="History"
+            >
+              <button type="button" class="ch-topbar-history-btn" data-ch-history="back" aria-label="Back" disabled>
+                <svg class="ch-icon ch-icon--sm" aria-hidden="true" focusable="false"><use href="#ch-chevron-left"/></svg>
+              </button>
+              <button type="button" class="ch-topbar-history-btn" data-ch-history="forward" aria-label="Forward" disabled>
+                <svg class="ch-icon ch-icon--sm" aria-hidden="true" focusable="false"><use href="#ch-chevron-right"/></svg>
+              </button>
+            </div>
           </div>
           <div class="ch-topbar-search-wrap d-none d-md-flex align-items-center justify-content-center flex-grow-1 min-w-0">
-            <div class="ch-topbar-search position-relative">
+            <div class="ch-topbar-search position-relative flex-grow-1">
               <label for="global-search" class="visually-hidden">Search workspace</label>
               <svg class="ch-icon ch-search-icon" aria-hidden="true" focusable="false"><use href="#ch-search"/></svg>
               <input
@@ -227,237 +251,57 @@
 
         <div class="ch-workspace flex-grow-1">
           <div class="ch-main">
-            <div class="ch-main-inner ch-main-inner--home">
+            <div class="ch-main-inner">
               <main id="main-content">
-                <div class="ch-home-dashboard">
-                  <div class="ch-home-dashboard__primary">
-                    <header class="ch-dash-header ch-dash-header--with-assistant mb-3">
-                      <div class="d-flex flex-column flex-md-row align-items-md-start justify-content-md-between gap-3 mb-3">
-                        <div class="min-w-0">
-                          <p class="ch-type-caption text-ch-secondary mb-1">Cultura AI</p>
-                          <h1 class="ch-heading ch-type-heading-2xl mb-1">Good to see you again</h1>
-                          <p class="ch-type-caption text-ch-secondary mb-0">
-                            You’re working with <span class="text-ch-primary fw-semibold">3 blueprints</span>
-                            <span class="text-ch-muted mx-1" aria-hidden="true">·</span>
-                            we’re processing <span class="text-ch-primary fw-semibold">2 files</span> in the background for you
-                          </p>
-                        </div>
-                        <div class="d-flex flex-wrap gap-2 flex-shrink-0">
-                          <a class="btn btn-primary btn-sm" href="crs-reports.html">Generate Blueprint</a>
-                          <a class="btn btn-outline-primary btn-sm" href="audiences.html">Explore Segments</a>
-                        </div>
+                <h1 class="ch-type-heading-lg mb-2">Cultural segments</h1>
+                <p class="text-ch-secondary mb-4">
+                  Explore segment-level insight: audience behaviors, cultural signals, and media habits aligned to how people actually live and choose brands.
+                </p>
+                <div class="table-responsive ch-card mb-4">
+                  <ul class="list-group list-group-flush border-0 ch-segment-list mb-0">
+                    <li class="list-group-item d-flex justify-content-between align-items-center gap-4">
+                      <div class="min-w-0">
+                        <div class="fw-semibold">Digital Wellness Seekers</div>
+                        <div class="text-ch-secondary mb-0">Health-motivated consumers who use digital content, creators, and peer communities to shape daily wellness decisions.</div>
                       </div>
-                      <div id="chHomeAssistant" class="ch-home-assistant ch-ai-prompt pt-3 border-top border-light-subtle">
-                        <div id="chHomeAssistantCompactOrder" class="ch-home-assistant-compact-order">
-                          <div
-                            id="chHomeAssistantThreadWrap"
-                            class="ch-home-assistant-thread-wrap ch-home-assistant-thread-wrap--idle"
-                            aria-label="Cultura AI conversation"
-                          >
-                            <div class="ch-home-assistant-thread-toolbar d-flex align-items-center justify-content-between gap-2 flex-wrap mb-2">
-                              <button type="button" id="chHomeAssistantReset" class="btn btn-link btn-sm px-0 text-decoration-none">
-                                New question
-                              </button>
-                              <a
-                                href="chat/index.html"
-                                class="ch-type-body-small text-ch-secondary text-decoration-none"
-                                title="Opens the Assistant on its own screen"
-                                >Open full assistant</a>
-                            </div>
-                            <div
-                              id="chHomeAssistantScroll"
-                              class="ch-home-assistant-scroll ch-chat-scroll"
-                              tabindex="0"
-                              role="log"
-                              aria-live="polite"
-                              aria-relevant="additions"
-                            ></div>
-                            <div id="chHomeAssistantFlowSlot" class="ch-home-assistant-flow-slot d-none mt-2"></div>
-                          </div>
-                          <div id="chHomeAssistantStarters" class="ch-home-assistant-starters">
-                          <div class="ch-ai-workspace-suggestions">
-                            <h3 id="workspace-suggestions-heading" class="visually-hidden">Suggested prompts</h3>
-                            <div
-                              class="ch-ai-workspace-suggestions__inner ch-ai-workspace-suggestions__inner--links"
-                              role="group"
-                              aria-labelledby="workspace-suggestions-heading"
-                            >
-                              <button
-                                type="button"
-                                class="ch-assistant-suggestion-link"
-                                data-ch-home-suggest="Create a cultural blueprint for Gen Z sneaker collectors."
-                              >
-                                Gen Z sneaker collectors
-                              </button>
-                              <span class="ch-assistant-suggestion-sep text-ch-muted d-none d-sm-inline" aria-hidden="true">·</span>
-                              <button
-                                type="button"
-                                class="ch-assistant-suggestion-link"
-                                data-ch-home-suggest="Analyze multicultural streaming behaviors for sports audiences."
-                              >
-                                Multicultural streaming sports
-                              </button>
-                              <span class="ch-assistant-suggestion-sep text-ch-muted d-none d-sm-inline" aria-hidden="true">·</span>
-                              <button
-                                type="button"
-                                class="ch-assistant-suggestion-link"
-                                data-ch-home-suggest="What cultural signals matter for urban wellness consumers?"
-                              >
-                                Urban wellness signals
-                              </button>
-                            </div>
-                          </div>
-                          </div>
-                          <div id="chHomeAssistantCompose" class="mt-2">
-                            <label for="home-ai-input" class="visually-hidden">Message</label>
-                            <textarea
-                              id="home-ai-input"
-                              class="form-control"
-                              rows="3"
-                              maxlength="2000"
-                              placeholder="Ask about audience behavior, cultural trends, media habits, or campaign strategy..."
-                            ></textarea>
-                            <div class="ch-ai-quick-actions" role="group" aria-label="Quick workspace actions">
-                              <a class="ch-ai-quick-action" href="crs-reports.html">
-                                <svg class="ch-icon ch-icon--sm text-primary" aria-hidden="true" focusable="false">
-                                  <use href="#ch-file-plus" />
-                                </svg>
-                                <span>Blueprints</span>
-                              </a>
-                              <a class="ch-ai-quick-action" href="upload-csv.html">
-                                <svg class="ch-icon ch-icon--sm text-success" aria-hidden="true" focusable="false">
-                                  <use href="#ch-upload" />
-                                </svg>
-                                <span>Upload CSV</span>
-                              </a>
-                              <a class="ch-ai-quick-action" href="persona-detail.html">
-                                <svg class="ch-icon ch-icon--sm ch-ai-quick-action-accent--persona" aria-hidden="true" focusable="false">
-                                  <use href="#ch-person-badge" />
-                                </svg>
-                                <span>Persona</span>
-                              </a>
-                              <a class="ch-ai-quick-action" href="chat/index.html">
-                                <svg class="ch-icon ch-icon--sm text-warning" aria-hidden="true" focusable="false">
-                                  <use href="#ch-chat" />
-                                </svg>
-                                <span>Assistant</span>
-                              </a>
-                            </div>
-                            <div class="d-flex align-items-center justify-content-between mt-2 pt-2 border-top gap-2">
-                              <div class="ch-ai-toolbar">
-                                <button type="button" class="btn btn-light btn-sm" aria-label="Attach file">
-                                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-paperclip" /></svg>
-                                </button>
-                                <button type="button" class="btn btn-light btn-sm" aria-label="Voice message">
-                                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-mic" /></svg>
-                                </button>
-                                <button type="button" class="btn btn-light btn-sm" aria-label="Browse prompts" data-ch-prompt-browser>
-                                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-bookmarks" /></svg>
-                                </button>
-                              </div>
-                              <div class="d-flex align-items-center gap-2">
-                                <span class="ch-chat-char-count"><span id="chHomeCharCount">0</span> / 2000</span>
-                                <button
-                                  type="button"
-                                  id="chHomeAiSend"
-                                  class="btn btn-primary rounded-circle p-2 lh-1"
-                                  aria-label="Send message"
-                                  disabled
-                                >
-                                  <svg class="ch-icon" aria-hidden="true" focusable="false">
-                                    <use href="#ch-send" />
-                                  </svg>
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                      <button type="button" class="btn btn-sm btn-outline-primary flex-shrink-0" data-ch-demo-toast>Use in blueprint</button>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center gap-4">
+                      <div class="min-w-0">
+                        <div class="fw-semibold">Creator-Led Shoppers</div>
+                        <div class="text-ch-secondary mb-0">Consumers who discover new brands through short-form video, influencer recommendations, and social proof.</div>
                       </div>
-                    </header>
-
-                    <section class="ch-dash-section mb-4" aria-labelledby="continue-heading">
-                      <h2 id="continue-heading" class="ch-type-heading-xs text-ch-secondary mb-2">Continue working</h2>
-                      <div class="ch-dash-grid">
-                        <a class="ch-recent-card" href="crs-reports.html#crs-scores">
-                          <div class="d-flex gap-3 align-items-start">
-                            <div class="ch-recent-icon ch-accent-purple" aria-hidden="true">
-                              <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-file-graph"/></svg>
-                            </div>
-                            <div class="min-w-0 flex-grow-1">
-                              <div class="ch-type-card-title">Urban Wellness Cultural Blueprint</div>
-                              <div class="ch-type-body-small text-ch-muted">Edited 2 hours ago</div>
-                            </div>
-                          </div>
-                        </a>
-                        <a class="ch-recent-card" href="persona-detail.html#persona-overview">
-                          <div class="d-flex gap-3 align-items-start">
-                            <div class="ch-recent-icon ch-accent-green" aria-hidden="true">
-                              <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-people"/></svg>
-                            </div>
-                            <div class="min-w-0 flex-grow-1">
-                              <div class="ch-type-card-title">Urban Wellness Consumer Profile</div>
-                              <div class="ch-type-body-small text-ch-muted">Viewed yesterday</div>
-                            </div>
-                          </div>
-                        </a>
-                        <a class="ch-recent-card" href="upload-csv.html#upload-zone">
-                          <div class="d-flex gap-3 align-items-start">
-                            <div class="ch-recent-icon ch-accent-orange" aria-hidden="true">
-                              <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-cloud-upload"/></svg>
-                            </div>
-                            <div class="min-w-0 flex-grow-1">
-                              <div class="ch-type-card-title">Wellness audience signals CSV</div>
-                              <div class="ch-type-body-small text-ch-muted">Uploaded Monday</div>
-                            </div>
-                          </div>
-                        </a>
-                        <button type="button" class="ch-recent-card" data-ch-home-continue-thread>
-                          <div class="d-flex gap-3 align-items-start">
-                            <div class="ch-recent-icon ch-accent-blue" aria-hidden="true">
-                              <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-chat"/></svg>
-                            </div>
-                            <div class="min-w-0 flex-grow-1">
-                              <div class="ch-type-card-title">Sustainable home blueprint thread</div>
-                              <div class="ch-type-body-small text-ch-muted">Edited this morning</div>
-                            </div>
-                          </div>
-                        </button>
+                      <button type="button" class="btn btn-sm btn-outline-primary flex-shrink-0" data-ch-demo-toast>Use in blueprint</button>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center gap-4">
+                      <div class="min-w-0">
+                        <div class="fw-semibold">Budget-Smart Families</div>
+                        <div class="text-ch-secondary mb-0">Value-conscious households balancing quality, practicality, and cultural representation in everyday purchase decisions.</div>
                       </div>
-                    </section>
-
-                    <section class="ch-dash-section ch-home-dashboard__activity mb-0" aria-labelledby="activity-heading">
-                      <div class="ch-activity-panel ch-activity-panel--stacked">
-                        <div class="d-flex align-items-center justify-content-between gap-2 mb-1">
-                          <h2 id="activity-heading" class="ch-type-section-title mb-0">Recent activity</h2>
-                          <a href="#" class="ch-type-body-small text-ch-secondary text-decoration-none" data-ch-demo-toast>View all</a>
-                        </div>
-                        <div class="ch-activity-feed">
-                          <div class="ch-rail-item">
-                            <svg class="ch-icon text-success" aria-hidden="true" focusable="false"><use href="#ch-check-circle"/></svg>
-                            <div class="min-w-0">
-                              <div class="ch-type-body fw-semibold text-truncate">Cultural blueprint exported</div>
-                              <div class="ch-type-body-small text-ch-muted">12 minutes ago</div>
-                            </div>
-                          </div>
-                          <div class="ch-rail-item">
-                            <svg class="ch-icon text-primary" aria-hidden="true" focusable="false"><use href="#ch-people"/></svg>
-                            <div class="min-w-0">
-                              <div class="ch-type-body fw-semibold text-truncate">Audience profile updated</div>
-                              <div class="ch-type-body-small text-ch-muted">Yesterday</div>
-                            </div>
-                          </div>
-                          <div class="ch-rail-item">
-                            <svg class="ch-icon text-ch-secondary" aria-hidden="true" focusable="false"><use href="#ch-cloud-upload"/></svg>
-                            <div class="min-w-0">
-                              <div class="ch-type-body fw-semibold text-truncate">Audience data file uploaded</div>
-                              <div class="ch-type-body-small text-ch-muted">Mon 9:14&nbsp;a.m.</div>
-                            </div>
-                          </div>
-                        </div>
+                      <button type="button" class="btn btn-sm btn-outline-primary flex-shrink-0" data-ch-demo-toast>Use in blueprint</button>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center gap-4">
+                      <div class="min-w-0">
+                        <div class="fw-semibold">Urban Design Optimizers</div>
+                        <div class="text-ch-secondary mb-0">City-based consumers who use design, organization, and small-space solutions to express identity and improve daily living.</div>
                       </div>
-                    </section>
-                  </div>
+                      <button type="button" class="btn btn-sm btn-outline-primary flex-shrink-0" data-ch-demo-toast>Use in blueprint</button>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center gap-4">
+                      <div class="min-w-0">
+                        <div class="fw-semibold">Community Connectors</div>
+                        <div class="text-ch-secondary mb-0">Socially driven consumers who influence purchase behavior through family, peer groups, events, and cultural communities.</div>
+                      </div>
+                      <button type="button" class="btn btn-sm btn-outline-primary flex-shrink-0" data-ch-demo-toast>Use in blueprint</button>
+                    </li>
+                  </ul>
                 </div>
+                <p class="small text-ch-muted mb-0">
+                  <button type="button" class="btn btn-link btn-sm px-0 align-baseline" data-bs-toggle="modal" data-bs-target="#chCampaignModal">Campaign workspace</button>
+                  <span aria-hidden="true"> · </span>
+                  <a href="#" class="text-reset" data-ch-nav="blueprint">Cultural Blueprint</a>
+                  <span class="text-ch-muted"> deepens segment narratives with activation-ready context.</span>
+                </p>
               </main>
             </div>
           </div>
@@ -669,7 +513,7 @@
       </div>
     </div>
 
-    <div class="modal fade" id="chCommandPalette" tabindex="-1" aria-labelledby="chCommandPaletteLabel" aria-hidden="true">
+        <div class="modal fade" id="chCommandPalette" tabindex="-1" aria-labelledby="chCommandPaletteLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
         <div class="modal-content">
           <div class="modal-header border-0 pb-0">
@@ -680,21 +524,9 @@
             <label for="chCommandPaletteFilter" class="visually-hidden">Filter destinations</label>
             <input type="search" class="form-control mb-3" id="chCommandPaletteFilter" placeholder="Filter brands, audiences, and saved work…" autocomplete="off" />
             <div class="list-group ch-command-palette-list">
-              <a
-                href="crs-reports.html#crs-scores"
-                class="list-group-item list-group-item-action"
-                data-ch-palette-label="urban wellness cultural blueprint scores report"
-                >Urban Wellness Cultural Blueprint</a>
-              <a
-                href="persona-detail.html#persona-overview"
-                class="list-group-item list-group-item-action"
-                data-ch-palette-label="urban wellness consumer audience profile persona"
-                >Urban Wellness Consumer Profile</a>
-              <a
-                href="upload-csv.html#upload-zone"
-                class="list-group-item list-group-item-action"
-                data-ch-palette-label="audience signals CSV upload data"
-                >Audience signals CSV upload</a>
+              <a href="crs-reports.html#crs-scores" class="list-group-item list-group-item-action" data-ch-palette-label="urban wellness cultural blueprint scores report">Urban Wellness Cultural Blueprint</a>
+              <a href="persona-detail.html#persona-overview" class="list-group-item list-group-item-action" data-ch-palette-label="urban wellness consumer audience profile persona">Urban Wellness Consumer Profile</a>
+              <a href="upload-csv.html#upload-zone" class="list-group-item list-group-item-action" data-ch-palette-label="audience signals CSV upload data">Audience signals CSV upload</a>
               <a href="processed-csvs/index.html" class="list-group-item list-group-item-action" data-ch-palette-label="processed audience data files">Processed audience data</a>
               <a href="audiences.html" class="list-group-item list-group-item-action" data-ch-palette-label="cultural segments library audiences">Cultural segments library</a>
               <a href="chat/index.html" class="list-group-item list-group-item-action" data-ch-palette-label="Culture Hive assistant chat">Open Culture Hive Assistant</a>
@@ -706,6 +538,26 @@
     </div>
 
     <div class="toast-container position-fixed bottom-0 end-0 p-3" id="chToastHost" aria-live="polite"></div>
+
+    <div class="modal fade" id="chDemoModal" tabindex="-1" aria-labelledby="chDemoModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title ch-type-heading-md" id="chDemoModalLabel">Generate cultural blueprint</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close dialog"></button>
+          </div>
+          <div class="modal-body">
+            <p class="text-ch-secondary mb-0">
+              In production, choose an audience lens and blueprint template here. This preview uses static copy only.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Continue</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js" crossorigin="anonymous"></script>
     <script

@@ -68,10 +68,59 @@
     });
   }
 
+  /** Browser back/forward: disabled when the session cannot traverse that direction. */
+  function initTopbarHistoryNav() {
+    var $backs = $("[data-ch-history=\"back\"]");
+    var $fwds = $("[data-ch-history=\"forward\"]");
+    if (!$backs.length && !$fwds.length) return;
+
+    function navigationEntryType() {
+      var entries = performance.getEntriesByType && performance.getEntriesByType("navigation");
+      return entries && entries[0] ? entries[0].type : "";
+    }
+
+    function computeAvailability() {
+      var nav = window.navigation;
+      if (nav && typeof nav.canGoBack === "boolean" && typeof nav.canGoForward === "boolean") {
+        return { back: nav.canGoBack, forward: nav.canGoForward };
+      }
+      var viaHistoryTraversal = navigationEntryType() === "back_forward";
+      return {
+        back: window.history.length > 1,
+        forward: viaHistoryTraversal
+      };
+    }
+
+    function apply() {
+      var caps = computeAvailability();
+      $backs.prop("disabled", !caps.back);
+      $fwds.prop("disabled", !caps.forward);
+    }
+
+    $backs.on("click", function () {
+      if (this.disabled) return;
+      window.history.back();
+    });
+    $fwds.on("click", function () {
+      if (this.disabled) return;
+      window.history.forward();
+    });
+
+    window.addEventListener("pageshow", apply);
+    if (window.navigation && typeof window.navigation.addEventListener === "function") {
+      try {
+        window.navigation.addEventListener("currententrychange", apply);
+      } catch (e) {
+        /* ignore */
+      }
+    }
+    apply();
+  }
+
   function initToastDemo() {
     $(document).on("click", "[data-ch-demo-toast]", function (e) {
       e.preventDefault();
-      showToast("Saved successfully. This is a demo toast.", "primary");
+      showToast("Audience saved to your workspace.", "primary");
     });
   }
 
@@ -108,6 +157,41 @@
     toast.show();
   }
 
+  function initFoundationsPage() {
+    if (getCurrentPage() !== "foundations") return;
+    var $filter = $("#ch-foundations-filter");
+    if ($filter.length) {
+      $filter.on("input", function () {
+        var q = ($filter.val() || "").trim().toLowerCase();
+        $(".ch-foundations-section").each(function () {
+          var $sec = $(this);
+          var blob = (($sec.attr("id") || "") + " " + $sec.text()).toLowerCase();
+          var terms = ($sec.attr("data-ch-foundations-terms") || "").toLowerCase();
+          var match = !q || blob.indexOf(q) !== -1 || terms.indexOf(q) !== -1;
+          $sec.toggleClass("d-none", !match);
+        });
+      });
+    }
+    $(document).on("click", "[data-ch-copy]", function (e) {
+      if (getCurrentPage() !== "foundations") return;
+      e.preventDefault();
+      var raw = ($(this).attr("data-ch-copy") || "").trim();
+      if (!raw) return;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(raw).then(
+          function () {
+            showToast("Copied to clipboard.", "secondary");
+          },
+          function () {
+            showToast("Copy failed.", "danger");
+          }
+        );
+      } else {
+        showToast("Clipboard unavailable in this context.", "warning");
+      }
+    });
+  }
+
   function initAiGeneratingDemo() {
     $(document).on("click", "[data-ch-ai-generating-toggle]", function (e) {
       e.preventDefault();
@@ -120,25 +204,22 @@
   }
 
   function initDropzoneDemo() {
-    var $zone = $("[data-ch-dropzone]");
-    if (!$zone.length) return;
-
-    $zone.on("dragenter dragover", function (e) {
+    $(document).on("dragenter.chdz dragover.chdz", "[data-ch-dropzone]", function (e) {
       e.preventDefault();
       e.stopPropagation();
-      $zone.addClass("ch-dropzone-active");
+      $(this).addClass("ch-dropzone-active");
     });
 
-    $zone.on("dragleave", function (e) {
+    $(document).on("dragleave.chdz", "[data-ch-dropzone]", function (e) {
       e.preventDefault();
       e.stopPropagation();
-      $zone.removeClass("ch-dropzone-active");
+      $(this).removeClass("ch-dropzone-active");
     });
 
-    $zone.on("drop", function (e) {
+    $(document).on("drop.chdz", "[data-ch-dropzone]", function (e) {
       e.preventDefault();
       e.stopPropagation();
-      $zone.removeClass("ch-dropzone-active");
+      $(this).removeClass("ch-dropzone-active");
     });
   }
 
@@ -171,6 +252,65 @@
     }
   }
 
+  /** Login vs sign-up panel on #chAuthGate (Assistant preview only). */
+  function setAuthGateMode(mode) {
+    var $gate = $("#chAuthGate");
+    var $loginView = $("#chAuthLoginView");
+    var $signupView = $("#chAuthSignupView");
+    if (!$gate.length || !$loginView.length || !$signupView.length) return;
+    var isSignup = mode === "signup";
+    $loginView.toggleClass("d-none", isSignup);
+    $signupView.toggleClass("d-none", !isSignup);
+    $gate.attr("data-ch-auth-mode", isSignup ? "signup" : "login");
+    var title = document.getElementById("chAuthTitle");
+    var lead = document.getElementById("chAuthLead");
+    var hint = document.getElementById("chAuthHint");
+    if (title) title.textContent = isSignup ? "Sign up" : "Log in";
+    if (lead) {
+      lead.textContent = isSignup
+        ? "Create your workspace. This preview does not create real accounts."
+        : "Enter your details to open the workspace.";
+    }
+    if (hint) {
+      hint.textContent = isSignup
+        ? "This preview uses a local session only. You can continue with empty fields on Assistant."
+        : "This preview uses a local session only. On Assistant you can also log in with empty fields to explore the layout.";
+    }
+  }
+
+  function pauseAuthHeroVideo() {
+    var v = document.getElementById("chAuthHeroVideo");
+    if (!v || typeof v.pause !== "function") return;
+    try {
+      v.pause();
+    } catch (err) {
+      /* ignore */
+    }
+  }
+
+  function playAuthHeroVideo() {
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var v = document.getElementById("chAuthHeroVideo");
+    if (!v || typeof v.play !== "function") return;
+    var p = v.play();
+    if (p && typeof p.catch === "function") p.catch(function () {});
+  }
+
+  function resetAuthGatePasswordToggles() {
+    ["chLoginPassword", "chSignupPassword"].forEach(function (inputId) {
+      var input = document.getElementById(inputId);
+      if (input) input.setAttribute("type", "password");
+    });
+    ["chLoginPasswordToggle", "chSignupPasswordToggle"].forEach(function (btnId) {
+      var btn = document.getElementById(btnId);
+      if (btn) {
+        btn.classList.remove("is-revealed");
+        btn.setAttribute("aria-pressed", "false");
+        btn.setAttribute("aria-label", "Show password");
+      }
+    });
+  }
+
   function applyAuthVisibility() {
     var $gate = $("#chAuthGate");
     var $app = $("#chWorkspaceApp");
@@ -179,9 +319,11 @@
     if (hasSession()) {
       $gate.addClass("d-none").attr("aria-hidden", "true");
       $app.removeClass("d-none").attr("aria-hidden", "false");
+      pauseAuthHeroVideo();
     } else {
       $gate.removeClass("d-none").attr("aria-hidden", "false");
       $app.addClass("d-none").attr("aria-hidden", "true");
+      playAuthHeroVideo();
     }
   }
 
@@ -190,22 +332,123 @@
 
     applyAuthVisibility();
 
+    try {
+      var params = new URLSearchParams(window.location.search || "");
+      if (params.get("ch_auth") === "signup") {
+        if (!hasSession()) setAuthGateMode("signup");
+        params.delete("ch_auth");
+        var rest = params.toString();
+        var next = window.location.pathname + (rest ? "?" + rest : "");
+        if (typeof history !== "undefined" && history.replaceState) {
+          history.replaceState(null, "", next);
+        }
+      }
+    } catch (err) {
+      /* ignore */
+    }
+
+    $("#chSignupPasswordToggle").on("click", function (e) {
+      e.preventDefault();
+      var $btn = $(this);
+      var $input = $("#chSignupPassword");
+      if (!$input.length) return;
+      var revealed = $input.attr("type") === "text";
+      $input.attr("type", revealed ? "password" : "text");
+      $btn.toggleClass("is-revealed", !revealed);
+      $btn.attr("aria-pressed", revealed ? "false" : "true");
+      $btn.attr("aria-label", revealed ? "Show password" : "Hide password");
+    });
+
+    $("#chLoginPasswordToggle").on("click", function (e) {
+      e.preventDefault();
+      var $btn = $(this);
+      var $input = $("#chLoginPassword");
+      if (!$input.length) return;
+      var revealed = $input.attr("type") === "text";
+      $input.attr("type", revealed ? "password" : "text");
+      $btn.toggleClass("is-revealed", !revealed);
+      $btn.attr("aria-pressed", revealed ? "false" : "true");
+      $btn.attr("aria-label", revealed ? "Show password" : "Hide password");
+    });
+
     $("#chLoginForm").on("submit", function (e) {
       e.preventDefault();
       var email = ($("#chLoginEmail").val() || "").trim();
       var password = ($("#chLoginPassword").val() || "").trim();
-      if (!email || !password) {
-        showToast("Enter email and password to continue (prototype).", "danger");
+      var assistantPreview = getCurrentPage() === "ai-chat";
+      if ((!email || !password) && !assistantPreview) {
+        showToast("Enter your email and password to continue.", "danger");
         return;
       }
       setSession(true);
       applyAuthVisibility();
-      showToast("Signed in (prototype session).", "success");
+      showToast(
+        assistantPreview && (!email || !password)
+          ? "Opening the Assistant workspace for preview."
+          : "Signed in. Welcome back.",
+        "success"
+      );
+      if (assistantPreview) {
+        setTimeout(function () {
+          var ta = document.getElementById("chat-input");
+          if (ta) {
+            ta.focus();
+            try {
+              ta.scrollIntoView({ block: "nearest", behavior: "smooth" });
+            } catch (err) {
+              ta.scrollIntoView(false);
+            }
+          }
+        }, 100);
+      }
     });
 
-    $(document).on("click", "[data-ch-register-placeholder], [data-ch-forgot-placeholder]", function (e) {
+    $("#chSignupForm").on("submit", function (e) {
       e.preventDefault();
-      showToast("Registration and password reset are not wired in this prototype.", "secondary");
+      var email = ($("#chSignupEmail").val() || "").trim();
+      var password = ($("#chSignupPassword").val() || "").trim();
+      var assistantPreview = getCurrentPage() === "ai-chat";
+      if ((!email || !password) && !assistantPreview) {
+        showToast("Enter your email and password to continue.", "danger");
+        return;
+      }
+      setSession(true);
+      applyAuthVisibility();
+      setAuthGateMode("login");
+      showToast(
+        assistantPreview && (!email || !password)
+          ? "Opening the Assistant workspace for preview."
+          : "Account created. Welcome to Culture Hive (preview).",
+        "success"
+      );
+      if (assistantPreview) {
+        setTimeout(function () {
+          var ta = document.getElementById("chat-input");
+          if (ta) {
+            ta.focus();
+            try {
+              ta.scrollIntoView({ block: "nearest", behavior: "smooth" });
+            } catch (err2) {
+              ta.scrollIntoView(false);
+            }
+          }
+        }, 100);
+      }
+    });
+
+    $(document).on("click", "[data-ch-show-login]", function (e) {
+      e.preventDefault();
+      setAuthGateMode("login");
+    });
+
+    $(document).on("click", "[data-ch-register-placeholder]", function (e) {
+      e.preventDefault();
+      setAuthGateMode("signup");
+    });
+
+    $(document).on("click", "[data-ch-forgot-placeholder]", function (e) {
+      e.preventDefault();
+      showToast("Password reset is not available in this preview build.", "secondary");
     });
   }
 
@@ -215,16 +458,20 @@
       setSession(false);
       var $gate = $("#chAuthGate");
       if ($gate.length && $("#chWorkspaceApp").length) {
+        setAuthGateMode("signup");
         applyAuthVisibility();
-        var form = document.getElementById("chLoginForm");
-        if (form) form.reset();
+        var loginForm = document.getElementById("chLoginForm");
+        if (loginForm) loginForm.reset();
+        var signupForm = document.getElementById("chSignupForm");
+        if (signupForm) signupForm.reset();
+        resetAuthGatePasswordToggles();
         showToast("Logged out.", "secondary");
         return;
       }
-      showToast("Logged out. Opening sign-in…", "secondary");
+      showToast("Logged out. Opening sign-up…", "secondary");
       var path = window.location.pathname || "";
-      var dest = "chat/";
-      if (path.indexOf("processed-csvs") !== -1) dest = "../chat/";
+      var dest = "chat/index.html?ch_auth=signup";
+      if (path.indexOf("processed-csvs") !== -1) dest = "../chat/index.html?ch_auth=signup";
       window.location.href = dest;
     });
   }
@@ -262,6 +509,7 @@
       $("#chAudienceSearch").val("");
       filterAudienceList("");
       $modal.find(".ch-audience-row.is-active").removeClass("is-active");
+      $modal.find(".ch-audience-row").attr("aria-selected", "false");
       modal.show();
     });
 
@@ -274,8 +522,8 @@
     });
 
     $modal.on("click", ".ch-audience-row", function () {
-      $modal.find(".ch-audience-row").removeClass("is-active");
-      $(this).addClass("is-active");
+      $modal.find(".ch-audience-row").removeClass("is-active").attr("aria-selected", "false");
+      $(this).addClass("is-active").attr("aria-selected", "true");
     });
 
     $("#chAudienceContinue").on("click", function () {
@@ -297,7 +545,8 @@
   function filterAudienceList(q) {
     $("#chAudienceList .ch-audience-row").each(function () {
       var t = ($(this).attr("data-ch-audience-name") || "").toLowerCase();
-      $(this).toggleClass("d-none", q.length > 0 && t.indexOf(q) === -1);
+      var hide = q.length > 0 && t.indexOf(q) === -1;
+      $(this).closest("li").toggleClass("d-none", hide);
     });
   }
 
@@ -308,17 +557,17 @@
   }
 
   function appendChatUserBubble($scroll, text) {
-    var $bubble = $('<div class="ch-chat-bubble ch-chat-bubble-user"></div>');
-    $bubble.append('<div class="small text-ch-muted mb-1">You</div>');
-    $bubble.append($("<p/>", { class: "mb-0", text: text }));
+    var $bubble = $('<div class="ch-chat-bubble ch-chat-bubble-user ch-chat-bubble--appear"></div>');
+    $bubble.append('<div class="ch-chat-bubble__meta text-ch-muted">You</div>');
+    $bubble.append($("<div/>", { class: "ch-chat-markdown" }).append($("<p/>", { class: "mb-0", text: text })));
     $scroll.append($bubble);
   }
 
   function appendChatAssistantBubble($scroll, options) {
     options = options || {};
-    var $bubble = $('<div class="ch-chat-bubble ch-chat-bubble-assistant"></div>');
-    $bubble.append('<div class="small text-ch-muted mb-1">Cultura AI</div>');
-    var $body = $('<div class="mb-2"></div>');
+    var $bubble = $('<div class="ch-chat-bubble ch-chat-bubble-assistant ch-chat-bubble--appear"></div>');
+    $bubble.append('<div class="ch-chat-bubble__meta text-ch-muted">Culture Hive AI</div>');
+    var $body = $("<div/>", { class: "ch-chat-markdown" });
     if (options.html) {
       $body.html(options.html);
     } else {
@@ -326,10 +575,10 @@
     }
     $bubble.append($body);
     if (options.actions) {
-      var $actions = $('<div class="d-flex flex-wrap gap-2" role="group" aria-label="Message actions"></div>');
+      var $actions = $('<div class="ch-chat-actions" role="group" aria-label="Message actions"></div>');
       ["Save", "Export", "Create Persona", "Create Report"].forEach(function (label) {
         $actions.append(
-          $('<button type="button" class="btn btn-sm btn-outline-primary"></button>').text(label)
+          $('<button type="button" class="btn btn-sm btn-light border ch-chat-actions__btn"></button>').text(label)
         );
       });
       $bubble.append($actions);
@@ -369,7 +618,7 @@
       if ($send.prop("disabled")) return;
 
       if (!hasThreadUi) {
-        showToast("Send is a UI prototype only (no model).", "secondary");
+        showToast("Live model responses are not enabled in this preview build.", "secondary");
         return;
       }
 
@@ -382,6 +631,7 @@
       if (isFirst) {
         $page.addClass("ch-chat-page--active");
         $threadSection.attr("aria-hidden", "false");
+        $(".ch-chat-page-empty").attr("aria-hidden", "true");
         var raw = getPrototypeMarkdownSource();
         var html = "";
         if (raw && typeof marked !== "undefined") {
@@ -389,12 +639,12 @@
         } else if (raw) {
           html = "<pre class=\"mb-0\">" + String(raw).replace(/</g, "&lt;") + "</pre>";
         } else {
-          html = "<p class=\"mb-0 text-ch-secondary\">Sample reply is not available in this build.</p>";
+          html = "<p class=\"mb-0 text-ch-secondary\">Sample reply is not available in this preview build.</p>";
         }
         appendChatAssistantBubble($scroll, { html: html, actions: true });
       } else {
         appendChatAssistantBubble($scroll, {
-          text: "Thanks for the follow-up—assistant replies are still a UI prototype (no live model yet).",
+          text: "Follow-up replies are not generated in this preview. Continue in your workspace or refine your prompt for the next blueprint pass.",
         });
       }
 
@@ -407,11 +657,204 @@
   function initStarterPrompts() {
     $(document).on("click", "[data-ch-starter-prompt]", function () {
       var text = $(this).attr("data-ch-starter-prompt") || $(this).text();
-      var $ta = $("#chat-input");
+      var sel = $(this).attr("data-ch-prompt-target");
+      var $ta = sel ? $(sel) : $("#chat-input");
+      if (!$ta.length) $ta = $("#home-ai-input");
       if ($ta.length) {
         $ta.val(text).trigger("input");
         $ta[0].focus();
       }
+    });
+  }
+
+  function homeAssistantReplyForUserMessage(msg) {
+    var t = (msg || "").toLowerCase();
+    if (t.indexOf("gen z sneaker") !== -1 || t.indexOf("sneaker collectors") !== -1) {
+      return (
+        "For Gen Z sneaker collectors, prioritize creator-led discovery, resale community trust, and short-form education. " +
+        "I can align a cultural blueprint around identity, hype cycles, and the media habits where purchase intent forms."
+      );
+    }
+    if (t.indexOf("multicultural streaming") !== -1 || t.indexOf("sports audiences") !== -1) {
+      return (
+        "Sports audiences are increasingly co-viewing across CTV and mobile, with multicultural households over-indexing on live moments and recap culture. " +
+        "We should map cultural signals by league affinity, language preference, and creator commentary, not generic sports hype."
+      );
+    }
+    if (t.indexOf("urban wellness") !== -1 || t.indexOf("cultural signals") !== -1) {
+      return (
+        "Urban wellness consumers respond to routines, trusted expertise, and community validation. " +
+        "Key signals include holistic health framing, convenience, and culturally authentic storytelling in the feeds where decisions are shaped."
+      );
+    }
+    if (t.indexOf("sustainable home") !== -1 || t.indexOf("home shoppers") !== -1) {
+      return (
+        "Sustainable home shoppers blend practicality with design-forward expectations. " +
+        "Lead with proof of everyday use, peer validation, and clear value; support with creator-led tours and practical sustainability explainers."
+      );
+    }
+    if (t.indexOf("csv") !== -1 || t.indexOf("upload") !== -1) {
+      return (
+        "I can profile the latest audience data upload, flag quality issues, and suggest segment cuts before you generate a blueprint. " +
+        "Open Files → Upload CSV when you are ready to stage a new dataset."
+      );
+    }
+    return (
+      "Start with a brand, category, or audience you care about. " +
+      "I can help you generate a cultural blueprint, compare segments, or pressure-test activation ideas using the saved work in this workspace."
+    );
+  }
+
+  function initHomeAssistant() {
+    var $root = $("#chHomeAssistant");
+    var $ta = $("#home-ai-input");
+    var $send = $("#chHomeAiSend");
+    var $count = $("#chHomeCharCount");
+    var $scroll = $("#chHomeAssistantScroll");
+    var $threadWrap = $("#chHomeAssistantThreadWrap");
+    var $compose = $("#chHomeAssistantCompose");
+    var $flowSlot = $("#chHomeAssistantFlowSlot");
+    if (!$root.length || !$ta.length || !$send.length || !$scroll.length || !$compose.length) return;
+
+    function sync() {
+      var raw = $ta.val() || "";
+      var len = raw.length;
+      if ($count.length) $count.text(String(len));
+      $send.prop("disabled", len === 0 || len > 2000);
+    }
+
+    function clearFlowSlot() {
+      $flowSlot.addClass("d-none").empty();
+    }
+
+    function setThreadMode(on) {
+      $root.toggleClass("ch-home-assistant--thread", on);
+      $threadWrap.toggleClass("ch-home-assistant-thread-wrap--idle", !on);
+    }
+
+    function resetCompose() {
+      $scroll.empty();
+      clearFlowSlot();
+      setThreadMode(false);
+      $ta.val("").trigger("input");
+      $ta.trigger("focus");
+    }
+
+    function openThread() {
+      setThreadMode(true);
+    }
+
+    function pushUserThenAssistant(userText, assistantText) {
+      openThread();
+      appendChatUserBubble($scroll, userText);
+      appendChatAssistantBubble($scroll, { text: assistantText });
+      scrollChatToEnd($scroll);
+    }
+
+    function pushAssistantOnly(assistantText, showCsvDropzone) {
+      openThread();
+      appendChatAssistantBubble($scroll, { text: assistantText });
+      if (showCsvDropzone) {
+        $flowSlot.removeClass("d-none").html(
+          '<div class="ch-dropzone" data-ch-dropzone role="region" aria-label="Upload CSV for analysis">' +
+            '<svg class="ch-icon ch-icon--2xl text-ch-muted mb-2 d-block mx-auto" aria-hidden="true" focusable="false">' +
+            '<use href="#ch-cloud-upload"/></svg>' +
+            '<p class="fw-semibold mb-1 text-center">Drag and drop a CSV file</p>' +
+            '<p class="small text-ch-secondary mb-0 text-center">Preview only: files are not uploaded.</p>' +
+            "</div>"
+        );
+      } else {
+        clearFlowSlot();
+      }
+      scrollChatToEnd($scroll);
+    }
+
+    $ta.on("input", sync);
+    sync();
+
+    $("#chHomeAssistantReset").on("click", function () {
+      resetCompose();
+    });
+
+    $send.on("click", function () {
+      if ($send.prop("disabled")) return;
+      var msg = ($ta.val() || "").trim();
+      if (!msg || msg.length > 2000) return;
+      var reply = homeAssistantReplyForUserMessage(msg);
+      pushUserThenAssistant(msg, reply);
+      $ta.val("").trigger("input");
+    });
+
+    $(document).on("click", "[data-ch-home-suggest]", function () {
+      var text = ($(this).attr("data-ch-home-suggest") || $(this).text() || "").trim();
+      if (!text) return;
+      var reply = homeAssistantReplyForUserMessage(text);
+      pushUserThenAssistant(text, reply);
+      $ta.val("").trigger("input");
+    });
+
+    $(document).on("click", "[data-ch-home-continue-thread]", function (e) {
+      e.preventDefault();
+      pushAssistantOnly(
+        "Picking up your sustainable home blueprint thread. Last time we were prioritizing creator-led discovery and peer validation for budget-smart families. " +
+          "Should I continue with segment momentum, or shift to channel mix for short-form video?",
+        false
+      );
+    });
+
+    $ta.on("keydown", function (e) {
+      if (e.key === "Enter" && !e.shiftKey) {
+        e.preventDefault();
+        $send.trigger("click");
+      }
+    });
+  }
+
+  function initGlobalCommandPalette() {
+    var $modal = $("#chCommandPalette");
+    var $filter = $("#chCommandPaletteFilter");
+    if (!$modal.length) return;
+    if (!$filter.length) return;
+
+    function openPalette() {
+      if (typeof bootstrap === "undefined") return;
+      var inst = bootstrap.Modal.getOrCreateInstance($modal[0]);
+      inst.show();
+      setTimeout(function () {
+        if ($filter.length) {
+          $filter.val(($("#global-search").val() || "").trim());
+          $filter.trigger("input");
+          $filter.trigger("focus");
+        }
+      }, 10);
+    }
+
+    $(document).on("keydown", function (e) {
+      if ((e.metaKey || e.ctrlKey) && String(e.key || "").toLowerCase() === "k") {
+        e.preventDefault();
+        openPalette();
+      }
+    });
+
+    $("#global-search").on("focus", function () {
+      openPalette();
+      $(this).blur();
+    });
+
+    $(document).on("click", "#chCommandPalette .list-group-item-action", function () {
+      var el = document.getElementById("chCommandPalette");
+      if (el && typeof bootstrap !== "undefined") {
+        var inst = bootstrap.Modal.getInstance(el);
+        if (inst) inst.hide();
+      }
+    });
+
+    $filter.on("input", function () {
+      var q = ($(this).val() || "").trim().toLowerCase();
+      $modal.find("[data-ch-palette-label]").each(function () {
+        var lab = ($(this).attr("data-ch-palette-label") || "").toLowerCase();
+        $(this).toggleClass("d-none", q.length > 0 && lab.indexOf(q) === -1);
+      });
     });
   }
 
@@ -431,12 +874,13 @@
       if ($threadSection.length) {
         $threadSection.attr("aria-hidden", "true");
       }
+      $(".ch-chat-page-empty").attr("aria-hidden", "false");
 
       if ($ta.length) {
         $ta.val("").trigger("input");
         $ta.trigger("focus");
       }
-      showToast("Started a new chat (prototype).", "primary");
+      showToast("Started a new conversation.", "primary");
     });
 
     $("#chHistorySearch").on("input", function () {
@@ -444,6 +888,10 @@
       $("#chHistoryThreadList .ch-history-thread").each(function () {
         var t = ($(this).attr("data-ch-thread-title") || "").toLowerCase();
         $(this).toggleClass("d-none", q.length > 0 && t.indexOf(q) === -1);
+      });
+      $("#chHistoryThreadList [data-ch-history-group]").each(function () {
+        var visible = $(this).find(".ch-history-thread:not(.d-none)").length;
+        $(this).toggleClass("d-none", visible === 0);
       });
     });
   }
@@ -460,15 +908,25 @@
     $(document).on("click", "[data-ch-prompt-insert]", function () {
       var text = $(this).attr("data-ch-prompt-insert") || "";
       var $ta = $("#chat-input");
+      if (!$ta.length) $ta = $("#home-ai-input");
       if ($ta.length) {
         $ta.val(text).trigger("input");
         $ta[0].focus();
       }
       var el = document.getElementById("chPromptPickerModal");
       if (el && typeof bootstrap !== "undefined") {
-        bootstrap.Modal.getInstance(el).hide();
+        var pickerInst = bootstrap.Modal.getInstance(el);
+        if (pickerInst) pickerInst.hide();
       }
     });
+  }
+
+  function syncLocaleMenuVisibility() {
+    var $li = $("[data-ch-locale-menu-item]");
+    var $sel = $("#chLocaleSelect");
+    if (!$li.length || !$sel.length) return;
+    var n = $sel.find("option").length;
+    $li.toggleClass("d-none", n <= 1);
   }
 
   function initLocaleSelect() {
@@ -488,7 +946,14 @@
       } catch (e) {
         /* ignore */
       }
-      showToast("Language preference saved for future copy (English only in this build).", "secondary");
+      showToast("Language preference saved. Additional locales are not available in this preview.", "secondary");
+    });
+  }
+
+  function initAccountMenu() {
+    $(document).on("click", "[data-ch-notifications-open]", function (e) {
+      e.preventDefault();
+      showToast("No new notifications.", "secondary");
     });
   }
 
@@ -512,37 +977,37 @@
     $(document).on("click", 'a[data-ch-nav="blueprint"]', function (e) {
       if ($(this).attr("href") === "#") {
         e.preventDefault();
-        showToast("Cultural Blueprint destination is not confirmed for this prototype.", "secondary");
+        showToast("Cultural Blueprint routing is not connected in this preview build.", "secondary");
       }
     });
   }
 
   function initProcessedCsvPage() {
-    if (getCurrentPage() !== "processed-csvs") return;
+    if (!$("#chCsvTableBody").length) return;
 
     var rows = [
       {
-        file: "retail-footfall-q1.csv",
-        uploaded: "2025-04-02 09:12",
-        processed: "2025-04-02 09:18",
+        file: "wellness-signals-q2.csv",
+        uploaded: "2026-05-10 09:12",
+        processed: "2026-05-10 09:18",
         status: "Ready",
       },
       {
-        file: "audience-weights-march.csv",
-        uploaded: "2025-04-10 14:40",
-        processed: "—",
+        file: "multicultural-streaming-weights.csv",
+        uploaded: "2026-05-12 14:40",
+        processed: "-",
         status: "Processing",
       },
       {
-        file: "sneaker-cohort-sample.csv",
-        uploaded: "2025-04-11 11:05",
-        processed: "2025-04-11 11:06",
+        file: "sustainable-home-panel.csv",
+        uploaded: "2026-05-11 11:05",
+        processed: "2026-05-11 11:06",
         status: "Failed",
       },
       {
-        file: "geo-baseline.csv",
-        uploaded: "2025-03-28 08:00",
-        processed: "2025-03-28 08:02",
+        file: "urban-design-geo-baseline.csv",
+        uploaded: "2026-05-08 08:00",
+        processed: "2026-05-08 08:02",
         status: "Ready",
       },
     ];
@@ -580,33 +1045,43 @@
       $empty.addClass("d-none");
 
       list.forEach(function (r) {
-        var statusClass =
+        var safeFile = String(r.file).replace(/</g, "&lt;");
+        var pillClass =
           r.status === "Ready"
-            ? "text-success"
+            ? "ch-pill ch-pill-success"
             : r.status === "Failed"
-              ? "text-danger"
-              : "text-warning";
+              ? "ch-pill ch-pill-danger"
+              : "ch-pill ch-pill-warning";
+        var aria = "Actions for " + String(r.file).replace(/"/g, "&quot;");
         $tb.append(
           "<tr>" +
-            "<td class=\"fw-medium\">" +
-            String(r.file).replace(/</g, "&lt;") +
+            "<td class=\"fw-semibold\">" +
+            safeFile +
             "</td>" +
-            "<td>" +
+            "<td class=\"text-ch-secondary\">" +
             r.uploaded +
             "</td>" +
-            "<td>" +
+            "<td class=\"text-ch-secondary\">" +
             r.processed +
             "</td>" +
             "<td><span class=\"" +
-            statusClass +
+            pillClass +
             "\">" +
             r.status +
             "</span></td>" +
-            "<td>" +
-            "<div class=\"btn-group btn-group-sm\">" +
-            "<button type=\"button\" class=\"btn btn-outline-secondary\">Download</button>" +
-            "<button type=\"button\" class=\"btn btn-outline-secondary\">View</button>" +
-            "</div></td>" +
+            "<td class=\"text-end\">" +
+            "<div class=\"dropdown\">" +
+            "<button type=\"button\" class=\"btn btn-sm btn-light border\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\" aria-label=\"" +
+            aria +
+            "\">" +
+            "<svg class=\"ch-icon\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#ch-dots-vertical\"/></svg>" +
+            "</button>" +
+            "<ul class=\"dropdown-menu dropdown-menu-end\">" +
+            "<li><a class=\"dropdown-item\" href=\"#\">Download</a></li>" +
+            "<li><a class=\"dropdown-item\" href=\"#\">View</a></li>" +
+            "</ul>" +
+            "</div>" +
+            "</td>" +
             "</tr>"
         );
       });
@@ -651,7 +1126,9 @@
     highlightNav();
     initNavGroups();
     initSidebarCollapse();
+    initTopbarHistoryNav();
     initToastDemo();
+    initFoundationsPage();
     initAiGeneratingDemo();
     initDropzoneDemo();
     initMarkedChat();
@@ -660,9 +1137,13 @@
     initAudienceGate();
     initChatComposer();
     initStarterPrompts();
+    initHomeAssistant();
+    initGlobalCommandPalette();
     initChatHistoryDrawer();
     initPromptBrowser();
     initLocaleSelect();
+    initAccountMenu();
+    syncLocaleMenuVisibility();
     initHelpModal();
     initDevNav();
     initBlueprintPlaceholder();

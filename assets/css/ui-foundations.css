@@ -1,0 +1,85 @@
+/**
+ * UI Foundations page only: documentation layout (TOC, filter, specimens chrome).
+ * Product tokens and components stay in theme.css — same SSOT the app loads.
+ */
+
+.ch-page-foundations .ch-foundations-doc {
+  max-width: 1200px;
+}
+
+.ch-foundations-toc {
+  position: sticky;
+  top: calc(var(--ch-topbar-height) + 1rem);
+  max-height: calc(100vh - var(--ch-topbar-height) - 2rem);
+  overflow: auto;
+}
+
+.ch-foundations-toc .nav-link {
+  color: var(--ch-text-secondary);
+  border-radius: var(--ch-radius-xs);
+  font-weight: 500;
+}
+
+.ch-foundations-toc .nav-link:hover {
+  background: var(--ch-neutral-100);
+  color: var(--ch-text-primary);
+}
+
+.ch-foundations-toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ch-foundations-toc-list .nav-link {
+  font-size: var(--ch-font-size-300);
+}
+
+.ch-foundations-filter {
+  max-width: 20rem;
+}
+
+.ch-foundations-icon-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.35rem;
+  padding: 0.75rem 0.5rem;
+  border: 1px solid var(--ch-border);
+  border-radius: var(--ch-radius-xs);
+  background: var(--ch-surface);
+  text-align: center;
+  min-height: 7.5rem;
+}
+
+.ch-foundations-icon-tile .ch-copy-btn {
+  margin-top: auto;
+}
+
+.ch-foundations-icon-tile code {
+  font-size: 0.65rem;
+  word-break: break-all;
+  line-height: 1.2;
+  color: var(--ch-text-muted);
+}
+
+.ch-copy-btn {
+  flex-shrink: 0;
+}
+
+/* Static slice of the Assistant auth gate (same classes as chat/index.html) */
+.ch-foundations-auth-demo {
+  max-width: 22rem;
+  padding: var(--ch-space-7);
+  border-radius: var(--ch-radius-lg);
+  border: 1px solid var(--ch-border);
+  background: var(--ch-surface);
+  box-shadow: var(--ch-shadow-md);
+}
+
+.ch-foundations-auth-demo .ch-auth-title,
+.ch-foundations-auth-demo .ch-auth-lead,
+.ch-foundations-auth-demo .ch-auth-form {
+  max-width: none;
+}

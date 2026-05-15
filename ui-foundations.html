@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="assets/img/cultura-icon.png" />
-    <title>UI Foundations · Cultura</title>
+    <title>UI Foundations · Culture Hive AI</title>
     <link
       rel="stylesheet"
       href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&amp;display=swap"
@@ -20,8 +20,11 @@
     />
     <link href="assets/css/icons.css" rel="stylesheet" />
     <link href="assets/css/theme.css" rel="stylesheet" />
+    <link href="assets/css/ui-foundations.css" rel="stylesheet" />
   </head>
-  <body data-ch-current="foundations">
+  <body class="ch-page-foundations" data-ch-current="foundations">
+    <script src="assets/js/ch-icon-sprite-inject.js"></script>
+
     <a class="ch-skip-link" href="#main-content">Skip to main content</a>
 
     <div class="ch-app">
@@ -31,7 +34,7 @@
           <a
             href="index.html"
             class="ch-sidebar-brand-link d-flex align-items-center gap-2 flex-grow-1 min-w-0 text-decoration-none"
-            aria-label="Cultura home"
+            aria-label="Culture Hive home"
           >
             <span class="ch-sidebar-brand-wordmark">
               <img src="assets/img/cultura-logo.png" alt="" decoding="async" />
@@ -48,109 +51,55 @@
             <ul class="list-unstyled mb-0">
               <li>
                 <a class="ch-nav-link" href="index.html" data-ch-nav="home">
-                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-house"/></svg>
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-house"/></svg>
                   <span class="ch-nav-label">Home</span>
                 </a>
               </li>
               <li>
-                <a class="ch-nav-link" href="chat/" data-ch-nav="ai-chat">
-                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-chat"/></svg>
-                  <span class="ch-nav-label">Chat</span>
+                <a class="ch-nav-link" href="chat/index.html" data-ch-nav="ai-chat">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-chat"/></svg>
+                  <span class="ch-nav-label">Assistant</span>
                 </a>
               </li>
               <li>
-                <details class="ch-nav-group">
-                  <summary>
-                    <span class="ch-nav-group-label">CRS reports</span>
-                    <svg class="ch-nav-group-caret" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-chevron-down"/></svg>
-                  </summary>
-                  <ul class="ch-nav-group-list list-unstyled mb-0">
-                    <li>
-                      <a
-                        class="ch-nav-link"
-                        href="#"
-                        data-ch-nav="crs-reports"
-                        data-ch-audience-gate
-                        data-ch-post-select-href="crs-reports.html"
-                      >
-                        <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-file-graph"/></svg>
-                        <span class="ch-nav-label">CRS Reports</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="ch-nav-link" href="crs-reports.html#crs-scores" data-ch-nav="crs-scores">
-                        <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-graph-up"/></svg>
-                        <span class="ch-nav-label">CRS Scores</span>
-                      </a>
-                    </li>
-                  </ul>
-                </details>
+                <a
+                  class="ch-nav-link"
+                  href="#"
+                  data-ch-nav="crs-reports"
+                  data-ch-audience-gate
+                  data-ch-post-select-href="crs-reports.html"
+                >
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-file-graph"/></svg>
+                  <span class="ch-nav-label">Reports</span>
+                </a>
               </li>
               <li>
-                <details class="ch-nav-group">
-                  <summary>
-                    <span class="ch-nav-group-label">Audience &amp; campaigns</span>
-                    <svg class="ch-nav-group-caret" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-chevron-down"/></svg>
-                  </summary>
-                  <ul class="ch-nav-group-list list-unstyled mb-0">
-                    <li>
-                      <a
-                        class="ch-nav-link"
-                        href="#"
-                        data-ch-nav="personas"
-                        data-ch-audience-gate
-                        data-ch-post-select-href="persona-detail.html"
-                      >
-                        <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-people"/></svg>
-                        <span class="ch-nav-label">Persona</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        class="ch-nav-link"
-                        href="#"
-                        data-ch-nav="campaign"
-                        data-ch-audience-gate
-                        data-ch-post-select-modal="#chCampaignModal"
-                      >
-                        <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-megaphone"/></svg>
-                        <span class="ch-nav-label">Campaign</span>
-                      </a>
-                    </li>
-                  </ul>
-                </details>
+                <a
+                  class="ch-nav-link"
+                  href="#"
+                  data-ch-nav="personas"
+                  data-ch-audience-gate
+                  data-ch-post-select-href="persona-detail.html"
+                >
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-people"/></svg>
+                  <span class="ch-nav-label">Personas</span>
+                </a>
               </li>
               <li>
-                <details class="ch-nav-group">
-                  <summary>
-                    <span class="ch-nav-group-label">CSV &amp; files</span>
-                    <svg class="ch-nav-group-caret" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-chevron-down"/></svg>
-                  </summary>
-                  <ul class="ch-nav-group-list list-unstyled mb-0">
-                    <li>
-                      <a class="ch-nav-link" href="upload-csv.html" data-ch-nav="upload">
-                        <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-cloud-upload"/></svg>
-                        <span class="ch-nav-label">Download CSV template</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="ch-nav-link" href="processed-csvs/" data-ch-nav="processed-csvs">
-                        <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-folder"/></svg>
-                        <span class="ch-nav-label">Processed CSV</span>
-                      </a>
-                    </li>
-                  </ul>
-                </details>
+                <a class="ch-nav-link" href="audiences.html" data-ch-nav="audiences">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-list-ul"/></svg>
+                  <span class="ch-nav-label">Audiences</span>
+                </a>
               </li>
               <li>
-                <a class="ch-nav-link" href="#" data-ch-nav="blueprint">
-                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-diagram"/></svg>
-                  <span class="ch-nav-label">Cultural Blueprint</span>
+                <a class="ch-nav-link" href="processed-csvs/index.html" data-ch-nav="files">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-folder"/></svg>
+                  <span class="ch-nav-label">Files</span>
                 </a>
               </li>
               <li class="ch-dev-only-nav d-none">
                 <a class="ch-nav-link" href="ui-foundations.html" data-ch-nav="foundations">
-                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-grid"/></svg>
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-grid"/></svg>
                   <span class="ch-nav-label">UI Foundations</span>
                 </a>
               </li>
@@ -165,10 +114,10 @@
               <div class="text-ch-muted small">Free Plan</div>
             </div>
           </div>
-          <button type="button" class="btn btn-outline-primary btn-sm w-100">
-            <svg class="ch-icon me-1" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-arrow-up-circle"/></svg>
+          <a class="btn btn-outline-primary btn-sm w-100" href="ui-foundations.html">
+            <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-arrow-up-circle"/></svg>
             <span>Upgrade Plan</span>
-          </button>
+          </a>
         </div>
       </aside>
       <!-- ch:/shell:sidebar -->
@@ -183,72 +132,117 @@
             aria-controls="chNavDrawer"
             aria-label="Open menu"
           >
-            <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-menu"/></svg>
+            <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-menu"/></svg>
           </button>
+          <div
+            class="ch-topbar-history ch-mobile-only me-1 flex-shrink-0 d-inline-flex align-items-center"
+            role="group"
+            aria-label="History"
+          >
+            <button type="button" class="ch-topbar-history-btn" data-ch-history="back" aria-label="Back" disabled>
+              <svg class="ch-icon ch-icon--sm" aria-hidden="true" focusable="false"><use href="#ch-chevron-left"/></svg>
+            </button>
+            <button type="button" class="ch-topbar-history-btn" data-ch-history="forward" aria-label="Forward" disabled>
+              <svg class="ch-icon ch-icon--sm" aria-hidden="true" focusable="false"><use href="#ch-chevron-right"/></svg>
+            </button>
+          </div>
           <a
             href="index.html"
             class="ch-topbar-logo ch-mobile-only d-inline-flex align-items-center flex-shrink-0 me-2 text-decoration-none"
-            aria-label="Cultura home"
+            aria-label="Culture Hive home"
           >
             <img src="assets/img/cultura-icon.png" alt="" width="28" height="28" decoding="async" />
           </a>
-          <div class="ch-topbar-search-wrap d-none d-md-flex align-items-center justify-content-center flex-grow-1 min-w-0">
+          <div class="ch-topbar-lead d-none d-md-flex align-items-center gap-2 flex-shrink-0 min-w-0 me-1">
             <button
               type="button"
-              class="btn btn-icon flex-shrink-0 d-none d-md-inline-flex"
+              class="btn btn-icon flex-shrink-0"
               data-ch-sidebar-toggle
               aria-controls="ch-primary-sidebar"
               aria-expanded="true"
               aria-label="Collapse sidebar"
               aria-pressed="false"
             >
-              <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-layout-sidebar"/></svg>
+              <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-layout-sidebar"/></svg>
             </button>
+            <div
+              class="ch-topbar-history d-none d-md-inline-flex align-items-center flex-shrink-0"
+              role="group"
+              aria-label="History"
+            >
+              <button type="button" class="ch-topbar-history-btn" data-ch-history="back" aria-label="Back" disabled>
+                <svg class="ch-icon ch-icon--sm" aria-hidden="true" focusable="false"><use href="#ch-chevron-left"/></svg>
+              </button>
+              <button type="button" class="ch-topbar-history-btn" data-ch-history="forward" aria-label="Forward" disabled>
+                <svg class="ch-icon ch-icon--sm" aria-hidden="true" focusable="false"><use href="#ch-chevron-right"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="ch-topbar-search-wrap d-none d-md-flex align-items-center justify-content-center flex-grow-1 min-w-0">
             <div class="ch-topbar-search position-relative flex-grow-1">
               <label for="global-search" class="visually-hidden">Search workspace</label>
-              <svg class="ch-icon ch-search-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-search"/></svg>
+              <svg class="ch-icon ch-search-icon" aria-hidden="true" focusable="false"><use href="#ch-search"/></svg>
               <input
                 id="global-search"
                 type="search"
                 class="form-control"
-                placeholder="Search reports, personas, audiences…"
+                placeholder="Search brands, categories, audiences, or cultural trends..."
                 autocomplete="off"
+                aria-describedby="global-search-hint"
+                aria-haspopup="dialog"
+                aria-controls="chCommandPalette"
               />
+              <span id="global-search-hint" class="visually-hidden"
+                >Opens the workspace search dialog when focused. Shortcut: Control or Command K.</span
+              >
               <span
                 class="position-absolute end-0 top-50 translate-middle-y me-3 ch-kbd-hint d-none d-md-inline"
                 role="group"
-                aria-label="Keyboard shortcut: Command K"
+                aria-label="Keyboard shortcut: Control or Command K"
                 ><kbd>Cmd</kbd><span class="ch-kbd-sep" aria-hidden="true">+</span><kbd>K</kbd></span
               >
             </div>
           </div>
-          <div class="ch-topbar-actions d-flex align-items-center gap-1 ms-auto flex-wrap justify-content-end">
-            <label class="visually-hidden" for="chLocaleSelect">Language</label>
-            <select id="chLocaleSelect" class="form-select form-select-sm ch-locale-select" aria-label="Language">
-              <option value="en" selected>English</option>
-            </select>
-            <button type="button" class="btn btn-icon" aria-label="Notifications">
-              <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-bell"/></svg>
-            </button>
-            <button type="button" class="btn btn-icon" data-ch-help-open aria-label="Help">
-              <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-help"/></svg>
-            </button>
+          <div class="ch-topbar-actions d-flex align-items-center gap-1 ms-auto flex-nowrap justify-content-end">
             <div class="dropdown">
               <button
                 type="button"
                 class="btn btn-light border rounded-pill d-flex align-items-center gap-2 py-1 ps-1 pe-2"
+                id="chAccountMenuBtn"
                 data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
                 aria-expanded="false"
                 aria-label="Account menu"
               >
                 <span class="ch-user-avatar" style="width: 32px; height: 32px; font-size: 0.75rem" aria-hidden="true">NC</span>
-                <svg class="ch-icon ch-icon--sm text-ch-muted" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-chevron-down"/></svg>
+                <svg class="ch-icon ch-icon--sm text-ch-muted" aria-hidden="true" focusable="false"><use href="#ch-chevron-down"/></svg>
               </button>
-              <ul class="dropdown-menu dropdown-menu-end shadow-sm" style="min-width: 12rem">
+              <ul class="dropdown-menu dropdown-menu-end shadow-sm ch-account-menu-dropdown" aria-labelledby="chAccountMenuBtn">
                 <li><span class="dropdown-item-text small text-ch-muted">Nate Chandra</span></li>
                 <li><span class="dropdown-item-text small">Free Plan</span></li>
                 <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#">Upgrade</a></li>
+                <li>
+                  <button type="button" class="dropdown-item d-flex align-items-center gap-2" data-ch-notifications-open>
+                    <svg class="ch-icon ch-icon--sm" aria-hidden="true" focusable="false"><use href="#ch-bell"/></svg>
+                    Notifications
+                  </button>
+                </li>
+                <li>
+                  <a class="dropdown-item d-flex align-items-center gap-2" href="#" data-ch-help-open>
+                    <svg class="ch-icon ch-icon--sm" aria-hidden="true" focusable="false"><use href="#ch-help"/></svg>
+                    Help
+                  </a>
+                </li>
+                <li class="d-none" data-ch-locale-menu-item>
+                  <div class="px-3 py-2">
+                    <label for="chLocaleSelect" class="form-label small text-ch-muted mb-1">Language</label>
+                    <select id="chLocaleSelect" class="form-select form-select-sm ch-locale-select w-100" aria-label="Language">
+                      <option value="en" selected>English</option>
+                    </select>
+                  </div>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="ui-foundations.html">Upgrade</a></li>
                 <li><hr class="dropdown-divider" /></li>
                 <li><a class="dropdown-item" href="#" data-ch-logout>Logout</a></li>
               </ul>
@@ -260,41 +254,167 @@
           <div class="ch-main">
             <div class="ch-main-inner">
               <main id="main-content">
-                <h1 class="ch-type-heading-lg mb-2">UI Foundations</h1>
-                <p class="text-ch-secondary mb-4">
-                  Developer reference for Cultura tokens, Bootstrap bridges, and reusable <code>.ch-*</code> patterns.
-                </p>
+                <div class="ch-foundations-doc">
+                  <div class="row g-4 g-lg-5 align-items-start">
+                    <div class="col-lg-3 col-xl-2 d-none d-lg-block">
+                      <nav class="ch-foundations-toc border rounded p-3 bg-white small" aria-label="Foundation page sections">
+                        <p class="ch-type-heading-xs text-ch-muted mb-2">On this page</p>
+                        <ul class="ch-foundations-toc-list">
+                          <li><a class="nav-link py-1" href="#tok-ssot">How updates work</a></li>
+                          <li><a class="nav-link py-1" href="#tok-colors">Colors</a></li>
+                          <li><a class="nav-link py-1" href="#tok-type">Typography</a></li>
+                          <li><a class="nav-link py-1" href="#icons">Icons</a></li>
+                          <li><a class="nav-link py-1" href="#tok-semantic-color">Status colors</a></li>
+                          <li><a class="nav-link py-1" href="#tok-space">Spacing and radius</a></li>
+                          <li><a class="nav-link py-1" href="#tok-focus">Focus</a></li>
+                          <li><a class="nav-link py-1" href="#comp-buttons">Buttons</a></li>
+                          <li><a class="nav-link py-1" href="#comp-forms">Forms</a></li>
+                          <li><a class="nav-link py-1" href="#comp-auth">Sign in</a></li>
+                          <li><a class="nav-link py-1" href="#comp-cards">Cards</a></li>
+                          <li><a class="nav-link py-1" href="#comp-table">Tables</a></li>
+                          <li><a class="nav-link py-1" href="#comp-tabs-bc">Tabs</a></li>
+                          <li><a class="nav-link py-1" href="#comp-alerts">Alerts</a></li>
+                          <li><a class="nav-link py-1" href="#comp-empty">Empty states</a></li>
+                          <li><a class="nav-link py-1" href="#comp-overlays">Modals and toasts</a></li>
+                          <li><a class="nav-link py-1" href="#comp-upload-ai">Upload and AI</a></li>
+                          <li><a class="nav-link py-1" href="#comp-nav">Navigation</a></li>
+                        </ul>
+                      </nav>
+                    </div>
+                    <div class="col-lg-9 col-xl-10">
+                      <h1 class="ch-type-heading-lg mb-2">UI Foundations</h1>
+                      <p class="text-ch-secondary mb-2">
+                        A simple guide to how Culture Hive looks and behaves: colors, type, icons, spacing, and common UI pieces. If you are not writing code, use it to see what “official” patterns look like.
+                        If you <em>are</em> building screens, everything here matches the live product because it uses the same stylesheets as the rest of the app.
+                      </p>
+                      <p class="text-ch-secondary small mb-3">
+                        Built on <a href="https://getbootstrap.com/docs/5.3/" rel="noopener noreferrer" target="_blank">Bootstrap&nbsp;5.3</a> with a Culture Hive layer in
+                        <a href="https://github.com/benfrontyard/cultura-ui/blob/main/assets/css/theme.css" rel="noopener noreferrer" target="_blank"><code>theme.css</code> on GitHub</a>.
+                      </p>
+                      <label for="ch-foundations-filter" class="visually-hidden">Filter documentation sections</label>
+                      <input type="search" id="ch-foundations-filter" class="form-control form-control-sm ch-foundations-filter mb-4" placeholder="Filter sections…" autocomplete="off" />
 
-                <section class="mb-5" aria-labelledby="tok-colors">
-                  <h2 id="tok-colors" class="h5 ch-heading mb-3">Color tokens</h2>
-                  <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 g-2">
-                    <div class="col"><div class="ch-swatch"><div class="ch-swatch-color" style="background:#1f69da"></div><div class="ch-swatch-meta"><code>--ch-primary</code><br />#1F69DA</div></div></div>
-                    <div class="col"><div class="ch-swatch"><div class="ch-swatch-color" style="background:#111111"></div><div class="ch-swatch-meta"><code>--ch-heading</code><br />#111111</div></div></div>
-                    <div class="col"><div class="ch-swatch"><div class="ch-swatch-color" style="background:#f2f6f9"></div><div class="ch-swatch-meta"><code>--ch-bg-page</code><br />#F2F6F9</div></div></div>
-                    <div class="col"><div class="ch-swatch"><div class="ch-swatch-color" style="background:#d3e8f0"></div><div class="ch-swatch-meta"><code>--ch-border</code><br />#D3E8F0</div></div></div>
+                <section class="ch-foundations-section mb-5" id="tok-ssot" aria-labelledby="tok-ssot-h">
+                  <h2 id="tok-ssot-h" class="h5 ch-heading mb-3">How updates work</h2>
+                  <p class="text-ch-secondary ch-type-body-sm mb-3">
+                    When designers or developers change the product look, they change shared CSS files—not just this page.
+                    The real app and this reference both load the same bundle, so what you see here is what users get after a refresh.
+                  </p>
+                  <ul class="small text-ch-secondary mb-0 ps-3">
+                    <li><strong>For everyone:</strong> think of <a href="https://github.com/benfrontyard/cultura-ui/blob/main/assets/css/theme.css" rel="noopener noreferrer" target="_blank"><code>theme.css</code></a> as the master style sheet for Culture Hive (colors, type, cards, tables, and more).</li>
+                    <li><strong>For developers:</strong> brand tokens live as <code>--ch-*</code> variables in <code>:root</code>. Extra names like <code>--color-primary-500</code> or <code>--surface-card</code> are thin aliases that point at those same <code>--ch-*</code> values so docs and code can speak the same language.</li>
+                    <li><strong>Only on this page:</strong> <a href="https://github.com/benfrontyard/cultura-ui/blob/main/assets/css/ui-foundations.css" rel="noopener noreferrer" target="_blank"><code>ui-foundations.css</code></a> handles the sidebar table of contents and layout of examples—not the product UI itself.</li>
+                    <li><strong>Assistant sign-in:</strong> the log-in and sign-up gate on <a href="chat/index.html"><code>chat/index.html</code></a> uses the same <code>theme.css</code> primitives as the rest of the app (<code>.ch-auth-*</code> wrappers plus <code>.form-control</code>, <code>.btn-primary</code>, and shared type classes). Treat the <a href="#comp-auth">Sign in</a> specimen below as the documented markup pattern; do not fork a second visual system for authentication screens.</li>
+                  </ul>
+                </section>
+
+                <section class="ch-foundations-section mb-5" id="icons" aria-labelledby="icons-h">
+                  <h2 id="icons-h" class="h5 ch-heading mb-3">Icons</h2>
+                  <p class="text-ch-secondary ch-type-body-sm mb-2">
+                    Icons are simple line drawings (not photos). They inherit the surrounding text color so they stay on-brand in light UI and in buttons.
+                    In the product we use one shared set so navigation, alerts, and cards all feel consistent.
+                  </p>
+                  <ul class="small text-ch-secondary mb-3 ps-3">
+                    <li><strong>Where they come from:</strong> the artwork is based on the open <a href="https://github.com/webalys-hq/streamline-vectors" rel="noopener noreferrer" target="_blank">Streamline vectors</a> family on GitHub (third-party library).</li>
+                    <li><strong>Culture Hive copy in this repo:</strong> the SVG “sprite” (one file with every icon) is
+                      <a href="https://github.com/benfrontyard/cultura-ui/blob/main/assets/icons/streamline-sprite.svg" rel="noopener noreferrer" target="_blank"><code>assets/icons/streamline-sprite.svg</code></a>
+                      (each icon has an <code>id</code> like <code>ch-house</code>). A vendored upstream checkout also lives under
+                      <a href="https://github.com/benfrontyard/cultura-ui/tree/main/vendor/streamline-vectors" rel="noopener noreferrer" target="_blank"><code>vendor/streamline-vectors/</code></a>.
+                      Sizing classes are in
+                      <a href="https://github.com/benfrontyard/cultura-ui/blob/main/assets/css/icons.css" rel="noopener noreferrer" target="_blank"><code>icons.css</code></a>
+                      (<code>.ch-icon</code>, <code>.ch-icon--sm</code>, <code>.ch-icon--xl</code>, <code>.ch-icon--2xl</code>).</li>
+                    <li><strong>For developers:</strong> when you open HTML from disk, <a href="https://github.com/benfrontyard/cultura-ui/blob/main/assets/js/ch-icon-sprite-inject.js" rel="noopener noreferrer" target="_blank"><code>ch-icon-sprite-inject.js</code></a> inlines the sprite so icons still render; regenerate it with <code>node scripts/sync-ch-icon-sprite-inject.mjs</code> after editing the sprite.</li>
+                  </ul>
+                  <p class="text-ch-muted small mb-3">Use <strong>Copy</strong> on a tile to grab the <code>#ch-…</code> fragment for <code>&lt;use href="…"&gt;</code> in markup.</p>
+                  <div class="row g-2 mb-0">
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-layout-sidebar"/></svg><code>#ch-layout-sidebar</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-layout-sidebar" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-house"/></svg><code>#ch-house</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-house" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-chat"/></svg><code>#ch-chat</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-chat" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-file-graph"/></svg><code>#ch-file-graph</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-file-graph" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-graph-up"/></svg><code>#ch-graph-up</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-graph-up" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-people"/></svg><code>#ch-people</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-people" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-megaphone"/></svg><code>#ch-megaphone</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-megaphone" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-list-ul"/></svg><code>#ch-list-ul</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-list-ul" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-cloud-upload"/></svg><code>#ch-cloud-upload</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-cloud-upload" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-folder"/></svg><code>#ch-folder</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-folder" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-diagram"/></svg><code>#ch-diagram</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-diagram" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-gear"/></svg><code>#ch-gear</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-gear" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-grid"/></svg><code>#ch-grid</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-grid" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-arrow-up-circle"/></svg><code>#ch-arrow-up-circle</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-arrow-up-circle" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-menu"/></svg><code>#ch-menu</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-menu" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-search"/></svg><code>#ch-search</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-search" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-bell"/></svg><code>#ch-bell</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-bell" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-help"/></svg><code>#ch-help</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-help" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-chevron-down"/></svg><code>#ch-chevron-down</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-chevron-down" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-chevron-right"/></svg><code>#ch-chevron-right</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-chevron-right" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-chevron-left"/></svg><code>#ch-chevron-left</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-chevron-left" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-lightning"/></svg><code>#ch-lightning</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-lightning" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-file-earmark"/></svg><code>#ch-file-earmark</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-file-earmark" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-arrow-up-right"/></svg><code>#ch-arrow-up-right</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-arrow-up-right" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-file-plus"/></svg><code>#ch-file-plus</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-file-plus" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-person-badge"/></svg><code>#ch-person-badge</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-person-badge" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-upload"/></svg><code>#ch-upload</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-upload" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-paperclip"/></svg><code>#ch-paperclip</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-paperclip" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-mic"/></svg><code>#ch-mic</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-mic" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-bookmarks"/></svg><code>#ch-bookmarks</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-bookmarks" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-send"/></svg><code>#ch-send</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-send" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-check"/></svg><code>#ch-check</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-check" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-check-circle"/></svg><code>#ch-check-circle</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-check-circle" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-plus"/></svg><code>#ch-plus</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-plus" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-alert-octagon"/></svg><code>#ch-alert-octagon</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-alert-octagon" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-file-csv"/></svg><code>#ch-file-csv</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-file-csv" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-pin"/></svg><code>#ch-pin</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-pin" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-phone"/></svg><code>#ch-phone</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-phone" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-instagram"/></svg><code>#ch-instagram</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-instagram" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-youtube"/></svg><code>#ch-youtube</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-youtube" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-tiktok"/></svg><code>#ch-tiktok</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-tiktok" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-eye"/></svg><code>#ch-eye</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-eye" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-eye-off"/></svg><code>#ch-eye-off</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-eye-off" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-dots-vertical"/></svg><code>#ch-dots-vertical</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-dots-vertical" aria-label="Copy icon fragment">Copy</button></div></div>
                   </div>
                 </section>
 
-                <section class="mb-5" aria-labelledby="tok-type">
+                <section class="ch-foundations-section mb-5" aria-labelledby="tok-colors">
+                  <h2 id="tok-colors" class="h5 ch-heading mb-3">Colors</h2>
+                  <p class="text-ch-secondary ch-type-body-sm mb-3">
+                    These swatches pull straight from the same variables the app uses. “Primary” is the main Culture Hive blue; other entries are page background, headline color, and default borders.
+                    Full scales and semantic states (success, warning, etc.) live in
+                    <a href="https://github.com/benfrontyard/cultura-ui/blob/main/assets/css/theme.css" rel="noopener noreferrer" target="_blank"><code>theme.css</code></a>.
+                  </p>
+                  <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 g-2">
+                    <div class="col"><div class="ch-swatch"><div class="ch-swatch-color" style="background: var(--ch-primary)"></div><div class="ch-swatch-meta"><code>--ch-primary</code><br /><code class="small">--color-primary-500</code></div></div></div>
+                    <div class="col"><div class="ch-swatch"><div class="ch-swatch-color" style="background: var(--ch-heading)"></div><div class="ch-swatch-meta"><code>--ch-heading</code><br /><code class="small">--text-heading</code></div></div></div>
+                    <div class="col"><div class="ch-swatch"><div class="ch-swatch-color" style="background: var(--ch-bg-page)"></div><div class="ch-swatch-meta"><code>--ch-bg-page</code><br /><code class="small">--color-bg-page</code></div></div></div>
+                    <div class="col"><div class="ch-swatch"><div class="ch-swatch-color" style="background: var(--ch-border)"></div><div class="ch-swatch-meta"><code>--ch-border</code><br /><code class="small">--border-default</code></div></div></div>
+                  </div>
+                </section>
+
+                <section class="ch-foundations-section mb-5" aria-labelledby="tok-type">
                   <h2 id="tok-type" class="h5 ch-heading mb-3">Typography</h2>
                   <p class="text-ch-secondary ch-type-body-sm mb-3">
-                    Font stacks stay Cultura: Epilogue (<code>--ch-font-display</code>) for the largest display headings, General Sans (<code>--ch-font-sans</code>) for UI and smaller headings.
-                    Size and line-height primitives follow the <a href="https://polaris.shopify.com/tokens/font" class="text-reset">Shopify Polaris font scale</a> (11px–40px, 4px line-height rhythm), exposed as <code>--ch-font-size-*</code> and <code>--ch-font-line-height-*</code>.
-                    Marketing-style fluid steps remain: <code>--ch-text-2xs</code>–<code>--ch-text-md</code>; <code>html</code> root uses <code>clamp()</code> (~16–17.5px).
+                    <strong>Fonts you will see:</strong>
+                    <a href="https://fonts.google.com/specimen/Epilogue" rel="noopener noreferrer" target="_blank">Epilogue</a> for big marketing-style titles,
+                    <a href="https://www.fontshare.com/fonts/general-sans" rel="noopener noreferrer" target="_blank">General Sans</a> for most UI text and smaller headings (loaded via Fontshare in this prototype).
+                    Technical sizing follows a clear step scale inspired by
+                    <a href="https://polaris.shopify.com/tokens/font" rel="noopener noreferrer" target="_blank">Shopify Polaris type tokens</a> (good reference for designers); in code those steps are <code>--ch-font-size-*</code> and <code>--ch-font-line-height-*</code>.
+                    Fluid sizes <code>--ch-text-2xs</code> through <code>--ch-text-md</code> plus a responsive root font size keep things readable on phones and desktops.
+                  </p>
+                  <p class="text-ch-secondary ch-type-body-sm mb-3">
+                    <strong>Heading weight:</strong> large titles use <strong>semibold (600)</strong>, not extra-heavy bold, so the product feels calm and enterprise rather than shouty.
                   </p>
                   <div class="table-responsive ch-card mb-4">
-                    <table class="table table-sm mb-0">
-                      <caption class="text-start px-3 py-2 text-ch-secondary ch-type-body-sm">Primitive sizes (rem @ 16px reference)</caption>
+                    <table class="table table-sm mb-0 ch-table">
+                      <caption class="text-start px-3 py-2 text-ch-secondary ch-type-body-sm">Type size tokens (rem at a 16px base)</caption>
                       <thead><tr><th scope="col">Token</th><th scope="col">≈ px</th></tr></thead>
                       <tbody>
-                        <tr><td><code>--ch-font-size-275</code> … <code>--ch-font-size-1000</code></td><td>11 → 40 (see <code>theme.css</code>)</td></tr>
-                        <tr><td><code>--ch-font-line-height-300</code> … <code>--ch-font-line-height-1200</code></td><td>12 → 48</td></tr>
+                        <tr><td><code>--ch-font-size-275</code> … <code>--ch-font-size-1000</code></td><td>11px → 40px steps (see <a href="https://github.com/benfrontyard/cultura-ui/blob/main/assets/css/theme.css" rel="noopener noreferrer" target="_blank"><code>theme.css</code></a>)</td></tr>
+                        <tr><td><code>--ch-font-line-height-300</code> … <code>--ch-font-line-height-1200</code></td><td>12px → 48px line-height steps</td></tr>
                       </tbody>
                     </table>
                   </div>
                   <div class="table-responsive ch-card mb-4">
-                    <table class="table table-sm mb-0">
-                      <caption class="text-start px-3 py-2 text-ch-secondary ch-type-body-sm">Semantic utilities (Polaris-style roles)</caption>
+                    <table class="table table-sm mb-0 ch-table">
+                      <caption class="text-start px-3 py-2 text-ch-secondary ch-type-body-sm">Ready-made text classes (what to use in markup)</caption>
                       <thead><tr><th scope="col">Class</th><th scope="col">Typical use</th></tr></thead>
                       <tbody>
                         <tr><td><code>.ch-type-heading-3xl</code></td><td>Rare hero / home greeting</td></tr>
@@ -302,11 +422,12 @@
                         <tr><td><code>.ch-type-heading-xl</code></td><td>Large in-content headline</td></tr>
                         <tr><td><code>.ch-type-heading-lg</code></td><td>Tool and settings page <code>h1</code></td></tr>
                         <tr><td><code>.ch-type-heading-md</code></td><td>Modal titles, panel titles</td></tr>
-                        <tr><td><code>.ch-type-heading-sm</code> / <code>.ch-type-heading-xs</code></td><td>Compact labels, uppercase section labels</td></tr>
+                        <tr><td><code>.ch-type-heading-sm</code> / <code>.ch-type-heading-xs</code></td><td>Compact section labels</td></tr>
                         <tr><td><code>.ch-type-section-title</code> … <code>.ch-type-caption</code></td><td>Legacy dashboard roles (mapped to the same scale)</td></tr>
                         <tr><td><code>.ch-type-body-lg</code> … <code>.ch-type-body-xs</code></td><td>Body density steps (aliases: <code>.ch-type-body-large</code> = lg, <code>.ch-type-body</code> = md)</td></tr>
+                        <tr><td><code>.ch-auth-title</code> + ramp class</td><td>Assistant sign-in headline (pair with <code>.ch-type-heading-xl</code>; see <a href="#comp-auth">Sign in</a>)</td></tr>
                         <tr><td><code>.ch-tabular-nums</code></td><td>Tables, metrics (<code>font-variant-numeric: tabular-nums</code>)</td></tr>
-                        <tr><td>Line breaks (<code>theme.css</code>)</td><td><code>h1</code>–<code>h6</code> in <code>.ch-app</code> and heading utilities use <code>text-wrap: balance</code>. Paragraphs and body/caption utilities use <code>text-wrap: pretty</code> plus <code>widows: 2</code> / <code>orphans: 2</code>. Prefer colons or a middle dot in titles over em dashes in copy.</td></tr>
+                        <tr><td>Line breaks (<code>theme.css</code>)</td><td>Headings use balanced line breaks where the browser supports it; body copy prefers “pretty” wrapping. When writing UI strings, favor short titles and simple punctuation.</td></tr>
                       </tbody>
                     </table>
                   </div>
@@ -324,73 +445,125 @@
                   <p class="ch-type-body-xs mb-0">Body xs: meta only (11px).</p>
                 </section>
 
-                <section class="mb-5" aria-labelledby="tok-space">
-                  <h2 id="tok-space" class="h5 ch-heading mb-3">Spacing, radius, elevation</h2>
+                <section class="ch-foundations-section mb-5" aria-labelledby="tok-semantic-color">
+                  <h2 id="tok-semantic-color" class="h5 ch-heading mb-3">Status colors (badges and alerts)</h2>
+                  <p class="text-ch-secondary small mb-3">
+                    Soft background tints with strong text keep status readable without screaming. Use them for chips (“Done”, “In progress”), banners, and validation—not for full-page decoration.
+                    Token names always start with <code>--ch-semantic-…</code>; the table below also shows friendlier alias names that map to the same values for documentation.
+                  </p>
+                  <div class="table-responsive ch-card mb-3">
+                    <table class="table table-sm mb-0 ch-table">
+                      <thead><tr><th scope="col">Friendly name</th><th scope="col">Underlying variable</th></tr></thead>
+                      <tbody>
+                        <tr><td><code>--color-primary-500</code></td><td><code>var(--ch-blue-500)</code></td></tr>
+                        <tr><td><code>--surface-card</code></td><td><code>var(--ch-surface)</code></td></tr>
+                        <tr><td><code>--border-subtle</code></td><td><code>var(--ch-neutral-200)</code></td></tr>
+                        <tr><td><code>--text-secondary</code></td><td><code>var(--ch-text-secondary)</code></td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="table-responsive ch-card mb-3">
+                    <table class="table table-sm mb-0 ch-table">
+                      <thead><tr><th scope="col">Token prefix</th><th scope="col">Roles</th></tr></thead>
+                      <tbody>
+                        <tr><td><code>--ch-semantic-info-*</code></td><td>Informational callouts, &quot;blue&quot; neutral status</td></tr>
+                        <tr><td><code>--ch-semantic-success-*</code></td><td>Positive completion, validation OK</td></tr>
+                        <tr><td><code>--ch-semantic-warning-*</code></td><td>In progress, attention without error</td></tr>
+                        <tr><td><code>--ch-semantic-danger-*</code></td><td>Errors, destructive confirmations</td></tr>
+                        <tr><td><code>--ch-semantic-neutral-*</code></td><td>Draft / inactive / default chips</td></tr>
+                        <tr><td><code>--ch-semantic-accent-*</code></td><td>Indigo-tinted feature or persona highlights</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="d-flex flex-wrap gap-2 mb-0">
+                    <span class="ch-pill ch-pill-neutral">Neutral</span>
+                    <span class="ch-pill ch-pill-info">Info</span>
+                    <span class="ch-pill ch-pill-success">Success</span>
+                    <span class="ch-pill ch-pill-warning">Warning</span>
+                    <span class="ch-pill ch-pill-danger">Danger</span>
+                    <span class="ch-pill ch-pill-accent">Accent</span>
+                  </div>
+                </section>
+
+                <section class="ch-foundations-section mb-5" aria-labelledby="tok-space">
+                  <h2 id="tok-space" class="h5 ch-heading mb-3">Spacing, corners, and shadow</h2>
+                  <p class="text-ch-secondary small mb-3">
+                    These numbers control padding inside the main workspace, gaps between cards, border roundness, and light shadows. They are ordinary CSS custom properties—change them in
+                    <a href="https://github.com/benfrontyard/cultura-ui/blob/main/assets/css/theme.css" rel="noopener noreferrer" target="_blank"><code>theme.css</code></a>
+                    to tighten or loosen the whole product at once.
+                  </p>
                   <div class="table-responsive ch-card">
-                    <table class="table table-sm mb-0">
+                    <table class="table table-sm mb-0 ch-table">
                       <thead><tr><th scope="col">Token</th><th scope="col">Value</th></tr></thead>
                       <tbody>
-                        <tr><td><code>--ch-content-pad-x</code></td><td>30px desktop / 22px ≤1200px / 18px ≤768px</td></tr>
-                        <tr><td><code>--ch-content-pad-y</code></td><td>22px desktop / 16px mobile (home primary column uses 26px desktop)</td></tr>
+                        <tr><td><code>--ch-content-pad-x</code></td><td>32px desktop / 24px ≤1200px / 20px ≤768px (4px grid)</td></tr>
+                        <tr><td><code>--ch-content-pad-y</code></td><td>24px desktop / 16px mobile (home primary column uses 28px desktop)</td></tr>
                         <tr><td><code>--ch-space-1</code> … <code>--ch-space-8</code></td><td>0.25rem → 2rem (component spacing)</td></tr>
                         <tr><td><code>--ch-space-grid</code> / <code>--ch-space-grid-compact</code></td><td>Fluid card grid gaps on the home dashboard</td></tr>
-                        <tr><td><code>--ch-icon-tile</code> / <code>--ch-icon-tile-sm</code></td><td>44px / 38px width for recent &amp; workflow icon cells (flat-top hex clip, height from <code>aspect-ratio</code>)</td></tr>
+                        <tr><td><code>--ch-icon-tile</code> / <code>--ch-icon-tile-sm</code></td><td>Fixed widths for small icon cells on home cards and workflows (see <code>theme.css</code>)</td></tr>
                         <tr><td><code>--ch-control-icon</code></td><td>36px (topbar / shell square buttons)</td></tr>
                         <tr><td><code>--ch-topbar-height</code></td><td>60px</td></tr>
                         <tr><td><code>--ch-sidebar-width</code></td><td>232px</td></tr>
                         <tr><td><code>--ch-rail-width</code></td><td>272px (home rail from xl only)</td></tr>
-                        <tr><td><code>--ch-radius-sm</code></td><td>10px</td></tr>
-                        <tr><td><code>--ch-radius</code></td><td>16px</td></tr>
-                        <tr><td><code>--ch-radius-lg</code></td><td>22px</td></tr>
+                        <tr><td><code>--ch-radius-2xs</code></td><td>4px (kbd chips, tight focus rounding)</td></tr>
+                        <tr><td><code>--ch-radius-xs</code> / <code>--ch-radius-sm</code></td><td>8px (controls, nav pills, small surfaces)</td></tr>
+                        <tr><td><code>--ch-radius</code></td><td>16px (cards, panels)</td></tr>
+                        <tr><td><code>--ch-radius-lg</code></td><td>20px (hero inputs, large shells)</td></tr>
+                        <tr><td><code>--ch-radius-pill</code></td><td>fully rounded (search field, tags, progress)</td></tr>
                         <tr><td><code>--ch-shadow</code></td><td>subtle lift (see theme.css)</td></tr>
+                        <tr><td><code>--ch-motion-duration-xs</code> … <code>--ch-motion-duration-md</code></td><td>150ms / 180ms / 320ms (paired with <code>prefers-reduced-motion</code> overrides)</td></tr>
                       </tbody>
                     </table>
                   </div>
                 </section>
 
-                <section class="mb-5" aria-labelledby="tok-hex-motif">
-                  <h2 id="tok-hex-motif" class="h5 ch-heading mb-3">Hex motif (flat-top)</h2>
-                  <p class="text-ch-secondary small mb-3">Reusable accent shape: flat edge on top, not stretched. Use on cards, rails, or inline markers — <strong>not</strong> as a full-page or <code>.ch-app</code> background.</p>
-                  <div class="d-flex flex-wrap align-items-center gap-3 mb-3">
-                    <span class="ch-motif-hex ch-motif-hex--tile" style="background: linear-gradient(200deg, rgba(31, 105, 218, 0.28), rgba(31, 105, 218, 0.06));" aria-hidden="true"></span>
-                    <span class="ch-motif-hex ch-motif-hex--tile-sm" style="background: var(--ch-primary); opacity: 0.22;" aria-hidden="true"></span>
-                    <span class="ch-motif-hex" style="width: 3rem; background: var(--ch-surface-subtle);" aria-hidden="true"></span>
-                  </div>
-                  <div class="table-responsive ch-card">
-                    <table class="table table-sm mb-0">
-                      <thead><tr><th scope="col">Token / class</th><th scope="col">Role</th></tr></thead>
-                      <tbody>
-                        <tr><td><code>--ch-hex-flat</code></td><td><code>clip-path</code> polygon (flat-top regular when box ratio is enforced)</td></tr>
-                        <tr><td><code>--ch-hex-flat-h</code></td><td><code>height: calc(width * var(--ch-hex-flat-h))</code> when you cannot use <code>aspect-ratio</code></td></tr>
-                        <tr><td><code>.ch-motif-hex</code></td><td>Clip + <code>aspect-ratio</code>; set <code>width</code> (or use tile modifiers)</td></tr>
-                        <tr><td><code>.ch-motif-hex--tile</code> / <code>.ch-motif-hex--tile-sm</code></td><td>Widths aligned to <code>--ch-icon-tile</code> / <code>--ch-icon-tile-sm</code></td></tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </section>
-
-                <section class="mb-5" aria-labelledby="tok-focus">
-                  <h2 id="tok-focus" class="h5 ch-heading mb-3">Focus</h2>
-                  <p class="text-ch-secondary mb-2">Tab to these controls: consistent <code>:focus-visible</code> ring across the app shell.</p>
+                <section class="ch-foundations-section mb-5" aria-labelledby="tok-focus">
+                  <h2 id="tok-focus" class="h5 ch-heading mb-3">Keyboard focus</h2>
+                  <p class="text-ch-secondary mb-2">
+                    When someone tabs through the interface, focused buttons and links get a clear blue ring so keyboard users know where they are. That behavior comes from shared focus styles in the theme, aligned with
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible" rel="noopener noreferrer" target="_blank"><code>:focus-visible</code> on MDN</a>.
+                  </p>
                   <button type="button" class="btn btn-primary me-2">Primary</button>
                   <button type="button" class="btn btn-outline-secondary">Outline</button>
                 </section>
 
-                <section class="mb-5" aria-labelledby="comp-buttons">
+                <section class="ch-foundations-section mb-5" aria-labelledby="comp-buttons">
                   <h2 id="comp-buttons" class="h5 ch-heading mb-3">Buttons</h2>
-                  <div class="d-flex flex-wrap gap-2 mb-2">
+                  <p class="text-ch-secondary small mb-3">
+                    Primary actions use solid blue; secondary actions use gray; destructive work uses red. Ghost-style buttons are light with a thin border so they feel quieter on dense screens.
+                    Under the hood these are standard <a href="https://getbootstrap.com/docs/5.3/components/buttons/" rel="noopener noreferrer" target="_blank">Bootstrap buttons</a> with Culture Hive colors wired in <code>theme.css</code>.
+                  </p>
+                  <div class="d-flex flex-wrap gap-2 mb-3">
                     <button type="button" class="btn btn-primary">Primary</button>
                     <button type="button" class="btn btn-secondary">Secondary</button>
                     <button type="button" class="btn btn-outline-primary">Outline</button>
+                    <button type="button" class="btn btn-outline-danger">Outline danger</button>
+                    <button type="button" class="btn btn-danger">Danger</button>
+                    <button type="button" class="btn btn-light border">Ghost</button>
                     <button type="button" class="btn btn-link">Link</button>
                     <button type="button" class="btn btn-primary" disabled>Disabled</button>
                     <button type="button" class="btn btn-primary" disabled><span class="spinner-border spinner-border-sm me-1" aria-hidden="true"></span>Loading</button>
                   </div>
-                  <button type="button" class="btn btn-light border" aria-label="Settings"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-gear"/></svg></button>
+                  <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                    <span class="small text-ch-muted me-1">Split</span>
+                    <div class="btn-group" role="group" aria-label="Example split button">
+                      <button type="button" class="btn btn-primary">Action</button>
+                      <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false"><span class="visually-hidden">Toggle dropdown</span></button>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Option A</a></li>
+                        <li><a class="dropdown-item" href="#">Option B</a></li>
+                      </ul>
+                    </div>
+                    <button type="button" class="btn btn-light border" aria-label="Settings"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-gear"/></svg></button>
+                  </div>
+                  <p class="text-ch-secondary small mb-0">Developers: map brand colors via <code>--bs-btn-*</code> variables in <a href="https://github.com/benfrontyard/cultura-ui/blob/main/assets/css/theme.css" rel="noopener noreferrer" target="_blank"><code>theme.css</code></a>.</p>
                 </section>
 
-                <section class="mb-5" aria-labelledby="comp-forms">
+                <section class="ch-foundations-section mb-5" aria-labelledby="comp-forms">
                   <h2 id="comp-forms" class="h5 ch-heading mb-3">Forms</h2>
+                  <p class="text-ch-secondary ch-type-body-sm mb-3">
+                    Labels, inputs, selects, and validation messages follow <a href="https://getbootstrap.com/docs/5.3/forms/overview/" rel="noopener noreferrer" target="_blank">Bootstrap form patterns</a>. Error states use Bootstrap’s invalid styles plus Culture Hive colors. Dense public surfaces (the Assistant gate) add <code>.ch-auth-*</code> spacing and label styles on top of the same controls—see <a href="#comp-auth">Sign in</a>.
+                  </p>
                   <div class="row g-3">
                     <div class="col-md-4">
                       <label for="fdemo1" class="form-label">Input</label>
@@ -412,39 +585,112 @@
                   </div>
                 </section>
 
-                <section class="mb-5" aria-labelledby="comp-cards">
-                  <h2 id="comp-cards" class="h5 ch-heading mb-3">Cards &amp; tiles</h2>
+                <section class="ch-foundations-section mb-5" id="comp-auth" aria-labelledby="comp-auth-h" data-ch-foundations-terms="sign in log in login signup register password auth gate assistant account">
+                  <h2 id="comp-auth-h" class="h5 ch-heading mb-3">Sign in and account creation</h2>
+                  <p class="text-ch-secondary ch-type-body-sm mb-3">
+                    The Culture Hive Assistant opens with the same split layout you see on
+                    <a href="chat/index.html"><code>chat/index.html</code></a>: media on the left, form on the right at desktop widths. All styling lives in
+                    <a href="https://github.com/benfrontyard/cultura-ui/blob/main/assets/css/theme.css" rel="noopener noreferrer" target="_blank"><code>theme.css</code></a> under the <code>.ch-auth-*</code> prefix—this page does not ship a separate auth stylesheet.
+                  </p>
+                  <ul class="text-ch-secondary ch-type-body-sm mb-3 ps-3">
+                    <li><strong>Title:</strong> <code>.ch-auth-title</code> with a type ramp class such as <code>.ch-type-heading-xl</code>.</li>
+                    <li><strong>Supporting line:</strong> <code>.ch-auth-lead</code> (uses body-large tokens).</li>
+                    <li><strong>Fields:</strong> <code>.ch-auth-field</code>, <code>.ch-auth-label</code> or <code>.ch-auth-label-row</code>, <code>.form-control.ch-auth-input</code>; password fields pair <code>.ch-auth-input-wrap</code>, <code>.ch-auth-input--toggle</code>, and <code>.ch-auth-password-toggle</code> with Streamline <code>#ch-eye</code> / <code>#ch-eye-off</code> icons.</li>
+                    <li><strong>Actions:</strong> <code>.btn.btn-primary.ch-auth-submit</code> for the primary action; secondary switches use <code>.ch-auth-text-link</code> (button element, underlined).</li>
+                    <li><strong>Footer chrome:</strong> <code>.ch-auth-hint</code>, <code>.ch-auth-page-footer</code>, <code>.ch-auth-footer-link</code> for legal and meta lines.</li>
+                  </ul>
+                  <p class="text-ch-muted ch-type-body-sm mb-3">
+                    Static specimen (password reveal is wired on the live Assistant page only):
+                  </p>
+                  <div class="ch-foundations-auth-demo">
+                    <h3 class="ch-auth-title ch-type-heading-xl" id="ch-foundations-auth-demo-title">Log in</h3>
+                    <p class="ch-auth-lead">Enter your details to open the workspace.</p>
+                    <form class="ch-auth-form" action="#" aria-labelledby="ch-foundations-auth-demo-title" novalidate onsubmit="return false;">
+                      <div class="ch-auth-field">
+                        <label for="ch-foundations-auth-email" class="ch-auth-label">Email</label>
+                        <input
+                          id="ch-foundations-auth-email"
+                          type="email"
+                          class="form-control ch-auth-input"
+                          placeholder="you@company.com"
+                          autocomplete="email"
+                        />
+                      </div>
+                      <div class="ch-auth-field">
+                        <div class="ch-auth-label-row">
+                          <label for="ch-foundations-auth-password" class="ch-auth-label mb-0">Password</label>
+                          <button type="button" class="ch-auth-text-link">Forgot password?</button>
+                        </div>
+                        <div class="ch-auth-input-wrap">
+                          <input
+                            id="ch-foundations-auth-password"
+                            type="password"
+                            class="form-control ch-auth-input ch-auth-input--toggle"
+                            autocomplete="current-password"
+                          />
+                          <button type="button" class="ch-auth-password-toggle" aria-label="Show password" aria-pressed="false">
+                            <svg class="ch-icon ch-icon--sm ch-auth-password-toggle__icon ch-auth-password-toggle__icon--show" aria-hidden="true" focusable="false">
+                              <use href="#ch-eye" />
+                            </svg>
+                            <svg class="ch-icon ch-icon--sm ch-auth-password-toggle__icon ch-auth-password-toggle__icon--hide" aria-hidden="true" focusable="false">
+                              <use href="#ch-eye-off" />
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                      <button type="submit" class="btn btn-primary w-100 ch-auth-submit">Log in</button>
+                    </form>
+                    <p class="ch-auth-signup mb-0">
+                      Don’t have an account?
+                      <button type="button" class="ch-auth-text-link">Sign up</button>
+                    </p>
+                  </div>
+                </section>
+
+                <section class="ch-foundations-section mb-5" aria-labelledby="comp-cards">
+                  <h2 id="comp-cards" class="h5 ch-heading mb-3">Cards and tiles</h2>
+                  <p class="text-ch-secondary small mb-3">
+                    Cards group related content on a white panel with a light border. “Tiles” here are larger click targets used on the home dashboard for quick actions and recent items.
+                  </p>
                   <div class="row g-2">
                     <div class="col-md-4">
                       <div class="ch-card ch-card-body"><div class="fw-semibold mb-1">Card</div><p class="small text-ch-secondary mb-0">Default surface + border.</p></div>
                     </div>
                     <div class="col-md-4">
-                      <a class="ch-workflow-tile" href="#"><div class="d-flex align-items-center gap-2 mb-1"><span class="ch-recent-icon ch-recent-icon--sm ch-accent-blue" aria-hidden="true"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-lightning"/></svg></span><span class="fw-semibold small">Workflow tile</span></div><p class="small text-ch-secondary mb-0">Entire tile clickable.</p><span class="ch-workflow-arrow" aria-hidden="true"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-arrow-up-right"/></svg></span></a>
+                      <a class="ch-workflow-tile" href="#"><div class="d-flex align-items-center gap-2 mb-1"><span class="ch-recent-icon ch-recent-icon--sm ch-accent-blue" aria-hidden="true"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-lightning"/></svg></span><span class="fw-semibold small">Workflow tile</span></div><p class="small text-ch-secondary mb-0">Entire tile clickable.</p><span class="ch-workflow-arrow" aria-hidden="true"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-arrow-up-right"/></svg></span></a>
                     </div>
                     <div class="col-md-4">
-                      <a class="ch-recent-card" href="#"><div class="d-flex gap-2"><div class="ch-recent-icon ch-accent-blue" aria-hidden="true"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-file-earmark"/></svg></div><div><div class="fw-semibold">Recent item</div><div class="small text-ch-muted">Metadata</div></div></div></a>
+                      <a class="ch-recent-card" href="#"><div class="d-flex gap-2"><div class="ch-recent-icon ch-accent-blue" aria-hidden="true"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-file-earmark"/></svg></div><div><div class="fw-semibold">Recent item</div><div class="small text-ch-muted">Metadata</div></div></div></a>
                     </div>
                   </div>
                 </section>
 
-                <section class="mb-5" aria-labelledby="comp-table">
-                  <h2 id="comp-table" class="h5 ch-heading mb-3">Table</h2>
+                <section class="ch-foundations-section mb-5" aria-labelledby="comp-table">
+                  <h2 id="comp-table" class="h5 ch-heading mb-3">Tables</h2>
+                  <p class="text-ch-secondary small mb-3">
+                    Data tables sit inside a card shell so they align with the rest of the dashboard. Wrap the table in <code>.table-responsive.ch-card</code> and add <code>.ch-table</code> on the <code>&lt;table&gt;</code> for Culture Hive’s header and row styling—see
+                    <a href="https://getbootstrap.com/docs/5.3/content/tables/" rel="noopener noreferrer" target="_blank">Bootstrap tables</a> for baseline behavior.
+                  </p>
                   <div class="table-responsive ch-card">
-                    <table class="table mb-0 ch-table">
+                    <table class="table table-hover mb-0 ch-table">
                       <caption class="px-3 pt-3 text-ch-secondary small">Sample caption for accessibility.</caption>
                       <thead><tr><th scope="col">Name</th><th scope="col">Status</th></tr></thead>
                       <tbody>
-                        <tr><td>Alpha</td><td><span class="badge rounded-pill ch-badge-completed">Completed</span></td></tr>
-                        <tr><td>Beta</td><td><span class="badge rounded-pill ch-badge-processing">Processing</span></td></tr>
-                        <tr><td>Gamma</td><td><span class="badge rounded-pill ch-badge-draft">Draft</span></td></tr>
+                        <tr><td>Alpha</td><td><span class="ch-pill ch-pill-success">Completed</span></td></tr>
+                        <tr><td>Beta</td><td><span class="ch-pill ch-pill-warning">Processing</span></td></tr>
+                        <tr><td>Gamma</td><td><span class="ch-pill ch-pill-neutral">Draft</span></td></tr>
                       </tbody>
                     </table>
                   </div>
                 </section>
 
-                <section class="mb-5" aria-labelledby="comp-tabs-bc">
-                  <h2 id="comp-tabs-bc" class="h5 ch-heading mb-3">Tabs &amp; breadcrumbs</h2>
-                  <nav aria-label="Breadcrumb example"><ol class="breadcrumb small mb-3"><li class="breadcrumb-item"><a href="index.html">Home</a></li><li class="breadcrumb-item active" aria-current="page">Foundations</li></ol></nav>
+                <section class="ch-foundations-section mb-5" aria-labelledby="comp-tabs-bc">
+                  <h2 id="comp-tabs-bc" class="h5 ch-heading mb-3">Tabs and wayfinding</h2>
+                  <p class="text-ch-secondary small mb-3">
+                    Inside the product shell we usually rely on the top bar back/forward buttons plus a clear page title instead of deep breadcrumb trails.
+                    For in-page sections, <a href="https://getbootstrap.com/docs/5.3/components/navs-tabs/#javascript-behavior" rel="noopener noreferrer" target="_blank">Bootstrap tabs</a> work as shown below. History buttons are wired in
+                    <a href="https://github.com/benfrontyard/cultura-ui/blob/main/assets/js/app.js" rel="noopener noreferrer" target="_blank"><code>app.js</code></a> (<code>initTopbarHistoryNav</code>).
+                  </p>
                   <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item" role="presentation"><button class="nav-link active" id="ftab1-tab" data-bs-toggle="tab" data-bs-target="#ftab1" type="button" role="tab" aria-controls="ftab1" aria-selected="true">Tab A</button></li>
                     <li class="nav-item" role="presentation"><button class="nav-link" id="ftab2-tab" data-bs-toggle="tab" data-bs-target="#ftab2" type="button" role="tab" aria-controls="ftab2" aria-selected="false">Tab B</button></li>
@@ -455,14 +701,20 @@
                   </div>
                 </section>
 
-                <section class="mb-5" aria-labelledby="comp-alerts">
-                  <h2 id="comp-alerts" class="h5 ch-heading mb-3">Alerts</h2>
+                <section class="ch-foundations-section mb-5" aria-labelledby="comp-alerts">
+                  <h2 id="comp-alerts" class="h5 ch-heading mb-3">Inline alerts</h2>
+                  <p class="text-ch-secondary small mb-3">
+                    Short messages for success, warnings, information, or errors. Same idea as <a href="https://getbootstrap.com/docs/5.3/components/alerts/" rel="noopener noreferrer" target="_blank">Bootstrap alerts</a>, with Culture Hive tints from <code>theme.css</code>.
+                  </p>
                   <div class="alert alert-success" role="status">Success state</div>
-                  <div class="alert alert-warning mb-0" role="status">Warning state</div>
+                  <div class="alert alert-warning" role="status">Warning state</div>
+                  <div class="alert alert-info" role="status">Info state</div>
+                  <div class="alert alert-danger mb-0" role="status">Danger state</div>
                 </section>
 
-                <section class="mb-5" aria-labelledby="comp-empty">
-                  <h2 id="comp-empty" class="h5 ch-heading mb-3">Empty state</h2>
+                <section class="ch-foundations-section mb-5" aria-labelledby="comp-empty">
+                  <h2 id="comp-empty" class="h5 ch-heading mb-3">Empty states</h2>
+                  <p class="text-ch-secondary small mb-3">When there is nothing to show yet, explain what is missing in plain language and offer one clear next step (a single primary button).</p>
                   <div class="ch-card ch-card-body text-center py-5">
                     <div class="ch-brand-wordmark mx-auto mb-3">
                       <img src="assets/img/cultura-logo.png" alt="Cultura by Culture Hive" decoding="async" />
@@ -473,18 +725,26 @@
                   </div>
                 </section>
 
-                <section class="mb-5" aria-labelledby="comp-overlays">
-                  <h2 id="comp-overlays" class="h5 ch-heading mb-3">Modal &amp; toast</h2>
+                <section class="ch-foundations-section mb-5" aria-labelledby="comp-overlays">
+                  <h2 id="comp-overlays" class="h5 ch-heading mb-3">Modals and toasts</h2>
+                  <p class="text-ch-secondary small mb-3">
+                    Modals pause the page for a focused task; toasts are small slide-in notices. Both come from
+                    <a href="https://getbootstrap.com/docs/5.3/components/modal/" rel="noopener noreferrer" target="_blank">Bootstrap modals</a>
+                    and <a href="https://getbootstrap.com/docs/5.3/components/toasts/" rel="noopener noreferrer" target="_blank">Bootstrap toasts</a> with Culture Hive styling.
+                  </p>
                   <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#chFoundationModal">Open modal</button>
                   <button type="button" class="btn btn-outline-primary" data-ch-demo-toast>Show toast</button>
                 </section>
 
-                <section class="mb-5" aria-labelledby="comp-upload-ai">
-                  <h2 id="comp-upload-ai" class="h5 ch-heading mb-3">Upload &amp; AI blocks</h2>
+                <section class="ch-foundations-section mb-5" aria-labelledby="comp-upload-ai">
+                  <h2 id="comp-upload-ai" class="h5 ch-heading mb-3">Uploads and AI prompts</h2>
+                  <p class="text-ch-secondary small mb-3">
+                    File drop zones and the AI prompt box reuse the same spacing and borders as the rest of the product so assistant flows feel like part of the workspace, not a separate skin.
+                  </p>
                   <div class="ch-dropzone mb-3" data-ch-dropzone role="region" aria-label="Example dropzone"><p class="mb-0 small text-ch-secondary">Drag files (demo state only)</p></div>
                   <div class="ch-ai-prompt mb-2">
                     <label for="fdemo-ai" class="visually-hidden">AI prompt</label>
-                    <textarea id="fdemo-ai" class="form-control" rows="2" placeholder="Ask Cultura AI…"></textarea>
+                    <textarea id="fdemo-ai" class="form-control" rows="2" placeholder="Ask Culture Hive AI…"></textarea>
                     <div class="d-flex justify-content-end mt-2 pt-2 border-top"><button type="button" class="btn btn-primary btn-sm" aria-label="Send">Send</button></div>
                   </div>
                   <div class="border rounded p-3 bg-white">
@@ -497,10 +757,18 @@
                   </div>
                 </section>
 
-                <section class="mb-2" aria-labelledby="comp-nav">
-                  <h2 id="comp-nav" class="h5 ch-heading mb-3">Sidebar nav states</h2>
-                  <p class="text-ch-secondary small">Live states appear in the app shell. Each page sets <code>data-ch-current</code> on <code>&lt;body&gt;</code>; <code>assets/js/app.js</code> marks the matching <code>data-ch-nav</code> link with <code>.ch-nav-active</code> / Bootstrap <code>.active</code> and opens the parent <code>&lt;details class="ch-nav-group"&gt;</code> when the route lives inside a collapsible section. In the desktop sidebar and mobile drawer, the active row uses a neutral pill background (<code>--ch-sidebar-nav-pill</code>) with no left accent; other surfaces may still use the legacy blue rail (<code>--ch-nav-active-indicator-width</code>).</p>
+                <section class="ch-foundations-section mb-2" aria-labelledby="comp-nav">
+                  <h2 id="comp-nav" class="h5 ch-heading mb-3">Navigation</h2>
+                  <p class="text-ch-secondary small">
+                    The left rail lists main areas of the product; the current page is highlighted automatically. Each screen sets a simple marker on the <code>&lt;body&gt;</code> tag; JavaScript in
+                    <a href="https://github.com/benfrontyard/cultura-ui/blob/main/assets/js/app.js" rel="noopener noreferrer" target="_blank"><code>app.js</code></a>
+                    matches that marker to the correct nav link. On small screens the same links appear inside a slide-out menu. Back and forward in the top bar follow normal browser history.
+                    <span class="d-block mt-2"><strong>Developers:</strong> look for <code>data-ch-current</code> on the page, <code>data-ch-nav</code> on links, optional <code>&lt;details class="ch-nav-group"&gt;</code> for grouped items, and <code>initTopbarHistoryNav</code> for the history buttons.</span>
+                  </p>
                 </section>
+                    </div>
+                  </div>
+                </div>
               </main>
             </div>
           </div>
@@ -540,82 +808,37 @@
           <ul class="list-unstyled mb-0">
             <li>
               <a class="ch-nav-link" href="index.html" data-ch-nav="home">
-                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-house"/></svg><span class="ch-nav-label">Home</span>
+                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-house"/></svg><span class="ch-nav-label">Home</span>
               </a>
             </li>
             <li>
-              <a class="ch-nav-link" href="chat/" data-ch-nav="ai-chat">
-                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-chat"/></svg><span class="ch-nav-label">Chat</span>
+              <a class="ch-nav-link" href="chat/index.html" data-ch-nav="ai-chat">
+                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-chat"/></svg><span class="ch-nav-label">Assistant</span>
               </a>
             </li>
             <li>
-              <details class="ch-nav-group">
-                <summary>
-                  <span class="ch-nav-group-label">CRS reports</span>
-                  <svg class="ch-nav-group-caret" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-chevron-down"/></svg>
-                </summary>
-                <ul class="ch-nav-group-list list-unstyled mb-0">
-                  <li>
-                    <a class="ch-nav-link" href="#" data-ch-nav="crs-reports" data-ch-audience-gate data-ch-post-select-href="crs-reports.html">
-                      <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-file-graph"/></svg><span class="ch-nav-label">CRS Reports</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="ch-nav-link" href="crs-reports.html#crs-scores" data-ch-nav="crs-scores">
-                      <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-graph-up"/></svg><span class="ch-nav-label">CRS Scores</span>
-                    </a>
-                  </li>
-                </ul>
-              </details>
+              <a class="ch-nav-link" href="#" data-ch-nav="crs-reports" data-ch-audience-gate data-ch-post-select-href="crs-reports.html">
+                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-file-graph"/></svg><span class="ch-nav-label">Reports</span>
+              </a>
             </li>
             <li>
-              <details class="ch-nav-group">
-                <summary>
-                  <span class="ch-nav-group-label">Audience &amp; campaigns</span>
-                  <svg class="ch-nav-group-caret" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-chevron-down"/></svg>
-                </summary>
-                <ul class="ch-nav-group-list list-unstyled mb-0">
-                  <li>
-                    <a class="ch-nav-link" href="#" data-ch-nav="personas" data-ch-audience-gate data-ch-post-select-href="persona-detail.html">
-                      <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-people"/></svg><span class="ch-nav-label">Persona</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="ch-nav-link" href="#" data-ch-nav="campaign" data-ch-audience-gate data-ch-post-select-modal="#chCampaignModal">
-                      <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-megaphone"/></svg><span class="ch-nav-label">Campaign</span>
-                    </a>
-                  </li>
-                </ul>
-              </details>
+              <a class="ch-nav-link" href="#" data-ch-nav="personas" data-ch-audience-gate data-ch-post-select-href="persona-detail.html">
+                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-people"/></svg><span class="ch-nav-label">Personas</span>
+              </a>
             </li>
             <li>
-              <details class="ch-nav-group">
-                <summary>
-                  <span class="ch-nav-group-label">CSV &amp; files</span>
-                  <svg class="ch-nav-group-caret" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-chevron-down"/></svg>
-                </summary>
-                <ul class="ch-nav-group-list list-unstyled mb-0">
-                  <li>
-                    <a class="ch-nav-link" href="upload-csv.html" data-ch-nav="upload">
-                      <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-cloud-upload"/></svg><span class="ch-nav-label">Download CSV template</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="ch-nav-link" href="processed-csvs/" data-ch-nav="processed-csvs">
-                      <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-folder"/></svg><span class="ch-nav-label">Processed CSV</span>
-                    </a>
-                  </li>
-                </ul>
-              </details>
+              <a class="ch-nav-link" href="audiences.html" data-ch-nav="audiences">
+                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-list-ul"/></svg><span class="ch-nav-label">Audiences</span>
+              </a>
             </li>
             <li>
-              <a class="ch-nav-link" href="#" data-ch-nav="blueprint">
-                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-diagram"/></svg><span class="ch-nav-label">Cultural Blueprint</span>
+              <a class="ch-nav-link" href="processed-csvs/index.html" data-ch-nav="files">
+                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-folder"/></svg><span class="ch-nav-label">Files</span>
               </a>
             </li>
             <li class="ch-dev-only-nav d-none">
               <a class="ch-nav-link" href="ui-foundations.html" data-ch-nav="foundations">
-                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="assets/icons/streamline-sprite.svg#ch-grid"/></svg><span class="ch-nav-label">UI Foundations</span>
+                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-grid"/></svg><span class="ch-nav-label">UI Foundations</span>
               </a>
             </li>
           </ul>
@@ -633,12 +856,79 @@
           </div>
           <div class="modal-body">
             <label for="chAudienceSearch" class="form-label">Search audiences</label>
-            <input type="search" class="form-control mb-3" id="chAudienceSearch" placeholder="Type to filter…" autocomplete="off" />
-            <ul class="list-unstyled mb-0 d-flex flex-column gap-1" id="chAudienceList">
-              <li class="ch-audience-row" data-ch-audience-name="Urban Gen Z Sneaker" role="button" tabindex="0">Urban Gen Z Sneaker</li>
-              <li class="ch-audience-row" data-ch-audience-name="National Sports Fans" role="button" tabindex="0">National Sports Fans</li>
-              <li class="ch-audience-row" data-ch-audience-name="Retail Foot Traffic" role="button" tabindex="0">Retail Foot Traffic</li>
-              <li class="ch-audience-row" data-ch-audience-name="Streaming Co-Viewing HH" role="button" tabindex="0">Streaming Co-Viewing HH</li>
+            <input type="search" class="form-control mb-3" id="chAudienceSearch" placeholder="Filter audiences…" autocomplete="off" />
+            <ul
+              class="list-unstyled mb-0 d-flex flex-column gap-1"
+              id="chAudienceList"
+              role="listbox"
+              aria-labelledby="chAudienceModalLabel"
+            >
+              <li role="presentation">
+                <button
+                  type="button"
+                  class="ch-audience-row w-100 text-start"
+                  role="option"
+                  aria-selected="false"
+                  data-ch-audience-name="Urban Wellness Consumers"
+                >
+                  Urban Wellness Consumers
+                </button>
+              </li>
+              <li role="presentation">
+                <button
+                  type="button"
+                  class="ch-audience-row w-100 text-start"
+                  role="option"
+                  aria-selected="false"
+                  data-ch-audience-name="Digital Wellness Seekers"
+                >
+                  Digital Wellness Seekers
+                </button>
+              </li>
+              <li role="presentation">
+                <button
+                  type="button"
+                  class="ch-audience-row w-100 text-start"
+                  role="option"
+                  aria-selected="false"
+                  data-ch-audience-name="Creator-Led Shoppers"
+                >
+                  Creator-Led Shoppers
+                </button>
+              </li>
+              <li role="presentation">
+                <button
+                  type="button"
+                  class="ch-audience-row w-100 text-start"
+                  role="option"
+                  aria-selected="false"
+                  data-ch-audience-name="Budget-Smart Families"
+                >
+                  Budget-Smart Families
+                </button>
+              </li>
+              <li role="presentation">
+                <button
+                  type="button"
+                  class="ch-audience-row w-100 text-start"
+                  role="option"
+                  aria-selected="false"
+                  data-ch-audience-name="Urban Design Optimizers"
+                >
+                  Urban Design Optimizers
+                </button>
+              </li>
+              <li role="presentation">
+                <button
+                  type="button"
+                  class="ch-audience-row w-100 text-start"
+                  role="option"
+                  aria-selected="false"
+                  data-ch-audience-name="Community Connectors"
+                >
+                  Community Connectors
+                </button>
+              </li>
             </ul>
           </div>
           <div class="modal-footer">
@@ -657,7 +947,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close dialog"></button>
           </div>
           <div class="modal-body">
-            <p class="mb-0">This is a static workspace stub. Hook your campaign builder route here when it exists.</p>
+            <p class="mb-0">Campaign planning and flighting tools are not available in this preview workspace.</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
@@ -675,12 +965,40 @@
           </div>
           <div class="modal-body">
             <ul class="mb-0">
-              <li><a href="https://theculturehive.ai" rel="noopener noreferrer" target="_blank">Culture Hive</a></li>
-              <li><a href="#">Support center</a> (placeholder)</li>
+              <li>
+                <a href="https://theculturehive.ai" rel="noopener noreferrer" target="_blank"
+                  >Culture Hive<span class="visually-hidden"> (opens in new tab)</span></a
+                >
+              </li>
+              <li class="text-ch-secondary small">Product documentation is not linked in this preview build.</li>
             </ul>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <div class="modal fade" id="chCommandPalette" tabindex="-1" aria-labelledby="chCommandPaletteLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header border-0 pb-0">
+            <h2 class="modal-title ch-type-heading-md" id="chCommandPaletteLabel">Search workspace</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close dialog"></button>
+          </div>
+          <div class="modal-body pt-2">
+            <label for="chCommandPaletteFilter" class="visually-hidden">Filter destinations</label>
+            <input type="search" class="form-control mb-3" id="chCommandPaletteFilter" placeholder="Filter brands, audiences, and saved work…" autocomplete="off" />
+            <div class="list-group ch-command-palette-list">
+              <a href="crs-reports.html#crs-scores" class="list-group-item list-group-item-action" data-ch-palette-label="urban wellness cultural blueprint scores report">Urban Wellness Cultural Blueprint</a>
+              <a href="persona-detail.html#persona-overview" class="list-group-item list-group-item-action" data-ch-palette-label="urban wellness consumer audience profile persona">Urban Wellness Consumer Profile</a>
+              <a href="upload-csv.html#upload-zone" class="list-group-item list-group-item-action" data-ch-palette-label="audience signals CSV upload data">Audience signals CSV upload</a>
+              <a href="processed-csvs/index.html" class="list-group-item list-group-item-action" data-ch-palette-label="processed audience data files">Processed audience data</a>
+              <a href="audiences.html" class="list-group-item list-group-item-action" data-ch-palette-label="cultural segments library audiences">Cultural segments library</a>
+              <a href="chat/index.html" class="list-group-item list-group-item-action" data-ch-palette-label="Culture Hive assistant chat">Open Culture Hive Assistant</a>
+            </div>
+            <p class="small text-ch-muted mb-0 mt-3">Choose a destination or press Escape to close.</p>
           </div>
         </div>
       </div>
