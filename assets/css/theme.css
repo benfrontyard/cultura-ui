@@ -1502,10 +1502,16 @@ body[data-ch-current="home"] {
   height: 100%;
   min-width: 0;
   text-decoration: none;
+  text-align: start;
   color: inherit;
   display: block;
   transition: border-color 0.18s ease-out;
   box-shadow: var(--ch-shadow-sm);
+}
+
+.ch-recent-card > .d-flex {
+  width: 100%;
+  justify-content: flex-start;
 }
 
 .ch-recent-card .ch-type-card-title {
@@ -1519,6 +1525,9 @@ button.ch-recent-card {
   font: inherit;
   color: inherit;
   cursor: pointer;
+  /* Match <a.ch-recent-card>: UA styles center inline content in buttons and use shrink-to-fit sizing. */
+  display: block;
+  text-align: start;
 }
 
 .ch-recent-icon {
@@ -2009,6 +2018,22 @@ body[data-ch-current="home"] .ch-home-assistant.ch-ai-prompt.ch-home-assistant--
   font-size: var(--ch-font-size-300);
   --bs-table-cell-padding-x: 1.25rem;
   --bs-table-cell-padding-y: 1rem;
+}
+
+@media (max-width: 767.98px) {
+  .ch-app .table.ch-table {
+    --bs-table-cell-padding-x: 1rem;
+    --bs-table-cell-padding-y: 0.875rem;
+  }
+
+  .ch-app .table.table-sm.ch-table {
+    --bs-table-cell-padding-x: 0.75rem;
+    --bs-table-cell-padding-y: 0.625rem;
+  }
+
+  .ch-app .table-responsive.ch-card .ch-segment-list > .list-group-item {
+    padding: 1rem 1rem;
+  }
 }
 
 @media (hover: none) {
@@ -3037,4 +3062,20 @@ button.ch-audience-row {
 
 .dropdown-menu .ch-locale-select {
   max-width: none;
+}
+
+/* Fixed chrome: respect safe areas on notched phones */
+#chToastHost.toast-container {
+  padding-bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+  padding-inline-end: calc(1rem + env(safe-area-inset-end, 0px));
+}
+
+#chCommandPalette .modal-dialog.modal-fullscreen-md-down .modal-content {
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+#chCommandPaletteFilter.form-control {
+  font-size: max(1rem, var(--ch-type-body-large-size));
+  min-height: 2.75rem;
 }

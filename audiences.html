@@ -203,6 +203,16 @@
             </div>
           </div>
           <div class="ch-topbar-actions d-flex align-items-center gap-1 ms-auto flex-nowrap justify-content-end">
+            <button
+              type="button"
+              class="btn btn-light border d-md-none flex-shrink-0"
+              data-ch-command-palette-open
+              aria-haspopup="dialog"
+              aria-controls="chCommandPalette"
+              aria-label="Search workspace"
+            >
+              <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-search"/></svg>
+            </button>
             <div class="dropdown">
               <button
                 type="button"
@@ -514,7 +524,7 @@
     </div>
 
         <div class="modal fade" id="chCommandPalette" tabindex="-1" aria-labelledby="chCommandPaletteLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg modal-fullscreen-md-down">
         <div class="modal-content">
           <div class="modal-header border-0 pb-0">
             <h2 class="modal-title ch-type-heading-md" id="chCommandPaletteLabel">Search workspace</h2>

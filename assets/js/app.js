@@ -836,10 +836,18 @@
       }
     });
 
-    $("#global-search").on("focus", function () {
+    $(document).on("click", "[data-ch-command-palette-open]", function (e) {
+      e.preventDefault();
       openPalette();
-      $(this).blur();
     });
+
+    var $globalSearch = $("#global-search");
+    if ($globalSearch.length) {
+      $globalSearch.on("focus", function () {
+        openPalette();
+        $(this).blur();
+      });
+    }
 
     $(document).on("click", "#chCommandPalette .list-group-item-action", function () {
       var el = document.getElementById("chCommandPalette");
