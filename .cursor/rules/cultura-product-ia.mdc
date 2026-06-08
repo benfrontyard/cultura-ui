@@ -1,0 +1,31 @@
+---
+description: Cultura product IA — decision/workflow product with AI as cross-screen support layer
+globs:
+  - "**/*.html"
+  - "assets/js/app.js"
+  - "assets/css/theme.css"
+---
+
+# Cultura product IA
+
+## Decision/workflow product (not analytics dashboard)
+
+- The core object is an **Analysis** — input → CRS verdict → evidence → next actions → activation.
+- CRS displays must include **verdict + rationale** (evidence cards, inline copy), not decorative charts alone.
+- Dashboard leads with **New Analysis** and Recent Analyses; KPIs stay secondary and visually subdued.
+- Workflow CTAs (Create Activation, Save Segment, Create Deal ID) outrank Ask AI in button hierarchy.
+
+## AI as support layer (not primary IA)
+
+- Structured UI leads; copilot drawer supports **explanation**, **interrogation**, and **workflow help**.
+- No chat input on dashboard hero; no Assistant in primary sidebar nav.
+- Copilot is an offcanvas drawer (`#chCopilotDrawer`) with context pill and page/tab-aware suggestions.
+- Full-page chat (`chat/index.html`) is exploration depth — links back to analyses workflow.
+- Chat starters must not compete with New Analysis entry points.
+
+## When adding UI
+
+1. Does the user know what to do next? Every analysis view ends with an action.
+2. Can they defend the score? Every CRS display needs a "because…"
+3. Is Ask AI secondary to workflow actions?
+4. Do charts earn their place? Prefer evidence cards and planning inputs over trend visuals.

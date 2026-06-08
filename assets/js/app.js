@@ -14,14 +14,18 @@
 
   function highlightNav() {
     var current = getCurrentPage();
+    var navKey = current;
+    if (current === "analyses-detail" || current === "analyses-new") {
+      navKey = "analyses";
+    }
     $(".ch-nav-link[data-ch-nav]").each(function () {
       var $link = $(this);
       var key = ($link.attr("data-ch-nav") || "").trim();
-      $link.toggleClass("active ch-nav-active", key === current);
+      $link.toggleClass("active ch-nav-active", key === navKey);
     });
     $(".ch-nav-link[data-ch-nav]").removeAttr("aria-current");
     var $match = $(".ch-nav-link[data-ch-nav]").filter(function () {
-      return ($(this).attr("data-ch-nav") || "").trim() === current;
+      return ($(this).attr("data-ch-nav") || "").trim() === navKey;
     });
     if ($match.length) {
       $match.first().attr("aria-current", "page");
@@ -120,7 +124,9 @@
   function initToastDemo() {
     $(document).on("click", "[data-ch-demo-toast]", function (e) {
       e.preventDefault();
-      showToast("Audience saved to your workspace.", "primary");
+      var msg = $(this).attr("data-ch-toast-message") || "Action completed.";
+      var variant = $(this).attr("data-ch-toast-variant") || "secondary";
+      showToast(msg, variant);
     });
   }
 
@@ -667,149 +673,6 @@
     });
   }
 
-  function homeAssistantReplyForUserMessage(msg) {
-    var t = (msg || "").toLowerCase();
-    if (t.indexOf("gen z sneaker") !== -1 || t.indexOf("sneaker collectors") !== -1) {
-      return (
-        "For Gen Z sneaker collectors, prioritize creator-led discovery, resale community trust, and short-form education. " +
-        "I can align a cultural blueprint around identity, hype cycles, and the media habits where purchase intent forms."
-      );
-    }
-    if (t.indexOf("multicultural streaming") !== -1 || t.indexOf("sports audiences") !== -1) {
-      return (
-        "Sports audiences are increasingly co-viewing across CTV and mobile, with multicultural households over-indexing on live moments and recap culture. " +
-        "We should map cultural signals by league affinity, language preference, and creator commentary, not generic sports hype."
-      );
-    }
-    if (t.indexOf("urban wellness") !== -1 || t.indexOf("cultural signals") !== -1) {
-      return (
-        "Urban wellness consumers respond to routines, trusted expertise, and community validation. " +
-        "Key signals include holistic health framing, convenience, and culturally authentic storytelling in the feeds where decisions are shaped."
-      );
-    }
-    if (t.indexOf("sustainable home") !== -1 || t.indexOf("home shoppers") !== -1) {
-      return (
-        "Sustainable home shoppers blend practicality with design-forward expectations. " +
-        "Lead with proof of everyday use, peer validation, and clear value; support with creator-led tours and practical sustainability explainers."
-      );
-    }
-    if (t.indexOf("csv") !== -1 || t.indexOf("upload") !== -1) {
-      return (
-        "I can profile the latest audience data upload, flag quality issues, and suggest segment cuts before you generate a blueprint. " +
-        "Open Files → Upload CSV when you are ready to stage a new dataset."
-      );
-    }
-    return (
-      "Start with a brand, category, or audience you care about. " +
-      "I can help you generate a cultural blueprint, compare segments, or pressure-test activation ideas using the saved work in this workspace."
-    );
-  }
-
-  function initHomeAssistant() {
-    var $root = $("#chHomeAssistant");
-    var $ta = $("#home-ai-input");
-    var $send = $("#chHomeAiSend");
-    var $count = $("#chHomeCharCount");
-    var $scroll = $("#chHomeAssistantScroll");
-    var $threadWrap = $("#chHomeAssistantThreadWrap");
-    var $compose = $("#chHomeAssistantCompose");
-    var $flowSlot = $("#chHomeAssistantFlowSlot");
-    if (!$root.length || !$ta.length || !$send.length || !$scroll.length || !$compose.length) return;
-
-    function sync() {
-      var raw = $ta.val() || "";
-      var len = raw.length;
-      if ($count.length) $count.text(String(len));
-      $send.prop("disabled", len === 0 || len > 2000);
-    }
-
-    function clearFlowSlot() {
-      $flowSlot.addClass("d-none").empty();
-    }
-
-    function setThreadMode(on) {
-      $root.toggleClass("ch-home-assistant--thread", on);
-      $threadWrap.toggleClass("ch-home-assistant-thread-wrap--idle", !on);
-    }
-
-    function resetCompose() {
-      $scroll.empty();
-      clearFlowSlot();
-      setThreadMode(false);
-      $ta.val("").trigger("input");
-      $ta.trigger("focus");
-    }
-
-    function openThread() {
-      setThreadMode(true);
-    }
-
-    function pushUserThenAssistant(userText, assistantText) {
-      openThread();
-      appendChatUserBubble($scroll, userText);
-      appendChatAssistantBubble($scroll, { text: assistantText });
-      scrollChatToEnd($scroll);
-    }
-
-    function pushAssistantOnly(assistantText, showCsvDropzone) {
-      openThread();
-      appendChatAssistantBubble($scroll, { text: assistantText });
-      if (showCsvDropzone) {
-        $flowSlot.removeClass("d-none").html(
-          '<div class="ch-dropzone" data-ch-dropzone role="region" aria-label="Upload CSV for analysis">' +
-            '<svg class="ch-icon ch-icon--2xl text-ch-muted mb-2 d-block mx-auto" aria-hidden="true" focusable="false">' +
-            '<use href="#ch-cloud-upload"/></svg>' +
-            '<p class="fw-semibold mb-1 text-center">Drag and drop a CSV file</p>' +
-            '<p class="small text-ch-secondary mb-0 text-center">Preview only: files are not uploaded.</p>' +
-            "</div>"
-        );
-      } else {
-        clearFlowSlot();
-      }
-      scrollChatToEnd($scroll);
-    }
-
-    $ta.on("input", sync);
-    sync();
-
-    $("#chHomeAssistantReset").on("click", function () {
-      resetCompose();
-    });
-
-    $send.on("click", function () {
-      if ($send.prop("disabled")) return;
-      var msg = ($ta.val() || "").trim();
-      if (!msg || msg.length > 2000) return;
-      var reply = homeAssistantReplyForUserMessage(msg);
-      pushUserThenAssistant(msg, reply);
-      $ta.val("").trigger("input");
-    });
-
-    $(document).on("click", "[data-ch-home-suggest]", function () {
-      var text = ($(this).attr("data-ch-home-suggest") || $(this).text() || "").trim();
-      if (!text) return;
-      var reply = homeAssistantReplyForUserMessage(text);
-      pushUserThenAssistant(text, reply);
-      $ta.val("").trigger("input");
-    });
-
-    $(document).on("click", "[data-ch-home-continue-thread]", function (e) {
-      e.preventDefault();
-      pushAssistantOnly(
-        "Picking up your sustainable home blueprint thread. Last time we were prioritizing creator-led discovery and peer validation for budget-smart families. " +
-          "Should I continue with segment momentum, or shift to channel mix for short-form video?",
-        false
-      );
-    });
-
-    $ta.on("keydown", function (e) {
-      if (e.key === "Enter" && !e.shiftKey) {
-        e.preventDefault();
-        $send.trigger("click");
-      }
-    });
-  }
-
   function initGlobalCommandPalette() {
     var $modal = $("#chCommandPalette");
     var $filter = $("#chCommandPaletteFilter");
@@ -1130,6 +993,312 @@
     render();
   }
 
+  var COPILOT_PAGE_SUGGESTIONS = {
+    home: [
+      "What should I analyze next?",
+      "Resume my last analysis",
+      "Explain how CRS scoring works",
+    ],
+    analyses: [
+      "Compare ESPN vs Nike brief",
+      "Filter activation-ready analyses",
+      "What makes a strong CRS score?",
+    ],
+    "analyses-new": [
+      "What input type fits a CTV app?",
+      "Suggest audience for espn.com",
+      "How does domain analysis work?",
+    ],
+    audiences: [
+      "How does Diego Ramirez affect CRS?",
+      "What stereotypes should we avoid?",
+      "Use this segment in a new analysis",
+    ],
+  };
+
+  var ANALYSIS_COPILOT_SUGGESTIONS = {
+    "#tab-overview": [
+      "Explain why this scored 82",
+      "What would improve the score?",
+      "Summarize for a client",
+      "What are the top risks?",
+    ],
+    "#tab-audience": [
+      "Turn this persona into targeting criteria",
+      "What creative tone would resonate?",
+      "What stereotypes should we avoid?",
+    ],
+    "#tab-inventory": [
+      "Why was this domain included?",
+      "Find more Spanish-language sports inventory",
+      "Exclude general-market domains",
+    ],
+    "#tab-blueprint": [
+      "Summarize this blueprint in 3 bullets",
+      "What cultural tensions should we be aware of?",
+    ],
+    "#tab-campaign-plan": [
+      "Recommend a lower-budget version",
+      "Adjust this for awareness",
+      "Rewrite this for a media buyer",
+    ],
+    "#tab-activation": [
+      "What DSPs work best for this audience?",
+      "Estimate reach for $5k/week",
+    ],
+  };
+
+  var EVIDENCE_CONTENT = {
+    "audience-alignment": {
+      title: "Audience Alignment",
+      score: "32/40",
+      body:
+        "Latino millennial sports fans over-index on ESPN digital properties for highlight consumption, live scores, and fantasy participation. Bilingual content paths and athlete storytelling drive repeat visits.",
+      askPrompt: "Explain the audience alignment score for ESPN.com",
+    },
+    "ownership-authenticity": {
+      title: "Ownership & Authenticity",
+      score: "20/25",
+      body:
+        "ESPN maintains credible sports authority with growing Spanish-language verticals (espndeportes.com) and community-driven commentary features that signal authentic engagement.",
+      askPrompt: "How does ESPN demonstrate ownership and authenticity?",
+    },
+    "editorial-ux": {
+      title: "Editorial/UX Signals",
+      score: "18/25",
+      body:
+        "Mobile-first layout, personalized team feeds, and highlight clips align with daily sports rituals. UX patterns support quick score checks and shareable moments.",
+      askPrompt: "What editorial and UX signals support the CRS score?",
+    },
+    "intersectional-representation": {
+      title: "Intersectional Representation",
+      score: "12/15",
+      body:
+        "Coverage spans soccer, baseball, and basketball with Latino athlete spotlights and bilingual commentary. Representation extends beyond tokenism into sustained narrative coverage.",
+      askPrompt: "How well does ESPN represent intersectional sports audiences?",
+    },
+  };
+
+  function renderCopilotSuggestions(prompts) {
+    var $list = $("#chCopilotSuggestions");
+    if (!$list.length) return;
+    $list.empty();
+    prompts.forEach(function (p) {
+      $list.append(
+        '<button type="button" class="ch-suggested-prompt w-100 text-start mb-1" data-ch-copilot-prompt="' +
+          p.replace(/"/g, "&quot;") +
+          '">' +
+          p +
+          "</button>"
+      );
+    });
+  }
+
+  function copilotReplyForMessage(text, context) {
+    var t = (text || "").toLowerCase();
+    context = context || "";
+    if (context.indexOf("ESPN") !== -1 || $("#analyses-espn-detail").length) {
+      if (t.indexOf("improve") !== -1 || t.indexOf("score") !== -1) {
+        return (
+          "ESPN.com scores 82 primarily on audience alignment (32/40) and ownership signals (20/25). " +
+          "To improve: expand Spanish-language inventory, add more intersectional athlete narratives, and pair with community sports publishers."
+        );
+      }
+      return (
+        "ESPN.com scores 82 for Latino millennial sports fans due to strong bilingual coverage, athlete storytelling, and high-intent sports environments."
+      );
+    }
+    if (context.indexOf("Dashboard") !== -1 || getCurrentPage() === "home") {
+      if (t.indexOf("resume") !== -1) {
+        return "Your most recent analysis is ESPN.com Evaluation (CRS 82, completed Jun 4). Open it from Recent Analyses to continue toward activation.";
+      }
+      return "Start with New Analysis to evaluate a domain, brief, or creative. Quick Start cards on the dashboard map to common workflows.";
+    }
+    if (context.indexOf("Analyses") !== -1 && getCurrentPage() === "analyses") {
+      return "Three analyses are in your workspace. ESPN.com Evaluation (82) is activation-ready. Use filters to narrow by status or search by audience.";
+    }
+    if (getCurrentPage() === "analyses-new") {
+      return "Choose an input type that matches your starting point — domain for publisher evaluation, brief for campaign planning, or audience for segment-first analysis.";
+    }
+    if (getCurrentPage() === "audiences") {
+      return "Audience segments inform CRS scoring and inventory curation. Select a segment, then start a New Analysis to evaluate cultural fit for your target.";
+    }
+    return (
+      "I can help explain CRS scores, summarize analyses for clients, or guide you through persona, inventory, and activation steps in the structured workspace."
+    );
+  }
+
+  function openCopilotWithPrompt(prompt) {
+    var drawer = document.getElementById("chCopilotDrawer");
+    if (!drawer || typeof bootstrap === "undefined") return;
+    bootstrap.Offcanvas.getOrCreateInstance(drawer).show();
+    setTimeout(function () {
+      $("#chCopilotInput").val(prompt || "").trigger("input");
+    }, 300);
+  }
+
+  var copilotHandlersBound = false;
+
+  function initCopilot(options) {
+    options = options || {};
+    var $drawer = $("#chCopilotDrawer");
+    if (!$drawer.length) return;
+
+    var context =
+      $("body").attr("data-ch-copilot-context") || options.contextLabel || "Workspace";
+    $drawer.find(".ch-copilot-context-text").text("Using " + context);
+
+    if (options.tabSuggestions) {
+      renderCopilotSuggestions(options.tabSuggestions["#tab-overview"] || []);
+      $("[data-bs-toggle=\"tab\"]").on("shown.bs.tab", function (e) {
+        var target = $(e.target).attr("data-bs-target");
+        var prompts = options.tabSuggestions[target] || [];
+        renderCopilotSuggestions(prompts);
+      });
+    } else {
+      var page = getCurrentPage();
+      var prompts = options.suggestions || COPILOT_PAGE_SUGGESTIONS[page] || [];
+      renderCopilotSuggestions(prompts);
+    }
+
+    if (copilotHandlersBound) return;
+    copilotHandlersBound = true;
+
+    $(document).on("click", "[data-ch-copilot-prompt]", function () {
+      openCopilotWithPrompt($(this).attr("data-ch-copilot-prompt"));
+    });
+
+    $(document).on("click", "#chCopilotSend", function () {
+      var text = $("#chCopilotInput").val().trim();
+      if (!text) return;
+      var $thread = $("#chCopilotThread");
+      var ctx = $("body").attr("data-ch-copilot-context") || "";
+      appendChatUserBubble($thread, text);
+      appendChatAssistantBubble($thread, { text: copilotReplyForMessage(text, ctx) });
+      $("#chCopilotInput").val("");
+      scrollChatToEnd($thread);
+    });
+  }
+
+  function initEvidenceModal() {
+    if (!$("#chEvidenceModal").length) return;
+
+    $(document).on("click", "[data-ch-evidence]", function () {
+      var key = $(this).attr("data-ch-evidence");
+      var item = EVIDENCE_CONTENT[key];
+      if (!item) return;
+      $("#chEvidenceModalLabel").text(item.title);
+      $("#chEvidenceModalScore").text(item.score);
+      $("#chEvidenceModalBody").text(item.body);
+      $("#chEvidenceModalAsk").attr("data-ch-copilot-prompt", item.askPrompt);
+      bootstrap.Modal.getOrCreateInstance(document.getElementById("chEvidenceModal")).show();
+    });
+  }
+
+  function initAnalysesList() {
+    if (!$("#analyses-search").length) return;
+    var $rows = $("[data-ch-analysis-row]");
+
+    function filterRows() {
+      var q = ($("#analyses-search").val() || "").trim().toLowerCase();
+      var status = ($("#analyses-status").val() || "All statuses").trim();
+      $rows.each(function () {
+        var $row = $(this);
+        var searchText = ($row.attr("data-ch-searchable") || $row.text() || "").toLowerCase();
+        var rowStatus = ($row.attr("data-ch-status") || "").trim();
+        var matchSearch = !q || searchText.indexOf(q) !== -1;
+        var matchStatus = status === "All statuses" || rowStatus === status;
+        $row.toggleClass("d-none", !(matchSearch && matchStatus));
+      });
+    }
+
+    $("#analyses-search").on("input", filterRows);
+    $("#analyses-status").on("change", filterRows);
+  }
+
+  function initCustomizePlan() {
+    if (!$("[data-ch-customize-plan]").length) return;
+    var editing = false;
+
+    $(document).on("click", "[data-ch-customize-plan]", function () {
+      var $btn = $(this);
+      var $field = $("#chCampaignObjective");
+      if (!$field.length) return;
+      if (!editing) {
+        $field.prop("readonly", false).focus();
+        $btn.text("Save Plan");
+        editing = true;
+        return;
+      }
+      $field.prop("readonly", true);
+      $btn.text("Customize Plan");
+      editing = false;
+      showToast("Campaign plan saved.", "success");
+    });
+  }
+
+  function initAnalysisDetail() {
+    if (!$("#analyses-espn-detail").length) return;
+
+    initCopilot({ tabSuggestions: ANALYSIS_COPILOT_SUGGESTIONS });
+
+    $(document).on("click", "[data-ch-goto-tab]", function () {
+      var target = $(this).attr("data-ch-goto-tab");
+      if (!target) return;
+      var tabBtn = document.querySelector('[data-bs-target="' + target + '"]');
+      if (tabBtn) {
+        bootstrap.Tab.getOrCreateInstance(tabBtn).show();
+        var pane = document.querySelector(target);
+        if (pane) pane.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+
+    $(document).on("click", "[data-ch-goto-activation]", function () {
+      bootstrap.Tab.getOrCreateInstance(document.querySelector("#tab-activation-tab")).show();
+      document.querySelector("#tab-activation").scrollIntoView({ behavior: "smooth" });
+    });
+
+    $(document).on("click", "#chDealSubmit", function () {
+      bootstrap.Modal.getInstance(document.getElementById("chDealModal")).hide();
+      showToast("Deal created. Confirmation sent to your DSP.", "success");
+    });
+
+    $(document).on("change", ".ch-inventory-toggle", function () {
+      var count = $(".ch-inventory-toggle:checked").length;
+      $("#chInventoryCount").text(count + " of 13 selected");
+    });
+
+    $(document).on("click", "[data-ch-save-audience]", function () {
+      showToast("Audience segment saved to your workspace.", "success");
+    });
+
+    $(document).on("click", "[data-ch-export]", function () {
+      showToast("Export ready.", "secondary");
+    });
+    $(document).on("click", "[data-ch-share]", function () {
+      showToast("Share link copied.", "secondary");
+    });
+    $(document).on("click", "[data-ch-download-pdf]", function () {
+      showToast("Blueprint PDF downloaded.", "secondary");
+    });
+  }
+
+  function initCopilotPages() {
+    if ($("#analyses-espn-detail").length) return;
+    initCopilot();
+  }
+
+  function initNewAnalysis() {
+    if (!$("#page-new-analysis").length) return;
+    $(document).on("click", ".ch-input-type-card", function () {
+      $(".ch-input-type-card").removeClass("selected");
+      $(this).addClass("selected");
+      var type = $(this).attr("data-ch-input-type");
+      $(".ch-analysis-form-step").addClass("d-none");
+      $("#ch-form-" + type).removeClass("d-none");
+    });
+  }
+
   $(function () {
     highlightNav();
     initNavGroups();
@@ -1145,7 +1314,6 @@
     initAudienceGate();
     initChatComposer();
     initStarterPrompts();
-    initHomeAssistant();
     initGlobalCommandPalette();
     initChatHistoryDrawer();
     initPromptBrowser();
@@ -1156,5 +1324,11 @@
     initDevNav();
     initBlueprintPlaceholder();
     initProcessedCsvPage();
+    initCopilotPages();
+    initEvidenceModal();
+    initAnalysesList();
+    initCustomizePlan();
+    initAnalysisDetail();
+    initNewAnalysis();
   });
 })(window.jQuery);

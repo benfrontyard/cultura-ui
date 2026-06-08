@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="../assets/img/cultura-icon.png" />
-    <title>Processed files · Culture Hive AI</title>
+    <title>Analyses · Culture Hive AI</title>
     <link
       rel="stylesheet"
       href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&amp;display=swap"
@@ -21,12 +21,13 @@
     <link href="../assets/css/icons.css" rel="stylesheet" />
     <link href="../assets/css/theme.css" rel="stylesheet" />
   </head>
-  <body data-ch-current="files">
+  <body data-ch-current="analyses" data-ch-copilot-context="Analyses">
     <script src="../assets/js/ch-icon-sprite-inject.js"></script>
 
     <a class="ch-skip-link" href="#main-content">Skip to main content</a>
 
     <div class="ch-app">
+      <!-- ch:shell:sidebar -->
       <aside id="ch-primary-sidebar" class="ch-sidebar ch-sidebar-desktop">
         <div class="ch-sidebar-brand">
           <a
@@ -45,6 +46,7 @@
         <div class="ch-sidebar-scroll">
           <nav aria-label="Primary navigation">
             <p class="ch-nav-section-label" id="nav-label-workspace">Workspace</p>
+            <!-- MVP: Home points at this dashboard at site root; a future marketing-only landing can replace or split this page. -->
             <ul class="list-unstyled mb-0">
               <li>
                 <a class="ch-nav-link" href="../index.html" data-ch-nav="home">
@@ -53,7 +55,7 @@
                 </a>
               </li>
               <li>
-                <a class="ch-nav-link" href="../analyses/index.html" data-ch-nav="analyses">
+                <a class="ch-nav-link" href="index.html" data-ch-nav="analyses">
                   <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-file-graph"/></svg>
                   <span class="ch-nav-label">Analyses</span>
                 </a>
@@ -105,6 +107,7 @@
           </a>
         </div>
       </aside>
+      <!-- ch:/shell:sidebar -->
 
       <div class="ch-shell">
         <header class="ch-topbar">
@@ -198,6 +201,13 @@
             >
               <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-search"/></svg>
             </button>
+            <button
+              type="button"
+              class="btn btn-light border btn-sm d-none d-md-inline-flex flex-shrink-0"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#chCopilotDrawer"
+              aria-controls="chCopilotDrawer"
+            >Ask AI</button>
             <div class="dropdown">
               <button
                 type="button"
@@ -208,7 +218,7 @@
                 aria-expanded="false"
                 aria-label="Account menu"
               >
-                <span class="ch-user-avatar ch-user-avatar--sm" aria-hidden="true">NC</span>
+                <span class="ch-user-avatar" style="width: 32px; height: 32px; font-size: 0.75rem" aria-hidden="true">NC</span>
                 <svg class="ch-icon ch-icon--sm text-ch-muted" aria-hidden="true" focusable="false"><use href="#ch-chevron-down"/></svg>
               </button>
               <ul class="dropdown-menu dropdown-menu-end shadow-sm ch-account-menu-dropdown" aria-labelledby="chAccountMenuBtn">
@@ -248,44 +258,82 @@
           <div class="ch-main">
             <div class="ch-main-inner">
               <main id="main-content">
-                <p class="ch-page-eyebrow small text-ch-secondary mb-1">Files</p>
-                <h1 class="ch-type-heading-lg mb-2">Processed audience data</h1>
-                <p class="text-ch-secondary mb-4">Review staged files feeding cultural blueprints and segment analysis. Filter and sort below; actions are static in this preview.</p>
-
-                <div class="row g-2 align-items-end mb-3">
-                  <div class="col-md-6">
-                    <label for="chCsvFilter" class="form-label small mb-1">Filter by file name</label>
-                    <input id="chCsvFilter" type="search" class="form-control" placeholder="Search file names…" autocomplete="off" />
+                <div class="d-flex flex-column flex-md-row align-items-md-start justify-content-md-between gap-3 mb-4">
+                  <div>
+                    <p class="ch-page-eyebrow small text-ch-secondary mb-1">Workspace</p>
+                    <h1 class="ch-type-heading-lg mb-2">Analyses</h1>
+                    <p class="text-ch-secondary mb-0">Browse cultural relevance analyses, filter by status, and open completed evaluations.</p>
                   </div>
-                  <div class="col-md-6">
-                    <label for="chCsvSort" class="form-label small mb-1">Sort</label>
-                    <select id="chCsvSort" class="form-select">
-                      <option value="file-asc">File name (A–Z)</option>
-                      <option value="file-desc">File name (Z–A)</option>
-                      <option value="uploaded-desc">Uploaded (newest)</option>
-                      <option value="uploaded-asc">Uploaded (oldest)</option>
-                      <option value="processed-desc">Processed (newest)</option>
-                      <option value="processed-asc">Processed (oldest)</option>
-                      <option value="status-asc">Status (A–Z)</option>
-                      <option value="status-desc">Status (Z–A)</option>
-                    </select>
+                  <a class="btn btn-primary flex-shrink-0" href="new.html">
+                    <svg class="ch-icon me-1" aria-hidden="true" focusable="false"><use href="#ch-plus"/></svg>
+                    New Analysis
+                  </a>
+                </div>
+
+                <div class="ch-card mb-3">
+                  <div class="ch-card-body">
+                    <div class="row g-2 align-items-end">
+                      <div class="col-md-6 col-lg-5">
+                        <label for="analyses-search" class="form-label small text-ch-secondary mb-1">Search</label>
+                        <div class="input-group">
+                          <span class="input-group-text bg-white border-end-0">
+                            <svg class="ch-icon text-ch-muted" aria-hidden="true" focusable="false"><use href="#ch-search"/></svg>
+                          </span>
+                          <input id="analyses-search" type="search" class="form-control border-start-0" placeholder="Search analyses…" />
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-lg-3">
+                        <label for="analyses-status" class="form-label small text-ch-secondary mb-1">Status</label>
+                        <select id="analyses-status" class="form-select">
+                          <option selected>All statuses</option>
+                          <option>Completed</option>
+                          <option>In review</option>
+                          <option>Draft</option>
+                        </select>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <div id="chCsvEmpty" class="alert alert-light border d-none" role="status">No files match this filter.</div>
-
-                <div class="table-responsive ch-card mb-0">
+                <div class="table-responsive ch-card">
                   <table class="table table-hover align-middle mb-0 ch-table">
+                    <caption class="visually-hidden">Analyses list with name, type, audience, CRS score, status, and date.</caption>
                     <thead>
                       <tr>
-                        <th scope="col">File</th>
-                        <th scope="col">Uploaded</th>
-                        <th scope="col">Processed</th>
+                        <th scope="col">Analysis</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Audience</th>
+                        <th scope="col">CRS</th>
                         <th scope="col">Status</th>
-                        <th scope="col"><span class="visually-hidden">Actions</span></th>
+                        <th scope="col">Date</th>
                       </tr>
                     </thead>
-                    <tbody id="chCsvTableBody"></tbody>
+                    <tbody>
+                      <tr role="link" tabindex="0" onclick="location.href='espn-detail.html'" style="cursor:pointer" data-ch-analysis-row data-ch-status="Completed" data-ch-searchable="espn.com evaluation domain latino millennial sports fans">
+                        <td class="fw-semibold">ESPN.com Evaluation</td>
+                        <td class="text-ch-secondary">Domain</td>
+                        <td class="text-ch-secondary">Latino Millennial Sports Fans</td>
+                        <td><span class="fw-semibold text-success">82</span></td>
+                        <td><span class="ch-pill ch-pill-success">Completed</span></td>
+                        <td class="text-ch-secondary">Jun 4, 2026</td>
+                      </tr>
+                      <tr role="link" tabindex="0" onclick="location.href='espn-detail.html'" style="cursor:pointer" data-ch-analysis-row data-ch-status="Completed" data-ch-searchable="nike summer brief campaign gen z athleisure">
+                        <td class="fw-semibold">Nike Summer Brief</td>
+                        <td class="text-ch-secondary">Campaign Brief</td>
+                        <td class="text-ch-secondary">Gen Z Athleisure</td>
+                        <td><span class="fw-semibold text-success">71</span></td>
+                        <td><span class="ch-pill ch-pill-success">Completed</span></td>
+                        <td class="text-ch-secondary">May 28, 2026</td>
+                      </tr>
+                      <tr role="link" tabindex="0" onclick="location.href='espn-detail.html'" style="cursor:pointer" data-ch-analysis-row data-ch-status="In review" data-ch-searchable="tubi creative review multicultural streaming">
+                        <td class="fw-semibold">Tubi Creative Review</td>
+                        <td class="text-ch-secondary">Creative Asset</td>
+                        <td class="text-ch-secondary">Multicultural Streaming</td>
+                        <td><span class="fw-semibold">68</span></td>
+                        <td><span class="ch-pill ch-pill-warning">In review</span></td>
+                        <td class="text-ch-secondary">May 22, 2026</td>
+                      </tr>
+                    </tbody>
                   </table>
                 </div>
               </main>
@@ -295,6 +343,7 @@
       </div>
     </div>
 
+    <!-- ch:shell:mobile-nav -->
     <div
       class="offcanvas offcanvas-start ch-offcanvas-nav"
       tabindex="-1"
@@ -302,12 +351,23 @@
       aria-labelledby="chNavDrawerLabel"
     >
       <div class="offcanvas-header border-bottom">
-        <a href="../index.html" id="chNavDrawerLabel" class="ch-offcanvas-brand-link text-decoration-none min-w-0">
-          <span class="ch-offcanvas-brand-wordmark">
-            <img src="../assets/img/cultura-logo.png" alt="Cultura by Culture Hive" decoding="async" />
-          </span>
-        </a>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close menu"></button>
+        <div class="d-flex align-items-center gap-2 min-w-0 flex-grow-1">
+          <a
+            href="../index.html"
+            id="chNavDrawerLabel"
+            class="ch-offcanvas-brand-link text-decoration-none min-w-0"
+          >
+            <span class="ch-offcanvas-brand-wordmark">
+              <img src="../assets/img/cultura-logo.png" alt="Cultura by Culture Hive" decoding="async" />
+            </span>
+          </a>
+        </div>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close menu"
+        ></button>
       </div>
       <div class="offcanvas-body p-0">
         <nav aria-label="Mobile primary navigation">
@@ -319,7 +379,7 @@
               </a>
             </li>
             <li>
-              <a class="ch-nav-link" href="../analyses/index.html" data-ch-nav="analyses">
+              <a class="ch-nav-link" href="index.html" data-ch-nav="analyses">
                 <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-file-graph"/></svg><span class="ch-nav-label">Analyses</span>
               </a>
             </li>
@@ -352,6 +412,7 @@
         </nav>
       </div>
     </div>
+    <!-- ch:/shell:mobile-nav -->
 
     <div class="modal fade" id="chAudienceModal" tabindex="-1" aria-labelledby="chAudienceModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
@@ -497,12 +558,12 @@
             <label for="chCommandPaletteFilter" class="visually-hidden">Filter destinations</label>
             <input type="search" class="form-control mb-3" id="chCommandPaletteFilter" placeholder="Filter brands, audiences, and saved work…" autocomplete="off" />
             <div class="list-group ch-command-palette-list">
-              <a href="../analyses/espn-detail.html" class="list-group-item list-group-item-action" data-ch-palette-label="espn.com evaluation domain analysis crs">ESPN.com Evaluation</a>
-              <a href="../analyses/index.html" class="list-group-item list-group-item-action" data-ch-palette-label="all analyses list workspace">All Analyses</a>
-              <a href="../analyses/new.html" class="list-group-item list-group-item-action" data-ch-palette-label="new analysis create start">New Analysis</a>
+              <a href="espn-detail.html" class="list-group-item list-group-item-action" data-ch-palette-label="espn.com evaluation domain analysis crs">ESPN.com Evaluation</a>
+              <a href="index.html" class="list-group-item list-group-item-action" data-ch-palette-label="all analyses list workspace">All Analyses</a>
+              <a href="new.html" class="list-group-item list-group-item-action" data-ch-palette-label="new analysis create start">New Analysis</a>
               <a href="../audiences.html" class="list-group-item list-group-item-action" data-ch-palette-label="cultural segments library audiences">Audiences library</a>
               <a href="../upload-csv.html#upload-zone" class="list-group-item list-group-item-action" data-ch-palette-label="audience signals CSV upload data">Audience signals CSV upload</a>
-              <a href="index.html" class="list-group-item list-group-item-action" data-ch-palette-label="processed audience data files">Processed audience data</a>
+              <a href="../processed-csvs/index.html" class="list-group-item list-group-item-action" data-ch-palette-label="processed audience data files">Processed audience data</a>
               <a href="../chat/index.html" class="list-group-item list-group-item-action" data-ch-palette-label="Culture Hive assistant chat exploration">Open Assistant</a>
             </div>
             <p class="small text-ch-muted mb-0 mt-3">Choose a destination or press Escape to close.</p>
@@ -511,10 +572,40 @@
       </div>
     </div>
 
+    <div class="offcanvas offcanvas-end ch-copilot-drawer" tabindex="-1" id="chCopilotDrawer" aria-labelledby="chCopilotDrawerLabel">
+      <div class="offcanvas-header border-bottom">
+        <div>
+          <h2 class="offcanvas-title ch-type-heading-sm" id="chCopilotDrawerLabel">Cultura AI</h2>
+          <span class="ch-copilot-context-pill mt-1">
+            <svg class="ch-icon ch-icon--sm" aria-hidden="true" focusable="false"><use href="#ch-file-graph"/></svg>
+            <span class="ch-copilot-context-text">Using Analyses</span>
+          </span>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close copilot"></button>
+      </div>
+      <div class="offcanvas-body d-flex flex-column">
+        <div class="mb-3">
+          <p class="small text-ch-muted mb-2">Suggested prompts</p>
+          <div id="chCopilotSuggestions"></div>
+        </div>
+        <div id="chCopilotThread" class="ch-chat-scroll flex-grow-1 mb-3 border rounded p-2" role="log" aria-live="polite" style="min-height:120px"></div>
+        <div class="ch-ai-prompt mt-auto">
+          <label for="chCopilotInput" class="visually-hidden">Ask Cultura AI</label>
+          <textarea id="chCopilotInput" class="form-control" rows="3" placeholder="Ask about your analyses…"></textarea>
+          <div class="d-flex justify-content-end mt-2">
+            <button type="button" class="btn btn-primary btn-sm" id="chCopilotSend" aria-label="Send">Send</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="toast-container position-fixed bottom-0 end-0 p-3" id="chToastHost" aria-live="polite"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="../assets/js/app.js"></script>
   </body>
 </html>

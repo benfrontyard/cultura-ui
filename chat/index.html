@@ -193,37 +193,13 @@
                 <li>
                   <a class="ch-nav-link" href="../index.html" data-ch-nav="home">
                     <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-house"/></svg>
-                    <span class="ch-nav-label">Home</span>
+                    <span class="ch-nav-label">Dashboard</span>
                   </a>
                 </li>
                 <li>
-                  <a class="ch-nav-link" href="index.html" data-ch-nav="ai-chat">
-                    <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-chat"/></svg>
-                    <span class="ch-nav-label">Assistant</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    class="ch-nav-link"
-                    href="#"
-                    data-ch-nav="crs-reports"
-                    data-ch-audience-gate
-                    data-ch-post-select-href="../crs-reports.html"
-                  >
+                  <a class="ch-nav-link" href="../analyses/index.html" data-ch-nav="analyses">
                     <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-file-graph"/></svg>
-                    <span class="ch-nav-label">Reports</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    class="ch-nav-link"
-                    href="#"
-                    data-ch-nav="personas"
-                    data-ch-audience-gate
-                    data-ch-post-select-href="../persona-detail.html"
-                  >
-                    <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-people"/></svg>
-                    <span class="ch-nav-label">Personas</span>
+                    <span class="ch-nav-label">Analyses</span>
                   </a>
                 </li>
                 <li>
@@ -233,9 +209,21 @@
                   </a>
                 </li>
                 <li>
-                  <a class="ch-nav-link" href="../processed-csvs/index.html" data-ch-nav="files">
+                  <a class="ch-nav-link" href="#" data-ch-nav="activations">
+                    <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-send"/></svg>
+                    <span class="ch-nav-label">Activations</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="ch-nav-link" href="#" data-ch-nav="library">
                     <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-folder"/></svg>
-                    <span class="ch-nav-label">Files</span>
+                    <span class="ch-nav-label">Library</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="ch-nav-link" href="#" data-ch-nav="settings">
+                    <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-gear"/></svg>
+                    <span class="ch-nav-label">Settings</span>
                   </a>
                 </li>
                 <li class="ch-dev-only-nav d-none">
@@ -426,24 +414,24 @@
                         <div class="ch-chat-page-empty d-flex flex-column">
                           <div class="ch-chat-hero text-center mx-auto pt-1 pb-1 ch-chat-hero-copy">
                             <p class="ch-type-heading-sm text-ch-secondary mb-1">
-                              Start with a brand, category, or audience.
+                              Deep-dive assistant for explanation and exploration.
                             </p>
-                            <p class="text-ch-secondary small mb-0">Generate a cultural blueprint to uncover audience values, media behaviors, psychographics, and activation opportunities, or choose a starter below.</p>
+                            <p class="text-ch-secondary small mb-0">Use this for open-ended questions about CRS scoring, client summaries, and cultural strategy. For structured workflows, start from <a href="../analyses/new.html">New Analysis</a>.</p>
                           </div>
                           <section class="mb-0 mt-3" aria-labelledby="suggested-heading">
                             <h2 id="suggested-heading" class="visually-hidden">Suggested prompts</h2>
                             <div class="d-flex flex-wrap gap-2 justify-content-center">
-                              <button type="button" class="ch-suggested-prompt" data-ch-starter-prompt="Create a cultural blueprint for sustainable home shoppers.">
-                                Sustainable home blueprint
+                              <button type="button" class="ch-suggested-prompt" data-ch-starter-prompt="Explain how CRS scoring works.">
+                                Explain CRS scoring
                               </button>
-                              <button type="button" class="ch-suggested-prompt" data-ch-starter-prompt="Identify audience segments for sustainable home products.">
-                                Sustainable home segments
+                              <button type="button" class="ch-suggested-prompt" data-ch-starter-prompt="Summarize the ESPN.com analysis for a client.">
+                                Summarize an analysis for a client
                               </button>
-                              <button type="button" class="ch-suggested-prompt" data-ch-starter-prompt="What media habits influence luxury skincare purchases?">
-                                Luxury skincare media habits
+                              <button type="button" class="ch-suggested-prompt" data-ch-starter-prompt="What cultural risks should I watch for in sports campaigns?">
+                                Cultural risks in sports campaigns
                               </button>
-                              <button type="button" class="ch-suggested-prompt" data-ch-starter-prompt="Build activation ideas for budget-smart multicultural families.">
-                                Budget-smart multicultural activation
+                              <button type="button" class="ch-suggested-prompt" data-ch-starter-prompt="How should I defend a CRS score of 82 to a media buyer?">
+                                Defend a CRS score to a buyer
                               </button>
                             </div>
                           </section>
@@ -470,19 +458,19 @@
                         placeholder="Ask about audience behavior, cultural trends, media habits, or campaign strategy..."
                       ></textarea>
                       <div class="ch-ai-quick-actions" role="group" aria-label="Quick workspace actions">
-                        <a class="ch-ai-quick-action" href="../crs-reports.html">
+                        <a class="ch-ai-quick-action" href="../analyses/new.html">
                           <svg class="ch-icon ch-icon--sm text-primary" aria-hidden="true" focusable="false">
                             <use href="#ch-file-plus" />
                           </svg>
-                          <span>Blueprints</span>
+                          <span>New Analysis</span>
                         </a>
-                        <a class="ch-ai-quick-action" href="../upload-csv.html">
+                        <a class="ch-ai-quick-action" href="../analyses/index.html">
                           <svg class="ch-icon ch-icon--sm text-success" aria-hidden="true" focusable="false">
-                            <use href="#ch-upload" />
+                            <use href="#ch-file-graph" />
                           </svg>
-                          <span>Upload CSV</span>
+                          <span>Analyses</span>
                         </a>
-                        <a class="ch-ai-quick-action" href="../persona-detail.html">
+                        <a class="ch-ai-quick-action" href="../analyses/espn-detail.html#tab-audience">
                           <svg class="ch-icon ch-icon--sm ch-ai-quick-action-accent--persona" aria-hidden="true" focusable="false">
                             <use href="#ch-person-badge" />
                           </svg>
@@ -492,7 +480,7 @@
                           <svg class="ch-icon ch-icon--sm text-warning" aria-hidden="true" focusable="false">
                             <use href="#ch-house" />
                           </svg>
-                          <span>Home</span>
+                          <span>Dashboard</span>
                         </a>
                       </div>
                       <div class="d-flex align-items-center justify-content-between mt-2 pt-2 border-top gap-2">
@@ -547,22 +535,12 @@
             <ul class="list-unstyled mb-0">
               <li>
                 <a class="ch-nav-link" href="../index.html" data-ch-nav="home">
-                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-house"/></svg><span class="ch-nav-label">Home</span>
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-house"/></svg><span class="ch-nav-label">Dashboard</span>
                 </a>
               </li>
               <li>
-                <a class="ch-nav-link" href="index.html" data-ch-nav="ai-chat">
-                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-chat"/></svg><span class="ch-nav-label">Assistant</span>
-                </a>
-              </li>
-              <li>
-                <a class="ch-nav-link" href="#" data-ch-nav="crs-reports" data-ch-audience-gate data-ch-post-select-href="../crs-reports.html">
-                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-file-graph"/></svg><span class="ch-nav-label">Reports</span>
-                </a>
-              </li>
-              <li>
-                <a class="ch-nav-link" href="#" data-ch-nav="personas" data-ch-audience-gate data-ch-post-select-href="../persona-detail.html">
-                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-people"/></svg><span class="ch-nav-label">Personas</span>
+                <a class="ch-nav-link" href="../analyses/index.html" data-ch-nav="analyses">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-file-graph"/></svg><span class="ch-nav-label">Analyses</span>
                 </a>
               </li>
               <li>
@@ -571,8 +549,18 @@
                 </a>
               </li>
               <li>
-                <a class="ch-nav-link" href="../processed-csvs/index.html" data-ch-nav="files">
-                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-folder"/></svg><span class="ch-nav-label">Files</span>
+                <a class="ch-nav-link" href="#" data-ch-nav="activations">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-send"/></svg><span class="ch-nav-label">Activations</span>
+                </a>
+              </li>
+              <li>
+                <a class="ch-nav-link" href="#" data-ch-nav="library">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-folder"/></svg><span class="ch-nav-label">Library</span>
+                </a>
+              </li>
+              <li>
+                <a class="ch-nav-link" href="#" data-ch-nav="settings">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-gear"/></svg><span class="ch-nav-label">Settings</span>
                 </a>
               </li>
               <li class="ch-dev-only-nav d-none">
@@ -913,12 +901,13 @@
             <label for="chCommandPaletteFilter" class="visually-hidden">Filter destinations</label>
             <input type="search" class="form-control mb-3" id="chCommandPaletteFilter" placeholder="Filter brands, audiences, and saved work…" autocomplete="off" />
             <div class="list-group ch-command-palette-list">
-              <a href="../crs-reports.html#crs-scores" class="list-group-item list-group-item-action" data-ch-palette-label="urban wellness cultural blueprint scores report">Urban Wellness Cultural Blueprint</a>
-              <a href="../persona-detail.html#persona-overview" class="list-group-item list-group-item-action" data-ch-palette-label="urban wellness consumer audience profile persona">Urban Wellness Consumer Profile</a>
+              <a href="../analyses/espn-detail.html" class="list-group-item list-group-item-action" data-ch-palette-label="espn.com evaluation domain analysis crs">ESPN.com Evaluation</a>
+              <a href="../analyses/index.html" class="list-group-item list-group-item-action" data-ch-palette-label="all analyses list workspace">All Analyses</a>
+              <a href="../analyses/new.html" class="list-group-item list-group-item-action" data-ch-palette-label="new analysis create start">New Analysis</a>
+              <a href="../audiences.html" class="list-group-item list-group-item-action" data-ch-palette-label="cultural segments library audiences">Audiences library</a>
               <a href="../upload-csv.html#upload-zone" class="list-group-item list-group-item-action" data-ch-palette-label="audience signals CSV upload data">Audience signals CSV upload</a>
               <a href="../processed-csvs/index.html" class="list-group-item list-group-item-action" data-ch-palette-label="processed audience data files">Processed audience data</a>
-              <a href="../audiences.html" class="list-group-item list-group-item-action" data-ch-palette-label="cultural segments library audiences">Cultural segments library</a>
-              <a href="index.html" class="list-group-item list-group-item-action" data-ch-palette-label="Culture Hive assistant chat">Open Culture Hive Assistant</a>
+              <a href="index.html" class="list-group-item list-group-item-action" data-ch-palette-label="Culture Hive assistant chat exploration">Open Assistant</a>
             </div>
             <p class="small text-ch-muted mb-0 mt-3">Choose a destination or press Escape to close.</p>
           </div>

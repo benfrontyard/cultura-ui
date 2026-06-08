@@ -21,7 +21,7 @@
     <link href="assets/css/icons.css" rel="stylesheet" />
     <link href="assets/css/theme.css" rel="stylesheet" />
   </head>
-  <body data-ch-current="audiences">
+  <body data-ch-current="audiences" data-ch-copilot-context="Audiences library">
     <script src="assets/js/ch-icon-sprite-inject.js"></script>
 
     <a class="ch-skip-link" href="#main-content">Skip to main content</a>
@@ -51,37 +51,13 @@
               <li>
                 <a class="ch-nav-link" href="index.html" data-ch-nav="home">
                   <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-house"/></svg>
-                  <span class="ch-nav-label">Home</span>
+                  <span class="ch-nav-label">Dashboard</span>
                 </a>
               </li>
               <li>
-                <a class="ch-nav-link" href="chat/index.html" data-ch-nav="ai-chat">
-                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-chat"/></svg>
-                  <span class="ch-nav-label">Assistant</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  class="ch-nav-link"
-                  href="#"
-                  data-ch-nav="crs-reports"
-                  data-ch-audience-gate
-                  data-ch-post-select-href="crs-reports.html"
-                >
+                <a class="ch-nav-link" href="analyses/index.html" data-ch-nav="analyses">
                   <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-file-graph"/></svg>
-                  <span class="ch-nav-label">Reports</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  class="ch-nav-link"
-                  href="#"
-                  data-ch-nav="personas"
-                  data-ch-audience-gate
-                  data-ch-post-select-href="persona-detail.html"
-                >
-                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-people"/></svg>
-                  <span class="ch-nav-label">Personas</span>
+                  <span class="ch-nav-label">Analyses</span>
                 </a>
               </li>
               <li>
@@ -91,9 +67,21 @@
                 </a>
               </li>
               <li>
-                <a class="ch-nav-link" href="processed-csvs/index.html" data-ch-nav="files">
+                <a class="ch-nav-link" href="#" data-ch-nav="activations">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-send"/></svg>
+                  <span class="ch-nav-label">Activations</span>
+                </a>
+              </li>
+              <li>
+                <a class="ch-nav-link" href="#" data-ch-nav="library">
                   <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-folder"/></svg>
-                  <span class="ch-nav-label">Files</span>
+                  <span class="ch-nav-label">Library</span>
+                </a>
+              </li>
+              <li>
+                <a class="ch-nav-link" href="#" data-ch-nav="settings">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-gear"/></svg>
+                  <span class="ch-nav-label">Settings</span>
                 </a>
               </li>
               <li class="ch-dev-only-nav d-none">
@@ -213,6 +201,13 @@
             >
               <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-search"/></svg>
             </button>
+            <button
+              type="button"
+              class="btn btn-light border btn-sm d-none d-md-inline-flex flex-shrink-0"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#chCopilotDrawer"
+              aria-controls="chCopilotDrawer"
+            >Ask AI</button>
             <div class="dropdown">
               <button
                 type="button"
@@ -351,22 +346,12 @@
           <ul class="list-unstyled mb-0">
             <li>
               <a class="ch-nav-link" href="index.html" data-ch-nav="home">
-                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-house"/></svg><span class="ch-nav-label">Home</span>
+                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-house"/></svg><span class="ch-nav-label">Dashboard</span>
               </a>
             </li>
             <li>
-              <a class="ch-nav-link" href="chat/index.html" data-ch-nav="ai-chat">
-                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-chat"/></svg><span class="ch-nav-label">Assistant</span>
-              </a>
-            </li>
-            <li>
-              <a class="ch-nav-link" href="#" data-ch-nav="crs-reports" data-ch-audience-gate data-ch-post-select-href="crs-reports.html">
-                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-file-graph"/></svg><span class="ch-nav-label">Reports</span>
-              </a>
-            </li>
-            <li>
-              <a class="ch-nav-link" href="#" data-ch-nav="personas" data-ch-audience-gate data-ch-post-select-href="persona-detail.html">
-                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-people"/></svg><span class="ch-nav-label">Personas</span>
+              <a class="ch-nav-link" href="analyses/index.html" data-ch-nav="analyses">
+                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-file-graph"/></svg><span class="ch-nav-label">Analyses</span>
               </a>
             </li>
             <li>
@@ -375,8 +360,18 @@
               </a>
             </li>
             <li>
-              <a class="ch-nav-link" href="processed-csvs/index.html" data-ch-nav="files">
-                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-folder"/></svg><span class="ch-nav-label">Files</span>
+              <a class="ch-nav-link" href="#" data-ch-nav="activations">
+                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-send"/></svg><span class="ch-nav-label">Activations</span>
+              </a>
+            </li>
+            <li>
+              <a class="ch-nav-link" href="#" data-ch-nav="library">
+                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-folder"/></svg><span class="ch-nav-label">Library</span>
+              </a>
+            </li>
+            <li>
+              <a class="ch-nav-link" href="#" data-ch-nav="settings">
+                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-gear"/></svg><span class="ch-nav-label">Settings</span>
               </a>
             </li>
             <li class="ch-dev-only-nav d-none">
@@ -534,14 +529,42 @@
             <label for="chCommandPaletteFilter" class="visually-hidden">Filter destinations</label>
             <input type="search" class="form-control mb-3" id="chCommandPaletteFilter" placeholder="Filter brands, audiences, and saved work…" autocomplete="off" />
             <div class="list-group ch-command-palette-list">
-              <a href="crs-reports.html#crs-scores" class="list-group-item list-group-item-action" data-ch-palette-label="urban wellness cultural blueprint scores report">Urban Wellness Cultural Blueprint</a>
-              <a href="persona-detail.html#persona-overview" class="list-group-item list-group-item-action" data-ch-palette-label="urban wellness consumer audience profile persona">Urban Wellness Consumer Profile</a>
+              <a href="analyses/espn-detail.html" class="list-group-item list-group-item-action" data-ch-palette-label="espn.com evaluation domain analysis crs">ESPN.com Evaluation</a>
+              <a href="analyses/index.html" class="list-group-item list-group-item-action" data-ch-palette-label="all analyses list workspace">All Analyses</a>
+              <a href="analyses/new.html" class="list-group-item list-group-item-action" data-ch-palette-label="new analysis create start">New Analysis</a>
+              <a href="audiences.html" class="list-group-item list-group-item-action" data-ch-palette-label="cultural segments library audiences">Audiences library</a>
               <a href="upload-csv.html#upload-zone" class="list-group-item list-group-item-action" data-ch-palette-label="audience signals CSV upload data">Audience signals CSV upload</a>
               <a href="processed-csvs/index.html" class="list-group-item list-group-item-action" data-ch-palette-label="processed audience data files">Processed audience data</a>
-              <a href="audiences.html" class="list-group-item list-group-item-action" data-ch-palette-label="cultural segments library audiences">Cultural segments library</a>
-              <a href="chat/index.html" class="list-group-item list-group-item-action" data-ch-palette-label="Culture Hive assistant chat">Open Culture Hive Assistant</a>
+              <a href="chat/index.html" class="list-group-item list-group-item-action" data-ch-palette-label="Culture Hive assistant chat exploration">Open Assistant</a>
             </div>
             <p class="small text-ch-muted mb-0 mt-3">Choose a destination or press Escape to close.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="offcanvas offcanvas-end ch-copilot-drawer" tabindex="-1" id="chCopilotDrawer" aria-labelledby="chCopilotDrawerLabel">
+      <div class="offcanvas-header border-bottom">
+        <div>
+          <h2 class="offcanvas-title ch-type-heading-sm" id="chCopilotDrawerLabel">Cultura AI</h2>
+          <span class="ch-copilot-context-pill mt-1">
+            <svg class="ch-icon ch-icon--sm" aria-hidden="true" focusable="false"><use href="#ch-file-graph"/></svg>
+            <span class="ch-copilot-context-text">Using Audiences library</span>
+          </span>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close copilot"></button>
+      </div>
+      <div class="offcanvas-body d-flex flex-column">
+        <div class="mb-3">
+          <p class="small text-ch-muted mb-2">Suggested prompts</p>
+          <div id="chCopilotSuggestions"></div>
+        </div>
+        <div id="chCopilotThread" class="ch-chat-scroll flex-grow-1 mb-3 border rounded p-2" role="log" aria-live="polite" style="min-height:120px"></div>
+        <div class="ch-ai-prompt mt-auto">
+          <label for="chCopilotInput" class="visually-hidden">Ask Cultura AI</label>
+          <textarea id="chCopilotInput" class="form-control" rows="3" placeholder="Ask about audience segments…"></textarea>
+          <div class="d-flex justify-content-end mt-2">
+            <button type="button" class="btn btn-primary btn-sm" id="chCopilotSend" aria-label="Send">Send</button>
           </div>
         </div>
       </div>
