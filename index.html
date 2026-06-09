@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="assets/img/cultura-icon.png" />
-    <title>Home · Culture Hive</title>
+    <title>Cultura</title>
     <link
       rel="stylesheet"
       href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&amp;display=swap"
@@ -258,6 +258,18 @@
           >
             <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-menu"/></svg>
           </button>
+          <div
+            class="ch-topbar-history ch-mobile-only me-1 flex-shrink-0 d-inline-flex align-items-center"
+            role="group"
+            aria-label="History"
+          >
+            <button type="button" class="ch-topbar-history-btn" data-ch-history="back" aria-label="Back" disabled>
+              <svg class="ch-icon ch-icon--sm" aria-hidden="true" focusable="false"><use href="#ch-chevron-left"/></svg>
+            </button>
+            <button type="button" class="ch-topbar-history-btn" data-ch-history="forward" aria-label="Forward" disabled>
+              <svg class="ch-icon ch-icon--sm" aria-hidden="true" focusable="false"><use href="#ch-chevron-right"/></svg>
+            </button>
+          </div>
           <a
             href="index.html"
             class="ch-topbar-logo ch-mobile-only d-inline-flex align-items-center flex-shrink-0 me-2 text-decoration-none"
@@ -277,6 +289,18 @@
             >
               <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-layout-sidebar"/></svg>
             </button>
+            <div
+              class="ch-topbar-history d-none d-md-inline-flex align-items-center flex-shrink-0"
+              role="group"
+              aria-label="History"
+            >
+              <button type="button" class="ch-topbar-history-btn" data-ch-history="back" aria-label="Back" disabled>
+                <svg class="ch-icon ch-icon--sm" aria-hidden="true" focusable="false"><use href="#ch-chevron-left"/></svg>
+              </button>
+              <button type="button" class="ch-topbar-history-btn" data-ch-history="forward" aria-label="Forward" disabled>
+                <svg class="ch-icon ch-icon--sm" aria-hidden="true" focusable="false"><use href="#ch-chevron-right"/></svg>
+              </button>
+            </div>
           </div>
           <div class="ch-topbar-actions d-flex align-items-center gap-1 ms-auto flex-nowrap justify-content-end">
             <button
@@ -462,7 +486,7 @@
                   <h2 id="quick-start-heading" class="ch-type-heading-xs text-ch-secondary mb-1">Quick Start</h2>
                   <p class="small text-ch-muted mb-3">Every path below starts a new analysis.</p>
                   <div class="row g-3">
-                    <div class="col-6 col-lg-3">
+                    <div class="col-12 col-sm-6 col-lg-3">
                       <a href="analyses/new.html?type=domain" class="ch-card h-100 text-decoration-none d-block">
                         <div class="ch-card-body">
                           <svg class="ch-icon text-primary mb-2" aria-hidden="true" focusable="false"><use href="#ch-globe"/></svg>
@@ -471,7 +495,7 @@
                         </div>
                       </a>
                     </div>
-                    <div class="col-6 col-lg-3">
+                    <div class="col-12 col-sm-6 col-lg-3">
                       <a href="analyses/new.html?type=brief" class="ch-card h-100 text-decoration-none d-block">
                         <div class="ch-card-body">
                           <svg class="ch-icon text-primary mb-2" aria-hidden="true" focusable="false"><use href="#ch-file-earmark"/></svg>
@@ -480,7 +504,7 @@
                         </div>
                       </a>
                     </div>
-                    <div class="col-6 col-lg-3">
+                    <div class="col-12 col-sm-6 col-lg-3">
                       <a href="analyses/new.html?type=creative" class="ch-card h-100 text-decoration-none d-block">
                         <div class="ch-card-body">
                           <svg class="ch-icon text-primary mb-2" aria-hidden="true" focusable="false"><use href="#ch-view"/></svg>
@@ -489,7 +513,7 @@
                         </div>
                       </a>
                     </div>
-                    <div class="col-6 col-lg-3">
+                    <div class="col-12 col-sm-6 col-lg-3">
                       <a href="analyses/new.html?type=audience" class="ch-card h-100 text-decoration-none d-block">
                         <div class="ch-card-body">
                           <svg class="ch-icon text-primary mb-2" aria-hidden="true" focusable="false"><use href="#ch-people"/></svg>

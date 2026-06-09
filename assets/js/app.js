@@ -1844,14 +1844,60 @@
     $btn.find("use").attr("href", expanded ? "#ch-chevron-down" : "#ch-chevron-up");
   }
 
+  function dockPanelActionText(label) {
+    return '<span class="ch-ai-dock__panel-action-label">' + label + "</span>";
+  }
+
+  function dockPanelActionIcon(iconId, sizeClass) {
+    return (
+      '<span class="ch-ai-dock__panel-action-icon" aria-hidden="true">' +
+      '<svg class="ch-icon ' +
+      (sizeClass || "ch-icon--sm") +
+      '" focusable="false"><use href="#' +
+      iconId +
+      '"/></svg></span>'
+    );
+  }
+
+  function ensureDockPanelActionMarkup() {
+    var $new = $("[data-ch-dock-new-chat]").first();
+    if ($new.length) {
+      $new.removeClass("btn-icon").addClass("ch-ai-dock__panel-action ch-ai-dock__panel-new--text");
+      if ($new.find(".ch-ai-dock__panel-action-icon").length || !$new.find(".ch-ai-dock__panel-action-label").length) {
+        $new.html(dockPanelActionText("New chat"));
+      }
+    }
+
+    var $full = $("[data-ch-dock-fullscreen]").first();
+    if ($full.length) {
+      $full
+        .removeClass("btn-icon ch-ai-dock__panel-full--icon-only")
+        .addClass("ch-ai-dock__panel-action ch-ai-dock__panel-full--text");
+      if ($full.find(".ch-ai-dock__panel-action-icon").length || !$full.find(".ch-ai-dock__panel-action-label").length) {
+        $full.html(dockPanelActionText("Expand"));
+      }
+    }
+
+    var $collapse = $("[data-ch-ai-dock-collapse]").first();
+    if ($collapse.length) {
+      $collapse
+        .removeClass("btn-icon")
+        .addClass("ch-ai-dock__panel-action ch-ai-dock__collapse--icon-only");
+      if ($collapse.find(".ch-ai-dock__panel-action-label").length || $collapse.find("use").attr("href") !== "#ch-x") {
+        $collapse.html(dockPanelActionIcon("ch-x", "ch-icon--sm"));
+      }
+    }
+  }
+
   function syncDockFullscreenUi(fullscreen) {
     var $btn = $("[data-ch-dock-fullscreen]");
     if (!$btn.length) return;
+    var label = fullscreen ? "Minimize" : "Expand";
     $btn.attr("aria-pressed", fullscreen ? "true" : "false");
-    $btn.attr("aria-label", fullscreen ? "Exit full view" : "Open full view");
-    $btn.attr("title", fullscreen ? "Exit full view" : "Open full view");
+    $btn.attr("aria-label", fullscreen ? "Minimize chat panel" : "Expand chat panel");
+    $btn.attr("title", fullscreen ? "Return to compact panel" : "Make panel larger");
+    $btn.find(".ch-ai-dock__panel-action-label").text(label);
     $btn.toggleClass("ch-ai-dock__panel-full--active", fullscreen);
-    $btn.find("use").attr("href", "#ch-arrow-up-right");
   }
 
   function syncDockNewChatUi() {
@@ -1860,7 +1906,8 @@
     var hasChat = dockHasConversation();
     $btn.toggleClass("ch-ai-dock__panel-new--idle", !hasChat);
     $btn.attr("aria-label", hasChat ? "Start new chat" : "Start new chat (no messages yet)");
-    $btn.attr("title", hasChat ? "Start new chat" : "No messages to clear");
+    $btn.attr("title", hasChat ? "Clear this conversation and start over" : "No messages to clear yet");
+    $btn.find(".ch-ai-dock__panel-action-label").text("New chat");
   }
 
   function flashDockPanelAction(selector, effect) {
@@ -1945,7 +1992,7 @@
     domain: { icon: "ch-globe", tone: "domain" },
     bundle: { icon: "ch-grid", tone: "bundle" },
     brief: { icon: "ch-file-earmark", tone: "brief" },
-    creative: { icon: "ch-view", tone: "creative" },
+    creative: { icon: "ch-upload", tone: "creative" },
     audience: { icon: "ch-people", tone: "audience" },
   };
 
@@ -1972,12 +2019,12 @@
   }
 
   function syncDockPanelActionsUi() {
-    $("[data-ch-ai-dock-collapse]").attr({ title: "Minimize to corner", "aria-label": "Minimize to corner" });
-    $("[data-ch-dock-fullscreen]")
-      .addClass("ch-ai-dock__panel-full")
-      .removeClass("ch-ai-dock__composer-full")
-      .find("use")
-      .attr("href", "#ch-arrow-up-right");
+    ensureDockPanelActionMarkup();
+    $("[data-ch-ai-dock-collapse]").attr({
+      title: "Close chat",
+      "aria-label": "Close chat",
+    });
+    $("[data-ch-dock-fullscreen]").removeClass("ch-ai-dock__composer-full");
     syncDockFullscreenUi($("#chAiDock").hasClass("ch-ai-dock--fullscreen"));
     syncDockNewChatUi();
   }
@@ -2015,25 +2062,26 @@
     var $actions = $head.find(".ch-ai-dock__panel-actions");
 
     $actions.append(
-      '<button type="button" class="btn btn-icon btn-sm ch-ai-dock__panel-new" data-ch-dock-new-chat aria-label="Start new chat" title="Start new chat">' +
-        '<svg class="ch-icon ch-icon--sm" aria-hidden="true" focusable="false"><use href="#ch-plus"/></svg>' +
+      '<button type="button" class="btn btn-sm ch-ai-dock__panel-action ch-ai-dock__panel-new ch-ai-dock__panel-new--text" data-ch-dock-new-chat aria-label="Start new chat" title="Clear this conversation and start over">' +
+        dockPanelActionText("New chat") +
         "</button>" +
-        '<button type="button" class="btn btn-icon btn-sm ch-ai-dock__panel-full" data-ch-dock-fullscreen aria-pressed="false" aria-label="Open full view" title="Open full view">' +
-        '<svg class="ch-icon ch-icon--sm" aria-hidden="true" focusable="false"><use href="#ch-arrow-up-right"/></svg>' +
+        '<button type="button" class="btn btn-sm ch-ai-dock__panel-action ch-ai-dock__panel-full ch-ai-dock__panel-full--text" data-ch-dock-fullscreen aria-pressed="false" aria-label="Expand chat panel" title="Make panel larger">' +
+        dockPanelActionText("Expand") +
         "</button>"
     );
 
     if ($collapse.length) {
       $collapse
-        .attr("aria-label", "Minimize to corner")
-        .attr("title", "Minimize to corner")
-        .find("use")
-        .attr("href", "#ch-chevron-down");
+        .removeClass("btn-icon")
+        .addClass("ch-ai-dock__panel-action ch-ai-dock__collapse ch-ai-dock__collapse--icon-only")
+        .attr("aria-label", "Close chat")
+        .attr("title", "Close chat")
+        .html(dockPanelActionIcon("ch-x", "ch-icon--sm"));
       $actions.append($collapse);
     } else {
       $actions.append(
-        '<button type="button" class="ch-ai-dock__collapse btn btn-icon btn-sm" data-ch-ai-dock-collapse aria-label="Minimize to corner" title="Minimize to corner">' +
-          '<svg class="ch-icon ch-icon--sm" aria-hidden="true" focusable="false"><use href="#ch-chevron-down"/></svg>' +
+        '<button type="button" class="btn btn-sm ch-ai-dock__panel-action ch-ai-dock__collapse ch-ai-dock__collapse--icon-only" data-ch-ai-dock-collapse aria-label="Close chat" title="Close chat">' +
+          dockPanelActionIcon("ch-x", "ch-icon--sm") +
           "</button>"
       );
     }
@@ -2468,12 +2516,16 @@
       uploaded: "2026-05-12 14:40",
       processed: "-",
       status: "Processing",
+      note: "Mapping cultural segments. ~2–4 min.",
     },
     {
       file: "sustainable-home-panel.csv",
       uploaded: "2026-05-11 11:05",
       processed: "2026-05-11 11:06",
       status: "Failed",
+      note: "Missing required column audience_id.",
+      actionHref: "upload-csv.html#upload-zone",
+      actionLabel: "Re-upload",
     },
     {
       file: "urban-design-geo-baseline.csv",
@@ -2483,14 +2535,72 @@
     },
   ];
 
-  function initProcessedCsvPage() {
-    if (!$("#chCsvTableBody").length) return;
+  var CSV_STATUS_ORDER = { Failed: 0, Processing: 1, Ready: 2 };
+
+  function csvStatusPillClass(status) {
+    if (status === "Ready") return "ch-pill ch-pill-success";
+    if (status === "Failed") return "ch-pill ch-pill-danger";
+    return "ch-pill ch-pill-warning";
+  }
+
+  function csvRowMeta(r) {
+    if (r.note) {
+      var note = escapeHtml(r.note);
+      if (r.actionHref && r.actionLabel) {
+        return (
+          note +
+          ' <a href="' +
+          escapeAttr(r.actionHref) +
+          '" class="text-decoration-none">' +
+          escapeHtml(r.actionLabel) +
+          "</a>"
+        );
+      }
+      return note;
+    }
+    return "Uploaded " + escapeHtml(r.uploaded);
+  }
+
+  function initLibraryFileList() {
+    var $list = $("#chLibraryFileList");
+    if (!$list.length) return;
 
     var rows = isNewAccountMode() ? [] : PROCESSED_CSV_ROWS.slice();
-    var $preview = $("#chCsvTableBody[data-ch-csv-preview]");
-    var previewLimit = $preview.length ? parseInt($preview.attr("data-ch-csv-preview"), 10) : 0;
-    var sortKey = previewLimit ? "uploaded" : "file";
-    var sortDir = previewLimit ? -1 : 1;
+    rows.sort(function (a, b) {
+      var statusDiff = (CSV_STATUS_ORDER[a.status] || 9) - (CSV_STATUS_ORDER[b.status] || 9);
+      if (statusDiff !== 0) return statusDiff;
+      return a.uploaded < b.uploaded ? 1 : a.uploaded > b.uploaded ? -1 : 0;
+    });
+
+    $list.empty();
+    rows.forEach(function (r) {
+      $list.append(
+        '<li class="list-group-item d-flex align-items-start justify-content-between gap-3">' +
+          '<div class="min-w-0">' +
+          '<div class="fw-semibold text-truncate">' +
+          escapeHtml(r.file) +
+          "</div>" +
+          '<div class="small text-ch-secondary">' +
+          csvRowMeta(r) +
+          "</div>" +
+          "</div>" +
+          '<span class="' +
+          csvStatusPillClass(r.status) +
+          ' flex-shrink-0">' +
+          escapeHtml(r.status) +
+          "</span>" +
+          "</li>"
+      );
+    });
+  }
+
+  function initProcessedCsvPage() {
+    var $tb = $("#chCsvTableBody");
+    if (!$tb.length) return;
+
+    var rows = isNewAccountMode() ? [] : PROCESSED_CSV_ROWS.slice();
+    var sortKey = "file";
+    var sortDir = 1;
 
     function rowMatches(r, q) {
       if (!q) return true;
@@ -2511,11 +2621,6 @@
         return 0;
       });
 
-      if (previewLimit > 0) {
-        list = list.slice(0, previewLimit);
-      }
-
-      var $tb = $("#chCsvTableBody");
       var $empty = $("#chCsvEmpty");
       $tb.empty();
 
@@ -2526,40 +2631,33 @@
       $empty.addClass("d-none");
 
       list.forEach(function (r) {
-        var safeFile = String(r.file).replace(/</g, "&lt;");
-        var pillClass =
-          r.status === "Ready"
-            ? "ch-pill ch-pill-success"
-            : r.status === "Failed"
-              ? "ch-pill ch-pill-danger"
-              : "ch-pill ch-pill-warning";
         var aria = "Actions for " + String(r.file).replace(/"/g, "&quot;");
         $tb.append(
           "<tr>" +
-            "<td class=\"fw-semibold\">" +
-            safeFile +
+            '<td class="fw-semibold">' +
+            escapeHtml(r.file) +
             "</td>" +
-            "<td class=\"text-ch-secondary\">" +
-            r.uploaded +
+            '<td class="text-ch-secondary">' +
+            escapeHtml(r.uploaded) +
             "</td>" +
-            "<td class=\"text-ch-secondary\">" +
-            r.processed +
+            '<td class="text-ch-secondary">' +
+            escapeHtml(r.processed) +
             "</td>" +
-            "<td><span class=\"" +
-            pillClass +
-            "\">" +
-            r.status +
+            '<td><span class="' +
+            csvStatusPillClass(r.status) +
+            '">' +
+            escapeHtml(r.status) +
             "</span></td>" +
-            "<td class=\"text-end\">" +
-            "<div class=\"dropdown\">" +
-            "<button type=\"button\" class=\"btn btn-sm btn-light border\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\" aria-label=\"" +
+            '<td class="text-end">' +
+            '<div class="dropdown">' +
+            '<button type="button" class="btn btn-sm btn-light border" data-bs-toggle="dropdown" aria-expanded="false" aria-label="' +
             aria +
-            "\">" +
-            "<svg class=\"ch-icon\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#ch-dots-vertical\"/></svg>" +
+            '">' +
+            '<svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-dots-vertical"/></svg>' +
             "</button>" +
-            "<ul class=\"dropdown-menu dropdown-menu-end\">" +
-            "<li><a class=\"dropdown-item\" href=\"#\">Download</a></li>" +
-            "<li><a class=\"dropdown-item\" href=\"#\">View</a></li>" +
+            '<ul class="dropdown-menu dropdown-menu-end">' +
+            '<li><a class="dropdown-item" href="#">Download</a></li>' +
+            '<li><a class="dropdown-item" href="#">View</a></li>' +
             "</ul>" +
             "</div>" +
             "</td>" +
@@ -2570,38 +2668,21 @@
 
     $("#chCsvFilter").on("input", render);
 
-    if (!$("#chCsvSort").length) {
-      render();
-      return;
-    }
-
     $("#chCsvSort").on("change", function () {
-      var v = $(this).val() || "file";
-      if (v === "file-desc") {
-        sortKey = "file";
-        sortDir = -1;
-      } else if (v === "file-asc") {
-        sortKey = "file";
-        sortDir = 1;
-      } else if (v === "uploaded-desc") {
-        sortKey = "uploaded";
-        sortDir = -1;
-      } else if (v === "uploaded-asc") {
-        sortKey = "uploaded";
-        sortDir = 1;
-      } else if (v === "processed-desc") {
-        sortKey = "processed";
-        sortDir = -1;
-      } else if (v === "processed-asc") {
-        sortKey = "processed";
-        sortDir = 1;
-      } else if (v === "status-asc") {
-        sortKey = "status";
-        sortDir = 1;
-      } else if (v === "status-desc") {
-        sortKey = "status";
-        sortDir = -1;
-      }
+      var v = $(this).val() || "file-asc";
+      var map = {
+        "file-desc": ["file", -1],
+        "file-asc": ["file", 1],
+        "uploaded-desc": ["uploaded", -1],
+        "uploaded-asc": ["uploaded", 1],
+        "processed-desc": ["processed", -1],
+        "processed-asc": ["processed", 1],
+        "status-asc": ["status", 1],
+        "status-desc": ["status", -1],
+      };
+      var next = map[v] || ["file", 1];
+      sortKey = next[0];
+      sortDir = next[1];
       render();
     });
 
@@ -3035,7 +3116,7 @@
       return "ESPN.com Evaluation is ready for DSP setup (CRS 82). Click Continue setup to enter deal details, or open analyses still in progress to finish inventory first.";
     }
     if (getCurrentPage() === "library") {
-      return "Upload audience signal CSVs here to enrich segment targeting. Review processing status and open processed files, then start a New Analysis to apply them.";
+      return "Review audience signal files and their status. Use Upload CSV to add files, then start a New Analysis to apply them.";
     }
     if (getCurrentPage() === "settings") {
       return "Manage plan, workspace language, and DSP integrations here. Connect your DSP to activate analyses directly from the Activation tab.";
@@ -4338,6 +4419,7 @@
     initUpgradeModal();
     initDevNav();
     initNavDestinations();
+    initLibraryFileList();
     initProcessedCsvPage();
     initAiDock();
     initCopilotPages();
