@@ -79,11 +79,12 @@ def ai_dock_html() -> str:
           </button>
           <div id="chCopilotSuggestions" class="ch-ai-dock__pills"></div>
           <button type="button" class="ch-ai-dock__trigger" data-ch-ai-dock-expand>
-            <span class="text-ch-secondary" data-ch-ai-dock-trigger-text>Enter a domain for CRS evaluation…</span>
+            <span class="text-ch-secondary" data-ch-ai-dock-trigger-text>Ask about CRS scores, site fit, or recommendations…</span>
           </button>
           <div class="ch-ai-dock__body">
             <div class="ch-ai-dock__intent-row" data-ch-ai-dock-intent-row hidden role="group" aria-label="Choose input type">
-              <button type="button" class="ch-ai-dock__intent ch-ai-dock__intent--active" data-ch-ai-dock-intent="domain" aria-pressed="true">Domain</button>
+              <button type="button" class="ch-ai-dock__intent ch-ai-dock__intent--active" data-ch-ai-dock-intent="ask" aria-pressed="true">Ask</button>
+              <button type="button" class="ch-ai-dock__intent" data-ch-ai-dock-intent="domain" aria-pressed="false">Domain</button>
               <button type="button" class="ch-ai-dock__intent" data-ch-ai-dock-intent="bundle" aria-pressed="false">Bundle ID</button>
               <button type="button" class="ch-ai-dock__intent" data-ch-ai-dock-intent="brief" aria-pressed="false">Brief</button>
               <button type="button" class="ch-ai-dock__intent" data-ch-ai-dock-intent="creative" aria-pressed="false">Creative</button>
@@ -97,9 +98,9 @@ def ai_dock_html() -> str:
                 class="form-control"
                 maxlength="2000"
                 autocomplete="off"
-                placeholder="Enter domain (www.domain.com) for CRS evaluation"
+                placeholder="Ask about CRS scores, cultural fit, or recommendations…"
               />
-              <button type="button" id="chCopilotAnalyze" class="btn btn-primary btn-sm flex-shrink-0" disabled>Analyze</button>
+              <button type="button" id="chCopilotAnalyze" class="btn btn-primary btn-sm flex-shrink-0" disabled>Ask</button>
             </div>
             <div class="ch-ai-dock__attachments" data-ch-ai-dock-attachments hidden>
               <input type="file" id="chAiDockBrief" class="visually-hidden" accept=".pdf,application/pdf" />
