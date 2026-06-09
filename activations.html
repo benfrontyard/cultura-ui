@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="assets/img/cultura-icon.png" />
-    <title>Audiences · Culture Hive</title>
+    <title>Activations · Culture Hive</title>
     <link
       rel="stylesheet"
       href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&amp;display=swap"
@@ -21,7 +21,7 @@
     <link href="assets/css/icons.css" rel="stylesheet" />
     <link href="assets/css/theme.css" rel="stylesheet" />
   </head>
-  <body data-ch-current="audiences" data-ch-copilot-context="Audiences library">
+  <body data-ch-current="activations" data-ch-copilot-context="Activations">
     <script src="assets/js/ch-icon-sprite-inject.js"></script>
 
     <a class="ch-skip-link" href="#main-content">Skip to main content</a>
@@ -230,106 +230,112 @@
               <main id="main-content">
                 <div class="d-flex flex-column flex-md-row align-items-md-start justify-content-md-between gap-3 mb-4">
                   <div>
-                    <h1 class="ch-type-heading-lg mb-2">Audiences</h1>
+                    <h1 class="ch-type-heading-lg mb-2">Activations</h1>
                     <p class="text-ch-secondary mb-0">
-                      Browse <span id="chAudienceTotalCount">200+</span> cultural segments from Culture Hive, or save your own under <strong>My segments</strong> for use in analyses.
+                      Track deal setup and campaign launch status across analyses. <strong>Ready for DSP setup</strong> means inventory and campaign plan are complete. Continue to enter DSP details.
                     </p>
                   </div>
-                  <div class="d-flex flex-wrap gap-2 flex-shrink-0">
-                    <button type="button" class="btn btn-outline-primary" data-ch-user-audience-create>
-                      <svg class="ch-icon me-1" aria-hidden="true" focusable="false"><use href="#ch-plus"/></svg>
-                      Create segment
-                    </button>
-                    <a class="btn btn-primary" href="analyses/new.html?type=audience">
-                      Start analysis
-                    </a>
+                  <a class="btn btn-outline-primary flex-shrink-0" href="analyses/index.html">View Analyses</a>
+                </div>
+
+                <div data-ch-populated-only>
+                <div class="ch-card mb-3">
+                  <div class="ch-card-body">
+                    <div class="row g-2 align-items-end">
+                      <div class="col-md-6 col-lg-5">
+                        <label for="activations-search" class="form-label small text-ch-secondary mb-1">Filter activations</label>
+                        <input id="activations-search" type="search" class="form-control" placeholder="Search activations…" />
+                      </div>
+                      <div class="col-md-4 col-lg-3">
+                        <label for="activations-status" class="form-label small text-ch-secondary mb-1">Status</label>
+                        <select id="activations-status" class="form-select">
+                          <option selected>All statuses</option>
+                          <option>Ready for DSP</option>
+                          <option>In progress</option>
+                          <option>Not ready</option>
+                        </select>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <ul class="nav nav-tabs mb-3" role="tablist">
-                  <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="ch-audience-tab-catalog" data-bs-toggle="tab" data-bs-target="#ch-audience-panel-catalog" type="button" role="tab" aria-controls="ch-audience-panel-catalog" aria-selected="true" data-ch-audience-tab="catalog">Culture Hive</button>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="ch-audience-tab-mine" data-bs-toggle="tab" data-bs-target="#ch-audience-panel-mine" type="button" role="tab" aria-controls="ch-audience-panel-mine" aria-selected="false" data-ch-audience-tab="mine">My segments</button>
-                  </li>
-                </ul>
+                <div id="chActivationsEmpty" class="ch-card ch-card-body text-center py-5 d-none" role="status">
+                  <svg class="ch-icon ch-icon--2xl text-ch-muted mb-2" aria-hidden="true" focusable="false"><use href="#ch-search"/></svg>
+                  <p class="fw-semibold mb-1">No activations match your filters</p>
+                  <p class="small text-ch-secondary mb-3">Try a different search term or status, or complete an analysis to activate.</p>
+                  <a href="analyses/index.html" class="btn btn-primary btn-sm">View Analyses</a>
+                </div>
 
-                <div id="ch-audience-browser" class="ch-audience-browser tab-content">
-                  <div class="tab-pane fade show active" id="ch-audience-panel-catalog" role="tabpanel" aria-labelledby="ch-audience-tab-catalog" tabindex="0">
-                  <div class="ch-card mb-3">
-                    <div class="ch-card-body ch-audience-browser__toolbar">
-                      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2">
-                        <label for="chAudienceBrowserSearch" class="form-label small text-ch-secondary mb-0">Search segments</label>
-                        <span id="chAudienceCount" class="small text-ch-muted" aria-live="polite"></span>
-                      </div>
-                      <div class="input-group mb-3">
-                        <span class="input-group-text bg-white border-end-0">
-                          <svg class="ch-icon text-ch-muted" aria-hidden="true" focusable="false"><use href="#ch-search"/></svg>
-                        </span>
-                        <input
-                          id="chAudienceBrowserSearch"
-                          type="search"
-                          class="form-control border-start-0"
-                          placeholder="Search by name or keyword…"
-                          autocomplete="off"
-                        />
-                      </div>
-                      <label class="form-label small text-ch-secondary mb-2">Category</label>
-                      <div id="chAudienceCategoryFilters" class="ch-audience-filters" role="group" aria-label="Filter by category"></div>
-                    </div>
-                  </div>
-
-                  <div class="table-responsive ch-card mb-3">
-                    <ul
-                      id="chAudienceBrowserList"
-                      class="list-group list-group-flush border-0 ch-segment-list ch-audience-browser__list mb-0"
-                      aria-label="Audience segments"
-                    ></ul>
-                    <div id="chAudienceEmpty" class="ch-audience-browser__empty d-none" role="status">
-                      <svg class="ch-icon ch-icon--2xl text-ch-muted mb-2" aria-hidden="true" focusable="false"><use href="#ch-search"/></svg>
-                      <p class="fw-semibold mb-1">No segments match</p>
-                      <p class="small text-ch-secondary mb-0">Try a different search term or clear the category filter.</p>
-                    </div>
-                    <div class="ch-audience-browser__footer border-top">
-                      <button type="button" class="btn btn-outline-secondary btn-sm d-none" id="chAudienceShowMore">Show more</button>
-                    </div>
-                  </div>
-                  </div>
-
-                  <div class="tab-pane fade" id="ch-audience-panel-mine" role="tabpanel" aria-labelledby="ch-audience-tab-mine" tabindex="0">
-                    <div class="ch-card mb-3">
-                      <div class="ch-card-body ch-audience-browser__toolbar">
-                        <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2">
-                          <label for="chMyAudienceSearch" class="form-label small text-ch-secondary mb-0">Search my segments</label>
-                          <span id="chMyAudienceCount" class="small text-ch-muted" aria-live="polite">0 segments</span>
-                        </div>
-                        <div class="input-group">
-                          <span class="input-group-text bg-white border-end-0">
-                            <svg class="ch-icon text-ch-muted" aria-hidden="true" focusable="false"><use href="#ch-search"/></svg>
+                <div class="table-responsive ch-card" id="chActivationsTableWrap">
+                  <table class="table table-hover align-middle mb-0 ch-table">
+                    <caption class="visually-hidden">Activations with analysis, audience, CRS, status, and next step.</caption>
+                    <thead>
+                      <tr>
+                        <th scope="col">Analysis</th>
+                        <th scope="col">Audience</th>
+                        <th scope="col">CRS</th>
+                        <th scope="col">Activation status</th>
+                        <th scope="col">Updated</th>
+                        <th scope="col"><span class="visually-hidden">Actions</span></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr data-ch-activation-row data-ch-status="Ready for DSP" data-ch-searchable="espn.com evaluation latino millennial sports fans">
+                        <td>
+                          <span class="ch-brand-mark" data-ch-brand-domain="espn.com">
+                            <img class="ch-brand-logo" src="https://www.google.com/s2/favicons?domain=espn.com&amp;sz=32" alt="" width="24" height="24" decoding="async" />
+                            <span class="fw-semibold">ESPN.com Evaluation</span>
                           </span>
-                          <input id="chMyAudienceSearch" type="search" class="form-control border-start-0" placeholder="Search saved segments…" autocomplete="off" />
-                        </div>
-                      </div>
-                    </div>
-                    <div class="table-responsive ch-card mb-3">
-                      <ul id="chMyAudienceList" class="list-group list-group-flush border-0 ch-segment-list ch-audience-browser__list mb-0" aria-label="My audience segments"></ul>
-                      <div id="chMyAudienceEmpty" class="ch-audience-browser__empty" role="status">
-                        <svg class="ch-icon ch-icon--2xl text-ch-muted mb-2" aria-hidden="true" focusable="false"><use href="#ch-people"/></svg>
-                        <p class="fw-semibold mb-1">No saved segments yet</p>
-                        <p class="small text-ch-secondary mb-3">Create a segment here, or save one from an analysis. My segments are editable; the Culture Hive catalog is read-only.</p>
-                        <button type="button" class="btn btn-primary btn-sm" data-ch-user-audience-create>Create segment</button>
-                      </div>
-                    </div>
-                  </div>
+                        </td>
+                        <td class="text-ch-secondary">Latino Millennial Sports Fans</td>
+                        <td><span class="fw-semibold text-success">82</span></td>
+                        <td><span class="ch-pill ch-pill-warning">Ready for DSP setup</span></td>
+                        <td class="text-ch-secondary">Jun 4, 2026</td>
+                        <td class="text-end">
+                          <a href="analyses/espn-detail.html#tab-activation" class="btn btn-sm btn-primary">Continue setup</a>
+                        </td>
+                      </tr>
+                      <tr data-ch-activation-row data-ch-status="In progress" data-ch-searchable="nike summer brief gen z athleisure">
+                        <td>
+                          <span class="ch-brand-mark" data-ch-brand-domain="nike.com">
+                            <img class="ch-brand-logo" src="https://www.google.com/s2/favicons?domain=nike.com&amp;sz=32" alt="" width="24" height="24" decoding="async" />
+                            <span class="fw-semibold">Nike Summer Brief</span>
+                          </span>
+                        </td>
+                        <td class="text-ch-secondary">Gen Z Athleisure</td>
+                        <td><span class="fw-semibold text-success">71</span></td>
+                        <td><span class="ch-pill ch-pill-neutral">Inventory pending</span></td>
+                        <td class="text-ch-secondary">May 28, 2026</td>
+                        <td class="text-end">
+                          <a href="analyses/espn-detail.html#tab-inventory" class="btn btn-sm btn-outline-primary">Open analysis</a>
+                        </td>
+                      </tr>
+                      <tr data-ch-activation-row data-ch-status="Not ready" data-ch-searchable="tubi creative review multicultural streaming">
+                        <td>
+                          <span class="ch-brand-mark" data-ch-brand-domain="tubi.tv">
+                            <img class="ch-brand-logo" src="https://www.google.com/s2/favicons?domain=tubi.tv&amp;sz=32" alt="" width="24" height="24" decoding="async" />
+                            <span class="fw-semibold">Tubi Creative Review</span>
+                          </span>
+                        </td>
+                        <td class="text-ch-secondary">Multicultural Streaming</td>
+                        <td><span class="fw-semibold">68</span></td>
+                        <td><span class="ch-pill ch-pill-neutral">Complete analysis first</span></td>
+                        <td class="text-ch-secondary">May 22, 2026</td>
+                        <td class="text-end">
+                          <a href="analyses/espn-detail.html" class="btn btn-sm btn-outline-secondary">Review analysis</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
                 </div>
 
-                <p class="small text-ch-muted mb-0">
-                  <button type="button" class="btn btn-link btn-sm px-0 align-baseline" data-bs-toggle="modal" data-bs-target="#chCampaignModal">Campaign workspace</button>
-                  <span aria-hidden="true"> · </span>
-                  <a href="analyses/espn-detail.html#tab-blueprint" class="text-reset" data-ch-nav="blueprint">Cultural Blueprint</a>
-                  <span class="text-ch-muted"> deepens segment narratives with activation-ready context.</span>
-                </p>
+                <div class="ch-card ch-card-body text-center py-5" data-ch-empty-zero role="status">
+                  <svg class="ch-icon ch-icon--2xl text-ch-muted mb-2" aria-hidden="true" focusable="false"><use href="#ch-rocket"/></svg>
+                  <p class="fw-semibold mb-1">No activations yet</p>
+                  <p class="small text-ch-secondary mb-3">Complete an analysis to activate inventory and campaigns.</p>
+                  <a href="analyses/index.html" class="btn btn-primary btn-sm">View Analyses</a>
+                </div>
               </main>
             </div>
           </div>
@@ -403,28 +409,6 @@
     </div>
     <!-- ch:/shell:mobile-nav -->
 
-    <div class="modal fade" id="chUserAudienceModal" tabindex="-1" aria-labelledby="chUserAudienceModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h2 class="modal-title ch-type-heading-md" id="chUserAudienceModalLabel">Create segment</h2>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close dialog"></button>
-          </div>
-          <div class="modal-body">
-            <label for="chUserAudienceName" class="form-label">Segment name</label>
-            <input type="text" class="form-control mb-3" id="chUserAudienceName" placeholder="e.g. Gen Z sneaker collectors in NYC" maxlength="120" />
-            <label for="chUserAudienceDescription" class="form-label">Description <span class="text-ch-muted fw-normal">(optional)</span></label>
-            <textarea class="form-control mb-1" id="chUserAudienceDescription" rows="3" placeholder="Behaviors, cultural signals, and media habits for this segment…" maxlength="500"></textarea>
-            <p class="small text-ch-muted mb-0">Saved to your workspace. Culture Hive catalog segments cannot be edited here.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-primary" id="chUserAudienceSave">Save segment</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <div class="modal fade" id="chAudienceModal" tabindex="-1" aria-labelledby="chAudienceModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
@@ -436,13 +420,79 @@
             <p class="small text-ch-muted mb-3">Optional, improves CRS accuracy.</p>
             <label for="chAudienceSearch" class="form-label">Search audiences</label>
             <input type="search" class="form-control mb-3" id="chAudienceSearch" placeholder="Filter audiences…" autocomplete="off" />
-            <p id="chAudienceModalCount" class="small text-ch-muted mb-2" aria-live="polite"></p>
             <ul
-              class="list-unstyled mb-0 d-flex flex-column gap-1 ch-audience-modal__list"
+              class="list-unstyled mb-0 d-flex flex-column gap-1"
               id="chAudienceList"
               role="listbox"
               aria-labelledby="chAudienceModalLabel"
-            ></ul>
+            >
+              <li role="presentation">
+                <button
+                  type="button"
+                  class="ch-audience-row w-100 text-start"
+                  role="option"
+                  aria-selected="false"
+                  data-ch-audience-name="Urban Wellness Consumers"
+                >
+                  Urban Wellness Consumers
+                </button>
+              </li>
+              <li role="presentation">
+                <button
+                  type="button"
+                  class="ch-audience-row w-100 text-start"
+                  role="option"
+                  aria-selected="false"
+                  data-ch-audience-name="Digital Wellness Seekers"
+                >
+                  Digital Wellness Seekers
+                </button>
+              </li>
+              <li role="presentation">
+                <button
+                  type="button"
+                  class="ch-audience-row w-100 text-start"
+                  role="option"
+                  aria-selected="false"
+                  data-ch-audience-name="Creator-Led Shoppers"
+                >
+                  Creator-Led Shoppers
+                </button>
+              </li>
+              <li role="presentation">
+                <button
+                  type="button"
+                  class="ch-audience-row w-100 text-start"
+                  role="option"
+                  aria-selected="false"
+                  data-ch-audience-name="Budget-Smart Families"
+                >
+                  Budget-Smart Families
+                </button>
+              </li>
+              <li role="presentation">
+                <button
+                  type="button"
+                  class="ch-audience-row w-100 text-start"
+                  role="option"
+                  aria-selected="false"
+                  data-ch-audience-name="Urban Design Optimizers"
+                >
+                  Urban Design Optimizers
+                </button>
+              </li>
+              <li role="presentation">
+                <button
+                  type="button"
+                  class="ch-audience-row w-100 text-start"
+                  role="option"
+                  aria-selected="false"
+                  data-ch-audience-name="Community Connectors"
+                >
+                  Community Connectors
+                </button>
+              </li>
+            </ul>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>

@@ -20,7 +20,7 @@ globs:
 - Structured UI leads; copilot drawer supports **explanation**, **interrogation**, and **workflow help**.
 - No chat input on dashboard hero; no Assistant in primary sidebar nav.
 - Copilot is an offcanvas drawer (`#chCopilotDrawer`) with context pill and page/tab-aware suggestions.
-- Full-page chat (`chat/index.html`) is exploration depth — links back to analyses workflow.
+- Cultura AI lives in the copilot drawer on every workspace page; there is no full-page chat landing.
 - Chat starters must not compete with New Analysis entry points.
 
 ## When adding UI

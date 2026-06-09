@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="assets/img/cultura-icon.png" />
-    <title>UI Foundations · Culture Hive AI</title>
+    <title>UI Foundations · Culture Hive</title>
     <link
       rel="stylesheet"
       href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&amp;display=swap"
@@ -46,13 +46,12 @@
         </div>
         <div class="ch-sidebar-scroll">
           <nav aria-label="Primary navigation">
-            <p class="ch-nav-section-label" id="nav-label-workspace">Workspace</p>
             <!-- MVP: Home points at this dashboard at site root; a future marketing-only landing can replace or split this page. -->
             <ul class="list-unstyled mb-0">
               <li>
                 <a class="ch-nav-link" href="index.html" data-ch-nav="home">
                   <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-house"/></svg>
-                  <span class="ch-nav-label">Dashboard</span>
+                  <span class="ch-nav-label">Home</span>
                 </a>
               </li>
               <li>
@@ -63,34 +62,29 @@
               </li>
               <li>
                 <a class="ch-nav-link" href="audiences.html" data-ch-nav="audiences">
-                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-list-ul"/></svg>
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-people"/></svg>
                   <span class="ch-nav-label">Audiences</span>
                 </a>
               </li>
               <li>
-                <a class="ch-nav-link" href="#" data-ch-nav="activations">
-                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-send"/></svg>
+                <a class="ch-nav-link" href="activations.html" data-ch-nav="activations">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-rocket"/></svg>
                   <span class="ch-nav-label">Activations</span>
                 </a>
               </li>
               <li>
-                <a class="ch-nav-link" href="#" data-ch-nav="library">
+                <a class="ch-nav-link" href="library.html" data-ch-nav="library">
                   <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-folder"/></svg>
                   <span class="ch-nav-label">Library</span>
                 </a>
               </li>
               <li>
-                <a class="ch-nav-link" href="#" data-ch-nav="settings">
+                <a class="ch-nav-link" href="settings.html" data-ch-nav="settings">
                   <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-gear"/></svg>
                   <span class="ch-nav-label">Settings</span>
                 </a>
               </li>
-              <li class="ch-dev-only-nav d-none">
-                <a class="ch-nav-link" href="ui-foundations.html" data-ch-nav="foundations">
-                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-grid"/></svg>
-                  <span class="ch-nav-label">UI Foundations</span>
-                </a>
-              </li>
+
             </ul>
           </nav>
         </div>
@@ -102,7 +96,7 @@
               <div class="text-ch-muted small">Free Plan</div>
             </div>
           </div>
-          <a class="btn btn-outline-primary btn-sm w-100" href="ui-foundations.html">
+          <a class="btn btn-outline-primary btn-sm w-100" href="settings.html#plan" data-ch-upgrade-open>
             <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-arrow-up-circle"/></svg>
             <span>Upgrade Plan</span>
           </a>
@@ -166,41 +160,24 @@
               </button>
             </div>
           </div>
-          <div class="ch-topbar-search-wrap d-none d-md-flex align-items-center justify-content-center flex-grow-1 min-w-0">
-            <div class="ch-topbar-search position-relative flex-grow-1">
-              <label for="global-search" class="visually-hidden">Search workspace</label>
-              <svg class="ch-icon ch-search-icon" aria-hidden="true" focusable="false"><use href="#ch-search"/></svg>
-              <input
-                id="global-search"
-                type="search"
-                class="form-control"
-                placeholder="Search brands, categories, audiences, or cultural trends..."
-                autocomplete="off"
-                aria-describedby="global-search-hint"
-                aria-haspopup="dialog"
-                aria-controls="chCommandPalette"
-              />
-              <span id="global-search-hint" class="visually-hidden"
-                >Opens the workspace search dialog when focused. Shortcut: Control or Command K.</span
-              >
+          <div class="ch-topbar-actions d-flex align-items-center gap-1 ms-auto flex-nowrap justify-content-end">
+            <button
+              type="button"
+              class="btn btn-light border flex-shrink-0 ch-topbar-jump-btn"
+              data-ch-command-palette-open
+              aria-haspopup="dialog"
+              aria-controls="chCommandPalette"
+              aria-label="Jump to page (Command K)"
+              title="Jump to page (⌘K)"
+            >
+              <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-search"/></svg>
+              <span class="ch-topbar-jump-label d-none d-lg-inline">Jump to…</span>
               <span
-                class="position-absolute end-0 top-50 translate-middle-y me-3 ch-kbd-hint d-none d-md-inline"
+                class="ch-kbd-hint d-none d-xl-inline-flex ms-1"
                 role="group"
                 aria-label="Keyboard shortcut: Control or Command K"
                 ><kbd>Cmd</kbd><span class="ch-kbd-sep" aria-hidden="true">+</span><kbd>K</kbd></span
               >
-            </div>
-          </div>
-          <div class="ch-topbar-actions d-flex align-items-center gap-1 ms-auto flex-nowrap justify-content-end">
-            <button
-              type="button"
-              class="btn btn-light border d-md-none flex-shrink-0"
-              data-ch-command-palette-open
-              aria-haspopup="dialog"
-              aria-controls="chCommandPalette"
-              aria-label="Search workspace"
-            >
-              <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-search"/></svg>
             </button>
             <div class="dropdown">
               <button
@@ -240,7 +217,7 @@
                   </div>
                 </li>
                 <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="ui-foundations.html">Upgrade</a></li>
+                <li><a class="dropdown-item" href="settings.html#plan" data-ch-upgrade-open>Upgrade</a></li>
                 <li><hr class="dropdown-divider" /></li>
                 <li><a class="dropdown-item" href="#" data-ch-logout>Logout</a></li>
               </ul>
@@ -270,11 +247,13 @@
                           <li><a class="nav-link py-1" href="#comp-auth">Sign in</a></li>
                           <li><a class="nav-link py-1" href="#comp-cards">Cards</a></li>
                           <li><a class="nav-link py-1" href="#comp-table">Tables</a></li>
-                          <li><a class="nav-link py-1" href="#comp-tabs-bc">Tabs</a></li>
+                          <li><a class="nav-link py-1" href="#comp-tabs-bc">Tabs and breadcrumbs</a></li>
                           <li><a class="nav-link py-1" href="#comp-alerts">Alerts</a></li>
                           <li><a class="nav-link py-1" href="#comp-empty">Empty states</a></li>
+                          <li><a class="nav-link py-1" href="#comp-workflow">Workflow entry</a></li>
+                          <li><a class="nav-link py-1" href="#comp-audience">Audiences</a></li>
                           <li><a class="nav-link py-1" href="#comp-overlays">Modals and toasts</a></li>
-                          <li><a class="nav-link py-1" href="#comp-upload-ai">Upload and AI</a></li>
+                          <li><a class="nav-link py-1" href="#comp-upload-ai">Upload and AI dock</a></li>
                           <li><a class="nav-link py-1" href="#comp-nav">Navigation</a></li>
                         </ul>
                       </nav>
@@ -295,14 +274,14 @@
                 <section class="ch-foundations-section mb-5" id="tok-ssot" aria-labelledby="tok-ssot-h">
                   <h2 id="tok-ssot-h" class="h5 ch-heading mb-3">How updates work</h2>
                   <p class="text-ch-secondary ch-type-body-sm mb-3">
-                    When designers or developers change the product look, they change shared CSS files—not just this page.
+                    When designers or developers change the product look, they change shared CSS files, not just this page.
                     The real app and this reference both load the same bundle, so what you see here is what users get after a refresh.
                   </p>
                   <ul class="small text-ch-secondary mb-0 ps-3">
                     <li><strong>For everyone:</strong> think of <a href="https://github.com/benfrontyard/cultura-ui/blob/main/assets/css/theme.css" rel="noopener noreferrer" target="_blank"><code>theme.css</code></a> as the master style sheet for Culture Hive (colors, type, cards, tables, and more).</li>
                     <li><strong>For developers:</strong> brand tokens live as <code>--ch-*</code> variables in <code>:root</code>. Extra names like <code>--color-primary-500</code> or <code>--surface-card</code> are thin aliases that point at those same <code>--ch-*</code> values so docs and code can speak the same language.</li>
-                    <li><strong>Only on this page:</strong> <a href="https://github.com/benfrontyard/cultura-ui/blob/main/assets/css/ui-foundations.css" rel="noopener noreferrer" target="_blank"><code>ui-foundations.css</code></a> handles the sidebar table of contents and layout of examples—not the product UI itself.</li>
-                    <li><strong>Assistant sign-in:</strong> the log-in and sign-up gate on <a href="chat/index.html"><code>chat/index.html</code></a> uses the same <code>theme.css</code> primitives as the rest of the app (<code>.ch-auth-*</code> wrappers plus <code>.form-control</code>, <code>.btn-primary</code>, and shared type classes). Treat the <a href="#comp-auth">Sign in</a> specimen below as the documented markup pattern; do not fork a second visual system for authentication screens.</li>
+                    <li><strong>Only on this page:</strong> <a href="https://github.com/benfrontyard/cultura-ui/blob/main/assets/css/ui-foundations.css" rel="noopener noreferrer" target="_blank"><code>ui-foundations.css</code></a> handles the sidebar table of contents and layout of examples, not the product UI itself.</li>
+                    <li><strong>Sign-in gate:</strong> the log-in and sign-up gate on <a href="index.html"><code>index.html</code></a> uses the same <code>theme.css</code> primitives as the rest of the app (<code>.ch-auth-*</code> wrappers plus <code>.form-control</code>, <code>.btn-primary</code>, and shared type classes). Treat the <a href="#comp-auth">Sign in</a> specimen below as the documented markup pattern; do not fork a second visual system for authentication screens.</li>
                   </ul>
                 </section>
 
@@ -327,6 +306,12 @@
                   <div class="row g-2 mb-0">
                     <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-layout-sidebar"/></svg><code>#ch-layout-sidebar</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-layout-sidebar" aria-label="Copy icon fragment">Copy</button></div></div>
                     <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-house"/></svg><code>#ch-house</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-house" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-globe"/></svg><code>#ch-globe</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-globe" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-rocket"/></svg><code>#ch-rocket</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-rocket" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-view"/></svg><code>#ch-view</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-view" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-export"/></svg><code>#ch-export</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-export" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-file-stack"/></svg><code>#ch-file-stack</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-file-stack" aria-label="Copy icon fragment">Copy</button></div></div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-lock"/></svg><code>#ch-lock</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-lock" aria-label="Copy icon fragment">Copy</button></div></div>
                     <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-chat"/></svg><code>#ch-chat</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-chat" aria-label="Copy icon fragment">Copy</button></div></div>
                     <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-file-graph"/></svg><code>#ch-file-graph</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-file-graph" aria-label="Copy icon fragment">Copy</button></div></div>
                     <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="ch-foundations-icon-tile"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-graph-up"/></svg><code>#ch-graph-up</code><button type="button" class="btn btn-sm btn-outline-secondary ch-copy-btn" data-ch-copy="#ch-graph-up" aria-label="Copy icon fragment">Copy</button></div></div>
@@ -392,13 +377,13 @@
                   <p class="text-ch-secondary ch-type-body-sm mb-3">
                     <strong>Fonts you will see:</strong>
                     <a href="https://fonts.google.com/specimen/Epilogue" rel="noopener noreferrer" target="_blank">Epilogue</a> for big marketing-style titles,
-                    <a href="https://www.fontshare.com/fonts/general-sans" rel="noopener noreferrer" target="_blank">General Sans</a> for most UI text and smaller headings (loaded via Fontshare in this prototype).
+                    <a href="https://www.fontshare.com/fonts/general-sans" rel="noopener noreferrer" target="_blank">General Sans</a> for most UI text and smaller headings (loaded via Fontshare).
                     Technical sizing follows a clear step scale inspired by
                     <a href="https://polaris.shopify.com/tokens/font" rel="noopener noreferrer" target="_blank">Shopify Polaris type tokens</a> (good reference for designers); in code those steps are <code>--ch-font-size-*</code> and <code>--ch-font-line-height-*</code>.
                     Fluid sizes <code>--ch-text-2xs</code> through <code>--ch-text-md</code> plus a responsive root font size keep things readable on phones and desktops.
                   </p>
                   <p class="text-ch-secondary ch-type-body-sm mb-3">
-                    <strong>Heading weight:</strong> large titles use <strong>semibold (600)</strong>, not extra-heavy bold, so the product feels calm and enterprise rather than shouty.
+                    <strong>Heading weight:</strong> large titles use semibold (600), not extra-heavy bold. Inline labels and emphasis in body copy use the same semibold (600) via the global <code>strong</code> rule in <code>theme.css</code>.
                   </p>
                   <div class="table-responsive ch-card mb-4">
                     <table class="table table-sm mb-0 ch-table">
@@ -438,7 +423,7 @@
                   <p class="ch-type-heading-xs mb-3">Heading xs</p>
                   <p class="ch-page-title mb-2">Fluid page title (<code>.ch-page-title</code>, 20–24px)</p>
                   <p class="ch-type-body-lg mb-1">Body large: supporting lead copy.</p>
-                  <p class="ch-type-body-md mb-1">Body md: default density. <strong>Strong</strong>, <a href="#">link</a>, <span class="text-ch-secondary">secondary</span>, <span class="text-ch-muted">muted</span>.</p>
+                  <p class="ch-type-body-md mb-1">Body md: default density. <strong>Strong (600)</strong>, <a href="#">link</a>, <span class="text-ch-secondary">secondary</span>, <span class="text-ch-muted">muted</span>.</p>
                   <p class="ch-type-body-sm mb-1">Body sm: secondary lines and captions.</p>
                   <p class="ch-type-body-xs mb-0">Body xs: meta only (11px).</p>
                 </section>
@@ -446,7 +431,7 @@
                 <section class="ch-foundations-section mb-5" aria-labelledby="tok-semantic-color">
                   <h2 id="tok-semantic-color" class="h5 ch-heading mb-3">Status colors (badges and alerts)</h2>
                   <p class="text-ch-secondary small mb-3">
-                    Soft background tints with strong text keep status readable without screaming. Use them for chips (“Done”, “In progress”), banners, and validation—not for full-page decoration.
+                    Soft background tints with strong text keep status readable without screaming. Use them for chips (“Done”, “In progress”), banners, and validation, not for full-page decoration.
                     Token names always start with <code>--ch-semantic-…</code>; the table below also shows friendlier alias names that map to the same values for documentation.
                   </p>
                   <div class="table-responsive ch-card mb-3">
@@ -486,7 +471,7 @@
                 <section class="ch-foundations-section mb-5" aria-labelledby="tok-space">
                   <h2 id="tok-space" class="h5 ch-heading mb-3">Spacing, corners, and shadow</h2>
                   <p class="text-ch-secondary small mb-3">
-                    These numbers control padding inside the main workspace, gaps between cards, border roundness, and light shadows. They are ordinary CSS custom properties—change them in
+                    These numbers control padding inside the main workspace, gaps between cards, border roundness, and light shadows. They are ordinary CSS custom properties; change them in
                     <a href="https://github.com/benfrontyard/cultura-ui/blob/main/assets/css/theme.css" rel="noopener noreferrer" target="_blank"><code>theme.css</code></a>
                     to tighten or loosen the whole product at once.
                   </p>
@@ -560,7 +545,7 @@
                 <section class="ch-foundations-section mb-5" aria-labelledby="comp-forms">
                   <h2 id="comp-forms" class="h5 ch-heading mb-3">Forms</h2>
                   <p class="text-ch-secondary ch-type-body-sm mb-3">
-                    Labels, inputs, selects, and validation messages follow <a href="https://getbootstrap.com/docs/5.3/forms/overview/" rel="noopener noreferrer" target="_blank">Bootstrap form patterns</a>. Error states use Bootstrap’s invalid styles plus Culture Hive colors. Dense public surfaces (the Assistant gate) add <code>.ch-auth-*</code> spacing and label styles on top of the same controls—see <a href="#comp-auth">Sign in</a>.
+                    Labels, inputs, selects, and validation messages follow <a href="https://getbootstrap.com/docs/5.3/forms/overview/" rel="noopener noreferrer" target="_blank">Bootstrap form patterns</a>. Error states use Bootstrap’s invalid styles plus Culture Hive colors. Dense public surfaces (the Assistant gate) add <code>.ch-auth-*</code> spacing and label styles on top of the same controls; see <a href="#comp-auth">Sign in</a>.
                   </p>
                   <div class="row g-3">
                     <div class="col-md-4">
@@ -586,9 +571,9 @@
                 <section class="ch-foundations-section mb-5" id="comp-auth" aria-labelledby="comp-auth-h" data-ch-foundations-terms="sign in log in login signup register password auth gate assistant account">
                   <h2 id="comp-auth-h" class="h5 ch-heading mb-3">Sign in and account creation</h2>
                   <p class="text-ch-secondary ch-type-body-sm mb-3">
-                    The Culture Hive Assistant opens with the same split layout you see on
-                    <a href="chat/index.html"><code>chat/index.html</code></a>: media on the left, form on the right at desktop widths. All styling lives in
-                    <a href="https://github.com/benfrontyard/cultura-ui/blob/main/assets/css/theme.css" rel="noopener noreferrer" target="_blank"><code>theme.css</code></a> under the <code>.ch-auth-*</code> prefix—this page does not ship a separate auth stylesheet.
+                    Culture Hive opens with the same split layout you see on
+                    <a href="index.html"><code>index.html</code></a>: media on the left, form on the right at desktop widths. All styling lives in
+                    <a href="https://github.com/benfrontyard/cultura-ui/blob/main/assets/css/theme.css" rel="noopener noreferrer" target="_blank"><code>theme.css</code></a> under the <code>.ch-auth-*</code> prefix; this page does not ship a separate auth stylesheet.
                   </p>
                   <ul class="text-ch-secondary ch-type-body-sm mb-3 ps-3">
                     <li><strong>Title:</strong> <code>.ch-auth-title</code> with a type ramp class such as <code>.ch-type-heading-xl</code>.</li>
@@ -602,7 +587,7 @@
                   </p>
                   <div class="ch-foundations-auth-demo">
                     <h3 class="ch-auth-title ch-type-heading-xl" id="ch-foundations-auth-demo-title">Log in</h3>
-                    <p class="ch-auth-lead">Enter your details to open the workspace.</p>
+                    <p class="ch-auth-lead">Enter your details to sign in to Culture Hive.</p>
                     <form class="ch-auth-form" action="#" aria-labelledby="ch-foundations-auth-demo-title" novalidate onsubmit="return false;">
                       <div class="ch-auth-field">
                         <label for="ch-foundations-auth-email" class="ch-auth-label">Email</label>
@@ -666,7 +651,7 @@
                 <section class="ch-foundations-section mb-5" aria-labelledby="comp-table">
                   <h2 id="comp-table" class="h5 ch-heading mb-3">Tables</h2>
                   <p class="text-ch-secondary small mb-3">
-                    Data tables sit inside a card shell so they align with the rest of the dashboard. Wrap the table in <code>.table-responsive.ch-card</code> and add <code>.ch-table</code> on the <code>&lt;table&gt;</code> for Culture Hive’s header and row styling—see
+                    Data tables sit inside a card shell so they align with the rest of the dashboard. Wrap the table in <code>.table-responsive.ch-card</code> and add <code>.ch-table</code> on the <code>&lt;table&gt;</code> for Culture Hive’s header and row styling; see
                     <a href="https://getbootstrap.com/docs/5.3/content/tables/" rel="noopener noreferrer" target="_blank">Bootstrap tables</a> for baseline behavior.
                   </p>
                   <div class="table-responsive ch-card">
@@ -683,19 +668,28 @@
                 </section>
 
                 <section class="ch-foundations-section mb-5" aria-labelledby="comp-tabs-bc">
-                  <h2 id="comp-tabs-bc" class="h5 ch-heading mb-3">Tabs and wayfinding</h2>
+                  <h2 id="comp-tabs-bc" class="h5 ch-heading mb-3">Tabs and breadcrumbs</h2>
                   <p class="text-ch-secondary small mb-3">
-                    Inside the product shell we usually rely on the top bar back/forward buttons plus a clear page title instead of deep breadcrumb trails.
+                    Top-level pages use the sidebar active state plus a clear H1. Nested pages (e.g. Analyses → New Analysis, Library → Upload CSV) use a short breadcrumb trail. In-page sections use tabs.
                     For in-page sections, <a href="https://getbootstrap.com/docs/5.3/components/navs-tabs/#javascript-behavior" rel="noopener noreferrer" target="_blank">Bootstrap tabs</a> work as shown below. History buttons are wired in
                     <a href="https://github.com/benfrontyard/cultura-ui/blob/main/assets/js/app.js" rel="noopener noreferrer" target="_blank"><code>app.js</code></a> (<code>initTopbarHistoryNav</code>).
                   </p>
-                  <ul class="nav nav-tabs" role="tablist">
+                  <p class="text-ch-secondary small mb-2">Parent crumbs use muted secondary text with a light underline (not primary blue). Current page is plain secondary text.</p>
+                  <nav aria-label="Breadcrumb example" class="mb-3">
+                    <ol class="breadcrumb mb-0 small">
+                      <li class="breadcrumb-item"><a href="analyses/index.html">Analyses</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">New Analysis</li>
+                    </ol>
+                  </nav>
+                  <ul class="nav nav-tabs mb-3" role="tablist">
                     <li class="nav-item" role="presentation"><button class="nav-link active" id="ftab1-tab" data-bs-toggle="tab" data-bs-target="#ftab1" type="button" role="tab" aria-controls="ftab1" aria-selected="true">Tab A</button></li>
                     <li class="nav-item" role="presentation"><button class="nav-link" id="ftab2-tab" data-bs-toggle="tab" data-bs-target="#ftab2" type="button" role="tab" aria-controls="ftab2" aria-selected="false">Tab B</button></li>
                   </ul>
-                  <div class="tab-content border border-top-0 rounded-bottom p-3 ch-card">
-                    <div class="tab-pane fade show active" id="ftab1" role="tabpanel" aria-labelledby="ftab1-tab" tabindex="0">Tab panel A</div>
-                    <div class="tab-pane fade" id="ftab2" role="tabpanel" aria-labelledby="ftab2-tab" tabindex="0">Tab panel B</div>
+                  <div class="tab-content">
+                    <div class="ch-card ch-card-body">
+                      <div class="tab-pane fade show active" id="ftab1" role="tabpanel" aria-labelledby="ftab1-tab" tabindex="0">Tab panel A</div>
+                      <div class="tab-pane fade" id="ftab2" role="tabpanel" aria-labelledby="ftab2-tab" tabindex="0">Tab panel B</div>
+                    </div>
                   </div>
                 </section>
 
@@ -715,42 +709,137 @@
                   <p class="text-ch-secondary small mb-3">When there is nothing to show yet, explain what is missing in plain language and offer one clear next step (a single primary button).</p>
                   <div class="ch-card ch-card-body text-center py-5">
                     <div class="ch-brand-wordmark mx-auto mb-3">
-                      <img src="assets/img/cultura-logo.png" alt="Cultura by Culture Hive" decoding="async" />
+                      <img src="assets/img/cultura-logo.png" alt="Culture Hive" decoding="async" />
                     </div>
-                    <p class="fw-semibold mb-1">No reports yet</p>
-                    <p class="text-ch-secondary small mb-3">Create a CRS report to see it listed here.</p>
-                    <a class="btn btn-primary btn-sm" href="analyses/index.html">Go to Analyses</a>
+                    <p class="fw-semibold mb-1">No analyses yet</p>
+                    <p class="text-ch-secondary small mb-3">Start an evaluation to see it listed here.</p>
+                    <a class="btn btn-primary btn-sm" href="analyses/new.html">New Analysis</a>
                   </div>
+                </section>
+
+                <section class="ch-foundations-section mb-5" aria-labelledby="comp-workflow">
+                  <h2 id="comp-workflow" class="h5 ch-heading mb-3">Workflow entry (New Analysis)</h2>
+                  <p class="text-ch-secondary small mb-3">
+                    Step 1 uses selectable <code>.ch-input-type-card</code> tiles; Step 2 shows the matching form. The horizontal <code>.ch-analysis-stepper</code> tracks progress. Deep links use
+                    <code>?type=domain</code>, <code>?type=brief</code>, <code>?type=creative</code>, <code>?type=app</code>, or audience params such as
+                    <code>?type=audience&amp;audienceId=…</code> — handled by <code>applyNewAnalysisDeepLink()</code> in <code>app.js</code>.
+                  </p>
+                  <nav class="ch-analysis-stepper mb-3" aria-label="Example analysis progress">
+                    <ol class="ch-analysis-stepper__list list-unstyled mb-0">
+                      <li class="ch-analysis-stepper__step ch-analysis-stepper__step--active" data-ch-analysis-step="1">
+                        <span class="ch-analysis-stepper__marker" aria-hidden="true">1</span>
+                        <span class="ch-analysis-stepper__label">Choose input type</span>
+                      </li>
+                      <li class="ch-analysis-stepper__step" data-ch-analysis-step="2">
+                        <span class="ch-analysis-stepper__marker" aria-hidden="true">2</span>
+                        <span class="ch-analysis-stepper__label">Provide input</span>
+                      </li>
+                      <li class="ch-analysis-stepper__step" data-ch-analysis-step="3">
+                        <span class="ch-analysis-stepper__marker" aria-hidden="true">3</span>
+                        <span class="ch-analysis-stepper__label">Review results</span>
+                      </li>
+                    </ol>
+                  </nav>
+                  <div class="row g-2 mb-0">
+                    <div class="col-md-6">
+                      <div class="ch-input-type-card position-relative selected" data-ch-input-type="domain" role="button" tabindex="0" aria-pressed="true">
+                        <div class="ch-input-type-card__icon" aria-hidden="true">
+                          <svg class="ch-icon" focusable="false"><use href="#ch-globe"/></svg>
+                        </div>
+                        <div class="ch-input-type-card__title fw-semibold mb-1">Domain</div>
+                        <div class="ch-input-type-card__desc small">Evaluate a publisher or brand website</div>
+                        <div class="ch-input-type-card__hint small text-ch-muted mt-1">Best for publisher and site CRS scoring</div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="ch-input-type-card position-relative" data-ch-input-type="audience" role="button" tabindex="0" aria-pressed="false">
+                        <div class="ch-input-type-card__icon" aria-hidden="true">
+                          <svg class="ch-icon" focusable="false"><use href="#ch-people"/></svg>
+                        </div>
+                        <div class="ch-input-type-card__title fw-semibold mb-1">Audience Idea</div>
+                        <div class="ch-input-type-card__desc small">Start from a segment hypothesis</div>
+                        <div class="ch-input-type-card__hint small text-ch-muted mt-1">Best for audience-first planning</div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="ch-foundations-section mb-5" aria-labelledby="comp-audience">
+                  <h2 id="comp-audience" class="h5 ch-heading mb-3">Audiences browser</h2>
+                  <p class="text-ch-secondary small mb-3">
+                    The Audiences page lists catalog segments with category filters. Rows are clickable; <strong>Start analysis</strong> deep-links to New Analysis with the segment pre-filled. The choose-audience modal list is populated from
+                    <code>assets/data/audience-types.json</code> at runtime (static shell markup is a fallback).
+                  </p>
+                  <div class="ch-card mb-3">
+                    <div class="ch-card-body ch-audience-browser__toolbar">
+                      <label class="form-label small text-ch-secondary mb-2">Category</label>
+                      <div class="ch-audience-filters d-flex flex-wrap gap-2" role="group" aria-label="Filter by category">
+                        <button type="button" class="ch-audience-filter is-active" aria-pressed="true">All</button>
+                        <button type="button" class="ch-audience-filter" aria-pressed="false">Featured</button>
+                        <button type="button" class="ch-audience-filter" aria-pressed="false">Wellness &amp; fitness</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="table-responsive ch-card mb-3">
+                    <ul class="list-group list-group-flush border-0 ch-segment-list ch-audience-browser__list mb-0" aria-label="Example segments">
+                      <li class="list-group-item d-flex justify-content-between align-items-center gap-3 ch-audience-browser__row">
+                        <div class="min-w-0">
+                          <div class="fw-semibold">Urban Wellness Consumers</div>
+                          <div class="small text-ch-secondary mb-0">Wellness &amp; fitness · Culture Hive · read-only</div>
+                        </div>
+                        <span class="btn btn-sm btn-outline-primary flex-shrink-0">Start analysis</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#chAudienceModal">Choose audience (modal)</button>
                 </section>
 
                 <section class="ch-foundations-section mb-5" aria-labelledby="comp-overlays">
                   <h2 id="comp-overlays" class="h5 ch-heading mb-3">Modals and toasts</h2>
                   <p class="text-ch-secondary small mb-3">
-                    Modals pause the page for a focused task; toasts are small slide-in notices. Both come from
-                    <a href="https://getbootstrap.com/docs/5.3/components/modal/" rel="noopener noreferrer" target="_blank">Bootstrap modals</a>
-                    and <a href="https://getbootstrap.com/docs/5.3/components/toasts/" rel="noopener noreferrer" target="_blank">Bootstrap toasts</a> with Culture Hive styling.
+                    Modals pause the page for a focused task; toasts confirm actions. Shell modals (<code>#chHelpModal</code>, <code>#chUpgradeModal</code>, <code>#chAudienceModal</code>) use identical copy on every workspace page. Demo actions use
+                    <code>data-ch-demo-toast</code> with a specific <code>data-ch-toast-message</code> — never generic fallbacks.
                   </p>
-                  <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#chFoundationModal">Open modal</button>
-                  <button type="button" class="btn btn-outline-primary" data-ch-demo-toast>Show toast</button>
+                  <div class="d-flex flex-wrap gap-2 mb-3">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#chFoundationModal">Example modal</button>
+                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#chUpgradeModal">Upgrade plan</button>
+                    <button type="button" class="btn btn-outline-primary" data-ch-help-open>Help</button>
+                    <button type="button" class="btn btn-light border" data-ch-command-palette-open>Jump to…</button>
+                  </div>
+                  <p class="small text-ch-muted mb-2">Toast specimens (wired via <code>initToastDemo()</code>):</p>
+                  <div class="d-flex flex-wrap gap-2 mb-0">
+                    <button type="button" class="btn btn-sm btn-outline-primary" data-ch-demo-toast data-ch-toast-message="Segment added to My segments." data-ch-toast-variant="success">Success</button>
+                    <button type="button" class="btn btn-sm btn-outline-primary" data-ch-demo-toast data-ch-toast-message="Select an audience to continue." data-ch-toast-variant="warning">Warning</button>
+                    <button type="button" class="btn btn-sm btn-outline-primary" data-ch-demo-toast data-ch-toast-message="Opening billing portal…" data-ch-toast-variant="secondary">Upgrade</button>
+                    <button type="button" class="btn btn-sm btn-outline-primary" data-ch-demo-toast data-ch-toast-message="Copied to clipboard." data-ch-toast-variant="secondary">Info</button>
+                  </div>
                 </section>
 
                 <section class="ch-foundations-section mb-5" aria-labelledby="comp-upload-ai">
-                  <h2 id="comp-upload-ai" class="h5 ch-heading mb-3">Uploads and AI prompts</h2>
+                  <h2 id="comp-upload-ai" class="h5 ch-heading mb-3">Uploads and Cultura AI dock</h2>
                   <p class="text-ch-secondary small mb-3">
-                    File drop zones and the AI prompt box reuse the same spacing and borders as the rest of the product so assistant flows feel like part of the workspace, not a separate skin.
+                    File drop zones and the Cultura AI dock (<code>.ch-ai-dock</code>) share workspace spacing and borders. The dock collapses to a bottom bar on workflow pages; expanded state shows intent pills (Domain, Bundle ID, Brief, Creative, Audience) and routes to New Analysis when appropriate.
                   </p>
                   <div class="ch-dropzone mb-3" data-ch-dropzone role="region" aria-label="Example dropzone"><p class="mb-0 small text-ch-secondary">Drag files (demo state only)</p></div>
-                  <div class="ch-ai-prompt mb-2">
-                    <label for="fdemo-ai" class="visually-hidden">AI prompt</label>
-                    <textarea id="fdemo-ai" class="form-control" rows="2" placeholder="Ask Culture Hive AI…"></textarea>
-                    <div class="d-flex justify-content-end mt-2 pt-2 border-top"><button type="button" class="btn btn-primary btn-sm" aria-label="Send">Send</button></div>
+                  <div class="border rounded p-3 bg-white mb-3">
+                    <div class="small text-ch-muted mb-2">Cultura AI dock (collapsed trigger)</div>
+                    <div class="ch-ai-prompt ch-ai-dock__composer">
+                      <button type="button" class="ch-ai-dock__trigger w-100 text-start">
+                        <span class="text-ch-secondary">Enter a domain for CRS evaluation…</span>
+                      </button>
+                    </div>
+                    <div class="d-flex flex-wrap gap-1 mt-2" role="group" aria-label="Intent pills">
+                      <button type="button" class="ch-ai-dock__intent ch-ai-dock__intent--active" aria-pressed="true">Domain</button>
+                      <button type="button" class="ch-ai-dock__intent" aria-pressed="false">Audience</button>
+                      <button type="button" class="ch-ai-dock__intent" aria-pressed="false">Ask</button>
+                    </div>
                   </div>
                   <div class="border rounded p-3 bg-white">
-                    <div class="small text-ch-muted mb-1">Assistant</div>
-                    <p class="mb-2">Short response preview with actions.</p>
+                    <div class="small text-ch-muted mb-1">Assistant reply pattern</div>
+                    <p class="mb-2">Short Cultura AI response with workflow actions.</p>
                     <div class="d-flex flex-wrap gap-2" role="group" aria-label="Response actions">
-                      <button type="button" class="btn btn-sm btn-outline-primary">Save</button>
-                      <button type="button" class="btn btn-sm btn-outline-primary">Export</button>
+                      <button type="button" class="btn btn-sm btn-outline-primary">Open Inventory tab</button>
+                      <button type="button" class="btn btn-sm btn-outline-primary">Create Activation</button>
                     </div>
                   </div>
                 </section>
@@ -789,7 +878,7 @@
             class="ch-offcanvas-brand-link text-decoration-none min-w-0"
           >
             <span class="ch-offcanvas-brand-wordmark">
-              <img src="assets/img/cultura-logo.png" alt="Cultura by Culture Hive" decoding="async" />
+              <img src="assets/img/cultura-logo.png" alt="Culture Hive" decoding="async" />
             </span>
           </a>
         </div>
@@ -802,11 +891,10 @@
       </div>
       <div class="offcanvas-body p-0">
         <nav aria-label="Mobile primary navigation">
-          <p class="ch-nav-section-label">Workspace</p>
           <ul class="list-unstyled mb-0">
             <li>
               <a class="ch-nav-link" href="index.html" data-ch-nav="home">
-                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-house"/></svg><span class="ch-nav-label">Dashboard</span>
+                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-house"/></svg><span class="ch-nav-label">Home</span>
               </a>
             </li>
             <li>
@@ -816,29 +904,25 @@
             </li>
             <li>
               <a class="ch-nav-link" href="audiences.html" data-ch-nav="audiences">
-                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-list-ul"/></svg><span class="ch-nav-label">Audiences</span>
+                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-people"/></svg><span class="ch-nav-label">Audiences</span>
               </a>
             </li>
             <li>
-              <a class="ch-nav-link" href="#" data-ch-nav="activations">
-                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-send"/></svg><span class="ch-nav-label">Activations</span>
+              <a class="ch-nav-link" href="activations.html" data-ch-nav="activations">
+                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-rocket"/></svg><span class="ch-nav-label">Activations</span>
               </a>
             </li>
             <li>
-              <a class="ch-nav-link" href="#" data-ch-nav="library">
+              <a class="ch-nav-link" href="library.html" data-ch-nav="library">
                 <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-folder"/></svg><span class="ch-nav-label">Library</span>
               </a>
             </li>
             <li>
-              <a class="ch-nav-link" href="#" data-ch-nav="settings">
+              <a class="ch-nav-link" href="settings.html" data-ch-nav="settings">
                 <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-gear"/></svg><span class="ch-nav-label">Settings</span>
               </a>
             </li>
-            <li class="ch-dev-only-nav d-none">
-              <a class="ch-nav-link" href="ui-foundations.html" data-ch-nav="foundations">
-                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-grid"/></svg><span class="ch-nav-label">UI Foundations</span>
-              </a>
-            </li>
+
           </ul>
         </nav>
       </div>
@@ -853,6 +937,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close dialog"></button>
           </div>
           <div class="modal-body">
+            <p class="small text-ch-muted mb-3">Optional, improves CRS accuracy.</p>
             <label for="chAudienceSearch" class="form-label">Search audiences</label>
             <input type="search" class="form-control mb-3" id="chAudienceSearch" placeholder="Filter audiences…" autocomplete="off" />
             <ul
@@ -945,10 +1030,11 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close dialog"></button>
           </div>
           <div class="modal-body">
-            <p class="mb-0">Campaign planning and flighting tools are not available in this preview workspace.</p>
+            <p class="mb-3">Plan geo mix, platform mix, and budget from the Campaign Plan tab on any completed analysis.</p>
+            <a href="analyses/espn-detail.html#tab-campaign-plan" class="btn btn-primary">Open Campaign Plan</a>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
@@ -963,12 +1049,16 @@
           </div>
           <div class="modal-body">
             <ul class="mb-0">
-              <li>
+              <li class="mb-2">
                 <a href="https://theculturehive.ai" rel="noopener noreferrer" target="_blank"
                   >Culture Hive<span class="visually-hidden"> (opens in new tab)</span></a
                 >
               </li>
-              <li class="text-ch-secondary small">Product documentation is not linked in this preview build.</li>
+              <li>
+                <a href="https://theculturehive.ai" rel="noopener noreferrer" target="_blank"
+                  >Help center<span class="visually-hidden"> (opens in new tab)</span></a
+                >
+              </li>
             </ul>
           </div>
           <div class="modal-footer">
@@ -982,22 +1072,46 @@
       <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg modal-fullscreen-md-down">
         <div class="modal-content">
           <div class="modal-header border-0 pb-0">
-            <h2 class="modal-title ch-type-heading-md" id="chCommandPaletteLabel">Search workspace</h2>
+            <h2 class="modal-title ch-type-heading-md" id="chCommandPaletteLabel">Jump to</h2>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close dialog"></button>
           </div>
           <div class="modal-body pt-2">
             <label for="chCommandPaletteFilter" class="visually-hidden">Filter destinations</label>
-            <input type="search" class="form-control mb-3" id="chCommandPaletteFilter" placeholder="Filter brands, audiences, and saved work…" autocomplete="off" />
+            <input type="search" class="form-control mb-3" id="chCommandPaletteFilter" placeholder="Filter pages and destinations…" autocomplete="off" />
             <div class="list-group ch-command-palette-list">
               <a href="analyses/espn-detail.html" class="list-group-item list-group-item-action" data-ch-palette-label="espn.com evaluation domain analysis crs">ESPN.com Evaluation</a>
               <a href="analyses/index.html" class="list-group-item list-group-item-action" data-ch-palette-label="all analyses list workspace">All Analyses</a>
               <a href="analyses/new.html" class="list-group-item list-group-item-action" data-ch-palette-label="new analysis create start">New Analysis</a>
+              <a href="activations.html" class="list-group-item list-group-item-action" data-ch-palette-label="activations campaigns dsp deals">Activations</a>
+              <a href="library.html" class="list-group-item list-group-item-action" data-ch-palette-label="library files uploads blueprints assets">Library</a>
+              <a href="settings.html" class="list-group-item list-group-item-action" data-ch-palette-label="settings account plan preferences">Settings</a>
               <a href="audiences.html" class="list-group-item list-group-item-action" data-ch-palette-label="cultural segments library audiences">Audiences library</a>
-              <a href="upload-csv.html#upload-zone" class="list-group-item list-group-item-action" data-ch-palette-label="audience signals CSV upload data">Audience signals CSV upload</a>
-              <a href="processed-csvs/index.html" class="list-group-item list-group-item-action" data-ch-palette-label="processed audience data files">Processed audience data</a>
-              <a href="chat/index.html" class="list-group-item list-group-item-action" data-ch-palette-label="Culture Hive assistant chat exploration">Open Assistant</a>
             </div>
-            <p class="small text-ch-muted mb-0 mt-3">Choose a destination or press Escape to close.</p>
+            <p class="small text-ch-muted mb-0 mt-3">Type to filter pages and actions.</p>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="chUpgradeModal" tabindex="-1" aria-labelledby="chUpgradeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title ch-type-heading-md" id="chUpgradeModalLabel">Upgrade your plan</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close dialog"></button>
+          </div>
+          <div class="modal-body">
+            <p class="mb-2"><span class="fw-semibold">Free Plan</span></p>
+            <p class="small text-ch-secondary mb-3">Upgrade for additional analyses, activations, and team seats.</p>
+            <ul class="small text-ch-secondary mb-0 ps-3">
+              <li>More analyses per month</li>
+              <li>DSP activation push</li>
+              <li>Team collaboration seats</li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Not now</button>
+            <a href="#" class="btn btn-outline-primary" data-ch-plan-details data-bs-dismiss="modal">Plan details</a>
+            <button type="button" class="btn btn-primary" data-ch-demo-toast data-ch-toast-message="Opening billing portal…" data-ch-toast-variant="secondary" data-bs-dismiss="modal">Upgrade plan</button>
           </div>
         </div>
       </div>

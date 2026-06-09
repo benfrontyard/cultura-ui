@@ -1,0 +1,1327 @@
+{
+  "version": 1,
+  "categories": [
+    {
+      "id": "identity",
+      "label": "Cultural identity"
+    },
+    {
+      "id": "media",
+      "label": "Fandom & media"
+    },
+    {
+      "id": "fashion",
+      "label": "Fashion & beauty"
+    },
+    {
+      "id": "wellness",
+      "label": "Wellness & fitness"
+    },
+    {
+      "id": "home",
+      "label": "Home & lifestyle"
+    },
+    {
+      "id": "travel",
+      "label": "Travel"
+    },
+    {
+      "id": "life",
+      "label": "Life stage"
+    },
+    {
+      "id": "work",
+      "label": "Work & business"
+    },
+    {
+      "id": "impact",
+      "label": "Social impact"
+    }
+  ],
+  "audiences": [
+    {
+      "id": "afrofuturism",
+      "name": "afrofuturism",
+      "category": "identity",
+      "featured": true
+    },
+    {
+      "id": "anime-streetwear",
+      "name": "anime streetwear",
+      "category": "media",
+      "featured": true
+    },
+    {
+      "id": "arab-american-creatives",
+      "name": "arab american creatives",
+      "category": "identity",
+      "featured": true
+    },
+    {
+      "id": "asian-foodies",
+      "name": "asian foodies",
+      "category": "identity",
+      "featured": true
+    },
+    {
+      "id": "black-wellness-culture",
+      "name": "black wellness culture",
+      "category": "identity",
+      "featured": true
+    },
+    {
+      "id": "booktok-romance-readers",
+      "name": "booktok romance readers",
+      "category": "media",
+      "featured": true
+    },
+    {
+      "id": "caribbean-diaspora",
+      "name": "caribbean diaspora",
+      "category": "identity",
+      "featured": true
+    },
+    {
+      "id": "climate-action-communities",
+      "name": "climate action communities",
+      "category": "impact",
+      "featured": true
+    },
+    {
+      "id": "eco-conscious-parents",
+      "name": "eco-conscious parents",
+      "category": "life",
+      "featured": true
+    },
+    {
+      "id": "first-gen-professionals",
+      "name": "first-gen professionals",
+      "category": "identity",
+      "featured": true
+    },
+    {
+      "id": "gen-z-beauty-creators",
+      "name": "gen z beauty creators",
+      "category": "fashion",
+      "featured": true
+    },
+    {
+      "id": "golf-lifestyle-culture",
+      "name": "golf lifestyle culture",
+      "category": "fashion",
+      "featured": true
+    },
+    {
+      "id": "latinx-entrepreneurs",
+      "name": "latinx entrepreneurs",
+      "category": "identity",
+      "featured": true
+    },
+    {
+      "id": "luxury-travel-enthusiasts",
+      "name": "luxury travel enthusiasts",
+      "category": "travel",
+      "featured": true
+    },
+    {
+      "id": "muslim-fashion-modest-style",
+      "name": "muslim fashion & modest style",
+      "category": "identity",
+      "featured": true
+    },
+    {
+      "id": "pet-wellness-enthusiasts",
+      "name": "pet wellness enthusiasts",
+      "category": "wellness",
+      "featured": true
+    },
+    {
+      "id": "plant-parent-culture",
+      "name": "plant parent culture",
+      "category": "wellness",
+      "featured": true
+    },
+    {
+      "id": "sneaker-culture",
+      "name": "sneaker culture",
+      "category": "fashion",
+      "featured": true
+    },
+    {
+      "id": "sustainable-fashion-shoppers",
+      "name": "sustainable fashion shoppers",
+      "category": "fashion",
+      "featured": true
+    },
+    {
+      "id": "tech-career-switchers",
+      "name": "tech career switchers",
+      "category": "work",
+      "featured": true
+    },
+    {
+      "id": "travel-hacking-enthusiasts",
+      "name": "travel hacking enthusiasts",
+      "category": "travel",
+      "featured": true
+    },
+    {
+      "id": "women-founders",
+      "name": "women founders",
+      "category": "work",
+      "featured": true
+    },
+    {
+      "id": "aapi-entrepreneurs",
+      "name": "aapi entrepreneurs",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "aapi-film-enthusiasts",
+      "name": "aapi film enthusiasts",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "aapi-food-culture",
+      "name": "aapi food culture",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "african-diaspora-creatives",
+      "name": "african diaspora creatives",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "afrobeat-music-fans",
+      "name": "afrobeat music fans",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "arab-diaspora-culture",
+      "name": "arab diaspora culture",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "black-beauty-enthusiasts",
+      "name": "black beauty enthusiasts",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "black-business-owners",
+      "name": "black business owners",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "black-fashion-culture",
+      "name": "black fashion culture",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "black-gamers",
+      "name": "black gamers",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "black-music-discovery",
+      "name": "black music discovery",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "black-parenting-communities",
+      "name": "black parenting communities",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "black-travel-enthusiasts",
+      "name": "black travel enthusiasts",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "caribbean-food-culture",
+      "name": "caribbean food culture",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "desi-beauty-enthusiasts",
+      "name": "desi beauty enthusiasts",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "desi-entrepreneurs",
+      "name": "desi entrepreneurs",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "desi-fashion-culture",
+      "name": "desi fashion culture",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "desi-music-fans",
+      "name": "desi music fans",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "east-asian-cinema-fans",
+      "name": "east asian cinema fans",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "filipino-american-culture",
+      "name": "filipino american culture",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "first-generation-immigrants",
+      "name": "first-generation immigrants",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "indigenous-artists",
+      "name": "indigenous artists",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "indigenous-entrepreneurs",
+      "name": "indigenous entrepreneurs",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "indigenous-environmental-advocates",
+      "name": "indigenous environmental advocates",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "jewish-creatives",
+      "name": "jewish creatives",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "jewish-food-culture",
+      "name": "jewish food culture",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "korean-american-culture",
+      "name": "korean american culture",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "latina-beauty-enthusiasts",
+      "name": "latina beauty enthusiasts",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "latina-founders",
+      "name": "latina founders",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "latino-comedy-fans",
+      "name": "latino comedy fans",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "latino-food-culture",
+      "name": "latino food culture",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "latino-sports-fans",
+      "name": "latino sports fans",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "middle-eastern-food-culture",
+      "name": "middle eastern food culture",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "multicultural-families",
+      "name": "multicultural families",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "multiracial-identity-communities",
+      "name": "multiracial identity communities",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "pacific-islander-culture",
+      "name": "pacific islander culture",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "south-asian-creatives",
+      "name": "south asian creatives",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "south-asian-wedding-culture",
+      "name": "south asian wedding culture",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "southeast-asian-foodies",
+      "name": "southeast asian foodies",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "urban-latino-culture",
+      "name": "urban latino culture",
+      "category": "identity",
+      "featured": false
+    },
+    {
+      "id": "anime-fandom",
+      "name": "anime fandom",
+      "category": "media",
+      "featured": false
+    },
+    {
+      "id": "art-toy-collectors",
+      "name": "art toy collectors",
+      "category": "media",
+      "featured": false
+    },
+    {
+      "id": "beauty-content-creators",
+      "name": "beauty content creators",
+      "category": "fashion",
+      "featured": false
+    },
+    {
+      "id": "board-game-enthusiasts",
+      "name": "board game enthusiasts",
+      "category": "media",
+      "featured": false
+    },
+    {
+      "id": "book-club-culture",
+      "name": "book club culture",
+      "category": "media",
+      "featured": false
+    },
+    {
+      "id": "booktok-fantasy-readers",
+      "name": "booktok fantasy readers",
+      "category": "media",
+      "featured": false
+    },
+    {
+      "id": "booktok-thriller-readers",
+      "name": "booktok thriller readers",
+      "category": "media",
+      "featured": false
+    },
+    {
+      "id": "comic-book-collectors",
+      "name": "comic book collectors",
+      "category": "media",
+      "featured": false
+    },
+    {
+      "id": "cosplay-communities",
+      "name": "cosplay communities",
+      "category": "media",
+      "featured": false
+    },
+    {
+      "id": "dance-music-culture",
+      "name": "dance music culture",
+      "category": "media",
+      "featured": false
+    },
+    {
+      "id": "digital-art-collectors",
+      "name": "digital art collectors",
+      "category": "media",
+      "featured": false
+    },
+    {
+      "id": "electronic-music-fans",
+      "name": "electronic music fans",
+      "category": "media",
+      "featured": false
+    },
+    {
+      "id": "festival-culture",
+      "name": "festival culture",
+      "category": "media",
+      "featured": false
+    },
+    {
+      "id": "film-photography-enthusiasts",
+      "name": "film photography enthusiasts",
+      "category": "media",
+      "featured": false
+    },
+    {
+      "id": "gaming-creators",
+      "name": "gaming creators",
+      "category": "media",
+      "featured": false
+    },
+    {
+      "id": "independent-film-fans",
+      "name": "independent film fans",
+      "category": "media",
+      "featured": false
+    },
+    {
+      "id": "indie-game-developers",
+      "name": "indie game developers",
+      "category": "media",
+      "featured": false
+    },
+    {
+      "id": "indie-music-discovery",
+      "name": "indie music discovery",
+      "category": "media",
+      "featured": false
+    },
+    {
+      "id": "k-drama-fans",
+      "name": "k-drama fans",
+      "category": "media",
+      "featured": false
+    },
+    {
+      "id": "k-pop-dance-communities",
+      "name": "k-pop dance communities",
+      "category": "media",
+      "featured": false
+    },
+    {
+      "id": "live-music-enthusiasts",
+      "name": "live music enthusiasts",
+      "category": "media",
+      "featured": false
+    },
+    {
+      "id": "manga-readers",
+      "name": "manga readers",
+      "category": "media",
+      "featured": false
+    },
+    {
+      "id": "music-festival-travelers",
+      "name": "music festival travelers",
+      "category": "media",
+      "featured": false
+    },
+    {
+      "id": "podcast-creators",
+      "name": "podcast creators",
+      "category": "media",
+      "featured": false
+    },
+    {
+      "id": "podcast-superfans",
+      "name": "podcast superfans",
+      "category": "media",
+      "featured": false
+    },
+    {
+      "id": "retro-gaming-culture",
+      "name": "retro gaming culture",
+      "category": "media",
+      "featured": false
+    },
+    {
+      "id": "science-fiction-fandom",
+      "name": "science fiction fandom",
+      "category": "media",
+      "featured": false
+    },
+    {
+      "id": "streaming-culture",
+      "name": "streaming culture",
+      "category": "media",
+      "featured": false
+    },
+    {
+      "id": "street-photography-enthusiasts",
+      "name": "street photography enthusiasts",
+      "category": "media",
+      "featured": false
+    },
+    {
+      "id": "true-crime-podcast-listeners",
+      "name": "true crime podcast listeners",
+      "category": "media",
+      "featured": false
+    },
+    {
+      "id": "vinyl-record-collectors",
+      "name": "vinyl record collectors",
+      "category": "media",
+      "featured": false
+    },
+    {
+      "id": "webtoon-readers",
+      "name": "webtoon readers",
+      "category": "media",
+      "featured": false
+    },
+    {
+      "id": "young-adult-fiction-readers",
+      "name": "young adult fiction readers",
+      "category": "media",
+      "featured": false
+    },
+    {
+      "id": "athleisure-shoppers",
+      "name": "athleisure shoppers",
+      "category": "fashion",
+      "featured": false
+    },
+    {
+      "id": "beauty-minimalists",
+      "name": "beauty minimalists",
+      "category": "fashion",
+      "featured": false
+    },
+    {
+      "id": "clean-beauty-shoppers",
+      "name": "clean beauty shoppers",
+      "category": "fashion",
+      "featured": false
+    },
+    {
+      "id": "designer-fashion-enthusiasts",
+      "name": "designer fashion enthusiasts",
+      "category": "fashion",
+      "featured": false
+    },
+    {
+      "id": "digital-fashion-creators",
+      "name": "digital fashion creators",
+      "category": "fashion",
+      "featured": false
+    },
+    {
+      "id": "dopamine-dressing-culture",
+      "name": "dopamine dressing culture",
+      "category": "fashion",
+      "featured": false
+    },
+    {
+      "id": "fragrance-enthusiasts",
+      "name": "fragrance enthusiasts",
+      "category": "fashion",
+      "featured": false
+    },
+    {
+      "id": "independent-fashion-designers",
+      "name": "independent fashion designers",
+      "category": "fashion",
+      "featured": false
+    },
+    {
+      "id": "luxury-beauty-shoppers",
+      "name": "luxury beauty shoppers",
+      "category": "fashion",
+      "featured": false
+    },
+    {
+      "id": "men-skincare-enthusiasts",
+      "name": "men skincare enthusiasts",
+      "category": "fashion",
+      "featured": false
+    },
+    {
+      "id": "modest-fashion-shoppers",
+      "name": "modest fashion shoppers",
+      "category": "fashion",
+      "featured": false
+    },
+    {
+      "id": "natural-hair-communities",
+      "name": "natural hair communities",
+      "category": "fashion",
+      "featured": false
+    },
+    {
+      "id": "nail-art-enthusiasts",
+      "name": "nail art enthusiasts",
+      "category": "fashion",
+      "featured": false
+    },
+    {
+      "id": "plus-size-fashion-culture",
+      "name": "plus-size fashion culture",
+      "category": "fashion",
+      "featured": false
+    },
+    {
+      "id": "resale-fashion-shoppers",
+      "name": "resale fashion shoppers",
+      "category": "fashion",
+      "featured": false
+    },
+    {
+      "id": "slow-fashion-advocates",
+      "name": "slow fashion advocates",
+      "category": "fashion",
+      "featured": false
+    },
+    {
+      "id": "streetwear-collectors",
+      "name": "streetwear collectors",
+      "category": "fashion",
+      "featured": false
+    },
+    {
+      "id": "thrift-fashion-culture",
+      "name": "thrift fashion culture",
+      "category": "fashion",
+      "featured": false
+    },
+    {
+      "id": "vintage-fashion-enthusiasts",
+      "name": "vintage fashion enthusiasts",
+      "category": "fashion",
+      "featured": false
+    },
+    {
+      "id": "wellness-beauty-enthusiasts",
+      "name": "wellness beauty enthusiasts",
+      "category": "fashion",
+      "featured": false
+    },
+    {
+      "id": "zero-waste-beauty-shoppers",
+      "name": "zero-waste beauty shoppers",
+      "category": "fashion",
+      "featured": false
+    },
+    {
+      "id": "biohacking-enthusiasts",
+      "name": "biohacking enthusiasts",
+      "category": "wellness",
+      "featured": false
+    },
+    {
+      "id": "breathwork-communities",
+      "name": "breathwork communities",
+      "category": "wellness",
+      "featured": false
+    },
+    {
+      "id": "cold-plunge-enthusiasts",
+      "name": "cold plunge enthusiasts",
+      "category": "wellness",
+      "featured": false
+    },
+    {
+      "id": "functional-fitness-culture",
+      "name": "functional fitness culture",
+      "category": "wellness",
+      "featured": false
+    },
+    {
+      "id": "holistic-wellness-seekers",
+      "name": "holistic wellness seekers",
+      "category": "wellness",
+      "featured": false
+    },
+    {
+      "id": "longevity-enthusiasts",
+      "name": "longevity enthusiasts",
+      "category": "wellness",
+      "featured": false
+    },
+    {
+      "id": "meditation-beginners",
+      "name": "meditation beginners",
+      "category": "wellness",
+      "featured": false
+    },
+    {
+      "id": "mental-wellness-advocates",
+      "name": "mental wellness advocates",
+      "category": "wellness",
+      "featured": false
+    },
+    {
+      "id": "mindful-movement-communities",
+      "name": "mindful movement communities",
+      "category": "wellness",
+      "featured": false
+    },
+    {
+      "id": "outdoor-wellness-enthusiasts",
+      "name": "outdoor wellness enthusiasts",
+      "category": "wellness",
+      "featured": false
+    },
+    {
+      "id": "pilates-enthusiasts",
+      "name": "pilates enthusiasts",
+      "category": "wellness",
+      "featured": false
+    },
+    {
+      "id": "recovery-and-mobility-culture",
+      "name": "recovery and mobility culture",
+      "category": "wellness",
+      "featured": false
+    },
+    {
+      "id": "running-communities",
+      "name": "running communities",
+      "category": "wellness",
+      "featured": false
+    },
+    {
+      "id": "sauna-culture",
+      "name": "sauna culture",
+      "category": "wellness",
+      "featured": false
+    },
+    {
+      "id": "sleep-optimization-enthusiasts",
+      "name": "sleep optimization enthusiasts",
+      "category": "wellness",
+      "featured": false
+    },
+    {
+      "id": "strength-training-beginners",
+      "name": "strength training beginners",
+      "category": "wellness",
+      "featured": false
+    },
+    {
+      "id": "women-fitness-communities",
+      "name": "women fitness communities",
+      "category": "wellness",
+      "featured": false
+    },
+    {
+      "id": "yoga-lifestyle-enthusiasts",
+      "name": "yoga lifestyle enthusiasts",
+      "category": "wellness",
+      "featured": false
+    },
+    {
+      "id": "healthy-aging-advocates",
+      "name": "healthy aging advocates",
+      "category": "wellness",
+      "featured": false
+    },
+    {
+      "id": "home-chefs",
+      "name": "home chefs",
+      "category": "home",
+      "featured": false
+    },
+    {
+      "id": "home-coffee-enthusiasts",
+      "name": "home coffee enthusiasts",
+      "category": "home",
+      "featured": false
+    },
+    {
+      "id": "home-organization-enthusiasts",
+      "name": "home organization enthusiasts",
+      "category": "home",
+      "featured": false
+    },
+    {
+      "id": "home-renovation-beginners",
+      "name": "home renovation beginners",
+      "category": "home",
+      "featured": false
+    },
+    {
+      "id": "interior-design-enthusiasts",
+      "name": "interior design enthusiasts",
+      "category": "home",
+      "featured": false
+    },
+    {
+      "id": "minimalist-living",
+      "name": "minimalist living",
+      "category": "home",
+      "featured": false
+    },
+    {
+      "id": "modern-homesteading",
+      "name": "modern homesteading",
+      "category": "home",
+      "featured": false
+    },
+    {
+      "id": "outdoor-entertaining-enthusiasts",
+      "name": "outdoor entertaining enthusiasts",
+      "category": "home",
+      "featured": false
+    },
+    {
+      "id": "small-space-living",
+      "name": "small-space living",
+      "category": "home",
+      "featured": false
+    },
+    {
+      "id": "smart-home-adopters",
+      "name": "smart home adopters",
+      "category": "home",
+      "featured": false
+    },
+    {
+      "id": "sustainable-home-design",
+      "name": "sustainable home design",
+      "category": "home",
+      "featured": false
+    },
+    {
+      "id": "urban-gardening-communities",
+      "name": "urban gardening communities",
+      "category": "home",
+      "featured": false
+    },
+    {
+      "id": "weekend-diy-enthusiasts",
+      "name": "weekend diy enthusiasts",
+      "category": "home",
+      "featured": false
+    },
+    {
+      "id": "coastal-lifestyle-enthusiasts",
+      "name": "coastal lifestyle enthusiasts",
+      "category": "travel",
+      "featured": false
+    },
+    {
+      "id": "country-living-culture",
+      "name": "country living culture",
+      "category": "travel",
+      "featured": false
+    },
+    {
+      "id": "digital-nomad-families",
+      "name": "digital nomad families",
+      "category": "travel",
+      "featured": false
+    },
+    {
+      "id": "food-focused-travelers",
+      "name": "food-focused travelers",
+      "category": "travel",
+      "featured": false
+    },
+    {
+      "id": "luxury-adventure-travelers",
+      "name": "luxury adventure travelers",
+      "category": "travel",
+      "featured": false
+    },
+    {
+      "id": "national-park-enthusiasts",
+      "name": "national park enthusiasts",
+      "category": "travel",
+      "featured": false
+    },
+    {
+      "id": "outdoor-adventure-communities",
+      "name": "outdoor adventure communities",
+      "category": "travel",
+      "featured": false
+    },
+    {
+      "id": "remote-work-travelers",
+      "name": "remote work travelers",
+      "category": "travel",
+      "featured": false
+    },
+    {
+      "id": "road-trip-culture",
+      "name": "road trip culture",
+      "category": "travel",
+      "featured": false
+    },
+    {
+      "id": "solo-female-travelers",
+      "name": "solo female travelers",
+      "category": "travel",
+      "featured": false
+    },
+    {
+      "id": "study-abroad-communities",
+      "name": "study abroad communities",
+      "category": "travel",
+      "featured": false
+    },
+    {
+      "id": "van-life-culture",
+      "name": "van life culture",
+      "category": "travel",
+      "featured": false
+    },
+    {
+      "id": "young-luxury-travelers",
+      "name": "young luxury travelers",
+      "category": "travel",
+      "featured": false
+    },
+    {
+      "id": "budget-conscious-parents",
+      "name": "budget-conscious parents",
+      "category": "life",
+      "featured": false
+    },
+    {
+      "id": "career-driven-mothers",
+      "name": "career-driven mothers",
+      "category": "life",
+      "featured": false
+    },
+    {
+      "id": "child-free-lifestyle-communities",
+      "name": "child-free lifestyle communities",
+      "category": "life",
+      "featured": false
+    },
+    {
+      "id": "co-parenting-communities",
+      "name": "co-parenting communities",
+      "category": "life",
+      "featured": false
+    },
+    {
+      "id": "creative-professionals",
+      "name": "creative professionals",
+      "category": "work",
+      "featured": false
+    },
+    {
+      "id": "early-career-professionals",
+      "name": "early-career professionals",
+      "category": "work",
+      "featured": false
+    },
+    {
+      "id": "empty-nesters",
+      "name": "empty nesters",
+      "category": "life",
+      "featured": false
+    },
+    {
+      "id": "entrepreneurial-parents",
+      "name": "entrepreneurial parents",
+      "category": "life",
+      "featured": false
+    },
+    {
+      "id": "freelance-creatives",
+      "name": "freelance creatives",
+      "category": "work",
+      "featured": false
+    },
+    {
+      "id": "gig-economy-workers",
+      "name": "gig economy workers",
+      "category": "work",
+      "featured": false
+    },
+    {
+      "id": "new-homeowners",
+      "name": "new homeowners",
+      "category": "life",
+      "featured": false
+    },
+    {
+      "id": "new-parents",
+      "name": "new parents",
+      "category": "life",
+      "featured": false
+    },
+    {
+      "id": "remote-work-professionals",
+      "name": "remote work professionals",
+      "category": "work",
+      "featured": false
+    },
+    {
+      "id": "retirement-lifestyle-planners",
+      "name": "retirement lifestyle planners",
+      "category": "life",
+      "featured": false
+    },
+    {
+      "id": "single-parents",
+      "name": "single parents",
+      "category": "life",
+      "featured": false
+    },
+    {
+      "id": "small-business-owners",
+      "name": "small business owners",
+      "category": "work",
+      "featured": false
+    },
+    {
+      "id": "startup-employees",
+      "name": "startup employees",
+      "category": "work",
+      "featured": false
+    },
+    {
+      "id": "working-parents",
+      "name": "working parents",
+      "category": "life",
+      "featured": false
+    },
+    {
+      "id": "creator-economy-professionals",
+      "name": "creator economy professionals",
+      "category": "work",
+      "featured": false
+    },
+    {
+      "id": "design-professionals",
+      "name": "design professionals",
+      "category": "work",
+      "featured": false
+    },
+    {
+      "id": "female-investors",
+      "name": "female investors",
+      "category": "work",
+      "featured": false
+    },
+    {
+      "id": "financial-independence-communities",
+      "name": "financial independence communities",
+      "category": "work",
+      "featured": false
+    },
+    {
+      "id": "first-time-investors",
+      "name": "first-time investors",
+      "category": "work",
+      "featured": false
+    },
+    {
+      "id": "freelance-business-owners",
+      "name": "freelance business owners",
+      "category": "work",
+      "featured": false
+    },
+    {
+      "id": "future-of-work-enthusiasts",
+      "name": "future of work enthusiasts",
+      "category": "work",
+      "featured": false
+    },
+    {
+      "id": "marketing-professionals",
+      "name": "marketing professionals",
+      "category": "work",
+      "featured": false
+    },
+    {
+      "id": "product-design-communities",
+      "name": "product design communities",
+      "category": "work",
+      "featured": false
+    },
+    {
+      "id": "side-hustle-entrepreneurs",
+      "name": "side hustle entrepreneurs",
+      "category": "work",
+      "featured": false
+    },
+    {
+      "id": "social-media-managers",
+      "name": "social media managers",
+      "category": "work",
+      "featured": false
+    },
+    {
+      "id": "startup-founders",
+      "name": "startup founders",
+      "category": "work",
+      "featured": false
+    },
+    {
+      "id": "tech-founders",
+      "name": "tech founders",
+      "category": "work",
+      "featured": false
+    },
+    {
+      "id": "venture-backed-entrepreneurs",
+      "name": "venture-backed entrepreneurs",
+      "category": "work",
+      "featured": false
+    },
+    {
+      "id": "women-in-tech",
+      "name": "women in tech",
+      "category": "work",
+      "featured": false
+    },
+    {
+      "id": "zero-to-one-builders",
+      "name": "zero-to-one builders",
+      "category": "work",
+      "featured": false
+    },
+    {
+      "id": "climate-conscious-consumers",
+      "name": "climate-conscious consumers",
+      "category": "impact",
+      "featured": false
+    },
+    {
+      "id": "community-organizers",
+      "name": "community organizers",
+      "category": "impact",
+      "featured": false
+    },
+    {
+      "id": "disability-advocates",
+      "name": "disability advocates",
+      "category": "impact",
+      "featured": false
+    },
+    {
+      "id": "ethical-technology-advocates",
+      "name": "ethical technology advocates",
+      "category": "impact",
+      "featured": false
+    },
+    {
+      "id": "food-justice-communities",
+      "name": "food justice communities",
+      "category": "impact",
+      "featured": false
+    },
+    {
+      "id": "inclusive-design-advocates",
+      "name": "inclusive design advocates",
+      "category": "impact",
+      "featured": false
+    },
+    {
+      "id": "lgbtqplus-entrepreneurs",
+      "name": "lgbtq+ entrepreneurs",
+      "category": "work",
+      "featured": false
+    },
+    {
+      "id": "lgbtqplus-families",
+      "name": "lgbtq+ families",
+      "category": "life",
+      "featured": false
+    },
+    {
+      "id": "lgbtqplus-travel-communities",
+      "name": "lgbtq+ travel communities",
+      "category": "travel",
+      "featured": false
+    },
+    {
+      "id": "neurodivergent-creatives",
+      "name": "neurodivergent creatives",
+      "category": "impact",
+      "featured": false
+    },
+    {
+      "id": "queer-fashion-culture",
+      "name": "queer fashion culture",
+      "category": "fashion",
+      "featured": false
+    },
+    {
+      "id": "queer-film-enthusiasts",
+      "name": "queer film enthusiasts",
+      "category": "media",
+      "featured": false
+    },
+    {
+      "id": "queer-gamers",
+      "name": "queer gamers",
+      "category": "media",
+      "featured": false
+    },
+    {
+      "id": "queer-wellness-communities",
+      "name": "queer wellness communities",
+      "category": "wellness",
+      "featured": false
+    },
+    {
+      "id": "social-impact-entrepreneurs",
+      "name": "social impact entrepreneurs",
+      "category": "work",
+      "featured": false
+    },
+    {
+      "id": "sustainable-living-advocates",
+      "name": "sustainable living advocates",
+      "category": "impact",
+      "featured": false
+    },
+    {
+      "id": "urban-cycling-communities",
+      "name": "urban cycling communities",
+      "category": "culture",
+      "featured": false
+    },
+    {
+      "id": "women-leadership-communities",
+      "name": "women leadership communities",
+      "category": "work",
+      "featured": false
+    },
+    {
+      "id": "youth-culture-researchers",
+      "name": "youth culture researchers",
+      "category": "impact",
+      "featured": false
+    }
+  ]
+}

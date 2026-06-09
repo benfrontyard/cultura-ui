@@ -26,6 +26,7 @@ OUT = ROOT / "assets" / "icons" / "streamline-sprite.svg"
 SOURCES: list[tuple[str, str]] = [
     ("ch-layout-sidebar", "ultimate/regular/programing-apps-websites/sidebar-line-left.svg"),
     ("ch-house", "ultimate/regular/interface-essential/house-1.svg"),
+    ("ch-globe", "ultimate/regular/programing-apps-websites/coding-apps-website-network-globe.svg"),
     ("ch-chat", "ultimate/regular/messages-chat-smileys/messages-bubble-text.svg"),
     ("ch-file-graph", "ultimate/regular/files-folders/office-file-graph.svg"),
     ("ch-graph-up", "ultimate/regular/business-products/analytics-graph-lines-2.svg"),
@@ -33,7 +34,15 @@ SOURCES: list[tuple[str, str]] = [
     ("ch-megaphone", "ultimate/regular/interface-essential/megaphone.svg"),
     ("ch-list-ul", "ultimate/regular/interface-essential/arrange-list-descending.svg"),
     ("ch-cloud-upload", "ultimate/regular/internet-networks-servers/upload-circle.svg"),
-    ("ch-folder", "ultimate/regular/files-folders/folder-share.svg"),
+    ("ch-folder", "ultimate/regular/files-folders/folder-hold.svg"),
+    ("ch-file-stack", "ultimate/regular/files-folders/common-file-stack.svg"),
+    ("ch-export", "ultimate/regular/files-folders/export-file.svg"),
+    ("ch-rocket", "ultimate/regular/business-products/startup-product-rocket-box.svg"),
+    ("ch-view", "ultimate/regular/interface-essential/view-square.svg"),
+    ("ch-eye", "ultimate/regular/interface-essential/view-square.svg"),
+    ("ch-eye-off", "ultimate/regular/interface-essential/lock-5.svg"),
+    ("ch-check-circle", "ultimate/regular/interface-essential/check-badge.svg"),
+    ("ch-lock", "ultimate/regular/interface-essential/lock-5.svg"),
     ("ch-diagram", "ultimate/regular/programing-apps-websites/module-three.svg"),
     ("ch-gear", "ultimate/regular/interface-essential/cog.svg"),
     ("ch-grid", "ultimate/regular/interface-essential/layout-11.svg"),
@@ -57,13 +66,21 @@ SOURCES: list[tuple[str, str]] = [
     ("ch-check", "ultimate/regular/interface-essential/check-double.svg"),
     ("ch-plus", "ultimate/regular/interface-essential/plus-one-increment.svg"),
     ("ch-alert-octagon", "ultimate/regular/interface-essential/alert-octagon-1.svg"),
-    ("ch-file-csv", "ultimate/regular/files-folders/office-file-xls.svg"),
+    ("ch-file-csv", "ultimate/regular/files-folders/common-file-horizontal.svg"),
     ("ch-pin", "ultimate/regular/maps-navigation/pin-2.svg"),
     ("ch-phone", "ultimate/regular/phones-mobile-devices/phone-mobile-device-iphone-x-2.svg"),
     ("ch-instagram", "ultimate/regular/logos/instagram-logo.svg"),
     ("ch-youtube", "logos/line/videos/youtube-logo.svg"),
     ("ch-tiktok", "logos/line/social-medias/tiktok-logo.svg"),
 ]
+
+# Mirror of arrow-right.svg so back/forward history controls match.
+CHEVRON_LEFT = """
+<symbol id="ch-chevron-left" viewBox="0 0 24 24">
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M0.75 12h22.5" stroke-width="1.5"/>
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M11.25 22.5 0.75 12 11.25 1.5" stroke-width="1.5"/>
+</symbol>
+""".strip()
 
 DOTS_VERTICAL = """
 <symbol id="ch-dots-vertical" viewBox="0 0 24 24">
@@ -105,6 +122,7 @@ def main() -> int:
             return 1
         inner = normalize_svg_inner(p.read_text(encoding="utf-8"))
         parts.append(f'<symbol id="{sid}" viewBox="0 0 24 24">{inner}</symbol>')
+    parts.append(CHEVRON_LEFT)
     parts.append(DOTS_VERTICAL)
     parts.append("</svg>")
     OUT.parent.mkdir(parents=True, exist_ok=True)

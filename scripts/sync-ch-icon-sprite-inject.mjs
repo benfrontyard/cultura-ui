@@ -33,7 +33,8 @@ const js =
   payload +
   " +\n" +
   "    '</svg>';\n" +
-  "  document.body.insertBefore(wrap.firstElementChild, document.body.firstChild);\n" +
+  "  var mount = document.body || document.documentElement;\n" +
+  "  mount.insertBefore(wrap.firstElementChild, mount.firstChild);\n" +
   "})();\n";
 
 fs.writeFileSync(outPath, js);

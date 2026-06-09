@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="../assets/img/cultura-icon.png" />
-    <title>Analyses · Culture Hive AI</title>
+    <title>Analyses · Culture Hive</title>
     <link
       rel="stylesheet"
       href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&amp;display=swap"
@@ -21,7 +21,7 @@
     <link href="../assets/css/icons.css" rel="stylesheet" />
     <link href="../assets/css/theme.css" rel="stylesheet" />
   </head>
-  <body data-ch-current="analyses" data-ch-copilot-context="Analyses">
+  <body data-ch-current="analyses" data-ch-copilot-context="Analyses" data-ch-folder="analyses">
     <script src="../assets/js/ch-icon-sprite-inject.js"></script>
 
     <a class="ch-skip-link" href="#main-content">Skip to main content</a>
@@ -45,13 +45,12 @@
         </div>
         <div class="ch-sidebar-scroll">
           <nav aria-label="Primary navigation">
-            <p class="ch-nav-section-label" id="nav-label-workspace">Workspace</p>
             <!-- MVP: Home points at this dashboard at site root; a future marketing-only landing can replace or split this page. -->
             <ul class="list-unstyled mb-0">
               <li>
                 <a class="ch-nav-link" href="../index.html" data-ch-nav="home">
                   <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-house"/></svg>
-                  <span class="ch-nav-label">Dashboard</span>
+                  <span class="ch-nav-label">Home</span>
                 </a>
               </li>
               <li>
@@ -62,34 +61,29 @@
               </li>
               <li>
                 <a class="ch-nav-link" href="../audiences.html" data-ch-nav="audiences">
-                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-list-ul"/></svg>
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-people"/></svg>
                   <span class="ch-nav-label">Audiences</span>
                 </a>
               </li>
               <li>
-                <a class="ch-nav-link" href="#" data-ch-nav="activations">
-                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-send"/></svg>
+                <a class="ch-nav-link" href="../activations.html" data-ch-nav="activations">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-rocket"/></svg>
                   <span class="ch-nav-label">Activations</span>
                 </a>
               </li>
               <li>
-                <a class="ch-nav-link" href="#" data-ch-nav="library">
+                <a class="ch-nav-link" href="../library.html" data-ch-nav="library">
                   <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-folder"/></svg>
                   <span class="ch-nav-label">Library</span>
                 </a>
               </li>
               <li>
-                <a class="ch-nav-link" href="#" data-ch-nav="settings">
+                <a class="ch-nav-link" href="../settings.html" data-ch-nav="settings">
                   <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-gear"/></svg>
                   <span class="ch-nav-label">Settings</span>
                 </a>
               </li>
-              <li class="ch-dev-only-nav d-none">
-                <a class="ch-nav-link" href="../ui-foundations.html" data-ch-nav="foundations">
-                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-grid"/></svg>
-                  <span class="ch-nav-label">UI Foundations</span>
-                </a>
-              </li>
+
             </ul>
           </nav>
         </div>
@@ -101,7 +95,7 @@
               <div class="text-ch-muted small">Free Plan</div>
             </div>
           </div>
-          <a class="btn btn-outline-primary btn-sm w-100" href="../ui-foundations.html">
+          <a class="btn btn-outline-primary btn-sm w-100" href="../settings.html#plan" data-ch-upgrade-open>
             <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-arrow-up-circle"/></svg>
             <span>Upgrade Plan</span>
           </a>
@@ -165,49 +159,25 @@
               </button>
             </div>
           </div>
-          <div class="ch-topbar-search-wrap d-none d-md-flex align-items-center justify-content-center flex-grow-1 min-w-0">
-            <div class="ch-topbar-search position-relative flex-grow-1">
-              <label for="global-search" class="visually-hidden">Search workspace</label>
-              <svg class="ch-icon ch-search-icon" aria-hidden="true" focusable="false"><use href="#ch-search"/></svg>
-              <input
-                id="global-search"
-                type="search"
-                class="form-control"
-                placeholder="Search brands, categories, audiences, or cultural trends..."
-                autocomplete="off"
-                aria-describedby="global-search-hint"
-                aria-haspopup="dialog"
-                aria-controls="chCommandPalette"
-              />
-              <span id="global-search-hint" class="visually-hidden"
-                >Opens the workspace search dialog when focused. Shortcut: Control or Command K.</span
-              >
+          <div class="ch-topbar-actions d-flex align-items-center gap-1 ms-auto flex-nowrap justify-content-end">
+            <button
+              type="button"
+              class="btn btn-light border flex-shrink-0 ch-topbar-jump-btn"
+              data-ch-command-palette-open
+              aria-haspopup="dialog"
+              aria-controls="chCommandPalette"
+              aria-label="Jump to page (Command K)"
+              title="Jump to page (⌘K)"
+            >
+              <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-search"/></svg>
+              <span class="ch-topbar-jump-label d-none d-lg-inline">Jump to…</span>
               <span
-                class="position-absolute end-0 top-50 translate-middle-y me-3 ch-kbd-hint d-none d-md-inline"
+                class="ch-kbd-hint d-none d-xl-inline-flex ms-1"
                 role="group"
                 aria-label="Keyboard shortcut: Control or Command K"
                 ><kbd>Cmd</kbd><span class="ch-kbd-sep" aria-hidden="true">+</span><kbd>K</kbd></span
               >
-            </div>
-          </div>
-          <div class="ch-topbar-actions d-flex align-items-center gap-1 ms-auto flex-nowrap justify-content-end">
-            <button
-              type="button"
-              class="btn btn-light border d-md-none flex-shrink-0"
-              data-ch-command-palette-open
-              aria-haspopup="dialog"
-              aria-controls="chCommandPalette"
-              aria-label="Search workspace"
-            >
-              <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-search"/></svg>
             </button>
-            <button
-              type="button"
-              class="btn btn-light border btn-sm d-none d-md-inline-flex flex-shrink-0"
-              data-bs-toggle="offcanvas"
-              data-bs-target="#chCopilotDrawer"
-              aria-controls="chCopilotDrawer"
-            >Ask AI</button>
             <div class="dropdown">
               <button
                 type="button"
@@ -246,7 +216,7 @@
                   </div>
                 </li>
                 <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="../ui-foundations.html">Upgrade</a></li>
+                <li><a class="dropdown-item" href="../settings.html#plan" data-ch-upgrade-open>Upgrade</a></li>
                 <li><hr class="dropdown-divider" /></li>
                 <li><a class="dropdown-item" href="#" data-ch-logout>Logout</a></li>
               </ul>
@@ -260,9 +230,8 @@
               <main id="main-content">
                 <div class="d-flex flex-column flex-md-row align-items-md-start justify-content-md-between gap-3 mb-4">
                   <div>
-                    <p class="ch-page-eyebrow small text-ch-secondary mb-1">Workspace</p>
                     <h1 class="ch-type-heading-lg mb-2">Analyses</h1>
-                    <p class="text-ch-secondary mb-0">Browse cultural relevance analyses, filter by status, and open completed evaluations.</p>
+                    <p class="text-ch-secondary mb-0">Browse cultural relevance analyses. Filter by name or status, then open any evaluation to review CRS scores and next steps.</p>
                   </div>
                   <a class="btn btn-primary flex-shrink-0" href="new.html">
                     <svg class="ch-icon me-1" aria-hidden="true" focusable="false"><use href="#ch-plus"/></svg>
@@ -270,11 +239,12 @@
                   </a>
                 </div>
 
+                <div data-ch-populated-only>
                 <div class="ch-card mb-3">
                   <div class="ch-card-body">
                     <div class="row g-2 align-items-end">
                       <div class="col-md-6 col-lg-5">
-                        <label for="analyses-search" class="form-label small text-ch-secondary mb-1">Search</label>
+                        <label for="analyses-search" class="form-label small text-ch-secondary mb-1">Filter analyses</label>
                         <div class="input-group">
                           <span class="input-group-text bg-white border-end-0">
                             <svg class="ch-icon text-ch-muted" aria-hidden="true" focusable="false"><use href="#ch-search"/></svg>
@@ -295,7 +265,14 @@
                   </div>
                 </div>
 
-                <div class="table-responsive ch-card">
+                <div id="chAnalysesEmpty" class="ch-card ch-card-body text-center py-5 d-none" role="status">
+                  <svg class="ch-icon ch-icon--2xl text-ch-muted mb-2" aria-hidden="true" focusable="false"><use href="#ch-search"/></svg>
+                  <p class="fw-semibold mb-1">No analyses match your filters</p>
+                  <p class="small text-ch-secondary mb-3">Try a different search term or status, or start a new evaluation.</p>
+                  <a href="new.html" class="btn btn-primary btn-sm">New Analysis</a>
+                </div>
+
+                <div class="table-responsive ch-card" id="chAnalysesTableWrap">
                   <table class="table table-hover align-middle mb-0 ch-table">
                     <caption class="visually-hidden">Analyses list with name, type, audience, CRS score, status, and date.</caption>
                     <thead>
@@ -310,7 +287,12 @@
                     </thead>
                     <tbody>
                       <tr role="link" tabindex="0" onclick="location.href='espn-detail.html'" style="cursor:pointer" data-ch-analysis-row data-ch-status="Completed" data-ch-searchable="espn.com evaluation domain latino millennial sports fans">
-                        <td class="fw-semibold">ESPN.com Evaluation</td>
+                        <td>
+                          <span class="ch-brand-mark" data-ch-brand-domain="espn.com">
+                            <img class="ch-brand-logo" src="https://www.google.com/s2/favicons?domain=espn.com&amp;sz=32" alt="" width="24" height="24" decoding="async" />
+                            <span class="fw-semibold">ESPN.com Evaluation</span>
+                          </span>
+                        </td>
                         <td class="text-ch-secondary">Domain</td>
                         <td class="text-ch-secondary">Latino Millennial Sports Fans</td>
                         <td><span class="fw-semibold text-success">82</span></td>
@@ -318,7 +300,12 @@
                         <td class="text-ch-secondary">Jun 4, 2026</td>
                       </tr>
                       <tr role="link" tabindex="0" onclick="location.href='espn-detail.html'" style="cursor:pointer" data-ch-analysis-row data-ch-status="Completed" data-ch-searchable="nike summer brief campaign gen z athleisure">
-                        <td class="fw-semibold">Nike Summer Brief</td>
+                        <td>
+                          <span class="ch-brand-mark" data-ch-brand-domain="nike.com">
+                            <img class="ch-brand-logo" src="https://www.google.com/s2/favicons?domain=nike.com&amp;sz=32" alt="" width="24" height="24" decoding="async" />
+                            <span class="fw-semibold">Nike Summer Brief</span>
+                          </span>
+                        </td>
                         <td class="text-ch-secondary">Campaign Brief</td>
                         <td class="text-ch-secondary">Gen Z Athleisure</td>
                         <td><span class="fw-semibold text-success">71</span></td>
@@ -326,7 +313,12 @@
                         <td class="text-ch-secondary">May 28, 2026</td>
                       </tr>
                       <tr role="link" tabindex="0" onclick="location.href='espn-detail.html'" style="cursor:pointer" data-ch-analysis-row data-ch-status="In review" data-ch-searchable="tubi creative review multicultural streaming">
-                        <td class="fw-semibold">Tubi Creative Review</td>
+                        <td>
+                          <span class="ch-brand-mark" data-ch-brand-domain="tubi.tv">
+                            <img class="ch-brand-logo" src="https://www.google.com/s2/favicons?domain=tubi.tv&amp;sz=32" alt="" width="24" height="24" decoding="async" />
+                            <span class="fw-semibold">Tubi Creative Review</span>
+                          </span>
+                        </td>
                         <td class="text-ch-secondary">Creative Asset</td>
                         <td class="text-ch-secondary">Multicultural Streaming</td>
                         <td><span class="fw-semibold">68</span></td>
@@ -335,6 +327,14 @@
                       </tr>
                     </tbody>
                   </table>
+                </div>
+                </div>
+
+                <div class="ch-card ch-card-body text-center py-5" data-ch-empty-zero role="status">
+                  <svg class="ch-icon ch-icon--2xl text-ch-muted mb-2" aria-hidden="true" focusable="false"><use href="#ch-file-graph"/></svg>
+                  <p class="fw-semibold mb-1">No analyses yet</p>
+                  <p class="small text-ch-secondary mb-3">Start an evaluation to see it listed here.</p>
+                  <a href="new.html" class="btn btn-primary btn-sm">New Analysis</a>
                 </div>
               </main>
             </div>
@@ -358,7 +358,7 @@
             class="ch-offcanvas-brand-link text-decoration-none min-w-0"
           >
             <span class="ch-offcanvas-brand-wordmark">
-              <img src="../assets/img/cultura-logo.png" alt="Cultura by Culture Hive" decoding="async" />
+              <img src="../assets/img/cultura-logo.png" alt="Culture Hive" decoding="async" />
             </span>
           </a>
         </div>
@@ -371,11 +371,10 @@
       </div>
       <div class="offcanvas-body p-0">
         <nav aria-label="Mobile primary navigation">
-          <p class="ch-nav-section-label">Workspace</p>
           <ul class="list-unstyled mb-0">
             <li>
               <a class="ch-nav-link" href="../index.html" data-ch-nav="home">
-                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-house"/></svg><span class="ch-nav-label">Dashboard</span>
+                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-house"/></svg><span class="ch-nav-label">Home</span>
               </a>
             </li>
             <li>
@@ -385,29 +384,25 @@
             </li>
             <li>
               <a class="ch-nav-link" href="../audiences.html" data-ch-nav="audiences">
-                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-list-ul"/></svg><span class="ch-nav-label">Audiences</span>
+                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-people"/></svg><span class="ch-nav-label">Audiences</span>
               </a>
             </li>
             <li>
-              <a class="ch-nav-link" href="#" data-ch-nav="activations">
-                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-send"/></svg><span class="ch-nav-label">Activations</span>
+              <a class="ch-nav-link" href="../activations.html" data-ch-nav="activations">
+                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-rocket"/></svg><span class="ch-nav-label">Activations</span>
               </a>
             </li>
             <li>
-              <a class="ch-nav-link" href="#" data-ch-nav="library">
+              <a class="ch-nav-link" href="../library.html" data-ch-nav="library">
                 <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-folder"/></svg><span class="ch-nav-label">Library</span>
               </a>
             </li>
             <li>
-              <a class="ch-nav-link" href="#" data-ch-nav="settings">
+              <a class="ch-nav-link" href="../settings.html" data-ch-nav="settings">
                 <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-gear"/></svg><span class="ch-nav-label">Settings</span>
               </a>
             </li>
-            <li class="ch-dev-only-nav d-none">
-              <a class="ch-nav-link" href="../ui-foundations.html" data-ch-nav="foundations">
-                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-grid"/></svg><span class="ch-nav-label">UI Foundations</span>
-              </a>
-            </li>
+
           </ul>
         </nav>
       </div>
@@ -422,6 +417,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close dialog"></button>
           </div>
           <div class="modal-body">
+            <p class="small text-ch-muted mb-3">Optional, improves CRS accuracy.</p>
             <label for="chAudienceSearch" class="form-label">Search audiences</label>
             <input type="search" class="form-control mb-3" id="chAudienceSearch" placeholder="Filter audiences…" autocomplete="off" />
             <ul
@@ -514,10 +510,11 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close dialog"></button>
           </div>
           <div class="modal-body">
-            <p class="mb-0">Campaign planning and flighting tools are not available in this preview workspace.</p>
+            <p class="mb-3">Plan geo mix, platform mix, and budget from the Campaign Plan tab on any completed analysis.</p>
+            <a href="../analyses/espn-detail.html#tab-campaign-plan" class="btn btn-primary">Open Campaign Plan</a>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
@@ -532,12 +529,16 @@
           </div>
           <div class="modal-body">
             <ul class="mb-0">
-              <li>
+              <li class="mb-2">
                 <a href="https://theculturehive.ai" rel="noopener noreferrer" target="_blank"
                   >Culture Hive<span class="visually-hidden"> (opens in new tab)</span></a
                 >
               </li>
-              <li class="text-ch-secondary small">Product documentation is not linked in this preview build.</li>
+              <li>
+                <a href="https://theculturehive.ai" rel="noopener noreferrer" target="_blank"
+                  >Help center<span class="visually-hidden"> (opens in new tab)</span></a
+                >
+              </li>
             </ul>
           </div>
           <div class="modal-footer">
@@ -551,49 +552,107 @@
       <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg modal-fullscreen-md-down">
         <div class="modal-content">
           <div class="modal-header border-0 pb-0">
-            <h2 class="modal-title ch-type-heading-md" id="chCommandPaletteLabel">Search workspace</h2>
+            <h2 class="modal-title ch-type-heading-md" id="chCommandPaletteLabel">Jump to</h2>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close dialog"></button>
           </div>
           <div class="modal-body pt-2">
             <label for="chCommandPaletteFilter" class="visually-hidden">Filter destinations</label>
-            <input type="search" class="form-control mb-3" id="chCommandPaletteFilter" placeholder="Filter brands, audiences, and saved work…" autocomplete="off" />
+            <input type="search" class="form-control mb-3" id="chCommandPaletteFilter" placeholder="Filter pages and destinations…" autocomplete="off" />
             <div class="list-group ch-command-palette-list">
               <a href="espn-detail.html" class="list-group-item list-group-item-action" data-ch-palette-label="espn.com evaluation domain analysis crs">ESPN.com Evaluation</a>
               <a href="index.html" class="list-group-item list-group-item-action" data-ch-palette-label="all analyses list workspace">All Analyses</a>
               <a href="new.html" class="list-group-item list-group-item-action" data-ch-palette-label="new analysis create start">New Analysis</a>
+              <a href="../activations.html" class="list-group-item list-group-item-action" data-ch-palette-label="activations campaigns dsp deals">Activations</a>
+              <a href="../library.html" class="list-group-item list-group-item-action" data-ch-palette-label="library files uploads blueprints assets">Library</a>
+              <a href="../settings.html" class="list-group-item list-group-item-action" data-ch-palette-label="settings account plan preferences">Settings</a>
               <a href="../audiences.html" class="list-group-item list-group-item-action" data-ch-palette-label="cultural segments library audiences">Audiences library</a>
-              <a href="../upload-csv.html#upload-zone" class="list-group-item list-group-item-action" data-ch-palette-label="audience signals CSV upload data">Audience signals CSV upload</a>
-              <a href="../processed-csvs/index.html" class="list-group-item list-group-item-action" data-ch-palette-label="processed audience data files">Processed audience data</a>
-              <a href="../chat/index.html" class="list-group-item list-group-item-action" data-ch-palette-label="Culture Hive assistant chat exploration">Open Assistant</a>
             </div>
-            <p class="small text-ch-muted mb-0 mt-3">Choose a destination or press Escape to close.</p>
+            <p class="small text-ch-muted mb-0 mt-3">Type to filter pages and actions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    <div
+      id="chAiDock"
+      class="ch-ai-dock ch-ai-dock--collapsed"
+      role="region"
+      aria-label="Cultura AI"
+      aria-expanded="false"
+    >
+      <div class="ch-ai-dock__panel">
+        <div id="chCopilotThread" class="ch-ai-dock__thread ch-chat-scroll" role="log" aria-live="polite" hidden></div>
+        <div class="ch-ai-prompt ch-ai-dock__composer">
+          <button type="button" class="ch-ai-dock__collapse btn btn-icon" data-ch-ai-dock-collapse aria-label="Minimize">
+            <svg class="ch-icon ch-icon--sm" aria-hidden="true" focusable="false"><use href="#ch-chevron-down"/></svg>
+          </button>
+          <div id="chCopilotSuggestions" class="ch-ai-dock__pills"></div>
+          <button type="button" class="ch-ai-dock__trigger" data-ch-ai-dock-expand>
+            <span class="text-ch-secondary" data-ch-ai-dock-trigger-text>Enter a domain for CRS evaluation…</span>
+          </button>
+          <div class="ch-ai-dock__body">
+            <div class="ch-ai-dock__intent-row" data-ch-ai-dock-intent-row hidden role="group" aria-label="Choose input type">
+              <button type="button" class="ch-ai-dock__intent ch-ai-dock__intent--active" data-ch-ai-dock-intent="domain" aria-pressed="true">Domain</button>
+              <button type="button" class="ch-ai-dock__intent" data-ch-ai-dock-intent="bundle" aria-pressed="false">Bundle ID</button>
+              <button type="button" class="ch-ai-dock__intent" data-ch-ai-dock-intent="brief" aria-pressed="false">Brief</button>
+              <button type="button" class="ch-ai-dock__intent" data-ch-ai-dock-intent="creative" aria-pressed="false">Creative</button>
+              <button type="button" class="ch-ai-dock__intent" data-ch-ai-dock-intent="audience" aria-pressed="false">Audience</button>
+            </div>
+            <div class="ch-ai-dock__input-row">
+              <label for="chCopilotInput" class="visually-hidden">Ask Cultura AI</label>
+              <input
+                type="text"
+                id="chCopilotInput"
+                class="form-control"
+                maxlength="2000"
+                autocomplete="off"
+                placeholder="Enter domain (www.domain.com) for CRS evaluation"
+              />
+              <button type="button" id="chCopilotAnalyze" class="btn btn-primary btn-sm flex-shrink-0" disabled>Analyze</button>
+            </div>
+            <div class="ch-ai-dock__attachments" data-ch-ai-dock-attachments hidden>
+              <input type="file" id="chAiDockBrief" class="visually-hidden" accept=".pdf,application/pdf" />
+              <input type="file" id="chAiDockCreative" class="visually-hidden" accept=".jpg,.jpeg,.png,image/jpeg,image/png" />
+              <button type="button" class="ch-ai-dock__attach btn btn-light btn-sm" data-ch-ai-dock-brief-trigger>
+                <svg class="ch-icon ch-icon--sm" aria-hidden="true" focusable="false"><use href="#ch-file-earmark"/></svg>
+                Brief <span class="text-ch-muted">(.pdf)</span>
+              </button>
+              <button type="button" class="ch-ai-dock__attach btn btn-light btn-sm" data-ch-ai-dock-creative-trigger>
+                <svg class="ch-icon ch-icon--sm" aria-hidden="true" focusable="false"><use href="#ch-upload"/></svg>
+                Creative <span class="text-ch-muted">(.jpg, .png)</span>
+              </button>
+              <span class="ch-ai-dock__file-name small text-ch-muted d-none" data-ch-ai-dock-file-label></span>
+              <button type="button" class="btn btn-link btn-sm text-ch-muted p-0 d-none" data-ch-ai-dock-file-clear>Remove</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="offcanvas offcanvas-end ch-copilot-drawer" tabindex="-1" id="chCopilotDrawer" aria-labelledby="chCopilotDrawerLabel">
-      <div class="offcanvas-header border-bottom">
-        <div>
-          <h2 class="offcanvas-title ch-type-heading-sm" id="chCopilotDrawerLabel">Cultura AI</h2>
-          <span class="ch-copilot-context-pill mt-1">
-            <svg class="ch-icon ch-icon--sm" aria-hidden="true" focusable="false"><use href="#ch-file-graph"/></svg>
-            <span class="ch-copilot-context-text">Using Analyses</span>
-          </span>
-        </div>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close copilot"></button>
-      </div>
-      <div class="offcanvas-body d-flex flex-column">
-        <div class="mb-3">
-          <p class="small text-ch-muted mb-2">Suggested prompts</p>
-          <div id="chCopilotSuggestions"></div>
-        </div>
-        <div id="chCopilotThread" class="ch-chat-scroll flex-grow-1 mb-3 border rounded p-2" role="log" aria-live="polite" style="min-height:120px"></div>
-        <div class="ch-ai-prompt mt-auto">
-          <label for="chCopilotInput" class="visually-hidden">Ask Cultura AI</label>
-          <textarea id="chCopilotInput" class="form-control" rows="3" placeholder="Ask about your analyses…"></textarea>
-          <div class="d-flex justify-content-end mt-2">
-            <button type="button" class="btn btn-primary btn-sm" id="chCopilotSend" aria-label="Send">Send</button>
+    <div class="modal fade" id="chUpgradeModal" tabindex="-1" aria-labelledby="chUpgradeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title ch-type-heading-md" id="chUpgradeModalLabel">Upgrade your plan</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close dialog"></button>
+          </div>
+          <div class="modal-body">
+            <p class="mb-2"><span class="fw-semibold">Free Plan</span></p>
+            <p class="small text-ch-secondary mb-3">Upgrade for additional analyses, activations, and team seats.</p>
+            <ul class="small text-ch-secondary mb-0 ps-3">
+              <li>More analyses per month</li>
+              <li>DSP activation push</li>
+              <li>Team collaboration seats</li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Not now</button>
+            <a href="#" class="btn btn-outline-primary" data-ch-plan-details data-bs-dismiss="modal">Plan details</a>
+            <button type="button" class="btn btn-primary" data-ch-demo-toast data-ch-toast-message="Opening billing portal…" data-ch-toast-variant="secondary" data-bs-dismiss="modal">Upgrade plan</button>
           </div>
         </div>
       </div>

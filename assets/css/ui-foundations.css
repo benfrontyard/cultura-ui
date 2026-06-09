@@ -1,6 +1,6 @@
 /**
  * UI Foundations page only: documentation layout (TOC, filter, specimens chrome).
- * Product tokens and components stay in theme.css — same SSOT the app loads.
+ * Product tokens and components stay in theme.css; same SSOT the app loads.
  */
 
 .ch-page-foundations .ch-foundations-doc {
