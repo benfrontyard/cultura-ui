@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="assets/img/cultura-icon.png" />
-    <title>Library · Culture Hive</title>
+    <title>Library | Cultura</title>
     <link
       rel="stylesheet"
       href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&amp;display=swap"
@@ -231,7 +231,7 @@
                 <div class="d-flex flex-column flex-md-row align-items-md-start justify-content-md-between gap-3 mb-4">
                   <div>
                     <h1 class="ch-type-heading-lg mb-2">Library</h1>
-                    <p class="text-ch-secondary mb-0">Upload and review audience signal files used in analyses.</p>
+                    <p class="text-ch-secondary mb-0">Audience signal files for analyses. Upload new files or review status below.</p>
                   </div>
                   <a class="btn btn-primary flex-shrink-0" href="upload-csv.html#upload-zone">
                     <svg class="ch-icon me-1" aria-hidden="true" focusable="false"><use href="#ch-upload"/></svg>
@@ -239,101 +239,24 @@
                   </a>
                 </div>
 
-                <section class="mb-4" aria-labelledby="activity-heading" data-ch-populated-only>
-                  <h2 id="activity-heading" class="ch-type-heading-xs text-ch-secondary mb-3">Needs attention</h2>
-                  <div class="d-flex flex-column gap-2">
-                    <div class="alert alert-warning d-flex align-items-start gap-2 mb-0" role="status">
-                      <div class="spinner-border spinner-border-sm text-warning flex-shrink-0 mt-1" role="status" aria-hidden="true"></div>
-                      <div class="min-w-0">
-                        <div class="fw-semibold">multicultural-streaming-weights.csv is processing</div>
-                        <div class="small mb-0">Mapping cultural segments. Estimated completion in 2–4 minutes.</div>
+                <section aria-labelledby="files-heading" data-ch-populated-only>
+                  <div class="ch-card mb-0">
+                    <div class="ch-card-body">
+                      <div class="d-flex align-items-center justify-content-between gap-2 mb-3">
+                        <h2 id="files-heading" class="ch-type-heading-md mb-0">Files</h2>
+                        <a href="processed-csvs/index.html" class="ch-type-body-small text-ch-secondary text-decoration-none">View all</a>
                       </div>
-                    </div>
-                    <div class="alert alert-danger d-flex align-items-start gap-2 mb-0" role="alert">
-                      <svg class="ch-icon flex-shrink-0 mt-1" aria-hidden="true" focusable="false"><use href="#ch-alert-octagon"/></svg>
-                      <div class="min-w-0">
-                        <div class="fw-semibold">sustainable-home-panel.csv failed validation</div>
-                        <div class="small mb-0">
-                          Missing required column <code>audience_id</code>.
-                          <a href="upload-csv.html#upload-zone">Re-upload with template</a>.
-                        </div>
-                      </div>
+                      <ul id="chLibraryFileList" class="list-group list-group-flush ch-recent-analyses-list mb-0" aria-label="Audience signal files"></ul>
                     </div>
                   </div>
                 </section>
 
-                <section class="ch-card mb-4" aria-labelledby="upload-heading">
-                  <div class="ch-card-body">
-                    <h2 id="upload-heading" class="ch-type-heading-md mb-3">Upload audience signals</h2>
-                    <a
-                      href="upload-csv.html#upload-zone"
-                      class="ch-dropzone text-decoration-none d-block"
-                      data-ch-dropzone
-                      aria-label="Go to upload page to add audience signal CSV files"
-                    >
-                      <svg class="ch-icon ch-icon--2xl text-ch-muted mb-2 d-block" aria-hidden="true" focusable="false"><use href="#ch-cloud-upload"/></svg>
-                      <p class="fw-semibold mb-1 text-body">Drag and drop CSV files</p>
-                      <p class="small text-ch-secondary mb-3">Up to 50MB per file. Column validation runs before processing.</p>
-                      <span class="btn btn-outline-primary btn-sm">Browse files</span>
-                    </a>
-                    <p class="small text-ch-muted mb-0 mt-3">
-                      <button type="button" class="btn btn-link btn-sm p-0 align-baseline" data-ch-demo-toast data-ch-toast-message="Template downloaded." data-ch-toast-variant="secondary">Download CSV template</button>
-                      <span aria-hidden="true"> · </span>
-                      Expected headers: audience_id, zip, weight.
-                    </p>
-                  </div>
-                </section>
-
-                <section aria-labelledby="files-heading">
-                  <div class="d-flex align-items-center justify-content-between gap-2 mb-3">
-                    <h2 id="files-heading" class="ch-type-heading-md mb-0">Processed files</h2>
-                    <a href="processed-csvs/index.html" class="ch-type-body-small text-ch-secondary text-decoration-none" data-ch-populated-only>View all</a>
-                  </div>
-
-                  <div data-ch-populated-only>
-                  <div class="row g-2 align-items-end mb-3">
-                    <div class="col-md-6 col-lg-5">
-                      <label for="chCsvFilter" class="form-label small text-ch-secondary mb-1">Filter by file name</label>
-                      <div class="input-group">
-                        <span class="input-group-text bg-white border-end-0">
-                          <svg class="ch-icon text-ch-muted" aria-hidden="true" focusable="false"><use href="#ch-search"/></svg>
-                        </span>
-                        <input id="chCsvFilter" type="search" class="form-control border-start-0" placeholder="Search file names…" autocomplete="off" />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div id="chCsvEmpty" class="ch-card ch-card-body text-center py-5 d-none" role="status">
-                    <svg class="ch-icon ch-icon--2xl text-ch-muted mb-2" aria-hidden="true" focusable="false"><use href="#ch-search"/></svg>
-                    <p class="fw-semibold mb-1">No files match your filters</p>
-                    <p class="small text-ch-secondary mb-3">Try a different search term or upload new audience signals.</p>
-                    <a href="upload-csv.html#upload-zone" class="btn btn-primary btn-sm">Upload CSV</a>
-                  </div>
-
-                  <div class="table-responsive ch-card mb-0">
-                    <table class="table table-hover align-middle mb-0 ch-table">
-                      <caption class="visually-hidden">Recent processed audience signal files with upload date, processing date, and status.</caption>
-                      <thead>
-                        <tr>
-                          <th scope="col">File</th>
-                          <th scope="col">Uploaded</th>
-                          <th scope="col">Processed</th>
-                          <th scope="col">Status</th>
-                          <th scope="col"><span class="visually-hidden">Actions</span></th>
-                        </tr>
-                      </thead>
-                      <tbody id="chCsvTableBody" data-ch-csv-preview="5"></tbody>
-                    </table>
-                  </div>
-                  </div>
-
-                  <div class="ch-card ch-card-body text-center py-5" data-ch-empty-zero role="status">
-                    <svg class="ch-icon ch-icon--2xl text-ch-muted mb-2" aria-hidden="true" focusable="false"><use href="#ch-folder"/></svg>
-                    <p class="fw-semibold mb-1">No files yet</p>
-                    <p class="small text-ch-secondary mb-3">Upload audience signal CSVs to process them for analyses.</p>
-                    <a href="upload-csv.html#upload-zone" class="btn btn-primary btn-sm">Upload CSV</a>
-                  </div>
-                </section>
+                <div class="ch-card ch-card-body text-center py-5" data-ch-empty-zero role="status">
+                  <svg class="ch-icon ch-icon--2xl text-ch-muted mb-2" aria-hidden="true" focusable="false"><use href="#ch-folder"/></svg>
+                  <p class="fw-semibold mb-1">No files yet</p>
+                  <p class="small text-ch-secondary mb-3">Upload audience signal CSVs to enrich segment targeting in your analyses.</p>
+                  <a href="upload-csv.html#upload-zone" class="btn btn-primary">Upload CSV</a>
+                </div>
               </main>
             </div>
           </div>

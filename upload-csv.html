@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="assets/img/cultura-icon.png" />
-    <title>Upload CSV · Culture Hive</title>
+    <title>Upload CSV | Cultura</title>
     <link
       rel="stylesheet"
       href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&amp;display=swap"
@@ -235,79 +235,79 @@
                   </ol>
                 </nav>
                 <h1 class="ch-type-heading-lg mb-2">Upload CSV</h1>
-                <p class="text-ch-secondary mb-3">
-                  Upload audience signal files to enrich segment targeting in your analyses. Drag a file into the dropzone or browse. Column validation runs before processing.
+                <p class="text-ch-secondary mb-4">
+                  Add audience signal files for segment targeting. Validation runs on upload; processing status appears in <a href="library.html">Library</a>.
                 </p>
-                <div class="d-flex flex-wrap gap-2 align-items-center mb-4">
-                  <button type="button" class="btn btn-outline-primary btn-sm" data-ch-demo-toast data-ch-toast-message="Template downloaded." data-ch-toast-variant="secondary">Download CSV template</button>
-                  <span class="small text-ch-muted mb-0">Use the official column layout so segment-level fields map cleanly.</span>
-                </div>
 
-                <div class="alert alert-danger d-flex align-items-start gap-2 mb-4" role="alert">
-                  <svg class="ch-icon flex-shrink-0 mt-1" aria-hidden="true" focusable="false"><use href="#ch-alert-octagon"/></svg>
-                  <div>
-                    <div class="fw-semibold">Validation failed (example state)</div>
-                    <div class="small mb-0">
-                      Missing required column <code>audience_id</code>. Expected headers: audience_id, zip, weight.
-                    </div>
-                  </div>
-                </div>
-
-                <section id="upload-zone" class="mb-4" aria-labelledby="drop-heading">
-                  <h2 id="drop-heading" class="ch-type-heading-xs text-ch-secondary mb-3">Files</h2>
-                  <div
-                    class="ch-dropzone mb-3"
-                    data-ch-dropzone
-                    role="button"
-                    tabindex="0"
-                    aria-label="Drop CSV files here or activate to browse"
-                  >
-                    <svg class="ch-icon ch-icon--2xl text-ch-muted mb-2 d-block" aria-hidden="true" focusable="false"><use href="#ch-cloud-upload"/></svg>
-                    <p class="fw-semibold mb-1">Drag and drop CSV files</p>
-                    <p class="small text-ch-secondary mb-3">Up to 50MB per file. UTF-8 encoding recommended.</p>
-                    <button type="button" class="btn btn-outline-primary btn-sm">Browse files</button>
-                  </div>
-
-                  <ul class="list-group ch-card mb-0">
-                    <li class="list-group-item d-flex align-items-center justify-content-between">
-                      <span class="d-flex align-items-center gap-2 min-w-0">
-                        <svg class="ch-icon ch-icon--xl text-primary" aria-hidden="true" focusable="false"><use href="#ch-file-csv"/></svg>
-                        <span class="text-truncate">wellness_signals_may.csv</span>
-                      </span>
-                      <button type="button" class="btn btn-sm btn-outline-danger" aria-label="Remove wellness_signals_may.csv">
-                        Remove
-                      </button>
-                    </li>
-                  </ul>
-                </section>
-
-                <section class="ch-card mb-4" aria-labelledby="success-heading">
+                <section id="upload-zone" class="ch-card mb-4" aria-labelledby="drop-heading">
                   <div class="ch-card-body">
-                    <h2 id="success-heading" class="ch-type-heading-md mb-3">Upload complete (example)</h2>
-                    <div class="alert alert-success d-flex align-items-start gap-2 mb-0" role="status">
-                      <svg class="ch-icon flex-shrink-0 mt-1" aria-hidden="true" focusable="false"><use href="#ch-check-circle"/></svg>
+                    <div class="d-flex flex-wrap align-items-start justify-content-between gap-2 mb-3">
                       <div>
-                        <div class="fw-semibold">wellness_signals_may.csv processed successfully</div>
-                        <div class="small mb-0">12,400 rows mapped to audience segments. <a href="library.html">View in Library</a>.</div>
+                        <h2 id="drop-heading" class="ch-type-heading-md mb-1">Files</h2>
+                        <p class="small text-ch-secondary mb-0">Up to 50MB per file. UTF-8 encoding recommended.</p>
                       </div>
+                      <button type="button" class="btn btn-link btn-sm p-0 flex-shrink-0" data-ch-demo-toast data-ch-toast-message="Template downloaded." data-ch-toast-variant="secondary">Download CSV template</button>
                     </div>
-                  </div>
-                </section>
 
-                <section class="ch-card" aria-labelledby="processing-heading">
-                  <div class="ch-card-body">
-                    <h2 id="processing-heading" class="ch-type-heading-md mb-3">Processing status (example)</h2>
-                    <div class="d-flex align-items-center gap-3 mb-2">
-                      <div class="spinner-border text-primary" role="status" aria-label="Analyzing audience behaviors">
-                        <span class="visually-hidden">Analyzing audience behaviors</span>
+                    <div
+                      class="ch-dropzone ch-dropzone--compact mb-3 d-flex flex-column flex-md-row align-items-center gap-3 text-center text-md-start"
+                      data-ch-dropzone
+                      role="button"
+                      tabindex="0"
+                      aria-label="Drop CSV files here or activate to browse"
+                    >
+                      <svg class="ch-icon ch-icon--xl text-ch-muted flex-shrink-0 mb-0" aria-hidden="true" focusable="false"><use href="#ch-cloud-upload"/></svg>
+                      <div class="flex-grow-1 min-w-0">
+                        <p class="fw-semibold mb-1">Drag and drop CSV files</p>
+                        <p class="small text-ch-secondary mb-0">Or browse from your device. Expected headers: audience_id, zip, weight.</p>
                       </div>
-                      <div>
-                                                <div class="fw-semibold">Mapping cultural segments</div>
-                        <div class="small text-ch-secondary">Estimated completion in 2–4 minutes.</div>
-                      </div>
+                      <button type="button" class="btn btn-outline-primary btn-sm flex-shrink-0">Browse files</button>
                     </div>
-                    <div class="progress" style="height: 6px" aria-hidden="true">
-                      <div class="progress-bar" style="width: 35%"></div>
+
+                    <div class="ch-card ch-library-queue mb-0">
+                      <ul class="list-group list-group-flush mb-0" role="list" aria-label="Upload queue">
+                        <li class="list-group-item" role="listitem">
+                          <div class="d-flex align-items-start justify-content-between gap-3">
+                            <div class="d-flex align-items-start gap-3 min-w-0 flex-grow-1">
+                              <span class="ch-library-queue__icon ch-library-queue__icon--ready flex-shrink-0" aria-hidden="true">
+                                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-file-csv"/></svg>
+                              </span>
+                              <div class="min-w-0 flex-grow-1">
+                                <div class="fw-semibold text-truncate">wellness_signals_may.csv</div>
+                                <p class="small text-ch-secondary mb-0">Ready to upload. 12,400 rows detected.</p>
+                              </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-2 flex-shrink-0">
+                              <span class="ch-pill ch-pill-neutral">Ready</span>
+                              <button type="button" class="btn btn-sm btn-light border" aria-label="Remove wellness_signals_may.csv">Remove</button>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="list-group-item" role="listitem">
+                          <div class="d-flex align-items-start justify-content-between gap-3">
+                            <div class="d-flex align-items-start gap-3 min-w-0 flex-grow-1">
+                              <span class="ch-library-queue__icon ch-library-queue__icon--error flex-shrink-0" aria-hidden="true">
+                                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-file-csv"/></svg>
+                              </span>
+                              <div class="min-w-0 flex-grow-1">
+                                <div class="fw-semibold text-truncate">sustainable-home-panel.csv</div>
+                                <p class="small text-ch-secondary mb-0">
+                                  Missing required column <code>audience_id</code>. Expected headers: audience_id, zip, weight.
+                                </p>
+                              </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-2 flex-shrink-0">
+                              <span class="ch-pill ch-pill-danger">Failed</span>
+                              <button type="button" class="btn btn-sm btn-light border" aria-label="Remove sustainable-home-panel.csv">Remove</button>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mt-3 pt-3 border-top">
+                      <p class="small text-ch-muted mb-0">Fix failed files or remove them before uploading.</p>
+                      <button type="button" class="btn btn-primary" data-ch-demo-toast data-ch-toast-message="Upload started. Track progress in Library." data-ch-toast-variant="success">Upload and process</button>
                     </div>
                   </div>
                 </section>

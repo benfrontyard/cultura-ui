@@ -83,3 +83,23 @@
 .ch-foundations-auth-demo .ch-auth-form {
   max-width: none;
 }
+
+.ch-foundations-toc-mobile {
+  position: sticky;
+  top: calc(var(--ch-topbar-height) + 0.5rem);
+  z-index: 1010;
+  background: var(--ch-surface);
+}
+
+.ch-foundations-toc-mobile summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.ch-foundations-toc-mobile summary::-webkit-details-marker {
+  display: none;
+}
+
+.ch-foundations-toc-mobile[open] summary {
+  border-bottom: 1px solid var(--ch-border);
+}
