@@ -11,6 +11,7 @@
   color: inherit;
   /* Closed paths default to fill=black; these sprites are stroke-only */
   fill: none;
+  stroke: currentColor;
 }
 
 .ch-icon use {

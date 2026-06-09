@@ -1,0 +1,119 @@
+---
+description: Cultura product copy — voice, terminology, and UX writing patterns
+globs:
+  - "**/*.html"
+  - "assets/js/app.js"
+  - "assets/data/*.json"
+---
+
+# Cultura product copy
+
+## Terminology
+
+| Role | Canonical name | Usage |
+|------|----------------|-------|
+| Company | **Culture Hive** | Legal, help links, logo alt, page titles |
+| Product | **Culture Hive** | Marketing, login; not repeated in page chrome |
+| AI assistant | **Cultura AI** | Dock, copilot, chat author, "Ask Cultura AI" button |
+| Core object | **Analysis** | Not "report" unless legacy; "Blueprint" only for Blueprint tab |
+| Score | **CRS** | Always pair verdict with rationale ("because…") |
+| Nav labels | Home · Analyses · Audiences · Activations · Library · Settings | Match sidebar exactly |
+
+Page titles: `{Page} · Culture Hive` — never "Culture Hive AI" as product name.
+
+## Tone
+
+- Verb-first CTAs: "New Analysis", "Create Activation", "Generate Analysis"
+- Sentence case for labels; title case for page H1s only
+- Plain language; no "preview", "prototype", "not available in this build"
+- Every screen answers: *What is this? What do I do next?*
+- Workflow CTAs outrank Ask Cultura AI (see `cultura-product-ia.mdc`)
+
+## CTA hierarchy
+
+1. **Primary workflow** — `btn-primary`: New Analysis, Generate Analysis, Create Activation, Create Deal ID, Save Segment
+2. **Secondary navigation** — `btn-outline-primary`: View Analyses, Open Campaign Plan, Review inventory
+3. **Cultura AI** — `btn-outline-primary` or chips: Ask Cultura AI, suggestion pills
+
+## Empty states
+
+Pattern: headline + one-line explanation + single primary button.
+
+- Zero items: `No {noun} yet` + how to create + CTA
+- Filtered to zero: `No {noun} match your filters` + adjust filters hint
+- Reference: `ui-foundations.html` empty-state component
+
+## Errors & validation
+
+Pattern: what happened + how to fix.
+
+- Good: "Missing required column `audience_id`. Expected headers: audience_id, zip, weight."
+- Bad: "Invalid file." / "Something went wrong."
+
+## Toasts
+
+Be specific. Never use generic fallbacks like "Action completed."
+
+- Success: "Segment added to My segments."
+- Warning: "Select an audience to continue."
+- Info: "Copied to clipboard."
+
+## Wayfinding
+
+Use one orientation signal per depth — do not stack eyebrow + breadcrumb + redundant "workspace" labels.
+
+| Depth | Signal |
+|-------|--------|
+| Top-level (nav item = current page) | Sidebar active state + **H1 only** — no eyebrow |
+| Nested (child of nav section) | **Breadcrumb** + H1 — no eyebrow |
+| In-page (analysis tabs, etc.) | Tab bar; optional breadcrumb suffix for deep links |
+
+**Top-level pages** (H1 only): Analyses, Audiences, Activations, Library, Settings. **Home** uses a time-based greeting with the user's first name (e.g. "Good afternoon, Nate") — nav label is "Home".
+
+**Nested pages** (breadcrumb + H1):
+- `Analyses → New Analysis`
+- `Analyses → {analysis name}`
+- `Library → Upload CSV`
+- `Library → Processed audience data`
+
+Do not use "Workspace" in page headers, eyebrows, or sidebar section labels. Settings account section uses **Preferences**, not Workspace.
+
+Subtitle copy under H1 explains the task, not location.
+
+## Analysis detail (bread and butter)
+
+- **Tabs:** Global `.ch-app .nav-tabs` underline switcher (gray inactive, primary underline when active). Add `ch-tabs--scroll` when many tabs overflow horizontally. No journey rail or per-tab CTA banner.
+- **Header:** Primary workflow CTA (`Create Activation`) and overflow menu live in the page header.
+- Tab content carries section context; next-step actions belong in-tab only when they are the main task for that section.
+
+## Onboarding
+
+- Step labels: numbered steps with outcome hint ("Step 3 — Review your CRS verdict and evidence")
+- Input-type cards: subtitle + one-line "Best for…"
+- Analysis tabs: each tab ends with one primary next-step CTA
+- Recommended next steps: ordered list linking to tabs or activation
+
+## Cultura AI copy
+
+- Dock section label: **Cultura AI**
+- Intent pills: Domain · Bundle ID · Brief · Creative · Audience · Ask
+- Suggestions must imply a workflow next step
+- Replies end with a concrete action ("Open the Inventory tab to review recommended domains.")
+- Chat starters align with current demo narrative (ESPN / CRS workflow)
+
+## Banned terms (production voice)
+
+Do not use in user-facing copy:
+
+- preview, prototype, MVP, demo only, not available, not connected, not linked, not configurable
+- "Ask AI" (use "Ask Cultura AI")
+- "Culture Hive AI" as product name (reserve for assistant contexts only if needed)
+- "Action completed." as toast default
+
+## When adding copy
+
+1. Match nav terminology in H1s and breadcrumbs; nested pages get breadcrumbs, top-level pages do not
+2. Pair every CRS score with verdict + because
+3. End analysis views with a workflow action
+4. Keep modal copy identical across all pages (shell is duplicated)
+5. Prefer `CH_COPY` in `app.js` for dynamic strings

@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="../assets/img/cultura-icon.png" />
+    <title>ESPN.com Evaluation · Culture Hive</title>
+    <link
+      rel="stylesheet"
+      href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&amp;display=swap"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <link href="../assets/css/icons.css" rel="stylesheet" />
+    <link href="../assets/css/theme.css" rel="stylesheet" />
+  </head>
+  <body data-ch-current="analyses-detail" data-ch-copilot-context="ESPN.com Analysis" data-ch-folder="analyses">
+    <script src="../assets/js/ch-icon-sprite-inject.js"></script>
+
+    <a class="ch-skip-link" href="#main-content">Skip to main content</a>
+
+    <div class="ch-app">
+      <!-- ch:shell:sidebar -->
+      <aside id="ch-primary-sidebar" class="ch-sidebar ch-sidebar-desktop">
+        <div class="ch-sidebar-brand">
+          <a
+            href="../index.html"
+            class="ch-sidebar-brand-link d-flex align-items-center gap-2 flex-grow-1 min-w-0 text-decoration-none"
+            aria-label="Culture Hive home"
+          >
+            <span class="ch-sidebar-brand-wordmark">
+              <img src="../assets/img/cultura-logo.png" alt="" decoding="async" />
+            </span>
+            <span class="ch-sidebar-brand-mark ch-sidebar-brand-mark--collapsed-only" aria-hidden="true">
+              <img src="../assets/img/cultura-icon.png" alt="" width="32" height="32" decoding="async" />
+            </span>
+          </a>
+        </div>
+        <div class="ch-sidebar-scroll">
+          <nav aria-label="Primary navigation">
+            <!-- MVP: Home points at this dashboard at site root; a future marketing-only landing can replace or split this page. -->
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a class="ch-nav-link" href="../index.html" data-ch-nav="home">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-house"/></svg>
+                  <span class="ch-nav-label">Home</span>
+                </a>
+              </li>
+              <li>
+                <a class="ch-nav-link" href="index.html" data-ch-nav="analyses">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-file-graph"/></svg>
+                  <span class="ch-nav-label">Analyses</span>
+                </a>
+              </li>
+              <li>
+                <a class="ch-nav-link" href="../audiences.html" data-ch-nav="audiences">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-people"/></svg>
+                  <span class="ch-nav-label">Audiences</span>
+                </a>
+              </li>
+              <li>
+                <a class="ch-nav-link" href="../activations.html" data-ch-nav="activations">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-rocket"/></svg>
+                  <span class="ch-nav-label">Activations</span>
+                </a>
+              </li>
+              <li>
+                <a class="ch-nav-link" href="../library.html" data-ch-nav="library">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-folder"/></svg>
+                  <span class="ch-nav-label">Library</span>
+                </a>
+              </li>
+              <li>
+                <a class="ch-nav-link" href="../settings.html" data-ch-nav="settings">
+                  <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-gear"/></svg>
+                  <span class="ch-nav-label">Settings</span>
+                </a>
+              </li>
+
+            </ul>
+          </nav>
+        </div>
+        <div class="ch-sidebar-footer">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <div class="ch-user-avatar" aria-hidden="true">NC</div>
+            <div class="ch-user-meta min-w-0">
+              <div class="fw-semibold text-truncate small">Nate Chandra</div>
+              <div class="text-ch-muted small">Free Plan</div>
+            </div>
+          </div>
+          <a class="btn btn-outline-primary btn-sm w-100" href="../settings.html#plan" data-ch-upgrade-open>
+            <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-arrow-up-circle"/></svg>
+            <span>Upgrade Plan</span>
+          </a>
+        </div>
+      </aside>
+      <!-- ch:/shell:sidebar -->
+
+      <div class="ch-shell">
+        <header class="ch-topbar">
+          <button
+            class="btn btn-light border ch-mobile-only me-1"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#chNavDrawer"
+            aria-controls="chNavDrawer"
+            aria-label="Open menu"
+          >
+            <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-menu"/></svg>
+          </button>
+          <div
+            class="ch-topbar-history ch-mobile-only me-1 flex-shrink-0 d-inline-flex align-items-center"
+            role="group"
+            aria-label="History"
+          >
+            <button type="button" class="ch-topbar-history-btn" data-ch-history="back" aria-label="Back" disabled>
+              <svg class="ch-icon ch-icon--sm" aria-hidden="true" focusable="false"><use href="#ch-chevron-left"/></svg>
+            </button>
+            <button type="button" class="ch-topbar-history-btn" data-ch-history="forward" aria-label="Forward" disabled>
+              <svg class="ch-icon ch-icon--sm" aria-hidden="true" focusable="false"><use href="#ch-chevron-right"/></svg>
+            </button>
+          </div>
+          <a
+            href="../index.html"
+            class="ch-topbar-logo ch-mobile-only d-inline-flex align-items-center flex-shrink-0 me-2 text-decoration-none"
+            aria-label="Culture Hive home"
+          >
+            <img src="../assets/img/cultura-icon.png" alt="" width="28" height="28" decoding="async" />
+          </a>
+          <div class="ch-topbar-lead d-none d-md-flex align-items-center gap-2 flex-shrink-0 min-w-0 me-1">
+            <button
+              type="button"
+              class="btn btn-icon flex-shrink-0"
+              data-ch-sidebar-toggle
+              aria-controls="ch-primary-sidebar"
+              aria-expanded="true"
+              aria-label="Collapse sidebar"
+              aria-pressed="false"
+            >
+              <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-layout-sidebar"/></svg>
+            </button>
+            <div
+              class="ch-topbar-history d-none d-md-inline-flex align-items-center flex-shrink-0"
+              role="group"
+              aria-label="History"
+            >
+              <button type="button" class="ch-topbar-history-btn" data-ch-history="back" aria-label="Back" disabled>
+                <svg class="ch-icon ch-icon--sm" aria-hidden="true" focusable="false"><use href="#ch-chevron-left"/></svg>
+              </button>
+              <button type="button" class="ch-topbar-history-btn" data-ch-history="forward" aria-label="Forward" disabled>
+                <svg class="ch-icon ch-icon--sm" aria-hidden="true" focusable="false"><use href="#ch-chevron-right"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="ch-topbar-actions d-flex align-items-center gap-1 ms-auto flex-nowrap justify-content-end">
+            <button
+              type="button"
+              class="btn btn-light border flex-shrink-0 ch-topbar-jump-btn"
+              data-ch-command-palette-open
+              aria-haspopup="dialog"
+              aria-controls="chCommandPalette"
+              aria-label="Jump to page (Command K)"
+              title="Jump to page (⌘K)"
+            >
+              <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-search"/></svg>
+              <span class="ch-topbar-jump-label d-none d-lg-inline">Jump to…</span>
+              <span
+                class="ch-kbd-hint d-none d-xl-inline-flex ms-1"
+                role="group"
+                aria-label="Keyboard shortcut: Control or Command K"
+                ><kbd>Cmd</kbd><span class="ch-kbd-sep" aria-hidden="true">+</span><kbd>K</kbd></span
+              >
+            </button>
+            <div class="dropdown">
+              <button
+                type="button"
+                class="btn btn-light border rounded-pill d-flex align-items-center gap-2 py-1 ps-1 pe-2"
+                id="chAccountMenuBtn"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+                aria-label="Account menu"
+              >
+                <span class="ch-user-avatar" style="width: 32px; height: 32px; font-size: 0.75rem" aria-hidden="true">NC</span>
+                <svg class="ch-icon ch-icon--sm text-ch-muted" aria-hidden="true" focusable="false"><use href="#ch-chevron-down"/></svg>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end shadow-sm ch-account-menu-dropdown" aria-labelledby="chAccountMenuBtn">
+                <li><span class="dropdown-item-text small text-ch-muted">Nate Chandra</span></li>
+                <li><span class="dropdown-item-text small">Free Plan</span></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <button type="button" class="dropdown-item d-flex align-items-center gap-2" data-ch-notifications-open>
+                    <svg class="ch-icon ch-icon--sm" aria-hidden="true" focusable="false"><use href="#ch-bell"/></svg>
+                    Notifications
+                  </button>
+                </li>
+                <li>
+                  <a class="dropdown-item d-flex align-items-center gap-2" href="#" data-ch-help-open>
+                    <svg class="ch-icon ch-icon--sm" aria-hidden="true" focusable="false"><use href="#ch-help"/></svg>
+                    Help
+                  </a>
+                </li>
+                <li class="d-none" data-ch-locale-menu-item>
+                  <div class="px-3 py-2">
+                    <label for="chLocaleSelect" class="form-label small text-ch-muted mb-1">Language</label>
+                    <select id="chLocaleSelect" class="form-select form-select-sm ch-locale-select w-100" aria-label="Language">
+                      <option value="en" selected>English</option>
+                    </select>
+                  </div>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="../settings.html#plan" data-ch-upgrade-open>Upgrade</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#" data-ch-logout>Logout</a></li>
+              </ul>
+            </div>
+          </div>
+        </header>
+
+        <div class="ch-workspace flex-grow-1">
+          <div class="ch-main">
+            <div class="ch-main-inner">
+              <main id="main-content">
+                <div id="analyses-espn-detail">
+                  <nav aria-label="Breadcrumb" class="mb-3">
+                    <ol class="breadcrumb mb-0 small">
+                      <li class="breadcrumb-item"><a href="index.html">Analyses</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">ESPN.com Evaluation</li>
+                    </ol>
+                  </nav>
+
+                  <div class="ch-analysis-header ch-analysis-header--hero rounded-3">
+                    <div class="d-flex flex-column flex-lg-row align-items-lg-start justify-content-lg-between gap-3">
+                      <div class="min-w-0">
+                        <div class="d-flex align-items-center gap-3 mb-2">
+                          <img class="ch-brand-logo ch-brand-logo--lg" src="https://www.google.com/s2/favicons?domain=espn.com&amp;sz=64" alt="" width="40" height="40" decoding="async" />
+                          <h1 class="ch-type-heading-lg mb-0 ch-text-balance">ESPN.com Evaluation</h1>
+                          <span class="ch-pill ch-pill-success flex-shrink-0">Completed</span>
+                        </div>
+                        <div class="ch-analysis-meta">
+                          <span class="text-ch-muted">Domain</span>
+                          <span class="text-ch-muted" aria-hidden="true">·</span>
+                          <span class="fw-medium">www.espn.com</span>
+                          <span class="text-ch-muted" aria-hidden="true">·</span>
+                          <span class="fw-medium">Latino Millennial Sports Fans</span>
+                        </div>
+                        <div class="ch-analysis-meta ch-analysis-meta--sub">
+                          <span>Completed Jun 4, 2026</span>
+                          <span class="text-ch-muted" aria-hidden="true">·</span>
+                          <span>Requested by User</span>
+                        </div>
+                        <p class="ch-analysis-prompt mb-0"><strong>Prompt:</strong> Give me CRS for www.espn.com</p>
+                      </div>
+                      <div class="d-flex flex-wrap gap-2 flex-shrink-0 align-items-start">
+                        <button type="button" class="btn btn-primary btn-sm" data-ch-goto-activation>Create Activation</button>
+                        <button type="button" class="btn btn-outline-secondary btn-sm" data-ch-ai-dock-open>Ask Cultura AI</button>
+                        <div class="dropdown">
+                          <button type="button" class="btn btn-outline-secondary btn-sm ch-analysis-more" id="chAnalysisMore" data-bs-toggle="dropdown" aria-expanded="false" aria-label="More actions" title="More actions">
+                            <svg class="ch-icon ch-icon--sm" aria-hidden="true" focusable="false"><use href="#ch-dots-vertical"/></svg>
+                          </button>
+                          <ul class="dropdown-menu dropdown-menu-end shadow-sm ch-account-menu-dropdown" aria-labelledby="chAnalysisMore">
+                            <li><button class="dropdown-item" type="button" data-ch-rename>Rename analysis</button></li>
+                            <li><button class="dropdown-item" type="button" data-ch-duplicate>Duplicate</button></li>
+                            <li><hr class="dropdown-divider" /></li>
+                            <li><button class="dropdown-item" type="button" data-ch-export>Export results</button></li>
+                            <li><button class="dropdown-item" type="button" data-ch-share>Share link</button></li>
+                            <li><hr class="dropdown-divider" /></li>
+                            <li><button class="dropdown-item text-danger" type="button" data-bs-toggle="modal" data-bs-target="#chDeleteAnalysisModal">Delete analysis</button></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ch-card">
+                      <div class="ch-card-body">
+                        <div class="ch-crs-score">
+                          <div class="ch-crs-score__number" aria-label="CRS score 82">82</div>
+                          <div class="flex-grow-1 min-w-0">
+                            <div class="ch-crs-score__verdict">Strong cultural relevance</div>
+                            <div class="ch-crs-score__label">ESPN.com resonates with Latino millennial sports fans through bilingual coverage, athlete storytelling, and community-driven commentary.</div>
+                            <div class="ch-crs-score__meta">
+                              <span class="ch-crs-score__of">82 of 100</span>
+                              <button type="button" class="btn btn-outline-secondary btn-sm" data-ch-show-score-breakdown>Score breakdown</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="ch-analysis-workspace">
+                  <ul class="nav nav-tabs ch-tabs--scroll" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="tab-overview-tab" data-bs-toggle="tab" data-bs-target="#tab-overview" type="button" role="tab" aria-controls="tab-overview" aria-selected="true">Overview</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="tab-audience-tab" data-bs-toggle="tab" data-bs-target="#tab-audience" type="button" role="tab" aria-controls="tab-audience" aria-selected="false">Audience</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="tab-inventory-tab" data-bs-toggle="tab" data-bs-target="#tab-inventory" type="button" role="tab" aria-controls="tab-inventory" aria-selected="false">Inventory</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="tab-blueprint-tab" data-bs-toggle="tab" data-bs-target="#tab-blueprint" type="button" role="tab" aria-controls="tab-blueprint" aria-selected="false">Blueprint</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="tab-campaign-plan-tab" data-bs-toggle="tab" data-bs-target="#tab-campaign-plan" type="button" role="tab" aria-controls="tab-campaign-plan" aria-selected="false">Campaign Plan</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="tab-activation-tab" data-bs-toggle="tab" data-bs-target="#tab-activation" type="button" role="tab" aria-controls="tab-activation" aria-selected="false">Activation</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="tab-history-tab" data-bs-toggle="tab" data-bs-target="#tab-history" type="button" role="tab" aria-controls="tab-history" aria-selected="false">History</button>
+                    </li>
+                  </ul>
+
+                  <div class="tab-content">
+                    <div class="tab-pane fade show active" id="tab-overview" role="tabpanel" aria-labelledby="tab-overview-tab" tabindex="0">
+                      <section class="ch-card mb-4" aria-labelledby="overview-recommendations-heading">
+                        <div class="ch-card-body">
+                          <h2 id="overview-recommendations-heading" class="ch-type-heading-sm mb-3">Recommendations</h2>
+                          <dl class="ch-persona-dl row mb-0">
+                            <div class="col-md-4">
+                              <dt>Most relevant to</dt>
+                              <dd>Latino Millennial Sports Fans</dd>
+                            </div>
+                            <div class="col-md-4">
+                              <dt>Suggested action</dt>
+                              <dd>Elevate with bilingual and intersectional content; curate Spanish-language sports inventory.</dd>
+                            </div>
+                            <div class="col-md-4">
+                              <dt>Impact potential</dt>
+                              <dd>High engagement and brand affinity with targeted cultural enhancements.</dd>
+                            </div>
+                          </dl>
+                        </div>
+                      </section>
+
+                      <section class="ch-card mb-4" id="overview-score-breakdown" aria-labelledby="overview-dimensions-heading">
+                        <div class="ch-card-body">
+                          <div class="ch-crs-breakdown__header">
+                            <h2 id="overview-dimensions-heading" class="ch-type-heading-xs text-ch-secondary mb-0">Score breakdown</h2>
+                            <div class="ch-crs-breakdown__summary" aria-label="Total score 82 out of 100">
+                              <span class="ch-crs-breakdown__summary-score">82</span>
+                              <span class="ch-crs-breakdown__summary-of">of 100</span>
+                            </div>
+                          </div>
+
+                          <ul class="ch-crs-breakdown__list list-unstyled mb-0" aria-label="CRS dimensions and point contributions">
+                            <li class="ch-crs-breakdown__item">
+                              <div class="ch-crs-breakdown__item-head">
+                                <h3 class="ch-crs-breakdown__title">Audience Alignment</h3>
+                                <span class="ch-crs-breakdown__pts">+32</span>
+                              </div>
+                              <p class="ch-crs-breakdown__desc">Strong overlap with Latino millennial sports interests, bilingual content, and athlete narratives.</p>
+                              <div class="ch-crs-breakdown__meter">
+                                <span class="ch-crs-breakdown__ratio">32 / 40</span>
+                                <div class="ch-crs-breakdown__bar" role="presentation">
+                                  <div class="ch-crs-breakdown__bar-fill" style="width: 80%"></div>
+                                </div>
+                              </div>
+                              <button type="button" class="ch-crs-breakdown__evidence" data-ch-evidence="audience-alignment">View evidence</button>
+                            </li>
+                            <li class="ch-crs-breakdown__item">
+                              <div class="ch-crs-breakdown__item-head">
+                                <h3 class="ch-crs-breakdown__title">Ownership &amp; Authenticity</h3>
+                                <span class="ch-crs-breakdown__pts">+20</span>
+                              </div>
+                              <p class="ch-crs-breakdown__desc">Credible sports authority with growing Spanish-language verticals and community features.</p>
+                              <div class="ch-crs-breakdown__meter">
+                                <span class="ch-crs-breakdown__ratio">20 / 25</span>
+                                <div class="ch-crs-breakdown__bar" role="presentation">
+                                  <div class="ch-crs-breakdown__bar-fill" style="width: 80%"></div>
+                                </div>
+                              </div>
+                              <button type="button" class="ch-crs-breakdown__evidence" data-ch-evidence="ownership-authenticity">View evidence</button>
+                            </li>
+                            <li class="ch-crs-breakdown__item">
+                              <div class="ch-crs-breakdown__item-head">
+                                <h3 class="ch-crs-breakdown__title">Editorial/UX Signals</h3>
+                                <span class="ch-crs-breakdown__pts">+18</span>
+                              </div>
+                              <p class="ch-crs-breakdown__desc">Mobile-first layout, highlight clips, and personalized team feeds support daily rituals.</p>
+                              <div class="ch-crs-breakdown__meter">
+                                <span class="ch-crs-breakdown__ratio">18 / 25</span>
+                                <div class="ch-crs-breakdown__bar" role="presentation">
+                                  <div class="ch-crs-breakdown__bar-fill ch-crs-breakdown__bar-fill--mid" style="width: 72%"></div>
+                                </div>
+                              </div>
+                              <button type="button" class="ch-crs-breakdown__evidence" data-ch-evidence="editorial-ux">View evidence</button>
+                            </li>
+                            <li class="ch-crs-breakdown__item">
+                              <div class="ch-crs-breakdown__item-head">
+                                <h3 class="ch-crs-breakdown__title">Intersectional Representation</h3>
+                                <span class="ch-crs-breakdown__pts">+12</span>
+                              </div>
+                              <p class="ch-crs-breakdown__desc">Coverage spans soccer, baseball, and basketball with Latino athlete spotlights; visibility for women and LGBTQ+ athletes is improving but uneven.</p>
+                              <div class="ch-crs-breakdown__meter">
+                                <span class="ch-crs-breakdown__ratio">12 / 15</span>
+                                <div class="ch-crs-breakdown__bar" role="presentation">
+                                  <div class="ch-crs-breakdown__bar-fill" style="width: 80%"></div>
+                                </div>
+                              </div>
+                              <button type="button" class="ch-crs-breakdown__evidence" data-ch-evidence="intersectional-representation">View evidence</button>
+                            </li>
+                          </ul>
+
+                          <div class="ch-crs-breakdown__total">
+                            <span class="ch-crs-breakdown__total-label">Total CRS</span>
+                            <span class="ch-crs-breakdown__total-score">82</span>
+                          </div>
+                        </div>
+                      </section>
+
+                      <div class="row g-4 mb-4">
+                        <div class="col-lg-6">
+                          <section class="ch-card h-100">
+                            <div class="ch-card-body">
+                              <h2 class="ch-type-heading-xs text-ch-secondary mb-3">Campaign context</h2>
+                              <dl class="ch-persona-dl mb-0">
+                                <dt>Culture / Subculture</dt>
+                                <dd class="mb-2">Latino Millennial Sports Fans</dd>
+                                <dt>Psychographics</dt>
+                                <dd class="mb-2">Passionate about sports, mobile-first, bilingual or English-dominant with cultural affinity.</dd>
+                                <dt>Sociodemographics</dt>
+                                <dd class="mb-0">Urban, middle-income, family-oriented; concentrated in Southwest US, California, and Texas.</dd>
+                              </dl>
+                            </div>
+                          </section>
+                        </div>
+                        <div class="col-lg-6">
+                          <section class="ch-card h-100">
+                            <div class="ch-card-body">
+                              <h2 class="ch-type-heading-xs text-ch-secondary mb-3">Stereotype &amp; authenticity flags</h2>
+                              <p class="small text-ch-secondary mb-2">No significant stereotypes detected in editorial coverage or brand positioning for this evaluation.</p>
+                              <p class="small text-ch-secondary mb-0">ESPN shows sustained Latino athlete narratives and bilingual pathways rather than token representation.</p>
+                            </div>
+                          </section>
+                        </div>
+                      </div>
+
+                      <section class="ch-card mb-4" aria-labelledby="overview-next-steps-heading">
+                        <div class="ch-card-body">
+                          <h2 id="overview-next-steps-heading" class="ch-type-heading-xs text-ch-secondary mb-3">Recommended next steps</h2>
+                          <ul class="ch-analysis-next-steps list-unstyled mb-0">
+                            <li>
+                              <button type="button" class="ch-analysis-next-steps__item" data-ch-goto-tab="#tab-audience">
+                                <span class="ch-analysis-next-steps__label">Review audience persona</span>
+                                <span class="ch-analysis-next-steps__hint">Diego Ramirez profile</span>
+                              </button>
+                            </li>
+                            <li>
+                              <button type="button" class="ch-analysis-next-steps__item" data-ch-goto-tab="#tab-inventory">
+                                <span class="ch-analysis-next-steps__label">Curate inventory</span>
+                                <span class="ch-analysis-next-steps__hint">13 domains selected</span>
+                              </button>
+                            </li>
+                            <li>
+                              <button type="button" class="ch-analysis-next-steps__item" data-ch-goto-tab="#tab-blueprint">
+                                <span class="ch-analysis-next-steps__label">Review blueprint</span>
+                                <span class="ch-analysis-next-steps__hint">Client-ready report</span>
+                              </button>
+                            </li>
+                            <li>
+                              <button type="button" class="ch-analysis-next-steps__item" data-ch-goto-tab="#tab-campaign-plan">
+                                <span class="ch-analysis-next-steps__label">Customize campaign plan</span>
+                                <span class="ch-analysis-next-steps__hint">Budget and geo mix</span>
+                              </button>
+                            </li>
+                            <li>
+                              <button type="button" class="ch-analysis-next-steps__item" data-ch-goto-activation>
+                                <span class="ch-analysis-next-steps__label">Create activation</span>
+                                <span class="ch-analysis-next-steps__hint">Send to DSP</span>
+                              </button>
+                            </li>
+                          </ul>
+                        </div>
+                      </section>
+
+                      <section aria-labelledby="overview-prompts-heading">
+                        <h2 id="overview-prompts-heading" class="ch-type-heading-xs text-ch-secondary mb-2">Ask Cultura AI</h2>
+                        <div class="d-flex flex-wrap gap-2">
+                          <button type="button" class="ch-suggested-prompt" data-ch-copilot-prompt="Explain why this scored 82">Explain why this scored 82</button>
+                          <button type="button" class="ch-suggested-prompt" data-ch-copilot-prompt="What would improve the score?">What would improve the score?</button>
+                          <button type="button" class="ch-suggested-prompt" data-ch-copilot-prompt="Summarize for a client">Summarize for a client</button>
+                          <button type="button" class="ch-suggested-prompt" data-ch-copilot-prompt="What are the top risks?">What are the top risks?</button>
+                        </div>
+                      </section>
+                    </div>
+
+                    <div class="tab-pane fade" id="tab-audience" role="tabpanel" aria-labelledby="tab-audience-tab" tabindex="0">
+                      <section class="ch-card mb-4">
+                        <div class="ch-card-body">
+                          <h2 class="ch-type-heading-md mb-1">Diego Ramirez</h2>
+                          <p class="text-ch-secondary mb-3">25–34 · Latino Millennial · Primary Segment</p>
+                          <dl class="ch-persona-dl row mb-0">
+                            <div class="col-md-6">
+                              <dt>Persona Name</dt>
+                              <dd>Diego Ramirez</dd>
+                              <dt>Age Range</dt>
+                              <dd>25–34</dd>
+                            </div>
+                            <div class="col-md-6">
+                              <dt>Cultural Identity</dt>
+                              <dd>U.S. Latino, bicultural Spanish–English speaker</dd>
+                            </div>
+                          </dl>
+                        </div>
+                      </section>
+                      <div class="row g-4 mb-4">
+                        <div class="col-md-4">
+                          <section class="ch-card h-100"><div class="ch-card-body">
+                            <h3 class="ch-type-heading-xs text-ch-secondary mb-3">Core Interests &amp; Values</h3>
+                            <ul class="small text-ch-secondary mb-0 ps-3">
+                              <li>Passionate about sports (soccer, baseball, basketball)</li>
+                              <li>Values family, community, and cultural pride</li>
+                              <li>Enjoys social gatherings around sports; seeks authentic representation</li>
+                            </ul>
+                          </div></section>
+                        </div>
+                        <div class="col-md-4">
+                          <section class="ch-card h-100"><div class="ch-card-body">
+                            <h3 class="ch-type-heading-xs text-ch-secondary mb-3">Behavioral Traits</h3>
+                            <ul class="small text-ch-secondary mb-0 ps-3">
+                              <li>Consumes live sports on CTV and mobile</li>
+                              <li>Influenced by athlete endorsements</li>
+                              <li>Seeks connection to culture through sports</li>
+                            </ul>
+                          </div></section>
+                        </div>
+                        <div class="col-md-4">
+                          <section class="ch-card h-100"><div class="ch-card-body">
+                            <h3 class="ch-type-heading-xs text-ch-secondary mb-3">Preferred Platforms &amp; Channels</h3>
+                            <p class="small mb-2"><strong>Primary:</strong> CTV apps (ESPN+, Hulu Live), Instagram, TikTok</p>
+                            <p class="small mb-0"><strong>Secondary:</strong> YouTube, Twitter/X, mobile web browsing</p>
+                          </div></section>
+                        </div>
+                      </div>
+                      <section class="ch-card mb-4"><div class="ch-card-body">
+                        <h3 class="ch-type-heading-xs text-ch-secondary mb-2">Creative Alignment Notes</h3>
+                        <p class="text-ch-secondary mb-0 small">Responds to authentic representation and bilingual content; avoid overly polished corporate tones. Celebrate athlete journeys and fan rituals.</p>
+                      </div></section>
+                      <section class="ch-card mb-4"><div class="ch-card-body">
+                        <h3 class="ch-type-heading-xs text-ch-secondary mb-2">Sample Targeting Filters</h3>
+                        <ul class="small text-ch-secondary mb-0 ps-3">
+                          <li><strong>Gender:</strong> All</li>
+                          <li><strong>Device:</strong> Mobile-first, CTV viewer</li>
+                          <li><strong>Affinities:</strong> ESPN, Univision Deportes, Bleacher Report</li>
+                          <li><strong>Age:</strong> 25–34 · <strong>Ethnicity:</strong> Hispanic/Latino · <strong>Interest:</strong> Sports</li>
+                        </ul>
+                      </div></section>
+                      <div class="ch-segment-match-bar mb-4">
+                        <span class="ch-segment-match-bar__label">Top Cultural Segment Match</span>
+                        <span class="ch-segment-match-bar__value">Latino Millennial Sports Fans</span>
+                      </div>
+                      <div class="mb-4">
+                        <button type="button" class="btn btn-outline-primary" data-ch-save-audience data-ch-audience-name="Latino Millennial Sports Fans">Save to My segments</button>
+                      </div>
+                      <section aria-labelledby="audience-prompts-heading" class="mb-4">
+                        <h2 id="audience-prompts-heading" class="ch-type-heading-xs text-ch-secondary mb-2">Ask Cultura AI</h2>
+                        <div class="d-flex flex-wrap gap-2">
+                          <button type="button" class="ch-suggested-prompt" data-ch-copilot-prompt="Turn this persona into targeting criteria">Turn this persona into targeting criteria</button>
+                          <button type="button" class="ch-suggested-prompt" data-ch-copilot-prompt="What creative tone would resonate?">What creative tone would resonate?</button>
+                          <button type="button" class="ch-suggested-prompt" data-ch-copilot-prompt="What stereotypes should we avoid?">What stereotypes should we avoid?</button>
+                        </div>
+                      </section>
+                    </div>
+
+                    <div class="tab-pane fade" id="tab-inventory" role="tabpanel" aria-labelledby="tab-inventory-tab" tabindex="0">
+                      <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+                        <span class="fw-semibold" id="chInventoryCount">13 of 13 selected</span>
+                        <span class="text-ch-muted small">of 50,000 domains</span>
+                        <span class="badge rounded-pill text-bg-light border">Included</span>
+                        <span class="badge rounded-pill text-bg-light border">Sports</span>
+                        <span class="badge rounded-pill text-bg-light border">Spanish-language</span>
+                        <span class="badge rounded-pill text-bg-light border">High cultural fit</span>
+                      </div>
+                      <div class="table-responsive ch-card mb-3">
+                        <table class="table align-middle mb-0 ch-table">
+                          <thead><tr><th>Domain</th><th>Reason Included</th><th>Cultural Fit</th><th>Include</th></tr></thead>
+                          <tbody>
+                      <tr>
+                        <td class="fw-semibold">espn.com</td>
+                        <td class="text-ch-secondary small">Leading sports news and live event coverage with strong Latino Millennial audience engagement and bilingual content options.</td>
+                        <td><span class="badge rounded-pill text-bg-light border">92</span></td>
+                        <td><div class="form-check form-switch mb-0"><input class="form-check-input ch-inventory-toggle" type="checkbox" role="switch" checked aria-label="Include espn.com" /></div></td>
+                      </tr>
+                      <tr>
+                        <td class="fw-semibold">univision.com</td>
+                        <td class="text-ch-secondary small">Spanish-language sports and news crossover</td>
+                        <td><span class="badge rounded-pill text-bg-light border">88</span></td>
+                        <td><div class="form-check form-switch mb-0"><input class="form-check-input ch-inventory-toggle" type="checkbox" role="switch" checked aria-label="Include univision.com" /></div></td>
+                      </tr>
+                      <tr>
+                        <td class="fw-semibold">mlb.com</td>
+                        <td class="text-ch-secondary small">Baseball content with Latino player narratives</td>
+                        <td><span class="badge rounded-pill text-bg-light border">85</span></td>
+                        <td><div class="form-check form-switch mb-0"><input class="form-check-input ch-inventory-toggle" type="checkbox" role="switch" checked aria-label="Include mlb.com" /></div></td>
+                      </tr>
+                      <tr>
+                        <td class="fw-semibold">nba.com</td>
+                        <td class="text-ch-secondary small">Basketball culture and highlight-driven engagement</td>
+                        <td><span class="badge rounded-pill text-bg-light border">84</span></td>
+                        <td><div class="form-check form-switch mb-0"><input class="form-check-input ch-inventory-toggle" type="checkbox" role="switch" checked aria-label="Include nba.com" /></div></td>
+                      </tr>
+                      <tr>
+                        <td class="fw-semibold">telemundo.com</td>
+                        <td class="text-ch-secondary small">Spanish-language sports broadcasting</td>
+                        <td><span class="badge rounded-pill text-bg-light border">86</span></td>
+                        <td><div class="form-check form-switch mb-0"><input class="form-check-input ch-inventory-toggle" type="checkbox" role="switch" checked aria-label="Include telemundo.com" /></div></td>
+                      </tr>
+                      <tr>
+                        <td class="fw-semibold">bleacherreport.com</td>
+                        <td class="text-ch-secondary small">Social sports commentary and fan culture</td>
+                        <td><span class="badge rounded-pill text-bg-light border">79</span></td>
+                        <td><div class="form-check form-switch mb-0"><input class="form-check-input ch-inventory-toggle" type="checkbox" role="switch" checked aria-label="Include bleacherreport.com" /></div></td>
+                      </tr>
+                      <tr>
+                        <td class="fw-semibold">futbolarena.com</td>
+                        <td class="text-ch-secondary small">Soccer-first Latino sports community</td>
+                        <td><span class="badge rounded-pill text-bg-light border">90</span></td>
+                        <td><div class="form-check form-switch mb-0"><input class="form-check-input ch-inventory-toggle" type="checkbox" role="switch" checked aria-label="Include futbolarena.com" /></div></td>
+                      </tr>
+                      <tr>
+                        <td class="fw-semibold">sbnation.com</td>
+                        <td class="text-ch-secondary small">Team-specific fan communities</td>
+                        <td><span class="badge rounded-pill text-bg-light border">76</span></td>
+                        <td><div class="form-check form-switch mb-0"><input class="form-check-input ch-inventory-toggle" type="checkbox" role="switch" checked aria-label="Include sbnation.com" /></div></td>
+                      </tr>
+                      <tr>
+                        <td class="fw-semibold">latinosports.com</td>
+                        <td class="text-ch-secondary small">Latino athlete and sports culture focus</td>
+                        <td><span class="badge rounded-pill text-bg-light border">91</span></td>
+                        <td><div class="form-check form-switch mb-0"><input class="form-check-input ch-inventory-toggle" type="checkbox" role="switch" checked aria-label="Include latinosports.com" /></div></td>
+                      </tr>
+                      <tr>
+                        <td class="fw-semibold">foxsports.com</td>
+                        <td class="text-ch-secondary small">Multi-sport coverage with streaming integration</td>
+                        <td><span class="badge rounded-pill text-bg-light border">78</span></td>
+                        <td><div class="form-check form-switch mb-0"><input class="form-check-input ch-inventory-toggle" type="checkbox" role="switch" checked aria-label="Include foxsports.com" /></div></td>
+                      </tr>
+                      <tr>
+                        <td class="fw-semibold">espndeportes.com</td>
+                        <td class="text-ch-secondary small">Spanish-language ESPN vertical</td>
+                        <td><span class="badge rounded-pill text-bg-light border">89</span></td>
+                        <td><div class="form-check form-switch mb-0"><input class="form-check-input ch-inventory-toggle" type="checkbox" role="switch" checked aria-label="Include espndeportes.com" /></div></td>
+                      </tr>
+                      <tr>
+                        <td class="fw-semibold">soccerwire.com</td>
+                        <td class="text-ch-secondary small">Soccer news with multicultural audience</td>
+                        <td><span class="badge rounded-pill text-bg-light border">82</span></td>
+                        <td><div class="form-check form-switch mb-0"><input class="form-check-input ch-inventory-toggle" type="checkbox" role="switch" checked aria-label="Include soccerwire.com" /></div></td>
+                      </tr>
+                      <tr>
+                        <td class="fw-semibold">theathletic.com</td>
+                        <td class="text-ch-secondary small">In-depth sports journalism</td>
+                        <td><span class="badge rounded-pill text-bg-light border">74</span></td>
+                        <td><div class="form-check form-switch mb-0"><input class="form-check-input ch-inventory-toggle" type="checkbox" role="switch" checked aria-label="Include theathletic.com" /></div></td>
+                      </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="ch-segment-match-bar mb-3">
+                        <span class="ch-segment-match-bar__label">Top Cultural Segment Match</span>
+                        <span class="ch-segment-match-bar__value">Latino Millennial Sports Fans</span>
+                      </div>
+                      <div class="d-flex flex-wrap gap-2 mb-4">
+                        <button type="button" class="btn btn-outline-secondary" data-ch-export>Export CSV</button>
+                        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#chDealModal">Create Deal ID</button>
+                        <button type="button" class="btn btn-outline-primary" data-ch-demo-toast data-ch-toast-message="Inventory package sent to DSP." data-ch-toast-variant="success">Send to DSP</button>
+                      </div>
+                      <section aria-labelledby="inventory-prompts-heading" class="mb-4">
+                        <h2 id="inventory-prompts-heading" class="ch-type-heading-xs text-ch-secondary mb-2">Ask Cultura AI</h2>
+                        <div class="d-flex flex-wrap gap-2">
+                          <button type="button" class="ch-suggested-prompt" data-ch-copilot-prompt="Why was this domain included?">Why was this domain included?</button>
+                          <button type="button" class="ch-suggested-prompt" data-ch-copilot-prompt="Find more Spanish-language sports inventory">Find more Spanish-language sports inventory</button>
+                          <button type="button" class="ch-suggested-prompt" data-ch-copilot-prompt="Exclude general-market domains">Exclude general-market domains</button>
+                        </div>
+                      </section>
+                    </div>
+
+                    <div class="tab-pane fade" id="tab-blueprint" role="tabpanel" aria-labelledby="tab-blueprint-tab" tabindex="0">
+                      <div class="row g-4">
+                        <div class="col-lg-6"><section class="ch-card"><div class="ch-card-body"><h3 class="ch-type-heading-xs text-ch-secondary mb-2">Brand Overview</h3><p class="small text-ch-secondary mb-0">ESPN aims to maintain cultural relevance among Latino Millennials by moving beyond generic coverage toward culturally nuanced sports experiences, bilingual coverage, and authentic Latino voices across digital and broadcast platforms.</p></div></section></div>
+                        <div class="col-lg-6"><section class="ch-card"><div class="ch-card-body"><h3 class="ch-type-heading-xs text-ch-secondary mb-2">Audience Snapshot</h3><p class="small text-ch-secondary mb-2"><strong>Core audience:</strong> Bilingual or English-dominant millennials (ages 25–40) in urban U.S. communities, particularly Southwest, California, and Texas.</p><p class="small text-ch-secondary mb-0"><strong>Cultural identity:</strong> Values both heritage and contemporary identity; family fandom and digital-first engagement.</p></div></section></div>
+                        <div class="col-12"><section class="ch-card"><div class="ch-card-body"><h3 class="ch-type-heading-xs text-ch-secondary mb-2">Values</h3><div class="d-flex flex-wrap gap-2"><span class="badge rounded-pill text-bg-light border">Celebration of sport as cultural legacy</span><span class="badge rounded-pill text-bg-light border">Community connection</span><span class="badge rounded-pill text-bg-light border">Family loyalty</span><span class="badge rounded-pill text-bg-light border">Authenticity</span><span class="badge rounded-pill text-bg-light border">Representation</span><span class="badge rounded-pill text-bg-light border">Upward mobility through shared fandom</span><span class="badge rounded-pill text-bg-light border">Sports-driven storytelling</span></div></div></section></div>
+                        <div class="col-lg-6"><section class="ch-card"><div class="ch-card-body"><h3 class="ch-type-heading-xs text-ch-secondary mb-2">Media Habits</h3><p class="small text-ch-secondary mb-0">Mobile-first and digitally connected; active on Instagram and Facebook; favors live sports on mobile apps and CTV for game day.</p></div></section></div>
+                        <div class="col-lg-6"><section class="ch-card"><div class="ch-card-body"><h3 class="ch-type-heading-xs text-ch-secondary mb-2">Psychographics</h3><p class="small text-ch-secondary mb-2">Identity-driven, energetic community-builders motivated by authentic representation.</p><p class="small text-ch-secondary mb-0">Convenience-minded digital natives who expect bilingual accessibility and shareable highlight moments.</p></div></section></div>
+                        <div class="col-12"><section class="ch-card"><div class="ch-card-body"><h3 class="ch-type-heading-xs text-ch-secondary mb-3">Why It Matters</h3><ol class="small text-ch-secondary mb-0 ps-3"><li class="mb-2">Latino Millennials are a fast-growing, highly engaged audience shaping U.S. sports fandom.</li><li class="mb-2">As digital natives, they set trends in mobile, social, and CTV sports content.</li><li>Their purchasing power and family-oriented decision-making drive incremental brand impact.</li></ol></div></section></div>
+                        <div class="col-12"><section class="ch-card"><div class="ch-card-body"><h3 class="ch-type-heading-xs text-ch-secondary mb-2">Strategic Recommendations</h3><ul class="small text-ch-secondary mb-0"><li>Pair ESPN.com with Spanish-language sports publishers for incremental reach.</li><li>Prioritize mobile web and CTV in campaign mix.</li><li>Use highlight-adjacent placements during key match windows.</li></ul></div></section></div>
+                      </div>
+                      <div class="d-flex flex-wrap gap-2 mt-4">
+                        <button type="button" class="btn btn-outline-secondary" data-ch-download-pdf>Download PDF</button>
+                        <button type="button" class="btn btn-outline-secondary" data-ch-share>Share Blueprint</button>
+                        <button type="button" class="btn btn-outline-primary" data-ch-demo-toast data-ch-toast-message="Client summary generated." data-ch-toast-variant="success">Generate Client Summary</button>
+                      </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="tab-campaign-plan" role="tabpanel" aria-labelledby="tab-campaign-plan-tab" tabindex="0">
+                      <div id="chCampaignPlanView">
+                        <div class="row g-4 mb-4">
+                          <div class="col-lg-4"><section class="ch-card h-100"><div class="ch-card-body"><h3 class="ch-type-heading-xs text-ch-secondary mb-2">Campaign Objective</h3><textarea id="chCampaignObjective" class="form-control form-control-sm" rows="3" readonly>Drive awareness and engagement among Latino millennial sports fans ahead of summer tournament season.</textarea></div></section></div>
+                          <div class="col-lg-4"><section class="ch-card h-100"><div class="ch-card-body"><h3 class="ch-type-heading-xs text-ch-secondary mb-2">KPIs</h3><div id="chCampaignKpiBadges" class="d-flex flex-wrap gap-2"></div></div></section></div>
+                          <div class="col-lg-4"><section class="ch-card h-100"><div class="ch-card-body"><h3 class="ch-type-heading-xs text-ch-secondary mb-2">Target Audience</h3><input type="text" id="chCampaignAudienceView" class="form-control form-control-sm" value="Latino Millennial Sports Fans" readonly aria-label="Target audience" /></div></section></div>
+                        </div>
+                        <div class="row g-4 mb-4">
+                          <div class="col-lg-6">
+                            <section class="ch-card h-100"><div class="ch-card-body">
+                              <h3 class="ch-type-heading-xs text-ch-secondary mb-3">Region / Geo</h3>
+                              <div class="row align-items-center g-3">
+                                <div class="col-sm-5">
+                                  <div class="ch-campaign-chart-wrap">
+                                    <canvas id="chGeoChart" role="img" aria-label="Region geo mix chart"></canvas>
+                                  </div>
+                                </div>
+                                <div class="col-sm-7">
+                                  <div id="chGeoMixBars"></div>
+                                  <p id="chGeoMixTotalView" class="ch-mix-total mb-0">Total: 100% ✓</p>
+                                </div>
+                              </div>
+                            </div></section>
+                          </div>
+                          <div class="col-lg-6">
+                            <section class="ch-card h-100"><div class="ch-card-body">
+                              <h3 class="ch-type-heading-xs text-ch-secondary mb-3">Platform / Medium</h3>
+                              <div class="row align-items-center g-3">
+                                <div class="col-sm-5">
+                                  <div class="ch-campaign-chart-wrap">
+                                    <canvas id="chPlatformChart" role="img" aria-label="Platform mix chart"></canvas>
+                                  </div>
+                                </div>
+                                <div class="col-sm-7">
+                                  <div id="chPlatformMixBars"></div>
+                                  <p id="chPlatformMixTotalView" class="ch-mix-total mb-0">Total: 100% ✓</p>
+                                </div>
+                              </div>
+                            </div></section>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div id="chCampaignPlanEdit" class="d-none">
+                        <div class="row g-4 mb-4">
+                          <div class="col-lg-4"><section class="ch-card h-100"><div class="ch-card-body"><h3 class="ch-type-heading-xs text-ch-secondary mb-2">Campaign Objective</h3><textarea id="chCampaignObjectiveEdit" class="form-control form-control-sm" rows="3">Drive awareness and engagement among Latino millennial sports fans ahead of summer tournament season.</textarea></div></section></div>
+                          <div class="col-lg-4"><section class="ch-card h-100"><div class="ch-card-body"><h3 class="ch-type-heading-xs text-ch-secondary mb-2">KPIs</h3><div id="chCampaignKpiEdit" class="ch-campaign-kpi-checklist"></div></div></section></div>
+                          <div class="col-lg-4"><section class="ch-card h-100"><div class="ch-card-body"><h3 class="ch-type-heading-xs text-ch-secondary mb-2">Target Audience</h3><input type="text" id="chCampaignAudienceEdit" class="form-control form-control-sm" value="Latino Millennial Sports Fans" aria-label="Target audience" /></div></section></div>
+                        </div>
+                        <div class="row g-4 mb-4">
+                          <div class="col-lg-6">
+                            <section class="ch-card h-100"><div class="ch-card-body">
+                              <div class="ch-campaign-mix-edit__header">
+                                <h3 class="ch-type-heading-xs text-ch-secondary mb-0">Region / Geo</h3>
+                                <button type="button" class="btn btn-link btn-sm px-0" data-ch-mix-collapse="geo">Collapse</button>
+                              </div>
+                              <div id="chGeoMixEditBody">
+                                <div id="chGeoMixEdit"></div>
+                                <p id="chGeoMixTotalEdit" class="ch-mix-total mb-0">Total: 100% ✓</p>
+                                <div class="ch-mix-add-row">
+                                  <input type="text" id="chGeoMixAddLabel" class="form-control form-control-sm" placeholder="Enter region" aria-label="New region name" />
+                                  <input type="number" id="chGeoMixAddPct" class="form-control form-control-sm" style="max-width:5rem" min="0" max="100" placeholder="%" aria-label="Region percent" />
+                                  <button type="button" class="btn btn-secondary btn-sm" data-ch-mix-add="geo">Add/Update</button>
+                                </div>
+                              </div>
+                            </div></section>
+                          </div>
+                          <div class="col-lg-6">
+                            <section class="ch-card h-100"><div class="ch-card-body">
+                              <div class="ch-campaign-mix-edit__header">
+                                <h3 class="ch-type-heading-xs text-ch-secondary mb-0">Platform / Medium</h3>
+                                <button type="button" class="btn btn-link btn-sm px-0" data-ch-mix-collapse="platform">Collapse</button>
+                              </div>
+                              <div id="chPlatformMixEditBody">
+                                <div id="chPlatformMixEdit"></div>
+                                <p id="chPlatformMixTotalEdit" class="ch-mix-total mb-0">Total: 100% ✓</p>
+                                <div class="ch-mix-add-row">
+                                  <input type="text" id="chPlatformMixAddLabel" class="form-control form-control-sm" placeholder="Enter platform" aria-label="New platform name" />
+                                  <input type="number" id="chPlatformMixAddPct" class="form-control form-control-sm" style="max-width:5rem" min="0" max="100" placeholder="%" aria-label="Platform percent" />
+                                  <button type="button" class="btn btn-secondary btn-sm" data-ch-mix-add="platform">Add/Update</button>
+                                </div>
+                              </div>
+                            </div></section>
+                          </div>
+                        </div>
+                      </div>
+
+                      <h3 class="ch-type-heading-xs text-ch-secondary mb-3">Suggested Weekly Budget &amp; Estimated Reach</h3>
+                      <div class="table-responsive ch-card mb-3">
+                        <table class="table align-middle mb-0 ch-table ch-budget-table">
+                          <thead><tr><th scope="col">Select</th><th scope="col">Suggested Weekly Budget</th><th scope="col">Estimated Reach</th></tr></thead>
+                          <tbody>
+                            <tr>
+                              <td><input type="radio" name="budget" class="form-check-input" checked aria-label="Budget $2,000 per week" /></td>
+                              <td class="fw-semibold">$2,000 / week</td>
+                              <td class="text-ch-secondary">1.2 million persons</td>
+                            </tr>
+                            <tr>
+                              <td><input type="radio" name="budget" class="form-check-input" aria-label="Budget $5,000 per week" /></td>
+                              <td class="fw-semibold">$5,000 / week</td>
+                              <td class="text-ch-secondary">3.1 million persons</td>
+                            </tr>
+                            <tr>
+                              <td><input type="radio" name="budget" class="form-check-input" aria-label="Budget $9,000 per week" /></td>
+                              <td class="fw-semibold">$9,000 / week</td>
+                              <td class="text-ch-secondary">5.6 million persons</td>
+                            </tr>
+                            <tr>
+                              <td><input type="radio" name="budget" class="form-check-input" id="chBudgetCustomRadio" aria-label="Custom weekly budget" /></td>
+                              <td colspan="2">
+                                <div class="input-group input-group-sm" style="max-width:16rem">
+                                  <span class="input-group-text">$</span>
+                                  <input type="text" id="chBudgetCustomAmount" class="form-control" placeholder="Enter your weekly budget" aria-label="Custom weekly budget amount" />
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <div class="d-flex flex-wrap gap-2">
+                        <button type="button" class="btn btn-outline-secondary" data-ch-customize-plan>Customize Plan</button>
+                        <button type="button" class="btn btn-outline-secondary d-none" data-ch-cancel-plan>Cancel</button>
+                      </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="tab-activation" role="tabpanel" aria-labelledby="tab-activation-tab" tabindex="0">
+                      <section class="ch-card mb-4"><div class="ch-card-body">
+                        <div class="d-flex align-items-center gap-2 mb-3"><span class="fw-semibold">Not activated</span><span class="ch-pill ch-pill-warning">Ready for DSP setup</span></div>
+                        <ol class="list-unstyled mb-0">
+                          <li class="d-flex align-items-center gap-2 mb-2"><svg class="ch-icon text-success" aria-hidden="true" focusable="false"><use href="#ch-check-circle"/></svg> Review inventory</li>
+                          <li class="d-flex align-items-center gap-2 mb-2"><svg class="ch-icon text-success" aria-hidden="true" focusable="false"><use href="#ch-check-circle"/></svg> Confirm platform mix</li>
+                          <li class="d-flex align-items-center gap-2 mb-2 fw-semibold"><svg class="ch-icon text-primary" aria-hidden="true" focusable="false"><use href="#ch-gear"/></svg> Enter DSP details <span class="ch-pill ch-pill-neutral ms-1">You are here</span></li>
+                          <li class="d-flex align-items-center gap-2 text-ch-muted"><svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-lock"/></svg> Submit (complete DSP details to unlock)</li>
+                        </ol>
+                      </div></section>
+                      <section class="ch-card mb-4">
+                        <div class="ch-card-body">
+                          <h2 class="ch-type-heading-xs text-ch-secondary mb-3">Recommended Data Segments</h2>
+                          <p class="small text-ch-secondary mb-3">CultureDSP Marketplace segments matched to Latino Millennial Sports Fans for this analysis.</p>
+                          <div class="table-responsive">
+                            <table class="table align-middle mb-0 ch-table">
+                              <thead>
+                                <tr>
+                                  <th>Segment</th>
+                                  <th>Provider</th>
+                                  <th>CPM</th>
+                                  <th>Description</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td class="fw-semibold small">Latino Sports Enthusiasts</td>
+                                  <td class="small text-ch-secondary">Acxiom</td>
+                                  <td class="small">$1.15</td>
+                                  <td class="small text-ch-secondary">High-intent sports fans with Hispanic/Latino household affinity</td>
+                                </tr>
+                                <tr>
+                                  <td class="fw-semibold small">Bilingual Millennial Sports</td>
+                                  <td class="small text-ch-secondary">Experian</td>
+                                  <td class="small">$2.40</td>
+                                  <td class="small text-ch-secondary">English–Spanish bilingual adults 25–40 with live sports streaming behavior</td>
+                                </tr>
+                                <tr>
+                                  <td class="fw-semibold small">CTV Latino Fan Households</td>
+                                  <td class="small text-ch-secondary">Oracle</td>
+                                  <td class="small">$4.50</td>
+                                  <td class="small text-ch-secondary">Connected-TV sports viewers in top Hispanic DMAs</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </section>
+                      <div class="ch-segment-match-bar mb-4">
+                        <span class="ch-segment-match-bar__label">Top CultureDSP Segment Match</span>
+                        <span class="ch-segment-match-bar__value">Latino Millennial Sports Fans</span>
+                      </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="tab-history" role="tabpanel" aria-labelledby="tab-history-tab" tabindex="0">
+                      <p class="text-ch-secondary small mb-4">See how audience or inventory changes affected your CRS over time.</p>
+                      <section class="ch-card mb-3"><div class="ch-card-body d-flex flex-wrap align-items-center justify-content-between gap-2">
+                        <div><div class="fw-semibold">Jun 4, 2026 · CRS 82</div><div class="small text-ch-muted">Completed: inventory curated, campaign plan finalized</div></div>
+                        <span class="ch-pill ch-pill-success">Current</span>
+                      </div></section>
+                      <section class="ch-card mb-3"><div class="ch-card-body d-flex flex-wrap align-items-center justify-content-between gap-2">
+                        <div><div class="fw-semibold">Jun 2, 2026 · CRS 79</div><div class="small text-ch-muted">Audience segment updated to Latino Millennial Sports Fans</div></div>
+                        <span class="ch-pill ch-pill-neutral">Snapshot</span>
+                      </div></section>
+                      <section class="ch-card"><div class="ch-card-body d-flex flex-wrap align-items-center justify-content-between gap-2">
+                        <div><div class="fw-semibold">Jun 1, 2026 · CRS 76</div><div class="small text-ch-muted">Initial domain analysis generated</div></div>
+                        <span class="ch-pill ch-pill-neutral">Snapshot</span>
+                      </div></section>
+                    </div>
+                  </div>
+                  </div>
+
+                  <section class="ch-analysis-feedback" aria-labelledby="analysis-feedback-heading">
+                    <h2 id="analysis-feedback-heading" class="ch-type-heading-xs text-ch-secondary mb-2">Feedback</h2>
+                    <p class="small text-ch-secondary mb-3">If you notice any missed cultural nuance or have suggestions for improvement, please share feedback to enhance future evaluations. You can also email <a href="mailto:info@culturehivemedia.com">info@culturehivemedia.com</a>.</p>
+                    <button type="button" class="btn btn-outline-primary btn-sm" data-ch-submit-feedback>Submit Feedback</button>
+                  </section>
+                </div>
+              </main>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ch:shell:mobile-nav -->
+    <div
+      class="offcanvas offcanvas-start ch-offcanvas-nav"
+      tabindex="-1"
+      id="chNavDrawer"
+      aria-labelledby="chNavDrawerLabel"
+    >
+      <div class="offcanvas-header border-bottom">
+        <div class="d-flex align-items-center gap-2 min-w-0 flex-grow-1">
+          <a
+            href="../index.html"
+            id="chNavDrawerLabel"
+            class="ch-offcanvas-brand-link text-decoration-none min-w-0"
+          >
+            <span class="ch-offcanvas-brand-wordmark">
+              <img src="../assets/img/cultura-logo.png" alt="Culture Hive" decoding="async" />
+            </span>
+          </a>
+        </div>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close menu"
+        ></button>
+      </div>
+      <div class="offcanvas-body p-0">
+        <nav aria-label="Mobile primary navigation">
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a class="ch-nav-link" href="../index.html" data-ch-nav="home">
+                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-house"/></svg><span class="ch-nav-label">Home</span>
+              </a>
+            </li>
+            <li>
+              <a class="ch-nav-link" href="index.html" data-ch-nav="analyses">
+                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-file-graph"/></svg><span class="ch-nav-label">Analyses</span>
+              </a>
+            </li>
+            <li>
+              <a class="ch-nav-link" href="../audiences.html" data-ch-nav="audiences">
+                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-people"/></svg><span class="ch-nav-label">Audiences</span>
+              </a>
+            </li>
+            <li>
+              <a class="ch-nav-link" href="../activations.html" data-ch-nav="activations">
+                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-rocket"/></svg><span class="ch-nav-label">Activations</span>
+              </a>
+            </li>
+            <li>
+              <a class="ch-nav-link" href="../library.html" data-ch-nav="library">
+                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-folder"/></svg><span class="ch-nav-label">Library</span>
+              </a>
+            </li>
+            <li>
+              <a class="ch-nav-link" href="../settings.html" data-ch-nav="settings">
+                <svg class="ch-icon" aria-hidden="true" focusable="false"><use href="#ch-gear"/></svg><span class="ch-nav-label">Settings</span>
+              </a>
+            </li>
+
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <!-- ch:/shell:mobile-nav -->
+
+    <div class="modal fade" id="chAudienceModal" tabindex="-1" aria-labelledby="chAudienceModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title ch-type-heading-md" id="chAudienceModalLabel">Choose audience</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close dialog"></button>
+          </div>
+          <div class="modal-body">
+            <p class="small text-ch-muted mb-3">Optional, improves CRS accuracy.</p>
+            <label for="chAudienceSearch" class="form-label">Search audiences</label>
+            <input type="search" class="form-control mb-3" id="chAudienceSearch" placeholder="Filter audiences…" autocomplete="off" />
+            <ul
+              class="list-unstyled mb-0 d-flex flex-column gap-1"
+              id="chAudienceList"
+              role="listbox"
+              aria-labelledby="chAudienceModalLabel"
+            >
+              <li role="presentation">
+                <button
+                  type="button"
+                  class="ch-audience-row w-100 text-start"
+                  role="option"
+                  aria-selected="false"
+                  data-ch-audience-name="Urban Wellness Consumers"
+                >
+                  Urban Wellness Consumers
+                </button>
+              </li>
+              <li role="presentation">
+                <button
+                  type="button"
+                  class="ch-audience-row w-100 text-start"
+                  role="option"
+                  aria-selected="false"
+                  data-ch-audience-name="Digital Wellness Seekers"
+                >
+                  Digital Wellness Seekers
+                </button>
+              </li>
+              <li role="presentation">
+                <button
+                  type="button"
+                  class="ch-audience-row w-100 text-start"
+                  role="option"
+                  aria-selected="false"
+                  data-ch-audience-name="Creator-Led Shoppers"
+                >
+                  Creator-Led Shoppers
+                </button>
+              </li>
+              <li role="presentation">
+                <button
+                  type="button"
+                  class="ch-audience-row w-100 text-start"
+                  role="option"
+                  aria-selected="false"
+                  data-ch-audience-name="Budget-Smart Families"
+                >
+                  Budget-Smart Families
+                </button>
+              </li>
+              <li role="presentation">
+                <button
+                  type="button"
+                  class="ch-audience-row w-100 text-start"
+                  role="option"
+                  aria-selected="false"
+                  data-ch-audience-name="Urban Design Optimizers"
+                >
+                  Urban Design Optimizers
+                </button>
+              </li>
+              <li role="presentation">
+                <button
+                  type="button"
+                  class="ch-audience-row w-100 text-start"
+                  role="option"
+                  aria-selected="false"
+                  data-ch-audience-name="Community Connectors"
+                >
+                  Community Connectors
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="chAudienceContinue">Continue</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="chCampaignModal" tabindex="-1" aria-labelledby="chCampaignModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title ch-type-heading-md" id="chCampaignModalLabel">Campaign</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close dialog"></button>
+          </div>
+          <div class="modal-body">
+            <p class="mb-3">Plan geo mix, platform mix, and budget from the Campaign Plan tab on any completed analysis.</p>
+            <a href="../analyses/espn-detail.html#tab-campaign-plan" class="btn btn-primary">Open Campaign Plan</a>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="chHelpModal" tabindex="-1" aria-labelledby="chHelpModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title ch-type-heading-md" id="chHelpModalLabel">Help</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close dialog"></button>
+          </div>
+          <div class="modal-body">
+            <ul class="mb-0">
+              <li class="mb-2">
+                <a href="https://theculturehive.ai" rel="noopener noreferrer" target="_blank"
+                  >Culture Hive<span class="visually-hidden"> (opens in new tab)</span></a
+                >
+              </li>
+              <li>
+                <a href="https://theculturehive.ai" rel="noopener noreferrer" target="_blank"
+                  >Help center<span class="visually-hidden"> (opens in new tab)</span></a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <div class="modal fade" id="chCommandPalette" tabindex="-1" aria-labelledby="chCommandPaletteLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg modal-fullscreen-md-down">
+        <div class="modal-content">
+          <div class="modal-header border-0 pb-0">
+            <h2 class="modal-title ch-type-heading-md" id="chCommandPaletteLabel">Jump to</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close dialog"></button>
+          </div>
+          <div class="modal-body pt-2">
+            <label for="chCommandPaletteFilter" class="visually-hidden">Filter destinations</label>
+            <input type="search" class="form-control mb-3" id="chCommandPaletteFilter" placeholder="Filter pages and destinations…" autocomplete="off" />
+            <div class="list-group ch-command-palette-list">
+              <a href="espn-detail.html" class="list-group-item list-group-item-action" data-ch-palette-label="espn.com evaluation domain analysis crs">ESPN.com Evaluation</a>
+              <a href="index.html" class="list-group-item list-group-item-action" data-ch-palette-label="all analyses list workspace">All Analyses</a>
+              <a href="new.html" class="list-group-item list-group-item-action" data-ch-palette-label="new analysis create start">New Analysis</a>
+              <a href="../activations.html" class="list-group-item list-group-item-action" data-ch-palette-label="activations campaigns dsp deals">Activations</a>
+              <a href="../library.html" class="list-group-item list-group-item-action" data-ch-palette-label="library files uploads blueprints assets">Library</a>
+              <a href="../settings.html" class="list-group-item list-group-item-action" data-ch-palette-label="settings account plan preferences">Settings</a>
+              <a href="../audiences.html" class="list-group-item list-group-item-action" data-ch-palette-label="cultural segments library audiences">Audiences library</a>
+            </div>
+            <p class="small text-ch-muted mb-0 mt-3">Type to filter pages and actions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="modal fade" id="chDealModal" tabindex="-1" aria-labelledby="chDealModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title ch-type-heading-md" id="chDealModalLabel">Create Deal ID</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close dialog"></button>
+          </div>
+          <div class="modal-body">
+            <p class="text-ch-secondary small mb-3">Provide your information below and we'll create the segment and send it to your preferred DSP. You'll receive an email confirmation when it's ready.</p>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="deal-first" class="form-label">First Name <span class="text-danger" aria-hidden="true">*</span></label>
+                <input type="text" class="form-control" id="deal-first" placeholder="Enter your first name" required />
+              </div>
+              <div class="col-md-6">
+                <label for="deal-last" class="form-label">Last Name <span class="text-danger" aria-hidden="true">*</span></label>
+                <input type="text" class="form-control" id="deal-last" placeholder="Enter your last name" required />
+              </div>
+              <div class="col-12">
+                <label for="deal-company" class="form-label">Company <span class="text-danger" aria-hidden="true">*</span></label>
+                <input type="text" class="form-control" id="deal-company" placeholder="Enter your company name" required />
+              </div>
+              <div class="col-12">
+                <label for="deal-email" class="form-label">Email Address <span class="text-danger" aria-hidden="true">*</span></label>
+                <input type="email" class="form-control" id="deal-email" placeholder="Enter your email address" required />
+              </div>
+              <div class="col-md-6">
+                <label for="deal-ssp" class="form-label">Preferred SSP</label>
+                <select id="deal-ssp" class="form-select"><option value="">Select your SSP</option><option>Magnite</option><option>PubMatic</option><option>OpenX</option></select>
+              </div>
+              <div class="col-md-6">
+                <label for="deal-dsp" class="form-label">Preferred DSP <span class="text-danger" aria-hidden="true">*</span></label>
+                <select id="deal-dsp" class="form-select" required><option value="">Select your DSP</option><option>The Trade Desk</option><option>DV360</option><option>Amazon DSP</option></select>
+              </div>
+              <div class="col-12">
+                <label for="deal-seat" class="form-label">Deal Seat ID <span class="text-danger" aria-hidden="true">*</span></label>
+                <input type="text" class="form-control" id="deal-seat" placeholder="Enter your DSP seat ID" required />
+                <div class="form-text">This is your unique identifier within your DSP platform.</div>
+              </div>
+              <div class="col-12">
+                <label for="deal-notes" class="form-label">Optional Note</label>
+                <textarea id="deal-notes" class="form-control" rows="2" placeholder="Any additional information or special requirements…"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" id="chDealSubmit">Create Deal ID &amp; Send to DSP</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="chDeleteAnalysisModal" tabindex="-1" aria-labelledby="chDeleteAnalysisLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title ch-type-heading-md" id="chDeleteAnalysisLabel">Delete this analysis?</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close dialog"></button>
+          </div>
+          <div class="modal-body">
+            <p class="text-ch-secondary mb-0">This removes <strong>ESPN.com Evaluation</strong> and its CRS score, inventory, and campaign plan from your Analyses. You can undo right after deleting.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Keep analysis</button>
+            <button type="button" class="btn btn-danger" id="chDeleteAnalysisConfirm" data-bs-dismiss="modal">Delete analysis</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="chEvidenceModal" tabindex="-1" aria-labelledby="chEvidenceModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div>
+              <h2 class="modal-title ch-type-heading-md mb-0" id="chEvidenceModalLabel">Evidence</h2>
+              <p class="small text-ch-muted mb-0 mt-1">Contribution: <span id="chEvidenceModalScore"></span></p>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close dialog"></button>
+          </div>
+          <div class="modal-body">
+            <p class="mb-0" id="chEvidenceModalBody"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-outline-primary" id="chEvidenceModalAsk" data-bs-dismiss="modal" data-ch-copilot-prompt="">Ask Cultura AI about this</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    <div
+      id="chAiDock"
+      class="ch-ai-dock ch-ai-dock--collapsed"
+      role="region"
+      aria-label="Cultura AI"
+      aria-expanded="false"
+    >
+      <div class="ch-ai-dock__panel">
+        <div id="chCopilotThread" class="ch-ai-dock__thread ch-chat-scroll" role="log" aria-live="polite" hidden></div>
+        <div class="ch-ai-prompt ch-ai-dock__composer">
+          <button type="button" class="ch-ai-dock__collapse btn btn-icon" data-ch-ai-dock-collapse aria-label="Minimize">
+            <svg class="ch-icon ch-icon--sm" aria-hidden="true" focusable="false"><use href="#ch-chevron-down"/></svg>
+          </button>
+          <div id="chCopilotSuggestions" class="ch-ai-dock__pills"></div>
+          <button type="button" class="ch-ai-dock__trigger" data-ch-ai-dock-expand>
+            <span class="text-ch-secondary" data-ch-ai-dock-trigger-text>Enter a domain for CRS evaluation…</span>
+          </button>
+          <div class="ch-ai-dock__body">
+            <div class="ch-ai-dock__intent-row" data-ch-ai-dock-intent-row hidden role="group" aria-label="Choose input type">
+              <button type="button" class="ch-ai-dock__intent ch-ai-dock__intent--active" data-ch-ai-dock-intent="domain" aria-pressed="true">Domain</button>
+              <button type="button" class="ch-ai-dock__intent" data-ch-ai-dock-intent="bundle" aria-pressed="false">Bundle ID</button>
+              <button type="button" class="ch-ai-dock__intent" data-ch-ai-dock-intent="brief" aria-pressed="false">Brief</button>
+              <button type="button" class="ch-ai-dock__intent" data-ch-ai-dock-intent="creative" aria-pressed="false">Creative</button>
+              <button type="button" class="ch-ai-dock__intent" data-ch-ai-dock-intent="audience" aria-pressed="false">Audience</button>
+            </div>
+            <div class="ch-ai-dock__input-row">
+              <label for="chCopilotInput" class="visually-hidden">Ask Cultura AI</label>
+              <input
+                type="text"
+                id="chCopilotInput"
+                class="form-control"
+                maxlength="2000"
+                autocomplete="off"
+                placeholder="Enter domain (www.domain.com) for CRS evaluation"
+              />
+              <button type="button" id="chCopilotAnalyze" class="btn btn-primary btn-sm flex-shrink-0" disabled>Analyze</button>
+            </div>
+            <div class="ch-ai-dock__attachments" data-ch-ai-dock-attachments hidden>
+              <input type="file" id="chAiDockBrief" class="visually-hidden" accept=".pdf,application/pdf" />
+              <input type="file" id="chAiDockCreative" class="visually-hidden" accept=".jpg,.jpeg,.png,image/jpeg,image/png" />
+              <button type="button" class="ch-ai-dock__attach btn btn-light btn-sm" data-ch-ai-dock-brief-trigger>
+                <svg class="ch-icon ch-icon--sm" aria-hidden="true" focusable="false"><use href="#ch-file-earmark"/></svg>
+                Brief <span class="text-ch-muted">(.pdf)</span>
+              </button>
+              <button type="button" class="ch-ai-dock__attach btn btn-light btn-sm" data-ch-ai-dock-creative-trigger>
+                <svg class="ch-icon ch-icon--sm" aria-hidden="true" focusable="false"><use href="#ch-upload"/></svg>
+                Creative <span class="text-ch-muted">(.jpg, .png)</span>
+              </button>
+              <span class="ch-ai-dock__file-name small text-ch-muted d-none" data-ch-ai-dock-file-label></span>
+              <button type="button" class="btn btn-link btn-sm text-ch-muted p-0 d-none" data-ch-ai-dock-file-clear>Remove</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="chUpgradeModal" tabindex="-1" aria-labelledby="chUpgradeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title ch-type-heading-md" id="chUpgradeModalLabel">Upgrade your plan</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close dialog"></button>
+          </div>
+          <div class="modal-body">
+            <p class="mb-2"><span class="fw-semibold">Free Plan</span></p>
+            <p class="small text-ch-secondary mb-3">Upgrade for additional analyses, activations, and team seats.</p>
+            <ul class="small text-ch-secondary mb-0 ps-3">
+              <li>More analyses per month</li>
+              <li>DSP activation push</li>
+              <li>Team collaboration seats</li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Not now</button>
+            <a href="#" class="btn btn-outline-primary" data-ch-plan-details data-bs-dismiss="modal">Plan details</a>
+            <button type="button" class="btn btn-primary" data-ch-demo-toast data-ch-toast-message="Opening billing portal…" data-ch-toast-variant="secondary" data-bs-dismiss="modal">Upgrade plan</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" id="chToastHost" aria-live="polite"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js" crossorigin="anonymous"></script>
+    <script src="../assets/js/app.js"></script>
+  </body>
+</html>
