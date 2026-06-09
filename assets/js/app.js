@@ -1989,6 +1989,7 @@
   }
 
   var DOCK_INTENT_UI = {
+    ask: { icon: "ch-chat", tone: "ask" },
     domain: { icon: "ch-globe", tone: "domain" },
     bundle: { icon: "ch-grid", tone: "bundle" },
     brief: { icon: "ch-file-earmark", tone: "brief" },
@@ -2139,12 +2140,12 @@
 
     if (isDock && isWorkflowEntryPage()) {
       var dockNote =
-        "\n\n---\n*Q&A only. Not saved to Analyses. Use **Generate Analysis** in the form or enter a domain / Bundle ID above to start an evaluation.*";
+        "\n\n---\n*Q&A only. Not saved to Analyses. Use **Generate Analysis** in the form, or select **Domain** / **Bundle ID** to start an evaluation.*";
       if (reply.markdown) {
         reply.markdown += dockNote;
       } else if (reply.text) {
         reply.text +=
-          " Q&A only. Not saved to Analyses. Use Generate Analysis in the form or enter a domain / Bundle ID above to start an evaluation.";
+          " Q&A only. Not saved to Analyses. Use Generate Analysis in the form, or select Domain / Bundle ID to start an evaluation.";
       }
     }
 
@@ -2891,6 +2892,10 @@
     return page === "home" || page === "analyses-new";
   }
 
+  function getDefaultAiDockIntent() {
+    return getCurrentPage() === "analyses-new" ? "domain" : "ask";
+  }
+
   function getAiDockIntent() {
     if (!isWorkflowEntryPage()) return "ask";
     return aiDockIntent;
@@ -3013,7 +3018,7 @@
     opts = opts || {};
     var prev = aiDockIntent;
     if (isWorkflowEntryPage()) {
-      aiDockIntent = intent || "domain";
+      aiDockIntent = intent || getDefaultAiDockIntent();
     } else {
       aiDockIntent = "ask";
     }
@@ -3059,10 +3064,9 @@
   }
 
   function showAiDockIntentRow() {
-    var show = isWorkflowEntryPage();
     var $row = $("[data-ch-ai-dock-intent-row]");
     if (!$row.length) return;
-    $row.prop("hidden", !show);
+    $row.prop("hidden", !isWorkflowEntryPage());
   }
 
   function copilotReplyForMessage(text, context) {
@@ -3184,7 +3188,7 @@
       if (!raw) return;
       var state = JSON.parse(raw);
       if (isWorkflowEntryPage() && state.intent) {
-        aiDockIntent = state.intent === "ask" ? "domain" : state.intent;
+        aiDockIntent = state.intent;
       }
       if (state.inputValue) {
         $("#chCopilotInput").val(state.inputValue);
@@ -3276,9 +3280,6 @@
       $input: $("#chCopilotInput"),
     }).then(function () {
       clearAiDockFile();
-      if (isWorkflowEntryPage() && getAiDockIntent() === "ask") {
-        setAiDockIntent("domain", { skipSuggestions: true });
-      }
       syncAiDockComposerState();
       saveAiDockState();
     });
@@ -3623,11 +3624,12 @@
     ensureAiDockFab($dock);
     ensureDockPanelChrome();
     ensureDockIntentChrome();
+    $("[data-ch-ai-dock-workflow-toggle]").remove();
     $("body").addClass("ch-has-ai-dock");
     if (!$dock.hasClass("ch-ai-dock--expanded")) {
       document.documentElement.style.setProperty("--ch-ai-dock-offset", AI_DOCK_COLLAPSED_OFFSET);
     }
-    aiDockIntent = isWorkflowEntryPage() ? "domain" : "ask";
+    aiDockIntent = isWorkflowEntryPage() ? getDefaultAiDockIntent() : "ask";
     showAiDockIntentRow();
     restoreAiDockState();
     setAiDockIntent(aiDockIntent, { skipSuggestions: true, keepInput: true });
@@ -3700,6 +3702,7 @@
     var text = (prompt || "").trim();
 
     if (isWorkflowEntryPage()) {
+      setAiDockIntent("ask", { skipSuggestions: true, keepInput: true });
       expandAiDock();
       if (text) {
         submitAiDockChat(text);
