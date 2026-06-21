@@ -2485,7 +2485,7 @@ var STORAGE_SIDEBAR = "ch-sidebar-collapsed";
     var hash = (window.location.hash || "").trim();
     if (!hash || hash.indexOf("#tab-") !== 0) return;
     var tabBtn =
-      document.querySelector('#analyses-espn-detail .nav-tabs [data-bs-target="' + hash + '"]') ||
+      document.querySelector('#analyses-detail .nav-tabs [data-bs-target="' + hash + '"]') ||
       document.querySelector('[data-bs-target="' + hash + '"]');
     if (!tabBtn || typeof bootstrap === "undefined") return;
     bootstrap.Tab.getOrCreateInstance(tabBtn).show();
@@ -2854,7 +2854,7 @@ var STORAGE_SIDEBAR = "ch-sidebar-collapsed";
   }
 
   function getDockTargetFromPage() {
-    if (!$("#analyses-espn-detail").length) return "";
+    if (!$("#analyses-detail").length) return "";
     var $meta = $(".ch-analysis-meta span").filter(function () {
       return /\.[a-z]{2,}/i.test(($(this).text() || "").trim());
     });
@@ -3061,29 +3061,28 @@ var STORAGE_SIDEBAR = "ch-sidebar-collapsed";
     var t = (text || "").toLowerCase();
     context = context || "";
     var prefix = getPagePrefix();
-    if (context.indexOf("ESPN") !== -1 || $("#analyses-espn-detail").length) {
+    if ($("#analyses-detail").length) {
+      var analysisTitle = ($("#analyses-detail h1").first().text() || "This analysis").trim();
+      var analysisScore = ($("#analyses-detail .ch-crs-score__number").first().text() || "").trim();
       if (t.indexOf("improve") !== -1 || t.indexOf("score") !== -1) {
         return (
-          "ESPN.com scores 82 from dimension contributions: +32 audience alignment, +20 ownership, +18 editorial/UX, and +12 intersectional representation. " +
-          "To improve: expand Spanish-language inventory, add more intersectional athlete narratives, and pair with community sports publishers. " +
-          "Open the Inventory tab to adjust your domain mix."
+          analysisTitle +
+          " scores CRS " +
+          (analysisScore || "—") +
+          " from dimension contributions. Open the Overview tab for the score breakdown, then adjust inventory or creative based on flagged dimensions."
         );
       }
       if (t.indexOf("inventory") !== -1 || t.indexOf("domain") !== -1) {
-        return (
-          "Thirteen domains are curated for Latino millennial sports fans: ESPN digital, Spanish-language sports, and community publishers. " +
-          "Open the Inventory tab to review selections, then continue to Campaign Plan."
-        );
+        return "Open the Inventory tab to review curated domains or placements, then continue to Campaign Plan when your mix is ready.";
       }
-      if (t.indexOf("persona") !== -1 || t.indexOf("audience") !== -1 || t.indexOf("diego") !== -1) {
-        return (
-          "Diego Ramirez (25–34, Latino millennial) responds to authentic athlete stories and bilingual highlights. " +
-          "Open the Audience tab to review targeting filters, then save to My segments if you want to reuse this lens."
-        );
+      if (t.indexOf("persona") !== -1 || t.indexOf("audience") !== -1) {
+        return "Open the Audience tab to review targeting filters and persona fit, then save to My segments if you want to reuse this lens.";
       }
       return (
-        "ESPN.com scores 82 for Latino millennial sports fans due to strong bilingual coverage, athlete storytelling, and high-intent sports environments. " +
-        "Next: open the Audience tab to review persona fit, or jump to Activation when your campaign plan is ready."
+        analysisTitle +
+        " (CRS " +
+        (analysisScore || "—") +
+        "). Next: review evidence in Overview, refine inventory if needed, or jump to Activation when your plan is ready."
       );
     }
     if (context.indexOf("Home") !== -1 || getCurrentPage() === "home") {
@@ -3093,7 +3092,7 @@ var STORAGE_SIDEBAR = "ch-sidebar-collapsed";
       return "Start with New Analysis to evaluate a domain, brief, or creative. Quick Start cards on Home map to common workflows. Each path creates a saved evaluation.";
     }
     if (context.indexOf("Analyses") !== -1 && getCurrentPage() === "analyses") {
-      return "Three analyses are in your workspace. ESPN.com Evaluation (CRS 82) is activation-ready. Use filters to narrow by status, then open any row to review evidence and next steps.";
+      return "Four analyses are in your workspace. ESPN.com Evaluation (CRS 82) is activation-ready; Nike, Tubi, and Breakfast Club show different CRS tiers and certification states. Use filters to narrow by status, then open any row to review evidence and next steps.";
     }
     if (getCurrentPage() === "analyses-new") {
       return (
@@ -4198,7 +4197,7 @@ var STORAGE_SIDEBAR = "ch-sidebar-collapsed";
   }
 
   function initAnalysisDetail() {
-    if (!$("#analyses-espn-detail").length) return;
+    if (!$("#analyses-detail").length) return;
 
     initBrandLogos();
     initCopilot({ tabSuggestions: ANALYSIS_COPILOT_SUGGESTIONS });
@@ -4223,7 +4222,7 @@ var STORAGE_SIDEBAR = "ch-sidebar-collapsed";
 
     function showAnalysisTab(target) {
       if (!target || typeof bootstrap === "undefined") return;
-      var tabBtn = document.querySelector('#analyses-espn-detail .nav-tabs [data-bs-target="' + target + '"]');
+      var tabBtn = document.querySelector('#analyses-detail .nav-tabs [data-bs-target="' + target + '"]');
       if (!tabBtn) return;
       bootstrap.Tab.getOrCreateInstance(tabBtn).show();
       var workspace = document.querySelector(".ch-analysis-workspace");
@@ -4239,7 +4238,7 @@ var STORAGE_SIDEBAR = "ch-sidebar-collapsed";
     });
 
     $(document).on("click", "[data-ch-show-score-breakdown]", function () {
-      var tabBtn = document.querySelector('#analyses-espn-detail .nav-tabs [data-bs-target="#tab-overview"]');
+      var tabBtn = document.querySelector('#analyses-detail .nav-tabs [data-bs-target="#tab-overview"]');
       if (tabBtn && typeof bootstrap !== "undefined") {
         bootstrap.Tab.getOrCreateInstance(tabBtn).show();
       }
@@ -4286,7 +4285,7 @@ var STORAGE_SIDEBAR = "ch-sidebar-collapsed";
     });
 
     $(document).on("click", "[data-ch-rename]", function () {
-      var current = ($("#analyses-espn-detail h1").first().text() || "").trim();
+      var current = ($("#analyses-detail h1").first().text() || "").trim();
       var next = window.prompt("Rename analysis", current);
       if (next === null) return;
       next = next.trim();
@@ -4294,7 +4293,7 @@ var STORAGE_SIDEBAR = "ch-sidebar-collapsed";
         showToast("Name cannot be empty.", "warning");
         return;
       }
-      $("#analyses-espn-detail h1").first().text(next);
+      $("#analyses-detail h1").first().text(next);
       showToast("Analysis renamed.", "success");
     });
 
@@ -4314,7 +4313,7 @@ var STORAGE_SIDEBAR = "ch-sidebar-collapsed";
   }
 
   function initCopilotPages() {
-    if ($("#analyses-espn-detail").length) return;
+    if ($("#analyses-detail").length) return;
     initCopilot();
   }
 

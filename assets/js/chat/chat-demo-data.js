@@ -34,12 +34,16 @@ export function copilotReplyForMessage(text, context) {
   const t = (text || "").toLowerCase();
   const page = getCurrentPage();
 
-  if (context.indexOf("ESPN") !== -1 || document.getElementById("analyses-espn-detail")) {
+  const detailRoot = document.getElementById("analyses-detail");
+  if (detailRoot) {
+    const title = (detailRoot.querySelector("h1")?.textContent || "This analysis").trim();
+    const score = (detailRoot.querySelector(".ch-crs-score__number")?.textContent || "").trim();
     if (t.indexOf("improve") !== -1 || t.indexOf("score") !== -1) {
-      return "ESPN.com scores 82 from dimension contributions. Open the Inventory tab to adjust your domain mix.";
+      return `${title} scores CRS ${score || "—"} from dimension contributions. Open the Overview tab for the score breakdown.`;
     }
-    return "ESPN.com scores 82 for Latino millennial sports fans. Next: open the Audience tab or jump to Activation.";
+    return `${title} (CRS ${score || "—"}). Next: review evidence in Overview or continue toward Activation.`;
   }
+  if (context.indexOf("ESPN") !== -1) {
   if (context.indexOf("Home") !== -1 || page === "home") {
     return "Start with New Analysis to evaluate a domain, brief, or creative.";
   }
