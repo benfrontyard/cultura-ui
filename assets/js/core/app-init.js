@@ -14,7 +14,9 @@ const PAGE_MODULES = {
   library: () => import("../pages/library.js"),
   files: () => import("../pages/library.js"),
   settings: () => import("../pages/settings.js"),
+  "library-certifications": () => import("../pages/certifications.js"),
   foundations: () => import("../pages/foundations.js"),
+  "crs-badges": () => import("../pages/crs-badges.js"),
 };
 
 async function boot() {

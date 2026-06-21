@@ -4190,11 +4190,25 @@ var STORAGE_SIDEBAR = "ch-sidebar-collapsed";
     });
   }
 
+  function initCertificationsHub() {
+    if (!$("[data-crs-cert-table-body]").length) return;
+    import("../pages/certifications.js").then(function (mod) {
+      if (typeof mod.initPage === "function") mod.initPage();
+    });
+  }
+
   function initAnalysisDetail() {
     if (!$("#analyses-espn-detail").length) return;
 
     initBrandLogos();
     initCopilot({ tabSuggestions: ANALYSIS_COPILOT_SUGGESTIONS });
+
+    import("../pages/analysis-detail.js").then(function (mod) {
+      if (typeof mod.initPage === "function") mod.initPage();
+    });
+    import("../components/crs-certification-status.js").then(function (mod) {
+      if (typeof mod.mountAnalysisCertificationStatus === "function") mod.mountAnalysisCertificationStatus();
+    });
 
     var campaignTab = document.querySelector("#tab-campaign-plan-tab");
     if (campaignTab) {
@@ -4412,6 +4426,7 @@ export function initWorkspace() {
     layoutInitNavDestinations();
     initLibraryFileList();
     initProcessedCsvPage();
+    initCertificationsHub();
     initAiDock();
     initCopilotPages();
     initEvidenceModal();

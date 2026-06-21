@@ -9,6 +9,8 @@ export function highlightNav() {
   let navKey = current;
   if (current === "analyses-detail" || current === "analyses-new") {
     navKey = "analyses";
+  } else if (current === "library-certifications" || current === "files") {
+    navKey = "library";
   }
   $(".ch-nav-link[data-ch-nav]").each(function () {
     const key = ($(this).attr("data-ch-nav") || "").trim();

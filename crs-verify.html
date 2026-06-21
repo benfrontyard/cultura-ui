@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="assets/img/cultura-icon.png" />
+    <title>CRS Verification | Culture Hive</title>
+    <meta
+      name="description"
+      content="Verify a Culture Hive CRS certification for a media property and audience segment."
+    />
+    <link
+      rel="stylesheet"
+      href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&amp;display=swap"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <link href="assets/css/theme.css" rel="stylesheet" />
+    <link href="assets/css/crs-badge.css" rel="stylesheet" />
+  </head>
+  <body class="ch-crs-verify-page">
+    <header class="ch-crs-verify-page__header">
+      <a class="ch-crs-verify-page__brand" href="index.html" aria-label="Culture Hive home">
+        <span class="ch-crs-verify-page__brand-mark" aria-hidden="true">
+          <img src="assets/img/cultura-icon.png" alt="" width="187" height="162" decoding="async" />
+        </span>
+        Culture Hive
+      </a>
+    </header>
+
+    <main class="ch-crs-verify-page__main" id="crsVerifyMain">
+      <div class="ch-crs-verify-hero" data-crs-verify-hero>
+        <div class="ch-crs-verify-hero__badge" id="crsVerifyBadge"></div>
+        <p class="ch-crs-verify-hero__status" data-crs-verify-status hidden></p>
+      </div>
+
+      <h1 class="ch-crs-verify-page__headline" data-crs-verify-headline>
+        iHeart Media has earned an Elite CRS Score
+      </h1>
+      <p class="ch-crs-verify-page__subhead" data-crs-verify-subhead>
+        This certification recognizes media properties with exceptional cultural relevance for a defined
+        audience segment.
+      </p>
+
+      <div
+        class="ch-crs-verify-details"
+        role="region"
+        aria-label="Certification details"
+        data-crs-verify-details
+      ></div>
+
+      <aside class="ch-crs-verify-page__methodology" data-crs-verify-methodology aria-label="About CRS">
+        This property has achieved an Elite CRS Score, indicating strong cultural relevance for a defined
+        audience segment based on Culture Hive's proprietary CRS methodology.
+      </aside>
+
+      <div class="ch-crs-verify-page__actions">
+        <a class="btn btn-primary btn-sm" href="index.html">Learn about Culture Hive</a>
+      </div>
+    </main>
+
+    <footer class="ch-crs-verify-page__footer">
+      <p>Certification records are issued and maintained by Culture Hive.</p>
+    </footer>
+
+    <script type="module">
+      import { initVerifyPage } from "./assets/js/pages/crs-verify-page.js";
+      initVerifyPage();
+    </script>
+  </body>
+</html>

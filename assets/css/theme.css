@@ -96,6 +96,28 @@
   --ch-semantic-accent-text: var(--ch-indigo-700);
   --ch-semantic-accent-border: var(--ch-indigo-200);
 
+  /* CRS certification badge tokens (tier accents live in crs-certification-badge.js) */
+  --crs-badge-tier-verified-accent: var(--ch-blue-500);
+  --crs-badge-tier-verified-soft: var(--ch-blue-50);
+  --crs-badge-tier-verified-ring: var(--ch-blue-200);
+  --crs-badge-tier-high-accent: var(--ch-semantic-success-text);
+  --crs-badge-tier-high-soft: var(--ch-semantic-success-bg);
+  --crs-badge-tier-high-ring: var(--ch-semantic-success-border);
+  --crs-badge-tier-elite-accent: var(--ch-semantic-warning-text);
+  --crs-badge-tier-elite-soft: var(--ch-semantic-warning-bg);
+  --crs-badge-tier-elite-ring: var(--ch-semantic-warning-border);
+  --crs-badge-surface: var(--ch-neutral-0);
+  --crs-badge-text: var(--ch-neutral-900);
+  --crs-badge-muted-text: var(--ch-neutral-600);
+  --crs-badge-border: var(--ch-border);
+  --crs-badge-accent: var(--ch-blue-500);
+  --crs-badge-accent-soft: var(--ch-blue-50);
+  --crs-badge-mono-surface: var(--ch-neutral-0);
+  --crs-badge-mono-text: var(--ch-neutral-900);
+  --crs-badge-radius: var(--ch-radius-sm);
+  --crs-badge-shadow: 0 1px 3px rgba(10, 22, 40, 0.06);
+  --ch-z-cert-panel: 99999;
+
   /* --------------------------------------------------------------------------
      Token aliases (DS / docs naming; all map to --ch-* SSOT)
      -------------------------------------------------------------------------- */
@@ -3736,6 +3758,7 @@ button.ch-audience-row {
   display: flex;
   align-items: center;
   gap: 1rem;
+  overflow: visible;
 }
 
 .ch-crs-score__number {
@@ -3794,6 +3817,7 @@ button.ch-audience-row {
   display: flex;
   flex-direction: column;
   gap: var(--ch-space-5);
+  overflow: visible;
 }
 
 .ch-analysis-header--hero {
@@ -3808,6 +3832,7 @@ button.ch-audience-row {
   border-color: var(--ch-border);
   box-shadow: none;
   background: var(--ch-surface);
+  overflow: visible;
 }
 
 .ch-analysis-header--hero .ch-crs-score__number {
@@ -3815,11 +3840,33 @@ button.ch-audience-row {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 3.25rem;
-  padding: 0.35rem 0.5rem;
-  border-radius: 0.75rem;
+  flex-shrink: 0;
+  min-width: 4.75rem;
+  min-height: 4.75rem;
+  padding: 0.875rem 1rem;
+  border-radius: var(--ch-radius-sm);
   background: var(--ch-semantic-success-bg);
   box-shadow: 0 0 0 1px var(--ch-semantic-success-border);
+}
+
+.ch-crs-score__content {
+  min-width: 0;
+}
+
+.ch-crs-score__cert {
+  display: none;
+  flex-shrink: 0;
+  align-self: center;
+  padding: 0.25rem 0 0.25rem 1rem;
+  border-left: 1px solid var(--ch-border);
+  margin-left: 0.5rem;
+  overflow: visible;
+}
+
+.ch-crs-score__cert:not([hidden]) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ch-crs-score__verdict {
@@ -3903,6 +3950,7 @@ button.ch-audience-row {
 
 .ch-analysis-header .ch-card-body {
   padding: var(--ch-space-7);
+  overflow: visible;
 }
 
 .ch-analysis-header .ch-crs-score {
@@ -5496,6 +5544,22 @@ body.ch-ai-dock-fullscreen-active #chToastHost {
 
   .ch-crs-score__meta .btn {
     width: 100%;
+  }
+
+  .ch-crs-score__cert {
+    align-self: stretch;
+    justify-content: flex-start;
+    padding-left: 0;
+    padding-top: 0.75rem;
+    margin-left: 0;
+    border-left: 0;
+    border-top: 1px solid var(--ch-border);
+  }
+
+  .ch-crs-score__cert .ch-crs-cert-chip__panel--anchored,
+  .ch-crs-cert-chip__panel--anchored {
+    width: min(16rem, calc(100vw - 1.5rem));
+    max-width: min(16rem, calc(100vw - 1.5rem));
   }
 
   .ch-recent-analyses-list > .list-group-item {

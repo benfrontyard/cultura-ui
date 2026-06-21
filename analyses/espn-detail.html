@@ -20,6 +20,7 @@
     />
     <link href="../assets/css/icons.css" rel="stylesheet" />
     <link href="../assets/css/theme.css" rel="stylesheet" />
+    <link href="../assets/css/crs-badge.css" rel="stylesheet" />
   </head>
   <body data-ch-current="analyses-detail" data-ch-copilot-context="ESPN.com Analysis" data-ch-folder="analyses">
     <script src="../assets/js/ch-icon-sprite-inject.js"></script>
@@ -228,7 +229,7 @@
           <div class="ch-main">
             <div class="ch-main-inner">
               <main id="main-content">
-                <div id="analyses-espn-detail">
+                <div id="analyses-espn-detail" data-analysis-id="analysis-espn-001">
                   <nav aria-label="Breadcrumb" class="mb-3">
                     <ol class="breadcrumb mb-0 small">
                       <li class="breadcrumb-item"><a href="index.html">Analyses</a></li>
@@ -271,6 +272,13 @@
                             <li><hr class="dropdown-divider" /></li>
                             <li><button class="dropdown-item" type="button" data-ch-export>Export results</button></li>
                             <li><button class="dropdown-item" type="button" data-ch-share>Share link</button></li>
+                            <li class="d-none" data-crs-cert-menu-item><hr class="dropdown-divider" /></li>
+                            <li class="d-none" data-crs-cert-menu-item>
+                              <a class="dropdown-item" href="../library/certifications.html" data-crs-cert-assets-link>CRS badge assets</a>
+                            </li>
+                            <li class="d-none" data-crs-cert-menu-item>
+                              <a class="dropdown-item" href="../crs-verify.html" target="_blank" rel="noopener noreferrer" data-crs-cert-verify-link>View verification page</a>
+                            </li>
                             <li><hr class="dropdown-divider" /></li>
                             <li><button class="dropdown-item text-danger" type="button" data-bs-toggle="modal" data-bs-target="#chDeleteAnalysisModal">Delete analysis</button></li>
                           </ul>
@@ -281,7 +289,7 @@
                       <div class="ch-card-body">
                         <div class="ch-crs-score">
                           <div class="ch-crs-score__number" aria-label="CRS score 82">82</div>
-                          <div class="flex-grow-1 min-w-0">
+                          <div class="ch-crs-score__content flex-grow-1 min-w-0">
                             <div class="ch-crs-score__verdict">Strong cultural relevance</div>
                             <div class="ch-crs-score__label">ESPN.com resonates with Latino millennial sports fans through bilingual coverage, athlete storytelling, and community-driven commentary.</div>
                             <div class="ch-crs-score__meta">
@@ -289,6 +297,13 @@
                               <button type="button" class="btn btn-outline-secondary btn-sm" data-ch-show-score-breakdown>Score breakdown</button>
                             </div>
                           </div>
+                          <div
+                            class="ch-crs-score__cert"
+                            data-crs-certification-status
+                            data-analysis-id="analysis-espn-001"
+                            data-crs-score="82"
+                            hidden
+                          ></div>
                         </div>
                       </div>
                     </div>
@@ -1331,5 +1346,9 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js" crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.9/dist/cdn.min.js"></script>
     <script type="module" src="../assets/js/core/app-init.js"></script>
+    <script type="module">
+      import { mountAnalysisCertificationStatus } from "../assets/js/components/crs-certification-status.js";
+      mountAnalysisCertificationStatus();
+    </script>
   </body>
 </html>
