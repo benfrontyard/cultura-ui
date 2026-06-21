@@ -1065,6 +1065,12 @@ body.ch-sidebar-collapsed .ch-sidebar-footer .btn {
   padding: 0.375rem;
 }
 
+/* Prevent sidebar width transition when restoring persisted collapse on navigation */
+body.ch-sidebar--restoring .ch-sidebar,
+html.ch-sidebar-persist-collapsed .ch-sidebar {
+  transition: none !important;
+}
+
 /* Hide desktop sidebar on small screens; use offcanvas (aligned to Bootstrap md, 768px) */
 @media (max-width: 767.98px) {
   .ch-sidebar.ch-sidebar-desktop {
