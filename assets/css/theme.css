@@ -100,12 +100,12 @@
   --crs-badge-tier-verified-accent: var(--ch-blue-500);
   --crs-badge-tier-verified-soft: var(--ch-blue-50);
   --crs-badge-tier-verified-ring: var(--ch-blue-200);
-  --crs-badge-tier-high-accent: var(--ch-semantic-success-text);
-  --crs-badge-tier-high-soft: var(--ch-semantic-success-bg);
-  --crs-badge-tier-high-ring: var(--ch-semantic-success-border);
-  --crs-badge-tier-elite-accent: var(--ch-semantic-warning-text);
-  --crs-badge-tier-elite-soft: var(--ch-semantic-warning-bg);
-  --crs-badge-tier-elite-ring: var(--ch-semantic-warning-border);
+  --crs-badge-tier-high-accent: var(--ch-blue-500);
+  --crs-badge-tier-high-soft: var(--ch-blue-50);
+  --crs-badge-tier-high-ring: var(--ch-blue-200);
+  --crs-badge-tier-elite-accent: var(--ch-blue-500);
+  --crs-badge-tier-elite-soft: var(--ch-blue-50);
+  --crs-badge-tier-elite-ring: var(--ch-blue-200);
   --crs-badge-surface: var(--ch-neutral-0);
   --crs-badge-text: var(--ch-neutral-900);
   --crs-badge-muted-text: var(--ch-neutral-600);
