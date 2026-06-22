@@ -4081,7 +4081,7 @@ var STORAGE_SIDEBAR = "ch-sidebar-collapsed";
     });
 
     $("#tab-inventory tbody tr").each(function () {
-      var $td = $(this).find("td:first");
+      var $td = $(this).find("td").first();
       if ($td.find(".ch-brand-mark").length) return;
       var domain = $td.text().trim();
       if (!domain || domain.indexOf(".") === -1) return;
