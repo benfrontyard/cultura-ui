@@ -330,11 +330,7 @@
 .ch-crs-verify-page__brand {
   display: inline-flex;
   align-items: center;
-  gap: var(--ch-space-2);
   text-decoration: none;
-  color: var(--ch-heading);
-  font-weight: 600;
-  font-size: var(--ch-font-size-400);
   min-height: 2.75rem;
 }
 
@@ -344,19 +340,15 @@
   border-radius: var(--ch-radius-xs);
 }
 
-.ch-crs-verify-page__brand-mark {
-  width: 2rem;
-  height: 1.75rem;
-  flex-shrink: 0;
-  display: grid;
-  place-items: center;
-}
-
-.ch-crs-verify-page__brand-mark img {
+.ch-crs-verify-page__brand-logo {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 36px;
+  aspect-ratio: 622 / 174;
   object-fit: contain;
+  object-position: left center;
 }
 
 .ch-crs-verify-page__main {
@@ -390,6 +382,8 @@
   flex-direction: column;
   align-items: flex-start;
   gap: var(--ch-space-3);
+  width: fit-content;
+  max-width: 100%;
   margin-bottom: var(--ch-space-6);
   padding: var(--ch-space-5);
   border-radius: var(--ch-radius);

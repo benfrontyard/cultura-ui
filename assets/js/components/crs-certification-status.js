@@ -68,7 +68,7 @@ export function renderCertificationStatusHtml({ cert, prefix = "", score }) {
           <div class="ch-crs-cert-chip__fact"><dt>Verified</dt><dd>${formatCertDate(cert.verifiedDate)}</dd></div>
         </dl>
         <div class="ch-crs-cert-chip__actions">
-          <a class="ch-crs-cert-chip__action ch-crs-cert-chip__action--primary" href="${verifyHref}" target="_blank" rel="noopener noreferrer">View verification</a>
+          <a class="ch-crs-cert-chip__action ch-crs-cert-chip__action--primary" href="${verifyHref}">View verification</a>
           <a class="ch-crs-cert-chip__action" href="${assetsHref}">Badge assets</a>
         </div>
       </div>

@@ -543,7 +543,7 @@ export function renderBadgeHtml(opts = {}) {
   const inner = `<span class="ch-crs-cert-badge__svg" aria-hidden="false">${svg}</span>`;
 
   if (linkHref) {
-    return `<a class="${classes} ch-crs-cert-badge--linked" href="${esc(linkHref)}" target="_blank" rel="noopener noreferrer">${inner}</a>`;
+    return `<a class="${classes} ch-crs-cert-badge--linked" href="${esc(linkHref)}">${inner}</a>`;
   }
   return `<span class="${classes}" role="img">${inner}</span>`;
 }
